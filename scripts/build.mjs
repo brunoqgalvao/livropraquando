@@ -57,12 +57,17 @@ ${corpo}
     if (carregado) return; carregado = true;
     const s = document.createElement('script');
     s.src = 'https://www.google.com/books/jsapi.js';
-    s.onload = () => google.books.load({}, () => {
-      new google.books.DefaultViewer(document.getElementById('visor-alvo'))
-        .load('ISBN:' + b.dataset.isbn,
-              () => { b.textContent = 'A editora não liberou amostra deste.'; visor.hidden = true; },
-              () => { b.hidden = true; visor.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
-    });
+    // padrao documentado: load() e depois setOnLoadCallback. Passar callback
+    // direto em load() carrega a api mas nunca dispara o retorno.
+    s.onload = () => {
+      google.books.load();
+      google.books.setOnLoadCallback(() => {
+        const v = new google.books.DefaultViewer(document.getElementById('visor-alvo'));
+        v.load('ISBN:' + b.dataset.isbn,
+               () => { b.textContent = 'A editora não liberou amostra deste.'; b.disabled = false; visor.hidden = true; },
+               () => { b.hidden = true; visor.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+      });
+    };
     s.onerror = () => { b.textContent = 'Não consegui carregar a amostra.'; visor.hidden = true; };
     document.head.appendChild(s);
   };
