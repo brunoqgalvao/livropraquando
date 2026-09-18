@@ -1,0 +1,90 @@
+{
+  "isbn13": "9786586881363",
+  "titulo": "O Monstro das Cores vai à escola",
+  "autor": "Anna Llenas",
+  "tradutor": "Rosana de Mont'Alverne Neto",
+  "editora": "Aletria",
+  "ano": 2020,
+  "origem": "traducao",
+  "paginas": 40,
+  "situacoes": [
+    "primeiro-dia-de-aula"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "0+",
+      "base": 1
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse da editora no Google Play Livros",
+      "url": "https://play.google.com/store/books/details?id=RujvEAAAQBAJ",
+      "trecho": "Escola...o que será? Uma nuvem mágica em que se pode voar? Uma selva cheia de armadilhas? Calma, Monstro das Cores! A escola é bem legal e lá te esperam muitas aventuras e novos amigos! […] Nessa nova aventura, o monstro vai viver o seu primeiro dia de aula e descobrir que, na escola, também há muitas emoções para serem vividas.",
+      "acessado_em": "2026-09-18"
+    },
+    {
+      "tipo": "material_editora",
+      "veiculo": "ficha do livro no site da Aletria",
+      "url": "https://www.aletria.com.br/o-monstro-das-cores-vai-a-escola",
+      "trecho": "Indicado para pré-leitores (a partir de 0 anos). Título original: El Monstruo de Colores va al cole. 2020, 1ª edição. 40 páginas, 25 x 25 cm.",
+      "acessado_em": "2026-09-18"
+    }
+  ],
+  "nao_coberto": "A sinopse não diz o que acontece na escola nem como o dia termina, e não informa o ano da edição original. Quem vai à escola é o monstro; a sinopse não diz se há uma criança na história.",
+  "nao_aborda": "A sinopse não menciona separação dos pais, choro na porta da escola nem creche.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Aletria",
+        "url": "https://www.aletria.com.br/o-monstro-das-cores-vai-a-escola"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6586881366"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "id": "OwOYzwEACAAJ",
+        "isbn13": "9786586881363",
+        "titulo_bateu": true,
+        "em": "2026-09-18"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-09-18"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-09-18",
+  "outras_edicoes": [
+    {
+      "isbn13": "9788595261297",
+      "formato": "digital de 2024",
+      "url": "https://play.google.com/store/books/details?id=RujvEAAAQBAJ",
+      "verificado_em": "2026-09-18"
+    }
+  ]
+}

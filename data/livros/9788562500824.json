@@ -1,0 +1,86 @@
+{
+  "isbn13": "9788562500824",
+  "titulo": "O primeiro dia de Chu na escola",
+  "autor": "Neil Gaiman",
+  "ilustrador": "Adam Rex",
+  "tradutor": "Ana Bergin",
+  "editora": "Rocco",
+  "ano": 2017,
+  "origem": "traducao",
+  "paginas": 51,
+  "situacoes": [
+    "primeiro-dia-de-aula"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site da Editora Rocco",
+      "url": "https://rocco.com.br/produto/o-primeiro-dia-de-chu-na-escola/",
+      "trecho": "É o primeiro dia de Chu na escola. Chu está nervoso. Ele gostaria que os outros meninos e meninas fossem legais. Será que eles vão gostar dele? O que será que vai acontecer na escola hoje? Será que Chu vai fazer o que ele faz de melhor? Uma delicada e bem-humorada história para quem começa a vida escolar.",
+      "acessado_em": "2026-09-18"
+    }
+  ],
+  "nao_coberto": "A sinopse não diz o que é que Chu \"faz de melhor\" nem como o dia termina. A Rocco classifica o livro como \"Leitores / Iniciante\", que é nível de leitura e não idade, então a idade fica sem indicação. A página da editora não informa o título nem o ano da edição original.",
+  "nao_aborda": "A sinopse trata do nervosismo com os colegas; não menciona separação dos pais nem creche.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Editora Rocco",
+        "url": "https://rocco.com.br/produto/o-primeiro-dia-de-chu-na-escola/",
+        "edicao": "impresso de 2022, ISBN 9786589642213"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6589642214",
+        "edicao": "impresso de 2022, ISBN 9786589642213"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "id": "HjskDwAAQBAJ",
+        "isbn13": "9788562500824",
+        "titulo_bateu": true,
+        "em": "2026-09-18"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-09-18"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-09-18",
+  "nota": "Este ISBN é o da edição digital de 2017 (51 páginas no Google Livros). A Rocco vende hoje uma edição impressa de 2022, com 36 páginas, sob outro ISBN.",
+  "outras_edicoes": [
+    {
+      "isbn13": "9786589642213",
+      "formato": "impressa de 2022",
+      "url": "https://rocco.com.br/produto/o-primeiro-dia-de-chu-na-escola/",
+      "verificado_em": "2026-09-18"
+    }
+  ]
+}

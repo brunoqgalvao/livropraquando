@@ -1,0 +1,84 @@
+{
+  "isbn13": "9786553557321",
+  "titulo": "Luluzinha e o primeiro dia de aula",
+  "autor": "Prazeres Campos",
+  "editora": "Editora Dialética",
+  "ano": 2024,
+  "origem": "nacional",
+  "paginas": 34,
+  "situacoes": [
+    "primeiro-dia-de-aula"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse na loja da Editora Dialética",
+      "url": "https://loja.editoradialetica.com/literatura-e-outros/luluzinha-e-o-primeiro-dia-de-aula",
+      "trecho": "Luluzinha é uma menininha que temia o seu primeiro dia de aula. Quando enfim chegou o momento de ir à escola, ela percebeu que não era nada daquilo que pensava. Se entrosou com todos da sala e amou sua professora Rosa. A partir daí, ela via a escola com outros olhos, como se fosse seu segundo lar.",
+      "acessado_em": "2026-09-18"
+    }
+  ],
+  "nao_coberto": "A sinopse não diz do que exatamente Luluzinha tinha medo, não indica idade e não nomeia quem ilustrou. A sinopse já conta o desfecho; o que ela não conta é como a história chega lá.",
+  "nao_aborda": "A sinopse não menciona creche nem a despedida dos pais na porta da escola.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Editora Dialética",
+        "url": "https://loja.editoradialetica.com/literatura-e-outros/luluzinha-e-o-primeiro-dia-de-aula",
+        "edicao": "impresso, ISBN 9786553557314"
+      },
+      {
+        "loja": "Google Play Livros",
+        "url": "https://play.google.com/store/books/details?id=HgP6EAAAQBAJ",
+        "edicao": "digital"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "id": "HgP6EAAAQBAJ",
+        "isbn13": "9786553557321",
+        "titulo_bateu": true,
+        "em": "2026-09-18"
+      },
+      {
+        "fonte": "open_library",
+        "erro": "fetch failed",
+        "em": "2026-09-18"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-09-18",
+  "nota": "Este ISBN é o da edição digital. A loja da editora vende a edição impressa sob outro ISBN.",
+  "outras_edicoes": [
+    {
+      "isbn13": "9786553557314",
+      "formato": "impressa",
+      "url": "https://loja.editoradialetica.com/literatura-e-outros/luluzinha-e-o-primeiro-dia-de-aula",
+      "verificado_em": "2026-09-18"
+    }
+  ]
+}

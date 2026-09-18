@@ -1,0 +1,71 @@
+{
+  "isbn13": "9786556540726",
+  "titulo": "Bibo na escola",
+  "autor": "Silvana Rando",
+  "ilustrador": "Silvana Rando",
+  "editora": "Brinque-Book",
+  "ano": 2023,
+  "origem": "nacional",
+  "paginas": 32,
+  "situacoes": [
+    "primeiro-dia-de-aula"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "0+",
+      "base": 0
+    },
+    "nomeia_evento": {
+      "valor": "nao_coberto"
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site do Grupo Companhia das Letras (selo Brinque-Book)",
+      "url": "https://www.companhiadasletras.com.br/livro/9786556540726/bibo-na-escola",
+      "trecho": "Bibo vai à escola, e o seu dia está bem agitado. Além de desenhar, descer no escorregador, dançar e tirar soneca, o coelho vai descobrir que podemos contar com os amigos quando enfrentamos uma situação difícil e que compartilhar os brinquedos deixa tudo mais divertido. […] Indicado para leitores a partir de 0 ano.",
+      "acessado_em": "2026-09-18"
+    }
+  ],
+  "nao_coberto": "A sinopse descreve um dia de escola, e não diz se é o primeiro dia do Bibo. Também não diz qual é a \"situação difícil\" que ele enfrenta, nem quem narra.",
+  "nao_aborda": "A sinopse não fala de medo de ir à escola, de despedida dos pais nem de adaptação; mostra a rotina de quem já está lá.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Companhia das Letras",
+        "url": "https://www.companhiadasletras.com.br/livro/9786556540726/bibo-na-escola"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "id": "BPQu0QEACAAJ",
+        "isbn13": "9786556540726",
+        "titulo_bateu": true,
+        "em": "2026-09-18"
+      },
+      {
+        "fonte": "open_library",
+        "erro": "fetch failed",
+        "em": "2026-09-18"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-09-18",
+  "nota": "A editora avisa que este é um livro de impressão sob demanda: o exemplar é produzido depois do pedido."
+}

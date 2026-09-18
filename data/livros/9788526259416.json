@@ -1,0 +1,90 @@
+{
+  "isbn13": "9788526259416",
+  "titulo": "Bibi vai para a escola",
+  "autor": "Alejandro Rosas",
+  "editora": "Scipione",
+  "ano": 2005,
+  "paginas": 40,
+  "situacoes": [
+    "primeiro-dia-de-aula"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "0 a 5",
+      "base": 1
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "sim",
+      "base": 1
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse da editora no Coletivo Leitor (Scipione)",
+      "url": "https://www.coletivoleitor.com.br/livro/bibi-vai-para-a-escola",
+      "trecho": "Bibi não quer ir para a escola porque acha que não vai gostar de nada por lá. Mas, no primeiro dia de aula, ela tem uma agradável surpresa.",
+      "acessado_em": "2026-09-18"
+    },
+    {
+      "tipo": "material_editora",
+      "veiculo": "classificação e materiais na página da editora (Coletivo Leitor)",
+      "url": "https://www.coletivoleitor.com.br/livro/bibi-vai-para-a-escola",
+      "trecho": "Iniciantes (4-5 anos): Alguém lê para mim · Bebês (0-3 anos): Alguém lê para mim · Educação Infantil […] Ler na Íntegra · Degustação · Guia do Professor",
+      "acessado_em": "2026-09-18"
+    }
+  ],
+  "nao_coberto": "A sinopse não diz qual é a \"agradável surpresa\" nem quem narra a história. A faixa \"0 a 5\" é a soma das duas etiquetas de idade que a editora põe na página (0-3 e 4-5 anos). O material para o adulto que a página oferece é um guia do professor; ela não menciona nada voltado a pais.",
+  "nao_aborda": "A sinopse fala da véspera e do primeiro dia; não menciona creche, separação dos pais na porta da escola nem os dias seguintes.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Coletivo Leitor (editora)",
+        "url": "https://www.coletivoleitor.com.br/livro/bibi-vai-para-a-escola",
+        "esgotado_se": "nada encontrado"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8526259415"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "id": "BBiWPgAACAAJ",
+        "isbn13": "9788526259416",
+        "titulo_bateu": true,
+        "em": "2026-09-18"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-09-18"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-09-18",
+  "outras_edicoes": [
+    {
+      "isbn13": "9788526259423",
+      "formato": "impressa de 2006",
+      "url": "https://books.google.com.br/books?id=ec6uYgEACAAJ",
+      "verificado_em": "2026-09-18"
+    }
+  ]
+}
