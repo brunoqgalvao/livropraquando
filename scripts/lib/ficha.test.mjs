@@ -1,6 +1,6 @@
 // Casos tirados de páginas reais (colhidas em 18/09/2026). Se um deles quebrar,
 // alguma loja mudou o layout e a extração virou chute.
-import { idadeDaEditora, idadeDaAmazon, faixaDoTexto, estoqueDaPagina } from './ficha.mjs';
+import { idadeDaEditora, idadeDaAmazon, faixaDoTexto, estoqueDaPagina, valorBr, precoDaLoja, paginasDaFicha } from './ficha.mjs';
 import assert from 'node:assert/strict';
 
 let ok = 0, falhou = 0;
@@ -77,6 +77,56 @@ t('Amazon: "Estimativa de envio" e livro comprável', () =>
 
 t('Amazon: fora de estoque ganha, mesmo com prazo de envio na mesma frase', () =>
   assert.equal(estoqueDaPagina({ host: 'amazon.com.br', amazon: { estoque: 'Temporariamente fora de estoque. Estimativa de envio de 2 a 3 dias.' } }).ok, false));
+
+
+// --- preço: casos reais de 18/09, todos da mesma pagina ------------------
+const CIA = 'BIBO NA ESCOLA Autor/Ilustrador: Silvana Rando Livro fisico R$ 67,90 / A vista Comprar agora '
+  + 'COMPRADOS JUNTOS Bibo na escola R$ 67,90 Bibo no sitio R$ 67,90 Bibo no mercado R$ 67,90 PRECO TOTAL DE R$ 203,70 '
+  + 'O CONTINENTE Erico Verissimo R$ 107,90';
+
+t('valorBr le "R$ 67,90"', () => assert.equal(valorBr('R$ 67,90'), 67.9));
+t('valorBr le preco quebrado em elementos', () => assert.equal(valorBr('R$ 47 , 90'), 47.9));
+t('valorBr le milhar', () => assert.equal(valorBr('R$ 1.203,70'), 1203.7));
+t('valorBr recusa R$ 0,00 do Kindle', () => assert.equal(valorBr('Kindle R$ 0,00'), null));
+
+t('Cia das Letras: pega o livro, nao o combo de tres volumes', () => {
+  const r = precoDaLoja({ host: 'companhiadasletras.com.br', texto: CIA });
+  assert.equal(r.valor, 67.9);
+  assert.equal(r.formato, 'impresso');
+});
+
+t('Amazon: buy box, nao Kindle nem marketplace nem parcela', () => {
+  const r = precoDaLoja({ host: 'amazon.com.br', amazon: { core: 'R$ 47,90\nR$47\n,\n90 ' },
+    texto: 'Kindle R$ 0,00 ou R$ 7,90 para comprar Novo a partir de R$ 36,90 Em ate 2x R$ 23,95' });
+  assert.equal(r.valor, 47.9);
+});
+
+t('schema.org ganha da leitura de texto', () => {
+  const r = precoDaLoja({ host: 'cirandacultural.com.br',
+    jsonld: [{ '@type': 'Product', offers: { '@type': 'Offer', price: '31.41', priceCurrency: 'BRL' } }],
+    texto: 'De R$ 34,90 por R$ 31,41' });
+  assert.equal(r.valor, 31.41);
+});
+
+t('microdado da Aletria', () => {
+  const r = precoDaLoja({ host: 'aletria.com.br', micro: { price: '88.90', priceCurrency: 'BRL' }, texto: '' });
+  assert.equal(r.valor, 88.9);
+});
+
+t('moeda estrangeira nao entra', () =>
+  assert.equal(precoDaLoja({ host: 'x.com', jsonld: [{ offers: { price: '9.99', priceCurrency: 'USD' } }], texto: '' }), null));
+
+t('loja sem ancora nenhuma nao devolve preco', () =>
+  assert.equal(precoDaLoja({ host: 'coletivoleitor.com.br', texto: 'Comprar Agora Ler na Integra' }), null));
+
+t('paginas da ficha da Amazon', () =>
+  assert.equal(paginasDaFicha({ amazon: { ficha: ['Numero de paginas \u200f : \u200e 40 paginas'] } }).valor, 40));
+
+t('paginas da ficha da editora', () =>
+  assert.equal(paginasDaFicha({ texto: 'FICHA TECNICA Paginas: 32 Formato: 21.10 X 21.10 cm' }).valor, 32));
+
+t('paginas: sem ficha, nada', () =>
+  assert.equal(paginasDaFicha({ texto: 'Um livro sobre 32 maneiras de brincar' }), null));
 
 console.log(`${ok} passaram, ${falhou} falharam`);
 process.exit(falhou ? 1 : 0);

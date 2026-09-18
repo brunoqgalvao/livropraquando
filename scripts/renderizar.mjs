@@ -11,7 +11,7 @@
 // recusado aqui — entra como `idade_leitores`, que a página rotula como tal.
 import { P, lerTodos, gravar, canonicalLivro, hoje } from './lib.mjs';
 import { renderizar } from './navegador.mjs';
-import { idadeDaEditora, idadeDaAmazon, estoqueDaPagina, isbnDaPagina } from './lib/ficha.mjs';
+import { idadeDaEditora, idadeDaAmazon, estoqueDaPagina, isbnDaPagina, precoDaLoja, paginasDaFicha } from './lib/ficha.mjs';
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -22,9 +22,19 @@ const SO = process.argv.slice(2).filter(a => /^\d{13}$/.test(a));
 // "Adicionar ao carrinho" aparece como dica de atalho de teclado).
 const EXTRATOR = `(() => {
   const limpo = (e) => e ? e.innerText.replace(/\\s+/g, ' ').trim() : null;
+  const jsonld = [];
+  for (const e of document.querySelectorAll('script[type="application/ld+json"]')) {
+    try { jsonld.push(JSON.parse(e.textContent)); } catch { /* loja com JSON quebrado: ignora */ }
+  }
+  const micro = {};
+  for (const k of ['price', 'priceCurrency', 'availability']) {
+    const e = document.querySelector(\`[itemprop="\${k}"]\`);
+    if (e) micro[k] = e.content || e.getAttribute('content') || e.innerText.trim().slice(0, 40);
+  }
   const amazon = /amazon\\./.test(location.hostname) ? {
     estoque: limpo(document.querySelector('#availability')),
-    preco: limpo(document.querySelector('#corePrice_feature_div .a-price .a-offscreen')) || limpo(document.querySelector('#price')),
+    core: limpo(document.querySelector('#corePriceDisplay_desktop_feature_div'))
+       || limpo(document.querySelector('#corePrice_feature_div')),
     ficha: [...document.querySelectorAll('#detailBullets_feature_div li, #productDetailsTable li, #detailBulletsWrapper_feature_div li')]
       .map(e => e.innerText.replace(/\\s+/g, ' ').trim()).filter(Boolean),
   } : null;
@@ -32,13 +42,15 @@ const EXTRATOR = `(() => {
     url: location.href,
     titulo: document.title,
     texto: document.body ? document.body.innerText : '',
-    amazon,
+    jsonld, micro, amazon,
   };
 })()`;
 
 // --- rodada --------------------------------------------------------------
 const livros = lerTodos(P.livros).filter(l => !SO.length || SO.includes(l.isbn13));
 const estoque = {};
+const precos = {};
+const paginas = {};
 const diario = [];
 let escritos = 0;
 
@@ -55,13 +67,16 @@ for (const l of livros) {
       const edi = idadeDaEditora(d.texto);
       leituras.push({
         host, url: alvo.url, loja: alvo.loja, estoque: est,
+        preco: precoDaLoja(dados),
+        paginas: paginasDaFicha(dados),
         isbn_pagina: isbnDaPagina(dados),
         idade: amz && !amz.deLeitores ? { ...amz, fonte: 'ficha da loja (metadado da editora)' }
              : edi && !edi.ambigua ? { ...edi, fonte: 'página da editora' } : null,
         idade_leitores: amz?.deLeitores ? amz : null,
         ambigua: edi?.ambigua ? edi : null,
       });
-      console.log(`  ${host.padEnd(28)} estoque=${String(est.ok)} idade=${leituras.at(-1).idade?.valor || '-'}`);
+      const u = leituras.at(-1);
+      console.log(`  ${host.padEnd(28)} estoque=${String(est.ok)} idade=${u.idade?.valor || '-'} preco=${u.preco?.valor ?? '-'} pags=${u.paginas?.valor ?? '-'}`);
     } catch (e) {
       leituras.push({ host, url: alvo.url, loja: alvo.loja, estoque: { ok: null, nota: String(e.message || e) } });
       console.log(`  ${host.padEnd(28)} FALHOU: ${e.message}`);
@@ -77,16 +92,57 @@ for (const l of livros) {
         detalhe: leituras.filter(x => x.estoque.ok !== null).map(x => `${x.host}: ${x.estoque.nota}`), em: hoje() }
     : { ok: null, detalhe: leituras.map(x => `${x.host}: ${x.estoque.nota}`), em: hoje() };
 
+  const aviso = (m) => diario.push({ isbn13: l.isbn13, titulo: l.titulo, aviso: m });
+  // preço: prefere loja que estava com estoque. Preço de prateleira vazia manda
+  // a pessoa pra uma página onde não dá pra comprar.
+  const comPreco = leituras.filter(x => x.preco);
+  const escolhidoPreco = comPreco.find(x => x.estoque.ok === true) || comPreco[0];
+  if (escolhidoPreco) {
+    precos[l.isbn13] = {
+      preco: escolhidoPreco.preco.valor,
+      moeda: 'BRL',
+      formato: escolhidoPreco.preco.formato || 'impresso',
+      onde: escolhidoPreco.loja || escolhidoPreco.host,
+      url: escolhidoPreco.url,
+      base: escolhidoPreco.preco.fonte,
+      ...(escolhidoPreco.isbn_pagina && escolhidoPreco.isbn_pagina !== l.isbn13
+        ? { edicao: escolhidoPreco.isbn_pagina } : {}),
+      em: hoje(),
+    };
+    // Mesma ressalva que a idade já carrega: se a página de venda é de outra
+    // tiragem, o preço é daquela tiragem. Vale dizer, não esconder.
+    if (precos[l.isbn13].edicao) {
+      aviso(`preço R$ ${escolhidoPreco.preco.valor.toFixed(2)} é da edição ISBN ${precos[l.isbn13].edicao}, não da ${l.isbn13}`);
+    }
+  }
+
   // idade: a editora ganha da loja. Conflito é registrado, não escondido.
   const cand = leituras.filter(x => x.idade);
   const escolhida = cand.find(x => x.idade.fonte === 'página da editora') || cand[0];
   const conflito = [...new Set(cand.map(x => x.idade.valor))];
 
-  const aviso = (m) => diario.push({ isbn13: l.isbn13, titulo: l.titulo, aviso: m });
   if (conflito.length > 1) aviso(`idades diferentes entre fontes: ${conflito.join(' / ')} — ficou com ${escolhida.idade.valor} (${escolhida.host})`);
   for (const x of leituras) {
     if (x.idade_leitores) aviso(`Amazon só tem "Idade sugerida pelo cliente" (${x.idade_leitores.valor}); não é da editora, não entrou`);
     if (x.ambigua) aviso(`indicação dupla (leitura compartilhada x independente), precisa de gente: "${x.ambigua.trecho.slice(0, 140)}"`);
+  }
+
+  // páginas: só preenche o que falta. Não vale reescrever o que já veio do
+  // catálogo — seria diff sem informação nova.
+  if (!l.paginas) {
+    const p = leituras.map(x => x.paginas).filter(Boolean);
+    if (p.length) {
+      const n = p[0].valor;
+      if (n > 0 && n < 400) {
+        paginas[l.isbn13] = n;
+        const { arquivo: arqP, ...comPag } = l;
+        comPag.paginas = n;
+        if (gravar(arqP, canonicalLivro(comPag))) console.log(`  → ${n} páginas`);
+        l.paginas = n;
+      } else {
+        aviso(`descartei "${n} páginas": fora da faixa plausível pra livro ilustrado`);
+      }
+    }
   }
 
   if (!escolhida) continue;
@@ -139,9 +195,12 @@ for (const [isbn, e] of Object.entries(estoque)) {
   if (e.ok === null) { delete reg.estoque; continue; }   // ausência > null: não sei não é um valor
   reg.estoque = { a_venda: e.ok, onde: e.detalhe, em: e.em };
 }
+for (const [isbn, pr] of Object.entries(precos)) {
+  (mercado.livros[isbn] ||= {}).loja = pr;
+}
 mercado.atualizado_em = hoje();
 gravar(ARQ_MERCADO, JSON.stringify(mercado, null, 2) + '\n');
 writeFileSync(join(P.runtime, `render-${hoje()}.json`), JSON.stringify({ em: hoje(), avisos: diario }, null, 2) + '\n');
 
-console.log(`\n${livros.length} livros · ${escritos} idade(s) gravada(s) · ${diario.length} aviso(s)`);
+console.log(`\n${livros.length} livros · ${escritos} idade(s) · ${Object.keys(precos).length} preço(s) de loja · ${Object.keys(paginas).length} página(s) · ${diario.length} aviso(s)`);
 for (const a of diario) console.log(`  ! ${a.titulo}: ${a.aviso}`);

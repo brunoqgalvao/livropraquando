@@ -13,6 +13,16 @@
           "amazon.com.br: Somente 5 em estoque."
         ],
         "em": "2026-09-18"
+      },
+      "loja": {
+        "preco": 40,
+        "moeda": "BRL",
+        "formato": "impresso",
+        "onde": "Amazon",
+        "url": "https://www.amazon.com.br/dp/655079093X",
+        "base": "preço do buy box",
+        "edicao": "9786550790936",
+        "em": "2026-09-18"
       }
     },
     "9786555300628": {
@@ -26,6 +36,15 @@
         "onde": [
           "estantevirtual.com.br: em estoque"
         ],
+        "em": "2026-09-18"
+      },
+      "loja": {
+        "preco": 22.3,
+        "moeda": "BRL",
+        "formato": "impresso",
+        "onde": "Estante Virtual",
+        "url": "https://www.estantevirtual.com.br/livro/conta-comigo-um-novo-irmao-sera-que-e-bom-06Z-1719-000-BK",
+        "base": "dado estruturado (schema.org)",
         "em": "2026-09-18"
       }
     },
@@ -41,6 +60,16 @@
           "amazon.com.br: Somente 6 em estoque."
         ],
         "em": "2026-09-18"
+      },
+      "loja": {
+        "preco": 39.9,
+        "moeda": "BRL",
+        "formato": "impresso",
+        "onde": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6556121045",
+        "base": "preço do buy box",
+        "edicao": "9786556121048",
+        "em": "2026-09-18"
       }
     },
     "9786556540726": {
@@ -51,6 +80,15 @@
         "onde": [
           "companhiadasletras.com.br: Adicionar ao carrinho"
         ],
+        "em": "2026-09-18"
+      },
+      "loja": {
+        "preco": 67.9,
+        "moeda": "BRL",
+        "formato": "impresso",
+        "onde": "Companhia das Letras",
+        "url": "https://www.companhiadasletras.com.br/livro/9786556540726/bibo-na-escola",
+        "base": "preço do físico",
         "em": "2026-09-18"
       }
     },
@@ -66,6 +104,15 @@
           "editorapeiropolis.com.br: Adicionar ao carrinho",
           "amazon.com.br: Somente 1 em estoque."
         ],
+        "em": "2026-09-18"
+      },
+      "loja": {
+        "preco": 84,
+        "moeda": "BRL",
+        "formato": "impresso",
+        "onde": "Editora Peirópolis",
+        "url": "https://www.editorapeiropolis.com.br/produto/eu-so-so-eu/",
+        "base": "dado estruturado (schema.org)",
         "em": "2026-09-18"
       }
     },
@@ -85,6 +132,15 @@
           "amazon.com.br: Estimativa de envio de 2 a 3 dias"
         ],
         "em": "2026-09-18"
+      },
+      "loja": {
+        "preco": 47.9,
+        "moeda": "BRL",
+        "formato": "impresso",
+        "onde": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6560070026",
+        "base": "preço do buy box",
+        "em": "2026-09-18"
       }
     },
     "9786560250420": {
@@ -96,6 +152,15 @@
           "altabooks.com.br: Em estoque",
           "amazon.com.br: Somente 3 em estoque (mais a caminho)."
         ],
+        "em": "2026-09-18"
+      },
+      "loja": {
+        "preco": 33.25,
+        "moeda": "BRL",
+        "formato": "impresso",
+        "onde": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6560250423",
+        "base": "preço do buy box",
         "em": "2026-09-18"
       }
     },
@@ -111,6 +176,16 @@
           "amazon.com.br: Em estoque"
         ],
         "em": "2026-09-18"
+      },
+      "loja": {
+        "preco": 19.19,
+        "moeda": "BRL",
+        "formato": "impresso",
+        "onde": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6583924560",
+        "base": "preço do buy box",
+        "edicao": "9786583924568",
+        "em": "2026-09-18"
       }
     },
     "9786586881363": {
@@ -122,6 +197,15 @@
           "amazon.com.br: Em estoque"
         ],
         "em": "2026-09-18"
+      },
+      "loja": {
+        "preco": 61.99,
+        "moeda": "BRL",
+        "formato": "impresso",
+        "onde": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6586881366",
+        "base": "preço do buy box",
+        "em": "2026-09-18"
       }
     },
     "9788526259416": {
@@ -131,8 +215,17 @@
         "a_venda": true,
         "onde": [
           "coletivoleitor.com.br: Comprar Agora",
-          "amazon.com.br: Somente 1 em estoque."
+          "amazon.com.br: Em estoque"
         ],
+        "em": "2026-09-18"
+      },
+      "loja": {
+        "preco": 64.76,
+        "moeda": "BRL",
+        "formato": "impresso",
+        "onde": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8526259415",
+        "base": "preço do buy box",
         "em": "2026-09-18"
       }
     },
@@ -144,6 +237,15 @@
         "onde": [
           "cirandacultural.com.br: Produto Indisponível"
         ],
+        "em": "2026-09-18"
+      },
+      "loja": {
+        "preco": 31.41,
+        "moeda": "BRL",
+        "formato": "impresso",
+        "onde": "Ciranda Cultural",
+        "url": "https://www.cirandacultural.com.br/produto/livro-mas-e-eu-72713",
+        "base": "dado estruturado (schema.org)",
         "em": "2026-09-18"
       }
     },
@@ -157,8 +259,17 @@
         "a_venda": true,
         "onde": [
           "rocco.com.br: Adicionar ao carrinho",
-          "amazon.com.br: Em estoque"
+          "amazon.com.br: Estimativa de envio de 2 a 3 dias"
         ],
+        "em": "2026-09-18"
+      },
+      "loja": {
+        "preco": 59.9,
+        "moeda": "BRL",
+        "formato": "impresso",
+        "onde": "Editora Rocco",
+        "url": "https://rocco.com.br/produto/o-primeiro-dia-de-chu-na-escola/",
+        "base": "dado estruturado (schema.org)",
         "em": "2026-09-18"
       }
     },
@@ -171,6 +282,15 @@
           "companhiadasletras.com.br: Adicionar ao carrinho",
           "amazon.com.br: Em estoque"
         ],
+        "em": "2026-09-18"
+      },
+      "loja": {
+        "preco": 69.9,
+        "moeda": "BRL",
+        "formato": "impresso",
+        "onde": "Companhia das Letras",
+        "url": "https://www.companhiadasletras.com.br/livro/9788574068039/nos-agora-somos-quatro",
+        "base": "preço do físico",
         "em": "2026-09-18"
       }
     }

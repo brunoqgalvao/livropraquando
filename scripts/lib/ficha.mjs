@@ -101,3 +101,77 @@ export function isbnDaPagina({ host, texto, amazon }) {
   const m = semMarcas(alvo).match(/ISBN-?13\s*:?\s*([\d-]{13,20})/i);
   return m ? m[1].replace(/\D/g, '') : null;
 }
+
+// --- preço --------------------------------------------------------------
+// Preço só entra com âncora, nunca por "o primeiro R$ da página". A página da
+// Companhia das Letras traz, ao mesmo tempo, o preço do livro (R$ 67,90), o
+// combo da coleção (R$ 203,70) e uma vitrine de outros títulos; a da Amazon
+// traz o Kindle a R$ 0,00, o marketplace a R$ 36,90 e a parcela de 2x R$ 23,95.
+// Qualquer heurística de "menor" ou "primeiro" publica um número falso, e preço
+// falso é pior que preço ausente: a pessoa vai à loja contando com ele.
+const REAIS = /R\$\s*([\d.]{1,9})\s*,\s*(\d{2})/;   // "R$ 67,90" e "R$ 67 , 90" (a loja quebra em elementos)
+
+export function valorBr(s) {
+  const m = String(s || '').match(REAIS);
+  if (!m) return null;
+  const n = Number(`${m[1].replace(/\./g, '')}.${m[2]}`);
+  return Number.isFinite(n) && n > 0 ? n : null;   // R$ 0,00 do Kindle não é preço
+}
+
+// schema.org, quando a loja publica: é declaração da própria loja, não leitura nossa.
+export function precoEstruturado({ jsonld, micro }) {
+  const pilha = [];
+  const achata = (x) => {
+    if (Array.isArray(x)) return x.forEach(achata);
+    if (x && typeof x === 'object') {
+      pilha.push(x);
+      for (const k of ['@graph', 'offers', 'mainEntity', 'itemListElement']) if (x[k]) achata(x[k]);
+    }
+  };
+  achata(jsonld);
+  for (const n of pilha) {
+    const bruto = n.price ?? n.lowPrice;
+    if (bruto === undefined || (n.priceCurrency && n.priceCurrency !== 'BRL')) continue;
+    const v = Number(String(bruto).replace(',', '.'));
+    if (Number.isFinite(v) && v > 0) return { valor: v, fonte: 'dado estruturado (schema.org)' };
+  }
+  if (micro?.price && (!micro.priceCurrency || micro.priceCurrency === 'BRL')) {
+    const v = Number(String(micro.price).replace(',', '.'));
+    if (Number.isFinite(v) && v > 0) return { valor: v, fonte: 'microdado (schema.org)' };
+  }
+  return null;
+}
+
+export function precoDaLoja({ host, texto, jsonld, micro, amazon }) {
+  const est = precoEstruturado({ jsonld, micro });
+  if (est) return est;
+
+  // Bloco de preço do buy box: é o que a Amazon cobra por esta edição, separado
+  // do Kindle, do marketplace e do parcelamento, que moram em outros blocos.
+  if (/amazon\./.test(host)) {
+    const v = valorBr(amazon?.core);
+    return v ? { valor: v, fonte: 'preço do buy box' } : null;
+  }
+
+  // "Livro físico R$ 67,90 / À vista": o rótulo de formato é a âncora. Sem ele
+  // pegaríamos o combo de três volumes que a mesma página oferece embaixo.
+  const m = String(texto || '').replace(/\s+/g, ' ').match(/Livro\s+(f[íi]sico|digital)\s*(R\$\s*[\d.]+\s*,\s*\d{2})/i);
+  if (m) {
+    const v = valorBr(m[2]);
+    if (v) return { valor: v, fonte: `preço do ${m[1].toLowerCase()}`, formato: /d/i.test(m[1][0]) ? 'digital' : 'impresso' };
+  }
+  return null;
+}
+
+// --- páginas ------------------------------------------------------------
+export function paginasDaFicha({ texto, amazon }) {
+  const linha = (amazon?.ficha || []).map(semMarcas).find(l => /n[úu]mero de p[áa]ginas/i.test(l));
+  if (linha) {
+    const m = linha.match(/(\d{1,4})\s*p[áa]ginas/i);
+    if (m) return { valor: Number(m[1]), trecho: linha };
+  }
+  const t = semMarcas(texto);
+  const m = t.match(/P[áa]ginas\s*:\s*(\d{1,4})\b/);
+  if (m) return { valor: Number(m[1]), trecho: m[0] };
+  return null;
+}

@@ -68,7 +68,7 @@ const COLS = {
   enquadramento:  { cab: 'Enquadr.<br>religioso', cel: l => vv(l, 'enquadramento') === 'religioso' ? SIM : NAO },
   material_adulto:{ cab: 'Material<br>pro adulto', cel: l => bin(vv(l, 'material_adulto'), 'sim') },
   disponibilidade:{ cab: 'À venda',           cel: l => vendaCel(l) },
-  preco:          { cab: 'Preço',             cel: l => precoBr(l) || '<span class="nao">–</span>' },
+  preco:          { cab: 'Preço',             cel: l => precoBr(l) ? `<span title="${esc(precoRotulo(l))}">${precoBr(l)}</span>${precoDe(l).formato === 'e-book' ? '<span class="selo"> e-book</span>' : ''}` : '<span class="nao">–</span>' },
   previa:         { cab: 'Dá pra<br>folhear',  cel: l => l.previa?.folheavel ? `<a class="folhear-link" href="https://books.google.com.br/books?id=${esc(l.previa.volume)}&printsec=frontcover" rel="noopener" target="_blank">ver ↗</a>` : NAO },
 };
 const SIM = '<span class="sim">sim</span>', NAO = '<span class="nao">–</span>';
@@ -123,8 +123,25 @@ const MERCADO = (() => {
   try { return JSON.parse(readFileSync(join(ROOT, 'data/mercado.json'), 'utf8')).livros || {}; }
   catch { return {}; }
 })();
-const preco = (l) => MERCADO[l.isbn13]?.preco;
-const precoBr = (l) => preco(l) === undefined ? '' : `R$ ${preco(l).toFixed(2).replace('.', ',')}`;
+// O preço da tabela era o do e-book no Google Play, e a tabela não dizia isso.
+// Num catálogo de livro ilustrado isso engana de verdade: o pai compara R$ 28
+// com R$ 67,90 sem saber que um é arquivo e o outro é o livro na mão. Preço de
+// loja manda; o e-book só aparece quando é tudo que existe, e rotulado.
+const precoDe = (l) => {
+  const m = MERCADO[l.isbn13];
+  if (m?.loja?.preco !== undefined) {
+    return { valor: m.loja.preco, onde: m.loja.onde, em: m.loja.em, formato: m.loja.formato || 'impresso', edicao: m.loja.edicao };
+  }
+  if (m?.preco !== undefined) return { valor: m.preco, onde: 'Google Play', em: m.em, formato: 'e-book' };
+  return null;
+};
+const precoBr = (l) => { const p = precoDe(l); return p ? `R$ ${p.valor.toFixed(2).replace('.', ',')}` : ''; };
+const precoRotulo = (l) => {
+  const p = precoDe(l);
+  if (!p) return '';
+  const edicao = p.edicao ? `, edição ISBN ${p.edicao}` : '';
+  return `${p.formato} ${p.formato === 'e-book' ? 'no' : 'na'} ${p.onde}${edicao}, conferido em ${dataBr(p.em)}`;
+};
 
 // A descrição da situação dizia "Nenhuma das nove editoras indica faixa etária".
 // Era verdade até a extração renderizada preencher quatro delas — aí a frase
@@ -255,7 +272,7 @@ for (const l of livros) {
 <p class="olho">${(l.situacoes || []).map(sl => situacoes.find(x => x.slug === sl)).filter(Boolean).map(s => `<a href="/s/${esc(s.slug)}">${esc(s.titulo)}</a>`).join(' · ') || 'Livro'}</p>
 <div class="topo-livro">${capa(l, 'grande')}<div><h1>${esc(l.titulo)}</h1>
 <p class="sub">${esc(l.autor)}${l.ilustrador ? ` · ilustração de ${esc(l.ilustrador)}` : ''} · ${esc(l.editora)}${l.ano ? `, ${l.ano}` : ''}</p>
-${precoBr(l) ? `<p class="preco">${precoBr(l)} <span class="selo">no Google Play, conferido em ${dataBr(MERCADO[l.isbn13].em)}</span></p>` : ''}
+${precoBr(l) ? `<p class="preco">${precoBr(l)} <span class="selo">${esc(precoRotulo(l))}</span></p>` : ''}
 ${l.previa?.folheavel ? `<p><a class="folhear" href="https://books.google.com.br/books?id=${esc(l.previa.volume)}&printsec=frontcover" rel="noopener" target="_blank">Folhear as primeiras páginas ↗</a></p>
 <p class="selo">Amostra no Google Livros, liberada pela editora. Abre em outra aba; nem todo o livro está disponível.</p>` : ''}</div></div>
 <ul class="ficha">
