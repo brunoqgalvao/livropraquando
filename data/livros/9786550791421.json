@@ -10,7 +10,8 @@
   ],
   "rubrica": {
     "idade_editora": {
-      "valor": "nao_coberto"
+      "valor": "4 a 10",
+      "base": 1
     },
     "nomeia_evento": {
       "valor": "direto",
@@ -35,6 +36,13 @@
       "veiculo": "sinopse da editora no Google Books",
       "url": "https://books.google.com.br/books?id=N0x0EAAAQBAJ",
       "trecho": "A Tina ganhou um irmãozinho e viu tudo em casa mudar. Mas a mudança maior foi com a mamãe, que ficou sem ninguém para cuidar dela e muito cansada. E o papai, cadê ele para dividir tanta tarefa? Vendo isso, Tina teve uma grande ideia!",
+      "acessado_em": "2026-09-18"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon (edição ISBN 9786550790936)",
+      "url": "https://www.amazon.com.br/dp/655079093X",
+      "trecho": "Idade de leitura : 4 - 10 anos",
       "acessado_em": "2026-09-18"
     }
   ],

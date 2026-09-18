@@ -35,35 +35,43 @@ incompleto vale mais que um catálogo completo e inventado.
 ## A ordem do dia
 
 1. `git pull`
-2. `node scripts/check.mjs` — disponibilidade. **Não interfira.** A regra de três
+2. `node scripts/renderizar.mjs` — abre cada link de compra no Chromium da VM e lê
+   a ficha renderizada: idade indicada e estoque. Roda **antes** do check, que
+   depende do veredito dele. Se o navegador estiver fora do ar, o script falha
+   alto e o check passa o dia sem observação de loja — é o certo: melhor não
+   saber do que inventar. **Nunca** mova para `idade_editora` a "Idade sugerida
+   pelo cliente" da Amazon: é enquete de comprador, e a página imprime "(pela
+   editora)" ao lado do número. Os avisos ficam em `runtime/render-<data>.json`;
+   leve os que pedem gente para o relatório.
+3. `node scripts/check.mjs` — disponibilidade. **Não interfira.** A regra de três
    falhas de loja em dias distintos existe porque bloqueio de bot parece livro esgotado. Se o script não
    mudou o estado, o estado está certo.
-3. `node scripts/descobrir.mjs <slug>` numa situação que já existe, rodando as
+4. `node scripts/descobrir.mjs <slug>` numa situação que já existe, rodando as
    situações em rodízio. Os candidatos caem em `runtime/candidatos-<slug>.json`.
-4. Escolha **no máximo 2**. O teto não é sugestão. Ele existe porque encher o
+5. Escolha **no máximo 2**. O teto não é sugestão. Ele existe porque encher o
    catálogo é a forma mais fácil de parecer produtivo sem ser útil.
    Descarte sem dó: a descoberta traz romance adulto e livro de teologia junto.
    Editora paga pelo autor (Dialética, Clube de Autores, Appris, Autografia…) não entra:
    veja "Régua editorial" no SPEC. `descobrir.mjs` já filtra as conhecidas.
-5. Para cada escolhido, monte `data/livros/<isbn13>.json`:
+6. Para cada escolhido, monte `data/livros/<isbn13>.json`:
    - fato vem da resolução externa;
    - cada campo da rúbrica aponta com `base` para o índice da evidência que o
      sustenta. Não deu pra sustentar? `nao_coberto`. Não é derrota, é a resposta certa;
    - `nao_coberto` é obrigatório e específico. "a sinopse não diz quem narra" serve;
      "faltam informações" não serve;
    - `curadoria: "agente"`. Sempre. Nunca escreva `humano`.
-6. Se a situação ganhou livro, reveja `faixas` — o "se for comprar um só" por faixa
+7. Se a situação ganhou livro, reveja `faixas` — o "se for comprar um só" por faixa
    etária. Trocar o escolhido exige que a citação nova seja melhor, não só diferente.
-7. `node scripts/validate.mjs`. Vermelho não sobe. Conserte a causa, não o sintoma:
+8. `node scripts/validate.mjs`. Vermelho não sobe. Conserte a causa, não o sintoma:
    se o linter pegou linguagem prescritiva, o problema é a frase, não o linter.
-8. `node scripts/build.mjs` e confira que as páginas novas existem.
-9. Commit com mensagem que diz **o que entrou e por quê**, uma linha por livro.
+9. `node scripts/build.mjs` e confira que as páginas novas existem.
+10. Commit com mensagem que diz **o que entrou e por quê**, uma linha por livro.
    O diff é como o Bruno mede se você está fazendo trabalho ou barulho.
-10. `git push` — o CI valida de novo e publica.
-11. Search Console: `node scripts/gsc.mjs` (quando estiver configurado). Anote que
+11. `git push` — o CI valida de novo e publica.
+12. Search Console: `node scripts/gsc.mjs [query|page|date]`. Anote que
     busca trouxe gente e que situação está faltando. Isso vai no relatório, não
     vira situação nova por sua conta.
-12. Relatório: `SendMessage` pra sessão `brunodeqgalvao-5c` e cópia em `runtime/report-<data>.md`.
+13. Relatório: `SendMessage` pra sessão `brunodeqgalvao-5c` e cópia em `runtime/report-<data>.md`.
     Não vai pro self-chat do WhatsApp do Bruno.
 
 ## O relatório

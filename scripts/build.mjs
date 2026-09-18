@@ -66,11 +66,26 @@ const COLS = {
   nomeia_evento:  { cab: 'Nomeia<br>o evento', cel: l => bin(vv(l, 'nomeia_evento'), 'direto') },
   enquadramento:  { cab: 'Enquadr.<br>religioso', cel: l => vv(l, 'enquadramento') === 'religioso' ? SIM : NAO },
   material_adulto:{ cab: 'Material<br>pro adulto', cel: l => bin(vv(l, 'material_adulto'), 'sim') },
-  disponibilidade:{ cab: 'À venda',           cel: l => l.disponibilidade?.estado === 'esgotado' ? '<span class="nao">esgotado</span>' : SIM },
+  disponibilidade:{ cab: 'À venda',           cel: l => vendaCel(l) },
   preco:          { cab: 'Preço',             cel: l => precoBr(l) || '<span class="nao">–</span>' },
   previa:         { cab: 'Dá pra<br>folhear',  cel: l => l.previa?.folheavel ? `<a class="folhear-link" href="https://books.google.com.br/books?id=${esc(l.previa.volume)}&printsec=frontcover" rel="noopener" target="_blank">ver ↗</a>` : NAO },
 };
 const SIM = '<span class="sim">sim</span>', NAO = '<span class="nao">–</span>';
+
+// Esta coluna dizia "sim" pros catorze livros, sempre, porque "sim" era o valor
+// padrão e ninguém tinha ido conferir. Agora ela só afirma o que o navegador
+// leu numa loja hoje, e "não consegui ver" tem célula própria em vez de virar
+// um "sim" de graça.
+const venda = (l) => MERCADO[l.isbn13]?.estoque;
+function vendaCel(l) {
+  if (l.disponibilidade?.estado === 'esgotado') return '<span class="nao">esgotado</span>';
+  const e = venda(l);
+  if (!e) return '<span class="nao" title="Nenhuma loja respondeu de forma legível na última verificação.">não conferi</span>';
+  const onde = esc((e.onde || []).join(' · '));
+  return e.a_venda
+    ? `<span class="sim" title="${onde} (${dataBr(e.em)})">sim</span>`
+    : `<span class="nao" title="${onde} (${dataBr(e.em)})">não achei</span>`;
+}
 // Capa é como pai reconhece livro. Sem ela a tabela é um extrato bancário.
 const capa = (l, cls = '') => l.capa?.arquivo
   ? `<img class="capa-livro ${cls}" src="/capas/${esc(l.capa.arquivo)}" alt="Capa de ${esc(l.titulo)}" loading="lazy" decoding="async" width="80" height="120">`
@@ -203,7 +218,7 @@ ${l.previa?.folheavel ? `<p><a class="folhear" href="https://books.google.com.br
 </ul>
 ${(l.disponibilidade?.compra || []).length ? `<h2>Onde encontrar</h2>
 <ul class="lojas">${l.disponibilidade.compra.map(c => `<li><a href="${esc(c.url)}" rel="noopener">${esc(c.loja)} ↗</a>${c.edicao ? ` <span class="selo">${esc(c.edicao)}</span>` : ''}</li>`).join('')}</ul>
-<p class="selo">Links diretos, sem comissão. Conferidos em ${dataBr(l.verificado_em)}; preço e estoque mudam.</p>` : ''}
+<p class="selo">Links diretos, sem comissão.${venda(l) ? ` Em ${dataBr(venda(l).em)} um navegador abriu essas páginas e leu: ${esc((venda(l).onde || []).join('; ').replace(/[.;\s]+$/, ''))}.` : ' Na última passagem nenhuma loja respondeu de forma legível, então não dá pra afirmar que está à venda hoje.'} Preço e estoque mudam.</p>` : ''}
 <h2>De onde vem cada afirmação</h2>
 ${evs.map((e, i) => `<div class="ev" id="ev${i}"><div class="meta">${esc((e.veiculo || e.tipo).replace(/_/g, ' '))}${e.autor ? ` · ${esc(e.autor)}` : ''} · acessado ${dataBr(e.acessado_em)}</div><q>${esc(e.trecho)}</q><a class="abrir" href="${esc(e.url)}" rel="noopener">abrir a fonte ↗</a></div>`).join('\n')}
 ${l.nota ? `<p class="nota">${esc(l.nota)}</p>` : ''}

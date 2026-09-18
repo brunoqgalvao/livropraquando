@@ -20,7 +20,10 @@ const PRESCRITIVO = [
   /falha em /i,            // Fable: "não aborda", nunca "falha em"
 ];
 
-const TIPOS_EVIDENCIA = new Set(['sinopse_editora', 'ficha_catalografica', 'resenha_assinada', 'material_editora']);
+// 'ficha_tecnica' é a tabela de dados da página de venda (idade indicada,
+// páginas, ISBN), que a loja recebe da editora. Não é 'ficha_catalografica',
+// que é o CIP impresso no livro, nem resenha: ninguém escreveu, é metadado.
+const TIPOS_EVIDENCIA = new Set(['sinopse_editora', 'ficha_catalografica', 'ficha_tecnica', 'resenha_assinada', 'material_editora']);
 const RUBRICA = {
   idade_editora: ['nao_coberto'],   // ou uma faixa livre, ver abaixo
   nomeia_evento: ['direto', 'metafora', 'nao_coberto'],

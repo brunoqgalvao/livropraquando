@@ -12,7 +12,8 @@
   ],
   "rubrica": {
     "idade_editora": {
-      "valor": "nao_coberto"
+      "valor": "3 a 5",
+      "base": 1
     },
     "nomeia_evento": {
       "valor": "direto",
@@ -38,6 +39,13 @@
       "veiculo": "sinopse da editora no Google Books",
       "url": "https://books.google.com.br/books?id=wSk9EAAAQBAJ",
       "trecho": "A primeira obra infantojuvenil […] aborda a trajetória de Miguel com a chegada de seu irmão mais novo, o Pedrinho, e como essa novidade vai ser digerida pelo primogênito. […] As brincadeiras fora do ritmo, as atenções voltadas ao bebê e diferença de idade são temas trabalhados por meio do olhar de uma criança em desenvolvimento.",
+      "acessado_em": "2026-09-18"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon (edição ISBN 9786556121048)",
+      "url": "https://www.amazon.com.br/dp/6556121045",
+      "trecho": "Idade de leitura : 3 - 5 anos",
       "acessado_em": "2026-09-18"
     }
   ],

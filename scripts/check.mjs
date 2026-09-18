@@ -30,36 +30,35 @@ async function sondaOpenLibrary(l) {
   return { fonte: 'open_library', ok: !erro, nota: erro ? 'não catalogado' : undefined };
 }
 
-// A loja é a única sonda que enxerga estoque. Percorre `compra` em ordem e fica
-// com a primeira resposta válida. 403/429/202/5xx são parede de bot ou servidor
-// fora do ar (a Amazon devolve 500 em metade das leituras) — não contam.
-// `esgotado_se` é um trecho do HTML que só aparece quando a loja marca
-// indisponível. `sem_loja: true` = garimpo não achou loja nenhuma; conta como falha.
-async function sondaLoja(l) {
+// A loja é a única sonda que enxerga estoque — e por isso precisa enxergar de
+// verdade. Até 18/09 isso era um fetch cru, e um fetch cru mente de dois jeitos:
+// a Amazon devolve 403/500 pro robô (vira `null`, some do contador) e a loja SPA
+// devolve 200 com o corpo vazio (virava `ok: true`). O resultado era a coluna
+// "À venda" dizendo "sim" pros 14 livros porque ninguém tinha olhado.
+//
+// Agora quem olha é o `renderizar.mjs`, no Chromium da VM, e aqui a gente só lê
+// o veredito dele. Se não rodou hoje, a resposta é `null`: não sei. "Não sei"
+// nunca vira observação — é o que impede um dia de rede ruim de esgotar o acervo.
+const RENDER = join(P.runtime, 'estoque-render.json');
+const render = existsSync(RENDER) ? JSON.parse(readFileSync(RENDER, 'utf8')) : null;
+const renderFresco = render?.em === hoje();
+if (!renderFresco) console.log(`! runtime/estoque-render.json ${render ? `é de ${render.em}` : 'não existe'} — rode scripts/renderizar.mjs antes; hoje ninguém olhou a prateleira`);
+
+function sondaLoja(l) {
   const d = l.disponibilidade || {};
   if (d.sem_loja) return { fonte: 'loja', ok: false, nota: 'nenhuma loja encontrada' };
-  const alvos = (d.compra || []).filter(c => c.url);
-  if (!alvos.length) return { fonte: 'loja', ok: null, nota: 'sem link de compra' };
-  let ultima = 'sem resposta válida';
-  for (const alvo of alvos) {
-    try {
-      const r = await fetch(alvo.url, { signal: AbortSignal.timeout(20000), redirect: 'follow', headers: { 'user-agent': 'Mozilla/5.0 (compatible; livropraisso/1.0)' } });
-      if ([202, 403, 429].includes(r.status) || r.status >= 500) { ultima = `${alvo.loja}: bloqueio ${r.status}`; continue; }
-      if (!r.ok) return { fonte: 'loja', ok: false, nota: `${alvo.loja}: HTTP ${r.status}` };
-      if (alvo.esgotado_se && (await r.text()).includes(alvo.esgotado_se)) return { fonte: 'loja', ok: false, nota: `${alvo.loja}: marca indisponível` };
-      return { fonte: 'loja', ok: true };
-    } catch (e) {
-      ultima = `${alvo.loja}: ${String(e.message || e)}`;   // rede caiu != livro sumiu
-    }
-  }
-  return { fonte: 'loja', ok: null, nota: ultima };
+  if (!(d.compra || []).some(c => c.url)) return { fonte: 'loja', ok: null, nota: 'sem link de compra' };
+  if (!renderFresco) return { fonte: 'loja', ok: null, nota: 'sem leitura renderizada de hoje' };
+  const r = render.livros?.[l.isbn13];
+  if (!r || r.ok === null) return { fonte: 'loja', ok: null, nota: r ? (r.detalhe || []).join('; ') : 'livro não foi renderizado' };
+  return { fonte: 'loja', ok: r.ok, nota: (r.detalhe || []).join('; ') };
 }
 
 const livros = lerTodos(P.livros);
 let transicoes = 0;
 
 for (const l of livros) {
-  const sondas = await Promise.all([sondaGoogle(l), sondaOpenLibrary(l), sondaLoja(l)]);
+  const sondas = [...await Promise.all([sondaGoogle(l), sondaOpenLibrary(l)]), sondaLoja(l)];
   const reg = estado[l.isbn13] ||= { observacoes: [] };
   for (const s of sondas) {
     if (s.ok === null) continue;                    // sonda inválida não vira observação

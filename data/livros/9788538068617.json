@@ -9,7 +9,8 @@
   ],
   "rubrica": {
     "idade_editora": {
-      "valor": "nao_coberto"
+      "valor": "4+",
+      "base": 1
     },
     "nomeia_evento": {
       "valor": "direto",
@@ -34,6 +35,13 @@
       "veiculo": "sinopse da editora no Google Books",
       "url": "https://books.google.com.br/books?id=wZn3zwEACAAJ",
       "trecho": "Com a chegada da irmãzinha recém-nascida, Breno elabora um plano ultrassecreto para conseguir chamar a atenção do papai e da mamãe. Será que Breno, agora o irmão mais velho, vai conseguir?",
+      "acessado_em": "2026-09-18"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Ciranda Cultural",
+      "url": "https://www.cirandacultural.com.br/produto/livro-mas-e-eu-72713",
+      "trecho": "Faixa Etária: + 4 anos",
       "acessado_em": "2026-09-18"
     }
   ],

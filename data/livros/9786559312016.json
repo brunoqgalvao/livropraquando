@@ -11,7 +11,8 @@
   ],
   "rubrica": {
     "idade_editora": {
-      "valor": "nao_coberto"
+      "valor": "3 a 6",
+      "base": 1
     },
     "nomeia_evento": {
       "valor": "direto",
@@ -36,6 +37,13 @@
       "veiculo": "sinopse da editora no Google Books",
       "url": "https://books.google.com.br/books?id=gt11EAAAQBAJ",
       "trecho": "Já não era mais segredo que o menino queria tudo para si, só para si mesmo. O balanço no jardim, o papagaio colorido, o triciclo azul, o livro de histórias, o colo quentinho da mamãe. Até que uma surpresa acontece e muda a vida de toda a família. […] esse irresistível livro de Ana Saldanha compartilha o lirismo e a comoção sentidos pelas crianças com a chegada de um irmão.",
+      "acessado_em": "2026-09-18"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon (edição ISBN 9788575963364)",
+      "url": "https://www.amazon.com.br/dp/8575963368",
+      "trecho": "Idade de leitura : 3 - 6 anos",
       "acessado_em": "2026-09-18"
     }
   ],
