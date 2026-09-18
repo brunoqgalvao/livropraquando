@@ -10,6 +10,10 @@ if (!slug) { console.error('uso: node scripts/descobrir.mjs <slug-da-situacao>')
 const sit = JSON.parse(readFileSync(join(P.situacoes, `${slug}.json`), 'utf8'));
 if (!sit.consultas?.length) { console.error(`situação "${slug}" não tem "consultas"`); process.exit(2); }
 
+// As consultas viram `intitle:` no Google Books. Frase de assunto ("irmão mais
+// novo ciúme criança") vira OR frouxo e devolve romance adulto e teologia;
+// o que rende é palavra curta e distintiva que caiba num TÍTULO de livro
+// infantil — "irmãozinho", "barriga da mamãe". Escreva as consultas assim.
 const vistos = new Map();
 for (const q of sit.consultas) {
   const r = await googleBooks({ titulo: q });

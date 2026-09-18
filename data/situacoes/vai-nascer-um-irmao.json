@@ -2,20 +2,12 @@
   "slug": "vai-nascer-um-irmao",
   "titulo": "Livro pra quando vai nascer um irmão",
   "pergunta": "Qual livro ler com o filho mais velho?",
-  "descricao": "Nove livros com edição brasileira sobre a chegada de um irmão. A tabela traz o que a fonte da editora sustenta: tamanho, forma do texto, e quem narra. Nenhuma das nove editoras indica faixa etária em lugar nenhum — isso aparece como \"n/i\", não como um chute nosso.",
+  "descricao": "Dez livros com edição brasileira sobre a chegada de um irmão. A tabela traz o que a fonte da editora sustenta: tamanho, forma do texto, e quem narra. Nenhuma das dez editoras indica faixa etária em lugar nenhum — isso aparece como \"n/i\", não como um chute nosso.",
   "faixas": [
     {
       "isbn13": "9786556121475",
       "base": 0
     }
-  ],
-  "consultas": [
-    "irmão mais novo ciúme criança",
-    "chegada do bebê irmão mais velho",
-    "novo irmãozinho família livro infantil",
-    "vou ter um irmão livro infantil",
-    "irmã mais nova nasceu livro criança",
-    "mamãe está grávida livro infantil"
   ],
   "bloqueada": false,
   "curadoria": "humano",
@@ -26,6 +18,14 @@
     "forma",
     "narrador",
     "disponibilidade"
+  ],
+  "consultas": [
+    "irmãozinho",
+    "irmãzinha",
+    "chegou o bebê",
+    "bebê na barriga",
+    "barriga da mamãe",
+    "irmão mais velho"
   ],
   "ilustracao": "Uma criança de uns quatro anos, na ponta dos pés, espiando com curiosidade dentro de um berço de vime onde só se vê um embrulho de manta; ao lado, no chão, o urso de pelúcia dela; quarto tranquilo, móbile de papel sobre o berço."
 }

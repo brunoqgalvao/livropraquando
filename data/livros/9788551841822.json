@@ -1,0 +1,70 @@
+{
+  "isbn13": "9788551841822",
+  "titulo": "Tem um bebê na barriga da mamãe",
+  "autor": "Ingride Ferreira",
+  "editora": "Autografia",
+  "ano": 2022,
+  "origem": "nacional",
+  "paginas": 15,
+  "situacoes": [
+    "vai-nascer-um-irmao"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse da editora na página do Google Play Books",
+      "url": "https://play.google.com/store/books/details?id=ZzllEQAAQBAJ",
+      "trecho": "Quando se é descoberto os motivos aos quais a mamãe está diferente, nossa personagem embarca em um processo não muito agradável de aceitação. Afinal, agora ela precisará dividir o colinho da mamãe. Entretanto o medo e a insegurança aos poucos dão lugar a ansiedade e o amor pela chegada de um novo integrante.",
+      "acessado_em": "2026-09-18"
+    }
+  ],
+  "nao_coberto": "A editora não indica faixa etária, não nomeia quem ilustrou e não diz quem narra. A sinopse para na espera: não diz se a história chega ao nascimento. Não há ficha catalográfica pública, então o mês da edição e a existência de tiragem impressa não puderam ser conferidos.",
+  "nao_aborda": "A sinopse se passa inteira durante a gravidez e não fala do bebê já em casa nem da rotina depois do parto.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Google Play Books",
+        "url": "https://play.google.com/store/books/details?id=ZzllEQAAQBAJ"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "id": "ZzllEQAAQBAJ",
+        "isbn13": "9788551841822",
+        "titulo_bateu": true,
+        "em": "2026-09-18"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-09-18"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-09-18",
+  "nota": "A única edição que as fontes consultadas mostram é digital — Google Play Books e Kindle. Não encontramos edição impressa à venda."
+}

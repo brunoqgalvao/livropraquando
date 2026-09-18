@@ -58,7 +58,8 @@ incompleto vale mais que um catálogo completo e inventado.
 11. Search Console: `node scripts/gsc.mjs` (quando estiver configurado). Anote que
     busca trouxe gente e que situação está faltando. Isso vai no relatório, não
     vira situação nova por sua conta.
-12. Relatório no WhatsApp, uma mensagem, começando com 🤖.
+12. Relatório: `SendMessage` pra sessão `brunodeqgalvao-5c` e cópia em `runtime/report-<data>.md`.
+    Não vai pro self-chat do WhatsApp do Bruno.
 
 ## O relatório
 
@@ -78,7 +79,7 @@ Se você não publicou nada hoje, diga isso e diga por quê. Dia sem publicaçã
 
 ## Quando parar e perguntar
 
-Pare, não improvise, e pergunte no WhatsApp:
+Pare, não improvise, e pergunte por `SendMessage` pra `brunodeqgalvao-5c`:
 
 - a descoberta não trouxe nada aproveitável duas rodadas seguidas para a mesma situação;
 - um livro bom só existe em edição de Portugal;
