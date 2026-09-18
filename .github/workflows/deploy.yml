@@ -1,0 +1,42 @@
+name: validar e publicar
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+
+      # O validador é o portão. Catálogo quebrado não vai pro ar.
+      - run: node scripts/validate.mjs
+
+      - run: node scripts/build.mjs
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          SITE_NOME: ${{ vars.SITE_NOME }}
+
+      - run: echo "${{ vars.SITE_DOMINIO }}" > site/CNAME
+        if: vars.SITE_DOMINIO != ''
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: site }
+      - id: deploy
+        uses: actions/deploy-pages@v4
