@@ -51,7 +51,7 @@ ${corpo}
 </main>
 <footer><div class="env">
   ${MARCA}
-  <p>Cada afirmação sobre um livro aqui vem de uma fonte que dá pra abrir e conferir — sinopse da editora, ficha catalográfica ou resenha assinada. O que a fonte não diz, a página diz que não sabe.</p>
+  <p>Cada afirmação sobre um livro aqui vem de uma fonte que dá pra abrir e conferir — ${FONTES_EM_USO}. O que a fonte não diz, a página diz que não sabe.</p>
   <p>Este site descreve livros. Não dá orientação psicológica nem recomendação clínica.</p>
 </div></footer>
 </body>
@@ -167,8 +167,26 @@ export function preenche(texto, cont) {
   });
 }
 
+// "sinopse da editora, ficha catalografica ou resenha assinada" era uma lista
+// escrita na mao, e a ficha tecnica da loja -- que hoje sustenta idade, paginas
+// e preco -- ficou de fora dela sem ninguem notar. Promessa de procedencia nao
+// pode depender de alguem lembrar de editar um paragrafo: sai do dado.
+const NOME_FONTE = {
+  sinopse_editora: 'sinopse da editora',
+  ficha_catalografica: 'ficha catalográfica',
+  ficha_tecnica: 'ficha técnica da loja',
+  resenha_assinada: 'resenha assinada',
+  material_editora: 'material da editora',
+};
+function listaPt(itens) {
+  if (itens.length <= 1) return itens[0] || '';
+  return `${itens.slice(0, -1).join(', ')} ou ${itens.at(-1)}`;
+}
+
 const situacoes = lerTodos(P.situacoes);
 const livros = lerTodos(P.livros);
+const FONTES_EM_USO = listaPt([...new Set(livros.flatMap(l => (l.evidencias || []).map(e => e.tipo)))]
+  .map(t => NOME_FONTE[t] || String(t).replace(/_/g, ' ')).sort());
 const porSit = new Map(situacoes.map(s => [s.slug, []]));
 for (const l of livros) for (const s of (l.situacoes || [])) if (porSit.has(s)) porSit.get(s).push(l);
 for (const [, arr] of porSit) arr.sort((a, b) => {
@@ -204,7 +222,7 @@ ${comLivro.map(s => `  <li class="cartao">${arte(s.slug, '', { sizes: '(min-widt
 <h2>Como cada página é feita</h2>
 <ol class="passos">
   <li><b>Por situação, não por título</b>Os livros ficam lado a lado numa tabela: tamanho, forma do texto, quem narra, se está à venda.</li>
-  <li><b>Com a fonte à vista</b>Cada afirmação aponta pra sinopse da editora, ficha catalográfica ou resenha assinada, com link e data.</li>
+  <li><b>Com a fonte à vista</b>Cada afirmação aponta pra ${FONTES_EM_USO}, com link e data.</li>
   <li><b>O que não sabemos, dizemos</b>Ninguém aqui finge ter lido o livro. Se a fonte não cobre, a página avisa.</li>
 </ol>`,
 }));
