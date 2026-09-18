@@ -101,6 +101,30 @@ const MERCADO = (() => {
 const preco = (l) => MERCADO[l.isbn13]?.preco;
 const precoBr = (l) => preco(l) === undefined ? '' : `R$ ${preco(l).toFixed(2).replace('.', ',')}`;
 
+// A descrição da situação dizia "Nenhuma das nove editoras indica faixa etária".
+// Era verdade até a extração renderizada preencher quatro delas — aí a frase
+// virou mentira sozinha, sem ninguém escrever nada. Número escrito na mão em
+// texto editorial é slop com data marcada, então a contagem sai do dado:
+// {n_livros}, {n_idade}, {n_sem_idade}, em algarismo ou por extenso ({N_...}
+// com maiúscula inicial). Se aparecer placeholder desconhecido, o validate
+// recusa — melhor o deploy travar do que publicar "{n_livors}".
+const EXTENSO = ['nenhum', 'um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito',
+                 'nove', 'dez', 'onze', 'doze', 'treze', 'catorze', 'quinze', 'dezesseis',
+                 'dezessete', 'dezoito', 'dezenove', 'vinte'];
+const porExtenso = (n) => EXTENSO[n] ?? String(n);
+export function contagens(livrosDaSit) {
+  const comIdade = livrosDaSit.filter(l => (l.rubrica?.idade_editora?.valor ?? 'nao_coberto') !== 'nao_coberto').length;
+  return { n_livros: livrosDaSit.length, n_idade: comIdade, n_sem_idade: livrosDaSit.length - comIdade };
+}
+export function preenche(texto, cont) {
+  return String(texto ?? '').replace(/\{(n_[a-z_]+)\}/gi, (todo, chave) => {
+    const v = cont[chave.toLowerCase()];
+    if (v === undefined) return todo;
+    const palavra = porExtenso(v);
+    return /^N/.test(chave) ? palavra[0].toUpperCase() + palavra.slice(1) : palavra;
+  });
+}
+
 const situacoes = lerTodos(P.situacoes);
 const livros = lerTodos(P.livros);
 const porSit = new Map(situacoes.map(s => [s.slug, []]));
@@ -161,16 +185,17 @@ ${cols.map(c => `        <td class="c">${COLS[c].cel(l)}</td>`).join('\n')}
   <div class="por">${esc(l.autor)} · ${esc(l.editora)}</div>
   ${ev ? `<blockquote>“${esc(ev.trecho)}” — <a href="${esc(ev.url)}" rel="noopener">${esc(ev.veiculo || ev.tipo.replace(/_/g, ' '))} ↗</a></blockquote>` : ''}</div></div>`;
   }).join('\n');
+  const descricao = preenche(s.descricao, contagens(arr));
   escreve(`s/${s.slug}.html`, pagina({
     titulo: `${s.titulo} — livro infantil por idade`,
-    desc: s.descricao,
+    desc: descricao,
     canon: `${SITE}/s/${s.slug}`,
     imagem: temArte(s.slug) ? s.slug : 'capa',
     corpo: `<section class="heroi sit">
   <div>
     <p class="olho"><a href="/#situacoes">Situações</a></p>
     <h1>${esc(s.titulo)}</h1>
-    <p class="sub">${esc(s.descricao)}</p>
+    <p class="sub">${esc(descricao)}</p>
   </div>
   ${temArte(s.slug) ? `<figure class="arte">${arte(s.slug, `Ilustração: ${s.titulo.toLowerCase()}`, { eager: true, sizes: '(min-width:860px) 420px, 100vw' })}</figure>` : ''}
 </section>

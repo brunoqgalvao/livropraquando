@@ -60,18 +60,24 @@ incompleto vale mais que um catálogo completo e inventado.
    - `nao_coberto` é obrigatório e específico. "a sinopse não diz quem narra" serve;
      "faltam informações" não serve;
    - `curadoria: "agente"`. Sempre. Nunca escreva `humano`.
-7. Se a situação ganhou livro, reveja `faixas` — o "se for comprar um só" por faixa
+7. Nunca escreva número na mão na `descricao` da situação. Use `{n_livros}`,
+   `{n_idade}`, `{n_sem_idade}` (ou `{N_...}` pra maiúscula no começo da frase);
+   o build preenche a partir do dado. Número na mão envelhece calado: a frase
+   "nenhuma das nove editoras indica faixa etária" virou mentira em 18/09 sem
+   ninguém editar nada, porque a extração preencheu quatro. O `validate` recusa
+   placeholder que ele não conhece.
+8. Se a situação ganhou livro, reveja `faixas` — o "se for comprar um só" por faixa
    etária. Trocar o escolhido exige que a citação nova seja melhor, não só diferente.
-8. `node scripts/validate.mjs`. Vermelho não sobe. Conserte a causa, não o sintoma:
+9. `node scripts/validate.mjs`. Vermelho não sobe. Conserte a causa, não o sintoma:
    se o linter pegou linguagem prescritiva, o problema é a frase, não o linter.
-9. `node scripts/build.mjs` e confira que as páginas novas existem.
-10. Commit com mensagem que diz **o que entrou e por quê**, uma linha por livro.
+10. `node scripts/build.mjs` e confira que as páginas novas existem.
+11. Commit com mensagem que diz **o que entrou e por quê**, uma linha por livro.
    O diff é como o Bruno mede se você está fazendo trabalho ou barulho.
-11. `git push` — o CI valida de novo e publica.
-12. Search Console: `node scripts/gsc.mjs [query|page|date]`. Anote que
+12. `git push` — o CI valida de novo e publica.
+13. Search Console: `node scripts/gsc.mjs [query|page|date]`. Anote que
     busca trouxe gente e que situação está faltando. Isso vai no relatório, não
     vira situação nova por sua conta.
-13. Relatório: `SendMessage` pra sessão `brunodeqgalvao-5c` e cópia em `runtime/report-<data>.md`.
+14. Relatório: `SendMessage` pra sessão `brunodeqgalvao-5c` e cópia em `runtime/report-<data>.md`.
     Não vai pro self-chat do WhatsApp do Bruno.
 
 ## O relatório

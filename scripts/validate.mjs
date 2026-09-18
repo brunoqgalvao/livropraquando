@@ -46,6 +46,7 @@ function lintPrescritivo(arquivo, campo, texto) {
   }
 }
 
+const CONTADORES = new Set(['n_livros', 'n_idade', 'n_sem_idade']);
 const situacoes = lerTodos(P.situacoes);
 const livros = lerTodos(P.livros);
 const slugs = new Map(situacoes.map(s => [s.slug, s]));
@@ -54,6 +55,15 @@ for (const s of situacoes) {
   const f = basename(s.arquivo);
   if (basename(s.arquivo, '.json') !== s.slug) err(f, `nome do arquivo não bate com slug "${s.slug}"`);
   for (const c of ['titulo', 'pergunta', 'descricao', 'curadoria']) if (!s[c]) err(f, `falta campo "${c}"`);
+
+  // A descrição pede contagem ao build ({n_livros}, {n_idade}, {n_sem_idade};
+  // {N_...} sai com maiúscula) em vez de trazer o número escrito na mão. Um
+  // número na mão envelhece calado: a frase "nenhuma das nove editoras indica
+  // faixa etária" virou falsa em 18/09 sem ninguém editar nada. Placeholder que
+  // o build não conhece iria cru pra página, então trava aqui.
+  for (const m of String(s.descricao ?? '').matchAll(/\{([^}]*)\}/g)) {
+    if (!CONTADORES.has(m[1].toLowerCase())) err(f, `descricao pede "{${m[1]}}", que o build não sabe preencher`);
+  }
   lintPrescritivo(s.arquivo, 'descricao', s.descricao);
   lintPrescritivo(s.arquivo, 'pergunta', s.pergunta);
   lintPrescritivo(s.arquivo, 'lacuna', s.lacuna);
