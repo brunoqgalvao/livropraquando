@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 export const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 export const P = {
+  ROOT,
   livros: join(ROOT, 'data/livros'),
   situacoes: join(ROOT, 'data/situacoes'),
   runtime: join(ROOT, 'runtime'),

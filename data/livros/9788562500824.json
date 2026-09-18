@@ -74,6 +74,11 @@
   },
   "curadoria": "agente",
   "verificado_em": "2026-09-18",
+  "capa": {
+    "url": "https://books.google.com/books/content?id=HjskDwAAQBAJ&printsec=frontcover&img=1&zoom=2",
+    "fonte": "google_books",
+    "obtida_em": "2026-09-18"
+  },
   "nota": "Este ISBN é o da edição digital de 2017 (51 páginas no Google Livros). A Rocco vende hoje uma edição impressa de 2022, com 36 páginas, sob outro ISBN.",
   "outras_edicoes": [
     {

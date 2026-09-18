@@ -73,5 +73,10 @@
   },
   "curadoria": "agente",
   "verificado_em": "2026-09-18",
+  "capa": {
+    "url": "https://books.google.com/books/content?id=zA2uEQAAQBAJ&printsec=frontcover&img=1&zoom=2",
+    "fonte": "google_books",
+    "obtida_em": "2026-09-18"
+  },
   "nota": "As fontes consultadas mostram apenas a edição digital. Não encontramos página deste título no site da HarperCollins Brasil em 18/09/2026."
 }

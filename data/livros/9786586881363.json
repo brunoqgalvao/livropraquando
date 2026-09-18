@@ -79,6 +79,11 @@
   },
   "curadoria": "agente",
   "verificado_em": "2026-09-18",
+  "capa": {
+    "url": "https://books.google.com/books/content?id=OwOYzwEACAAJ&printsec=frontcover&img=1&zoom=2",
+    "fonte": "google_books",
+    "obtida_em": "2026-09-18"
+  },
   "outras_edicoes": [
     {
       "isbn13": "9788595261297",

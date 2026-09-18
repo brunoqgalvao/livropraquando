@@ -15,8 +15,8 @@
   "colunas": [
     "idade_editora",
     "paginas",
-    "nomeia_evento",
-    "material_adulto",
+    "forma",
+    "preco",
     "disponibilidade"
   ],
   "consultas": [

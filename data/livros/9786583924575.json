@@ -71,5 +71,10 @@
   },
   "curadoria": "humano",
   "verificado_em": "2026-09-18",
+  "capa": {
+    "url": "https://books.google.com/books/content?id=VZevEQAAQBAJ&printsec=frontcover&img=1&zoom=2",
+    "fonte": "google_books",
+    "obtida_em": "2026-09-18"
+  },
   "nota": "Formato tête-bêche: duas capas, uma de cada lado."
 }

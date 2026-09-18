@@ -67,11 +67,23 @@ const COLS = {
   enquadramento:  { cab: 'Enquadr.<br>religioso', cel: l => vv(l, 'enquadramento') === 'religioso' ? SIM : NAO },
   material_adulto:{ cab: 'Material<br>pro adulto', cel: l => bin(vv(l, 'material_adulto'), 'sim') },
   disponibilidade:{ cab: 'À venda',           cel: l => l.disponibilidade?.estado === 'esgotado' ? '<span class="nao">esgotado</span>' : SIM },
+  preco:          { cab: 'Preço',             cel: l => precoBr(l) || '<span class="nao">–</span>' },
 };
 const SIM = '<span class="sim">sim</span>', NAO = '<span class="nao">–</span>';
+// Capa é como pai reconhece livro. Sem ela a tabela é um extrato bancário.
+const capa = (l, cls = '') => l.capa?.url
+  ? `<img class="capa ${cls}" src="${esc(l.capa.url)}" alt="Capa de ${esc(l.titulo)}" loading="lazy" width="80" height="120">`
+  : `<span class="capa vazia ${cls}" aria-hidden="true"></span>`;
 const bin = (v, quando) => v === quando ? SIM : (v === 'nao_coberto' || v === undefined ? NAO : NAO);
 const vv = (l, campo) => { const v = (l.rubrica || {})[campo]; return typeof v === 'object' ? v?.valor : v; };
 const val = (r, campo) => { const v = r?.[campo]; return typeof v === 'object' ? v?.valor : v; };
+
+const MERCADO = (() => {
+  try { return JSON.parse(readFileSync(join(ROOT_DADOS, 'data/mercado.json'), 'utf8')).livros || {}; }
+  catch { return {}; }
+})();
+const preco = (l) => MERCADO[l.isbn13]?.preco;
+const precoBr = (l) => preco(l) === undefined ? '' : `R$ ${preco(l).toFixed(2).replace('.', ',')}`;
 
 const situacoes = lerTodos(P.situacoes);
 const livros = lerTodos(P.livros);
@@ -121,17 +133,17 @@ for (const s of situacoes) {
   if (!arr.length) continue;
   const cols = s.colunas?.length ? s.colunas : ['idade_editora', 'paginas', 'forma', 'narrador', 'disponibilidade'];
   const linhas = arr.map(l => `      <tr>
-        <td><a href="/l/${esc(l.isbn13)}">${esc(l.titulo)}</a><br><span class="selo">${esc(l.autor)}</span></td>
+        <td class="tit"><a href="/l/${esc(l.isbn13)}">${capa(l, 'mini')}<span><b>${esc(l.titulo)}</b><br><span class="selo">${esc(l.autor)}</span></span></a></td>
 ${cols.map(c => `        <td class="c">${COLS[c].cel(l)}</td>`).join('\n')}
       </tr>`).join('\n');
   const picks = (s.faixas || []).map(f => {
     const l = livros.find(x => x.isbn13 === f.isbn13);
     if (!l) return '';
     const ev = (l.evidencias || [])[f.base ?? 0];
-    return `<div class="pick"><h3>Se for comprar um só${f.faixa ? ` · ${esc(f.faixa)}` : ''}</h3>
+    return `<div class="pick">${capa(l, 'media')}<div class="pick-c"><h3>Se for comprar um só${f.faixa ? ` · ${esc(f.faixa)}` : ''}</h3>
   <div class="t"><a href="/l/${esc(l.isbn13)}">${esc(l.titulo)}</a></div>
   <div class="por">${esc(l.autor)} · ${esc(l.editora)}</div>
-  ${ev ? `<blockquote>“${esc(ev.trecho)}” — <a href="${esc(ev.url)}">${esc(ev.veiculo || ev.tipo.replace(/_/g, ' '))}</a></blockquote>` : ''}</div>`;
+  ${ev ? `<blockquote>“${esc(ev.trecho)}” — <a href="${esc(ev.url)}" rel="noopener">${esc(ev.veiculo || ev.tipo.replace(/_/g, ' '))} ↗</a></blockquote>` : ''}</div></div>`;
   }).join('\n');
   escreve(`s/${s.slug}.html`, pagina({
     titulo: `${s.titulo} — livro infantil por idade`,
@@ -175,8 +187,9 @@ for (const l of livros) {
     imagem: (l.situacoes || []).find(temArte) || 'capa',
     corpo: `<div class="estreito" style="padding-top:20px">
 <p class="olho">${(l.situacoes || []).map(sl => situacoes.find(x => x.slug === sl)).filter(Boolean).map(s => `<a href="/s/${esc(s.slug)}">${esc(s.titulo)}</a>`).join(' · ') || 'Livro'}</p>
-<h1>${esc(l.titulo)}</h1>
+<div class="topo-livro">${capa(l, 'grande')}<div><h1>${esc(l.titulo)}</h1>
 <p class="sub">${esc(l.autor)}${l.ilustrador ? ` · ilustração de ${esc(l.ilustrador)}` : ''} · ${esc(l.editora)}${l.ano ? `, ${l.ano}` : ''}</p>
+${precoBr(l) ? `<p class="preco">${precoBr(l)} <span class="selo">no Google Play, conferido em ${dataBr(MERCADO[l.isbn13].em)}</span></p>` : ''}</div></div>
 <ul class="ficha">
   <li><b>Idade indicada</b> <span>${val(r, 'idade_editora') === 'nao_coberto' ? 'a editora não indica' : `${esc(val(r, 'idade_editora'))} <span class="selo">(pela editora)</span>`}</span></li>
   ${Object.entries(rot).filter(([k]) => k !== 'idade_editora').map(([k, label]) => `<li><b>${label}</b> <span>${esc(legivel[val(r, k)] ?? '—')}${(typeof r[k] === 'object' && r[k]?.base !== undefined && evs[r[k].base]) ? ` <a class="selo" href="#ev${r[k].base}">fonte ↓</a>` : ''}</span></li>`).join('\n  ')}

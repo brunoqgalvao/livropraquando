@@ -1,0 +1,82 @@
+{
+  "atualizado_em": "2026-09-18",
+  "livros": {
+    "9786550791421": {
+      "preco": 28,
+      "moeda": "BRL",
+      "venda": "FOR_SALE",
+      "link": "https://play.google.com/store/books/details?id=N0x0EAAAQBAJ&rdid=book-N0x0EAAAQBAJ&rdot=1&source=gbs_api",
+      "em": "2026-09-18"
+    },
+    "9786555300628": {
+      "preco": 19.9,
+      "moeda": "BRL",
+      "venda": "FOR_SALE",
+      "link": "https://play.google.com/store/books/details?id=ojjnDwAAQBAJ&rdid=book-ojjnDwAAQBAJ&rdot=1&source=gbs_api",
+      "em": "2026-09-18"
+    },
+    "9786556121475": {
+      "preco": 50.4,
+      "moeda": "BRL",
+      "venda": "FOR_SALE",
+      "link": "https://play.google.com/store/books/details?id=wSk9EAAAQBAJ&rdid=book-wSk9EAAAQBAJ&rdot=1&source=gbs_api",
+      "em": "2026-09-18"
+    },
+    "9786556540726": {
+      "venda": "NOT_FOR_SALE",
+      "em": "2026-09-18"
+    },
+    "9786559312016": {
+      "preco": 50.4,
+      "moeda": "BRL",
+      "venda": "FOR_SALE",
+      "link": "https://play.google.com/store/books/details?id=gt11EAAAQBAJ&rdid=book-gt11EAAAQBAJ&rdot=1&source=gbs_api",
+      "em": "2026-09-18"
+    },
+    "9786559803019": {
+      "preco": 39.9,
+      "moeda": "BRL",
+      "venda": "FOR_SALE",
+      "link": "https://play.google.com/store/books/details?id=zA2uEQAAQBAJ&rdid=book-zA2uEQAAQBAJ&rdot=1&source=gbs_api",
+      "em": "2026-09-18"
+    },
+    "9786560070028": {
+      "venda": "NOT_FOR_SALE",
+      "em": "2026-09-18"
+    },
+    "9786560250420": {
+      "venda": "NOT_FOR_SALE",
+      "em": "2026-09-18"
+    },
+    "9786583924575": {
+      "preco": 16.9,
+      "moeda": "BRL",
+      "venda": "FOR_SALE",
+      "link": "https://play.google.com/store/books/details?id=VZevEQAAQBAJ&rdid=book-VZevEQAAQBAJ&rdot=1&source=gbs_api",
+      "em": "2026-09-18"
+    },
+    "9786586881363": {
+      "venda": "NOT_FOR_SALE",
+      "em": "2026-09-18"
+    },
+    "9788526259416": {
+      "venda": "NOT_FOR_SALE",
+      "em": "2026-09-18"
+    },
+    "9788538068617": {
+      "venda": "NOT_FOR_SALE",
+      "em": "2026-09-18"
+    },
+    "9788562500824": {
+      "preco": 29.9,
+      "moeda": "BRL",
+      "venda": "FOR_SALE",
+      "link": "https://play.google.com/store/books/details?id=HjskDwAAQBAJ&rdid=book-HjskDwAAQBAJ&rdot=1&source=gbs_api",
+      "em": "2026-09-18"
+    },
+    "9788574068039": {
+      "venda": "NOT_FOR_SALE",
+      "em": "2026-09-18"
+    }
+  }
+}
