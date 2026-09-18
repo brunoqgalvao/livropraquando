@@ -1,0 +1,103 @@
+# Livro pra isso — experimento de site self-driving
+
+## O que é
+
+Catálogo em PT-BR de livro infantil por **situação da vida da criança** ("vai nascer um irmãozinho",
+"morreu a avó", "medo do escuro", "mudou de escola"). Mantido por um agente Claude que acorda 1x/dia.
+
+## Por que existe
+
+Testar se um loop autônomo se sustenta. O nicho é veículo, não fim.
+
+## Critério de sucesso (14 dias a partir do dia 0)
+
+Passa se **as duas coisas**:
+1. Impressões no Search Console saírem de zero.
+2. Numa amostra de 5 páginas escritas pelo agente: toda citação confere, nenhum livro inventado,
+   nenhuma frase prescritiva.
+
+Falha automática, sem discussão: **um livro que não existe**.
+
+## Estrutura
+
+- `situação` = página de entrada. É a página que rankeia.
+- `livro` = página própria. Cauda longa.
+
+### Página de situação: matriz, não lista
+
+Uma linha por livro, colunas binárias derivadas da rúbrica (nomeia o evento? religioso? narrador
+criança? material pro adulto? à venda hoje?), ordenável por idade. Mais, por faixa etária:
+**"se for comprar um só, este — porque «citação»"**.
+
+A mãe às 23h não quer 12 livros; quer saber qual e por quê. Amazon não cruza, biblioteca não escolhe.
+
+### Página de livro
+
+- **Fato** (da editora): título, autor, ilustrador, editora, ano, ano original, páginas, idade indicada, ISBN.
+- **Evidência citada** com link e data de acesso: sinopse oficial, assunto da ficha catalográfica, resenha assinada.
+- **Rúbrica** — cada campo aponta para a evidência que o sustenta. Sem evidência, o campo fica `nao_coberto`.
+- **"O que a evidência não cobre"** — obrigatório. Se a página não sabe como o livro termina, ela diz isso.
+- **"O que este livro não aborda"** — nunca "falha em". Livro religioso não é defeito para família religiosa.
+- `verificado_em` visível.
+
+## Rúbrica (v1)
+
+Só entram critérios extraíveis de sinopse / ficha catalográfica / resenha assinada.
+
+| campo | valores | fonte típica |
+|---|---|---|
+| `nomeia_evento` | `direto` / `metafora` / `nao_coberto` | sinopse |
+| `enquadramento` | `religioso` / `secular` / `ambiguo` / `nao_coberto` | editora |
+| `narrador` | `crianca` / `adulto` / `animal` / `objeto` / `nao_coberto` | sinopse |
+| `material_adulto` | `sim` / `nao` / `nao_coberto` | editora |
+| `origem` | `nacional` / `traducao` | ficha |
+| `ano_original` | número / `nao_coberto` | ficha |
+
+**Cortados porque não saem de sinopse:** "o final resolve rápido demais", "a criança tem agência".
+Só entram se uma resenha assinada afirmar literalmente, com a citação no ar.
+
+## Travas
+
+### Anti-alucinação
+Livro só entra se o ISBN tiver checksum válido **e** resolver em catálogo externo com edição brasileira.
+Sem isso, não vira página.
+
+### Anti-churn (o furo mais provável)
+`esgotado` só depois de **3 falhas consecutivas em fontes distintas**. Uma leitura falha nunca muda estado.
+Bloqueio de bot e URL que muda de lugar são o caso comum, não o livro sumir.
+
+### Anti-slop
+Toda afirmação da rúbrica aponta para uma evidência com URL e trecho. Sem fonte, campo `nao_coberto`.
+O agente nunca finge ter lido o livro. Teto de **2 páginas novas por dia**.
+
+### Ética
+Linguagem **descritiva, nunca prescritiva**. Permitido: "trata de X pelo ponto de vista de Y".
+Proibido: "ajuda a criança a processar a perda" — é claim terapêutico sem fonte.
+
+**Temas bloqueados do loop autônomo** (quem busca isso está em crise; página fina faz dano real):
+suicídio, abuso sexual, morte de irmão, doença terminal de pai/mãe, automutilação.
+O agente não cria situação nova sem aprovação humana.
+
+## Gabarito
+
+Bruno cura 2 situações à mão, completas, no dia 0 — uma delas "vai nascer um irmãozinho".
+São o padrão-ouro: tudo que o agente produzir depois é comparado contra elas.
+Todo registro carrega `curadoria: humano | agente`.
+
+## Dia 0 (não começar do zero)
+
+Gabarito inteiro no ar de uma vez (15–20 páginas), sitemap submetido, indexação pedida à mão.
+Sem isso o experimento reprova por causa do Google, não do agente.
+
+## Loop diário (VM 24/7 — o Mac dorme)
+
+1. Revalida catálogo com a regra de 3 falhas.
+2. Procura lançamento novo para situação existente.
+3. Lê Search Console: que busca trouxe gente, que situação falta.
+4. Escreve no máximo 2 páginas novas, dentro da rúbrica.
+5. Commita e manda uma linha no self-chat.
+
+## Stack
+
+JSON é a fonte da verdade → gerador → HTML estático → deploy.
+O motivo não é preguiça: **o diff do git é a medida de slop**.
