@@ -105,8 +105,11 @@ const FORMATO = (() => {
 })();
 const deitada = (l) => (FORMATO.get(l.capa?.arquivo) ?? 0) > 1.15;
 
-const capa = (l, cls = '') => l.capa?.arquivo
-  ? `<img class="capa-livro ${cls}${deitada(l) ? ' deitada' : ''}" src="/capas/${esc(l.capa.arquivo)}" alt="Capa de ${esc(l.titulo)}" loading="lazy" decoding="async" width="80" height="120">`
+// A capa do topo da pagina do livro esta acima da dobra e e o maior elemento:
+// carregar preguicoso atrasa o LCP de proposito. Nao aparecia antes porque quase
+// nenhum livro tinha capa -- o defeito nasceu junto com a correcao.
+const capa = (l, cls = '', { jaVisivel = false } = {}) => l.capa?.arquivo
+  ? `<img class="capa-livro ${cls}${deitada(l) ? ' deitada' : ''}" src="/capas/${esc(l.capa.arquivo)}" alt="Capa de ${esc(l.titulo)}" ${jaVisivel ? 'fetchpriority="high" decoding="sync"' : 'loading="lazy" decoding="async"'} width="80" height="120">`
   : `<span class="capa-livro vazia ${cls}" aria-hidden="true"></span>`;
 const bin = (v, quando) => v === quando ? SIM : (v === 'nao_coberto' || v === undefined ? NAO : NAO);
 const vv = (l, campo) => { const v = (l.rubrica || {})[campo]; return typeof v === 'object' ? v?.valor : v; };
@@ -288,7 +291,7 @@ for (const l of livros) {
     imagem: (l.situacoes || []).find(temArte) || 'capa',
     corpo: `<div class="estreito" style="padding-top:20px">
 <p class="olho">${(l.situacoes || []).map(sl => situacoes.find(x => x.slug === sl)).filter(Boolean).map(s => `<a href="/s/${esc(s.slug)}">${esc(s.titulo)}</a>`).join(' · ') || 'Livro'}</p>
-<div class="topo-livro">${capa(l, 'grande')}<div><h1>${esc(l.titulo)}</h1>
+<div class="topo-livro">${capa(l, 'grande', { jaVisivel: true })}<div><h1>${esc(l.titulo)}</h1>
 <p class="sub">${esc(l.autor)}${l.ilustrador ? ` · ilustração de ${esc(l.ilustrador)}` : ''} · ${esc(l.editora)}${l.ano ? `, ${l.ano}` : ''}</p>
 ${precoBr(l) ? `<p class="preco">${precoBr(l)} <span class="selo">${esc(precoRotulo(l))}</span></p>` : ''}
 ${l.previa?.folheavel ? `<p><a class="folhear" href="https://books.google.com.br/books?id=${esc(l.previa.volume)}&printsec=frontcover" rel="noopener" target="_blank">Folhear as primeiras páginas ↗</a></p>
