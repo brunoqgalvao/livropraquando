@@ -1,6 +1,7 @@
-import { P, lerTodos, gravar } from './lib.mjs';
+import { P, ROOT, lerTodos, gravar } from './lib.mjs';
 import { join } from 'node:path';
-import { rmSync, existsSync, readFileSync } from 'node:fs';
+import { rmSync, existsSync, cpSync, readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 
 const SITE = process.env.SITE_URL || 'https://temlivropraisso.com';
 const NOME = process.env.SITE_NOME || 'Tem livro pra isso';
@@ -8,46 +9,18 @@ const NOME = process.env.SITE_NOME || 'Tem livro pra isso';
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const dataBr = (d) => d ? String(d).split('-').reverse().join('/') : '';
 
-const CSS = `
-:root{--tinta:#1c1a17;--suave:#6b655c;--linha:#e3ded5;--fundo:#fbf9f5;--caixa:#fff;--acento:#8a5a2b;--ok:#2f6b4f;--off:#a8a29a}
-@media (prefers-color-scheme:dark){:root:not([data-tema=claro]){--tinta:#ece7de;--suave:#a39c91;--linha:#332f2a;--fundo:#171512;--caixa:#201d19;--acento:#d4a373;--ok:#7fb79a;--off:#6b655c}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--fundo);color:var(--tinta);font:17px/1.6 ui-serif,Georgia,'Times New Roman',serif;-webkit-font-smoothing:antialiased}
-.env{max-width:62rem;margin:0 auto;padding:0 16px}
-header{border-bottom:1px solid var(--linha);padding:20px 0;margin-bottom:32px}
-header a{font:600 15px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.02em;color:var(--tinta);text-decoration:none}
-h1{font-size:clamp(1.7rem,4.5vw,2.4rem);line-height:1.2;margin:0 0 .4em;letter-spacing:-.015em}
-h2{font-size:1.25rem;margin:2.2em 0 .6em;letter-spacing:-.01em}
-.sub{color:var(--suave);font-size:1.05rem;margin:0 0 2em;max-width:44rem}
-a{color:var(--acento)}
-.grade{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));padding:0;list-style:none;margin:0}
-.cartao{background:var(--caixa);border:1px solid var(--linha);border-radius:10px;padding:18px 20px}
-.cartao a{text-decoration:none;font-weight:600;font-size:1.05rem}
-.cartao p{color:var(--suave);font-size:.92rem;margin:.4em 0 0}
-.rolo{overflow-x:auto;margin:0 -16px;padding:0 16px}
-table{border-collapse:collapse;width:100%;font:14px/1.45 ui-sans-serif,system-ui,sans-serif;min-width:44rem}
-th,td{text-align:left;padding:11px 10px;border-bottom:1px solid var(--linha);vertical-align:top}
-th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--suave);font-weight:600;white-space:nowrap}
-td.c{text-align:center;font-variant-numeric:tabular-nums}
-.sim{color:var(--ok);font-weight:600}.nao{color:var(--off)}
-.pick{background:var(--caixa);border:1px solid var(--linha);border-left:3px solid var(--acento);border-radius:0 10px 10px 0;padding:16px 20px;margin:0 0 14px}
-.pick h3{margin:0 0 .3em;font-size:1rem;font-family:ui-sans-serif,system-ui,sans-serif;letter-spacing:.02em;color:var(--suave);text-transform:uppercase;font-size:12px}
-.pick .t{font-weight:600;font-size:1.1rem}
-blockquote{margin:.6em 0 0;padding-left:14px;border-left:2px solid var(--linha);color:var(--suave);font-size:.95rem}
-.ficha{font:14px/1.7 ui-sans-serif,system-ui,sans-serif;list-style:none;padding:0;margin:0 0 2em}
-.ficha li{display:flex;gap:10px;border-bottom:1px solid var(--linha);padding:7px 0}
-.ficha b{min-width:8.5rem;color:var(--suave);font-weight:500}
-.ev{background:var(--caixa);border:1px solid var(--linha);border-radius:10px;padding:16px 20px;margin:0 0 12px}
-.ev .meta{font:12px/1.4 ui-sans-serif,system-ui,sans-serif;color:var(--suave);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5em}
-.ev q{font-style:italic}
-.nota{font:15px/1.65 ui-sans-serif,system-ui,sans-serif;background:var(--caixa);border:1px solid var(--linha);border-left:3px solid var(--acento);border-radius:0 10px 10px 0;padding:14px 18px;margin:0 0 2em}
-.aviso{font:14px/1.6 ui-sans-serif,system-ui,sans-serif;color:var(--suave);background:var(--caixa);border:1px dashed var(--linha);border-radius:10px;padding:14px 18px;margin:0 0 12px}
-footer{margin:64px 0 40px;padding-top:20px;border-top:1px solid var(--linha);color:var(--suave);font:13px/1.6 ui-sans-serif,system-ui,sans-serif}
-.selo{font:12px/1 ui-sans-serif,system-ui,sans-serif;color:var(--suave)}
-`;
+const ASSETS = join(ROOT, 'assets');
+const VERSAO = createHash('sha1').update(readFileSync(join(ASSETS, 'site.css'))).digest('hex').slice(0, 8);
+const temArte = (nome) => existsSync(join(ASSETS, 'img', `${nome}.webp`));
+const arte = (nome, alt, { eager = false, sizes = '(min-width:860px) 480px, 100vw' } = {}) => temArte(nome)
+  ? `<img src="/assets/img/${nome}.webp"${temArte(`${nome}-640`) ? ` srcset="/assets/img/${nome}-640.webp 640w, /assets/img/${nome}.webp 1200w" sizes="${sizes}"` : ''} width="1200" height="800" alt="${esc(alt)}"${eager ? ' fetchpriority="high"' : ' loading="lazy" decoding="async"'}>`
+  : '';
+const LOGO = '<svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1f4e5a"/><path d="M16 10.5c-2.6-1.8-5.6-2.2-9-1.6v13c3.4-.6 6.4-.2 9 1.6 2.6-1.8 5.6-2.2 9-1.6v-13c-3.4-.6-6.4-.2-9 1.6z" fill="#fbf6ec"/><path d="M16 10.5v13" stroke="#ab4124" stroke-width="1.6"/><circle cx="23.5" cy="7.5" r="2.5" fill="#d9a441"/></svg>';
+const MARCA = `<a class="marca" href="/">${LOGO}<span>${esc(NOME)}</span></a>`;
 
-const pagina = ({ titulo, desc, corpo, canon }) => `<!doctype html>
+const pagina = ({ titulo, desc, corpo, canon, imagem = 'capa' }) => `<!doctype html>
 <html lang="pt-BR">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(titulo)}</title>
@@ -56,15 +29,31 @@ const pagina = ({ titulo, desc, corpo, canon }) => `<!doctype html>
 <meta property="og:title" content="${esc(titulo)}">
 <meta property="og:description" content="${esc(desc)}">
 <meta property="og:type" content="website">
-<style>${CSS}</style>
-<header><div class="env"><a href="/">${esc(NOME)}</a></div></header>
+<meta property="og:url" content="${esc(canon)}">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="${esc(NOME)}">
+${existsSync(join(ASSETS, 'img', `${imagem}-og.jpg`)) ? `<meta property="og:image" content="${SITE}/assets/img/${imagem}-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+` : ''}<meta name="theme-color" content="#fbf6ec" media="(prefers-color-scheme:light)">
+<meta name="theme-color" content="#10191d" media="(prefers-color-scheme:dark)">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/figtree.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css?v=${VERSAO}">
+</head>
+<body>
+<header><div class="env">${MARCA}<nav><a href="/#situacoes">Situações</a></nav></div></header>
 <main class="env">
 ${corpo}
 </main>
-<footer class="env">
+<footer><div class="env">
+  ${MARCA}
   <p>Cada afirmação sobre um livro aqui vem de uma fonte que dá pra abrir e conferir — sinopse da editora, ficha catalográfica ou resenha assinada. O que a fonte não diz, a página diz que não sabe.</p>
   <p>Este site descreve livros. Não dá orientação psicológica nem recomendação clínica.</p>
-</footer>
+</div></footer>
+</body>
 </html>
 `;
 
@@ -96,19 +85,34 @@ for (const [, arr] of porSit) arr.sort((a, b) => {
 });
 
 if (existsSync(P.site)) rmSync(P.site, { recursive: true });
+cpSync(ASSETS, join(P.site, 'assets'), { recursive: true });
 const urls = [];
 const escreve = (rel, html) => { gravar(join(P.site, rel), html); urls.push(rel === 'index.html' ? '/' : '/' + rel.replace(/\.html$/, '')); };
 
 // ---- home
+const comLivro = situacoes.filter(s => (porSit.get(s.slug) || []).length);
 escreve('index.html', pagina({
   titulo: `${NOME} — livro infantil pra cada momento difícil`,
   desc: 'Catálogo de livro infantil por situação da vida da criança. Cada indicação carrega a fonte que a sustenta.',
   canon: SITE + '/',
-  corpo: `<h1>Tem um livro pra essa conversa.</h1>
-<p class="sub">Vai nascer um irmão, morreu alguém, o quarto ficou escuro demais. Escolha a situação; a página diz qual livro, pra que idade, e de onde veio cada afirmação.</p>
+  corpo: `<section class="heroi">
+  <div>
+    <p class="olho">Livro infantil por situação</p>
+    <h1>Tem um livro pra <em>essa conversa.</em></h1>
+    <p class="sub">Vai nascer um irmão, morreu alguém, o quarto ficou escuro demais. Escolha a situação; a página diz qual livro, pra que idade, e de onde veio cada afirmação.</p>
+  </div>
+  <figure class="arte">${arte('capa', 'Ilustração: um adulto e uma criança lendo juntos numa poltrona, à noite', { eager: true })}</figure>
+</section>
+<h2 id="situacoes">Escolha a situação</h2>
 <ul class="grade">
-${situacoes.filter(s => (porSit.get(s.slug) || []).length).map(s => `  <li class="cartao"><a href="/s/${esc(s.slug)}">${esc(s.titulo)}</a><p>${(porSit.get(s.slug) || []).length} livros · ${esc(s.pergunta)}</p></li>`).join('\n')}
-</ul>`,
+${comLivro.map(s => `  <li class="cartao">${arte(s.slug, '', { sizes: '(min-width:700px) 330px, 100vw' })}<div class="c"><a href="/s/${esc(s.slug)}">${esc(s.titulo)}</a><p><span class="n">${(porSit.get(s.slug) || []).length} livros</span> · ${esc(s.pergunta)}</p></div></li>`).join('\n')}
+</ul>
+<h2>Como cada página é feita</h2>
+<ol class="passos">
+  <li><b>Por situação, não por título</b>Os livros ficam lado a lado numa tabela: tamanho, forma do texto, quem narra, se está à venda.</li>
+  <li><b>Com a fonte à vista</b>Cada afirmação aponta pra sinopse da editora, ficha catalográfica ou resenha assinada, com link e data.</li>
+  <li><b>O que não sabemos, dizemos</b>Ninguém aqui finge ter lido o livro. Se a fonte não cobre, a página avisa.</li>
+</ol>`,
 }));
 
 // ---- situação: matriz, não lista
@@ -126,23 +130,34 @@ ${cols.map(c => `        <td class="c">${COLS[c].cel(l)}</td>`).join('\n')}
     const ev = (l.evidencias || [])[f.base ?? 0];
     return `<div class="pick"><h3>Se for comprar um só${f.faixa ? ` · ${esc(f.faixa)}` : ''}</h3>
   <div class="t"><a href="/l/${esc(l.isbn13)}">${esc(l.titulo)}</a></div>
+  <div class="por">${esc(l.autor)} · ${esc(l.editora)}</div>
   ${ev ? `<blockquote>“${esc(ev.trecho)}” — <a href="${esc(ev.url)}">${esc(ev.veiculo || ev.tipo.replace(/_/g, ' '))}</a></blockquote>` : ''}</div>`;
   }).join('\n');
   escreve(`s/${s.slug}.html`, pagina({
     titulo: `${s.titulo} — livro infantil por idade`,
     desc: s.descricao,
     canon: `${SITE}/s/${s.slug}`,
-    corpo: `<h1>${esc(s.titulo)}</h1>
-<p class="sub">${esc(s.descricao)}</p>
+    imagem: temArte(s.slug) ? s.slug : 'capa',
+    corpo: `<section class="heroi sit">
+  <div>
+    <p class="olho"><a href="/#situacoes">Situações</a></p>
+    <h1>${esc(s.titulo)}</h1>
+    <p class="sub">${esc(s.descricao)}</p>
+  </div>
+  ${temArte(s.slug) ? `<figure class="arte">${arte(s.slug, `Ilustração: ${s.titulo.toLowerCase()}`, { eager: true, sizes: '(min-width:860px) 420px, 100vw' })}</figure>` : ''}
+</section>
+<div class="estreito">
 ${picks}
+</div>
 <h2>Os ${arr.length} livros, lado a lado</h2>
+<p class="arrasta">Arraste a tabela pro lado pra ver todas as colunas →</p>
 <div class="rolo"><table>
-  <thead><tr><th>Livro</th>${cols.map(c => `<th>${COLS[c].cab}</th>`).join('')}</tr></thead>
+  <thead><tr><th>Livro</th>${cols.map(c => `<th class="c">${COLS[c].cab}</th>`).join('')}</tr></thead>
   <tbody>
 ${linhas}
   </tbody>
 </table></div>
-<p class="selo">Coluna vazia quer dizer que a fonte não cobre aquilo — não que a resposta seja não.</p>`,
+<p class="selo legenda">Coluna vazia quer dizer que a fonte não cobre aquilo — não que a resposta seja não.</p>`,
   }));
 }
 
@@ -156,7 +171,10 @@ for (const l of livros) {
     titulo: `${l.titulo}, de ${l.autor} — pra que idade e o que traz`,
     desc: `${l.titulo} (${l.editora}, ${l.ano || 's/d'}): idade indicada, o que a fonte da editora afirma e o que ela não cobre.`,
     canon: `${SITE}/l/${l.isbn13}`,
-    corpo: `<h1>${esc(l.titulo)}</h1>
+    imagem: (l.situacoes || []).find(temArte) || 'capa',
+    corpo: `<div class="estreito" style="padding-top:20px">
+<p class="olho">${(l.situacoes || []).map(sl => situacoes.find(x => x.slug === sl)).filter(Boolean).map(s => `<a href="/s/${esc(s.slug)}">${esc(s.titulo)}</a>`).join(' · ') || 'Livro'}</p>
+<h1>${esc(l.titulo)}</h1>
 <p class="sub">${esc(l.autor)}${l.ilustrador ? ` · ilustração de ${esc(l.ilustrador)}` : ''} · ${esc(l.editora)}${l.ano ? `, ${l.ano}` : ''}</p>
 <ul class="ficha">
   <li><b>Idade indicada</b> <span>${val(r, 'idade_editora') === 'nao_coberto' ? 'a editora não indica' : `${esc(val(r, 'idade_editora'))} <span class="selo">(pela editora)</span>`}</span></li>
@@ -167,12 +185,13 @@ for (const l of livros) {
   <li><b>Conferido em</b> <span>${dataBr(l.verificado_em)}</span></li>
 </ul>
 <h2>De onde vem cada afirmação</h2>
-${evs.map((e, i) => `<div class="ev" id="ev${i}"><div class="meta">${esc((e.veiculo || e.tipo).replace(/_/g, ' '))}${e.autor ? ` · ${esc(e.autor)}` : ''} · acessado ${dataBr(e.acessado_em)}</div><q>${esc(e.trecho)}</q><div style="margin-top:.6em"><a href="${esc(e.url)}">abrir a fonte</a></div></div>`).join('\n')}
+${evs.map((e, i) => `<div class="ev" id="ev${i}"><div class="meta">${esc((e.veiculo || e.tipo).replace(/_/g, ' '))}${e.autor ? ` · ${esc(e.autor)}` : ''} · acessado ${dataBr(e.acessado_em)}</div><q>${esc(e.trecho)}</q><a class="abrir" href="${esc(e.url)}" rel="noopener">abrir a fonte ↗</a></div>`).join('\n')}
 ${l.nota ? `<p class="nota">${esc(l.nota)}</p>` : ''}
 <h2>O que a evidência não cobre</h2>
 <p class="aviso">${esc(l.nao_coberto)}</p>
 ${l.nao_aborda ? `<h2>O que este livro não aborda</h2>\n<p class="aviso">${esc(l.nao_aborda)}</p>` : ''}
-${(l.situacoes || []).length ? `<h2>Aparece em</h2>\n<ul class="grade">${(l.situacoes || []).map(sl => { const s = situacoes.find(x => x.slug === sl); return s ? `<li class="cartao"><a href="/s/${esc(s.slug)}">${esc(s.titulo)}</a></li>` : ''; }).join('')}</ul>` : ''}`,
+${(l.situacoes || []).length ? `<h2>Aparece em</h2>\n<ul class="grade">${(l.situacoes || []).map(sl => { const s = situacoes.find(x => x.slug === sl); return s ? `<li class="cartao mini">${arte(s.slug, '', { sizes: '112px' })}<div class="c"><a href="/s/${esc(s.slug)}">${esc(s.titulo)}</a></div></li>` : ''; }).join('')}</ul>` : ''}
+</div>`,
   }));
 }
 
