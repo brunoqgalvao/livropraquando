@@ -1,0 +1,63 @@
+{
+  "isbn13": "9786560250420",
+  "titulo": "O bebê chegou!",
+  "autor": "Danielle Graf, Katja Seide",
+  "ilustrador": "Günther Jakobs",
+  "editora": "Camaleão",
+  "ano": 2024,
+  "paginas": 24,
+  "situacoes": [
+    "vai-nascer-um-irmao"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse da editora no site da Alta Books (selo Camaleão)",
+      "url": "https://altabooks.com.br/produto/o-bebe-chegou/",
+      "trecho": "De repente, ele chegou: o bebê. Todos estão felizes, até Toni. O bebê tem um cheirinho bom, é quentinho e macio. Mas ele chora muito e gruda na mamãe o tempo todo. Toni acha isso tudo uma maldade. Será que dá para devolver o bebê? Um livro para irmãos que ainda não cresceram nem um pouquinho.",
+      "acessado_em": "2026-09-18"
+    }
+  ],
+  "nao_coberto": "A sinopse da editora não diz como a história termina — se Toni continua querendo devolver o bebê. A Alta Books também não indica faixa etária, não nomeia quem traduziu e não dá o título nem o ano da edição original; a amostra que ela publica no site é imagem digitalizada, sem ficha catalográfica, então nada disso pôde ser conferido.",
+  "nao_aborda": "A sinopse situa a história com o bebê já em casa, e não fala de gravidez nem do tempo de espera antes do nascimento.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "id": "xG4w0QEACAAJ",
+        "isbn13": "9786560250420",
+        "titulo_bateu": true,
+        "em": "2026-09-18"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-09-18"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-09-18"
+}

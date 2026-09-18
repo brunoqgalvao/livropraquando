@@ -103,7 +103,7 @@ export async function resolver({ isbn, titulo, autor }) {
   return { resolucoes, candidatos, provado: resolucoes.some(r => r.titulo_bateu) };
 }
 
-if (process.argv[1].endsWith('resolve.mjs')) {
+if (process.argv[1]?.endsWith('resolve.mjs')) {
   const arg = process.argv.slice(2).join(' ');
   if (!arg) { console.error('uso: node scripts/resolve.mjs <isbn|titulo>'); process.exit(2); }
   const isbn = isbn13Valido(arg.replace(/[^0-9]/g, '')) ? arg.replace(/[^0-9]/g, '') : undefined;
