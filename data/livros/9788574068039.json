@@ -72,5 +72,14 @@
     ]
   },
   "curadoria": "humano",
-  "verificado_em": "2026-09-18"
+  "verificado_em": "2026-09-18",
+  "capa": {
+    "arquivo": "9788574068039.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/71XPh-AhCUL._SL1200_.jpg",
+    "obtida_em": "2026-09-18",
+    "sha1": "07494d5b88f794801d36d80a888036a8d06b6ea8",
+    "largura": 600,
+    "altura": 600
+  }
 }

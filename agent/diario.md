@@ -43,41 +43,47 @@ incompleto vale mais que um catálogo completo e inventado.
    pelo cliente" da Amazon: é enquete de comprador, e a página imprime "(pela
    editora)" ao lado do número. Os avisos ficam em `runtime/render-<data>.json`;
    leve os que pedem gente para o relatório.
-3. `node scripts/check.mjs` — disponibilidade. **Não interfira.** A regra de três
+3. `node scripts/capas.mjs` se algum livro estiver sem capa. Ele colhe candidatos
+   da pagina da loja e deixa em `runtime/capas-espera/`, **sem publicar**. Antes de
+   `node scripts/capas.mjs --promover`, **abra cada imagem e confira que e o livro
+   certo** — a heuristica ja escolheu banner de loja e "imagem indisponivel" antes,
+   e "esta e a capa de X" e uma afirmacao como qualquer outra do site. Se a imagem
+   nao for do livro, nao promova: registre no relatorio.
+4. `node scripts/check.mjs` — disponibilidade. **Não interfira.** A regra de três
    falhas de loja em dias distintos existe porque bloqueio de bot parece livro esgotado. Se o script não
    mudou o estado, o estado está certo.
-4. `node scripts/descobrir.mjs <slug>` numa situação que já existe, rodando as
+5. `node scripts/descobrir.mjs <slug>` numa situação que já existe, rodando as
    situações em rodízio. Os candidatos caem em `runtime/candidatos-<slug>.json`.
-5. Escolha **no máximo 2**. O teto não é sugestão. Ele existe porque encher o
+6. Escolha **no máximo 2**. O teto não é sugestão. Ele existe porque encher o
    catálogo é a forma mais fácil de parecer produtivo sem ser útil.
    Descarte sem dó: a descoberta traz romance adulto e livro de teologia junto.
    Editora paga pelo autor (Dialética, Clube de Autores, Appris, Autografia…) não entra:
    veja "Régua editorial" no SPEC. `descobrir.mjs` já filtra as conhecidas.
-6. Para cada escolhido, monte `data/livros/<isbn13>.json`:
+7. Para cada escolhido, monte `data/livros/<isbn13>.json`:
    - fato vem da resolução externa;
    - cada campo da rúbrica aponta com `base` para o índice da evidência que o
      sustenta. Não deu pra sustentar? `nao_coberto`. Não é derrota, é a resposta certa;
    - `nao_coberto` é obrigatório e específico. "a sinopse não diz quem narra" serve;
      "faltam informações" não serve;
    - `curadoria: "agente"`. Sempre. Nunca escreva `humano`.
-7. Nunca escreva número na mão na `descricao` da situação. Use `{n_livros}`,
+8. Nunca escreva número na mão na `descricao` da situação. Use `{n_livros}`,
    `{n_idade}`, `{n_sem_idade}` (ou `{N_...}` pra maiúscula no começo da frase);
    o build preenche a partir do dado. Número na mão envelhece calado: a frase
    "nenhuma das nove editoras indica faixa etária" virou mentira em 18/09 sem
    ninguém editar nada, porque a extração preencheu quatro. O `validate` recusa
    placeholder que ele não conhece.
-8. Se a situação ganhou livro, reveja `faixas` — o "se for comprar um só" por faixa
+9. Se a situação ganhou livro, reveja `faixas` — o "se for comprar um só" por faixa
    etária. Trocar o escolhido exige que a citação nova seja melhor, não só diferente.
-9. `node scripts/validate.mjs`. Vermelho não sobe. Conserte a causa, não o sintoma:
+10. `node scripts/validate.mjs`. Vermelho não sobe. Conserte a causa, não o sintoma:
    se o linter pegou linguagem prescritiva, o problema é a frase, não o linter.
-10. `node scripts/build.mjs` e confira que as páginas novas existem.
-11. Commit com mensagem que diz **o que entrou e por quê**, uma linha por livro.
+11. `node scripts/build.mjs` e confira que as páginas novas existem.
+12. Commit com mensagem que diz **o que entrou e por quê**, uma linha por livro.
    O diff é como o Bruno mede se você está fazendo trabalho ou barulho.
-12. `git push` — o CI valida de novo e publica.
-13. Search Console: `node scripts/gsc.mjs [query|page|date]`. Anote que
+13. `git push` — o CI valida de novo e publica.
+14. Search Console: `node scripts/gsc.mjs [query|page|date]`. Anote que
     busca trouxe gente e que situação está faltando. Isso vai no relatório, não
     vira situação nova por sua conta.
-14. Relatório: `SendMessage` pra sessão `brunodeqgalvao-5c` e cópia em `runtime/report-<data>.md`.
+15. Relatório: `SendMessage` pra sessão `brunodeqgalvao-5c` e cópia em `runtime/report-<data>.md`.
     Não vai pro self-chat do WhatsApp do Bruno.
 
 ## O relatório

@@ -79,6 +79,15 @@
   },
   "curadoria": "agente",
   "verificado_em": "2026-09-18",
+  "capa": {
+    "arquivo": "9786586881363.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/71KtAPmqWLL._SL1200_.jpg",
+    "obtida_em": "2026-09-18",
+    "sha1": "e5453837886cae4ed4a23b95cb22efd5a8f2efeb",
+    "largura": 600,
+    "altura": 600
+  },
   "outras_edicoes": [
     {
       "isbn13": "9788595261297",

@@ -76,5 +76,14 @@
   },
   "curadoria": "humano",
   "verificado_em": "2026-09-18",
+  "capa": {
+    "arquivo": "9788538068617.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/91PA-1pWQuS._SL1200_.jpg",
+    "obtida_em": "2026-09-18",
+    "sha1": "2cd4e2bd0e93b4b214824dbab8c93c776a27d42c",
+    "largura": 593,
+    "altura": 600
+  },
   "nota": "Em 18/09/2026 a loja da editora e a Livraria da Travessa marcavam este título como indisponível. A Amazon ainda tem página para ele; vale conferir o estoque antes de contar com o livro."
 }

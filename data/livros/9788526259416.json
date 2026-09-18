@@ -79,6 +79,15 @@
   },
   "curadoria": "agente",
   "verificado_em": "2026-09-18",
+  "capa": {
+    "arquivo": "9788526259416.jpg",
+    "fonte": "coletivoleitor.com.br",
+    "url": "https://www.coletivoleitor.com.br/uploads/covers/225341_Capa_ALTA.jpg",
+    "obtida_em": "2026-09-18",
+    "sha1": "f848cf486734f7482d9c1c79dfe8345cfebb98c2",
+    "largura": 519,
+    "altura": 600
+  },
   "outras_edicoes": [
     {
       "isbn13": "9788526259423",

@@ -1,6 +1,7 @@
 import { P, ROOT, lerTodos, gravar } from './lib.mjs';
+import { dimensao } from './lib/imagem.mjs';
 import { join } from 'node:path';
-import { rmSync, existsSync, cpSync, readFileSync } from 'node:fs';
+import { rmSync, existsSync, cpSync, readFileSync, readdirSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 
 const SITE = process.env.SITE_URL || 'https://livropraquando.com';
@@ -87,8 +88,25 @@ function vendaCel(l) {
     : `<span class="nao" title="${onde} (${dataBr(e.em)})">não achei</span>`;
 }
 // Capa é como pai reconhece livro. Sem ela a tabela é um extrato bancário.
+// Uma das capas e uma lombada inteira (300x150, Girassol). Num slot 2:3 com
+// `object-fit:cover` ela vira uma tira vertical recortada do meio, que nao
+// parece capa de nada. Capa deitada aparece inteira, menor.
+const FORMATO = (() => {
+  const m = new Map();
+  try {
+    for (const f of readdirSync(join(ROOT, 'data/capas'))) {
+      const d = dimensao(readFileSync(join(ROOT, 'data/capas', f)));
+      if (d) m.set(f, d.w / d.h);
+    }
+  } catch (e) {
+    console.log(`! nao consegui medir as capas (${e.message}) — capa deitada vai sair cortada`);
+  }
+  return m;
+})();
+const deitada = (l) => (FORMATO.get(l.capa?.arquivo) ?? 0) > 1.15;
+
 const capa = (l, cls = '') => l.capa?.arquivo
-  ? `<img class="capa-livro ${cls}" src="/capas/${esc(l.capa.arquivo)}" alt="Capa de ${esc(l.titulo)}" loading="lazy" decoding="async" width="80" height="120">`
+  ? `<img class="capa-livro ${cls}${deitada(l) ? ' deitada' : ''}" src="/capas/${esc(l.capa.arquivo)}" alt="Capa de ${esc(l.titulo)}" loading="lazy" decoding="async" width="80" height="120">`
   : `<span class="capa-livro vazia ${cls}" aria-hidden="true"></span>`;
 const bin = (v, quando) => v === quando ? SIM : (v === 'nao_coberto' || v === undefined ? NAO : NAO);
 const vv = (l, campo) => { const v = (l.rubrica || {})[campo]; return typeof v === 'object' ? v?.valor : v; };

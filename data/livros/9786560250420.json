@@ -70,6 +70,15 @@
   },
   "curadoria": "agente",
   "verificado_em": "2026-09-18",
+  "capa": {
+    "arquivo": "9786560250420.jpg",
+    "fonte": "altabooks.com.br",
+    "url": "https://altabooks.com.br/wp-content/uploads/2024/04/CAPA_1000px_OBebeChegou.webp",
+    "obtida_em": "2026-09-18",
+    "sha1": "40d6e381638a0e368dc58f6e8f5341cbf7128f63",
+    "largura": 579,
+    "altura": 600
+  },
   "outras_edicoes": [
     {
       "isbn13": "9786560250970",

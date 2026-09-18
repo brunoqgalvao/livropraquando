@@ -11,7 +11,10 @@ import { readFileSync, existsSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 
 const chave = process.env.GOOGLE_BOOKS_API_KEY
-  || (() => { try { return execSync('security find-generic-password -a livropraisso -s GOOGLE_BOOKS_API_KEY -w', { encoding: 'utf8' }).trim(); } catch { return null; } })();
+  || (() => {
+    if (process.platform !== 'darwin') return null;   // keychain so existe no Mac
+    try { return execSync('security find-generic-password -a livropraisso -s GOOGLE_BOOKS_API_KEY -w', { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim(); } catch { return null; }
+  })();
 if (!chave) { console.error('sem GOOGLE_BOOKS_API_KEY'); process.exit(2); }
 
 const ARQ_MERCADO = join(P.ROOT ?? '.', 'data/mercado.json');
@@ -70,7 +73,12 @@ for (const l of lerTodos(P.livros)) {
   const venda = item.saleInfo || {};
   const preco = venda.listPrice || venda.retailPrice;
   if (preco || venda.saleability) {
+    // Mescla, nao substitui: o `renderizar.mjs` grava `estoque` nesta mesma
+    // entrada, e substituir apagava a leitura de prateleira toda vez que este
+    // script rodasse depois. Dois donos no mesmo arquivo so funcionam se os
+    // dois escreverem so o proprio campo.
     mercado.livros[l.isbn13] = {
+      ...(mercado.livros[l.isbn13] || {}),
       ...(preco ? { preco: preco.amount, moeda: preco.currencyCode } : {}),
       venda: venda.saleability,
       ...(venda.buyLink ? { link: venda.buyLink } : {}),

@@ -67,5 +67,14 @@
   },
   "curadoria": "agente",
   "verificado_em": "2026-09-18",
+  "capa": {
+    "arquivo": "9786556540726.jpg",
+    "fonte": "companhiadasletras.com.br",
+    "url": "https://cdl-static.s3-sa-east-1.amazonaws.com/covers/gg/9786556540726/bibo-na-escola.jpg",
+    "obtida_em": "2026-09-18",
+    "sha1": "2c1eb2b4ecbe0fbbb8f841662e56473eb05b868b",
+    "largura": 600,
+    "altura": 600
+  },
   "nota": "A editora avisa que este é um livro de impressão sob demanda: o exemplar é produzido depois do pedido."
 }
