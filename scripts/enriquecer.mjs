@@ -6,6 +6,7 @@
 // declaradamente mecânico, pra não sujar o diff editorial que mede slop.
 import { P, lerTodos, gravar, canonicalLivro, hoje, buscaJSON } from './lib.mjs';
 import { execSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import { readFileSync, existsSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -16,6 +17,9 @@ if (!chave) { console.error('sem GOOGLE_BOOKS_API_KEY'); process.exit(2); }
 const ARQ_MERCADO = join(P.ROOT ?? '.', 'data/mercado.json');
 const mercado = existsSync(ARQ_MERCADO) ? JSON.parse(readFileSync(ARQ_MERCADO, 'utf8')) : { atualizado_em: null, livros: {} };
 
+// hashes conhecidos do placeholder "image not available" do Google
+const PLACEHOLDERS = new Set(['bc6a3a797b93ed6aa75aa73b206e1582bbd9496d']);
+const hashes = new Map();
 let capas = 0, precos = 0;
 for (const l of lerTodos(P.livros)) {
   const { dados, erro } = await buscaJSON(`https://www.googleapis.com/books/v1/volumes?q=isbn:${l.isbn13}&country=BR&key=${chave}`);
@@ -33,10 +37,20 @@ for (const l of lerTodos(P.livros)) {
       const r = await fetch(remota, { signal: AbortSignal.timeout(30000) });
       if (!r.ok) throw new Error(`HTTP ${r.status}`);
       const buf = Buffer.from(await r.arrayBuffer());
-      if (buf.length < 2000) throw new Error('imagem vazia (placeholder do Google)');
+      // O Google devolve um "image not available" quando nao tem capa, e ele e'
+      // byte-identico entre livros. Duas capas com o mesmo hash = placeholder.
+      const hash = createHash('sha1').update(buf).digest('hex');
+      if (buf.length < 2000) throw new Error('imagem vazia');
+      if (PLACEHOLDERS.has(hash)) throw new Error('placeholder do Google');
+      const dono = hashes.get(hash);
+      if (dono && dono !== l.isbn13) {
+        PLACEHOLDERS.add(hash);
+        throw new Error(`placeholder (mesma imagem de ${dono})`);
+      }
+      hashes.set(hash, l.isbn13);
       mkdirSync(join(P.ROOT, 'data/capas'), { recursive: true });
       writeFileSync(join(P.ROOT, 'data/capas', `${l.isbn13}.jpg`), buf);
-      limpo.capa = { arquivo: `${l.isbn13}.jpg`, fonte: 'google_books', obtida_em: hoje(), bytes: buf.length };
+      limpo.capa = { arquivo: `${l.isbn13}.jpg`, fonte: 'google_books', obtida_em: hoje(), sha1: hash };
       if (gravar(arquivo, canonicalLivro(limpo))) capas++;
     } catch (e) { console.log(`  -- capa ${l.isbn13}: ${e.message}`); }
   }
