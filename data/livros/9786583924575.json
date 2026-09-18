@@ -25,6 +25,10 @@
     },
     "material_adulto": {
       "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "tete_beche",
+      "base": 0
     }
   },
   "evidencias": [

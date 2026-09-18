@@ -26,6 +26,7 @@ const RUBRICA = {
   nomeia_evento: ['direto', 'metafora', 'nao_coberto'],
   enquadramento: ['religioso', 'secular', 'ambiguo', 'nao_coberto'],
   narrador: ['crianca', 'adulto', 'animal', 'objeto', 'nao_coberto'],
+  forma: ['prosa', 'rimado', 'palavras_chave', 'tete_beche', 'nao_coberto'],
   material_adulto: ['sim', 'nao', 'nao_coberto'],
 };
 

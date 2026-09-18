@@ -25,6 +25,10 @@
     },
     "material_adulto": {
       "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "rimado",
+      "base": 0
     }
   },
   "evidencias": [

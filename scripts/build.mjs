@@ -40,6 +40,7 @@ blockquote{margin:.6em 0 0;padding-left:14px;border-left:2px solid var(--linha);
 .ev{background:var(--caixa);border:1px solid var(--linha);border-radius:10px;padding:16px 20px;margin:0 0 12px}
 .ev .meta{font:12px/1.4 ui-sans-serif,system-ui,sans-serif;color:var(--suave);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5em}
 .ev q{font-style:italic}
+.nota{font:15px/1.65 ui-sans-serif,system-ui,sans-serif;background:var(--caixa);border:1px solid var(--linha);border-left:3px solid var(--acento);border-radius:0 10px 10px 0;padding:14px 18px;margin:0 0 2em}
 .aviso{font:14px/1.6 ui-sans-serif,system-ui,sans-serif;color:var(--suave);background:var(--caixa);border:1px dashed var(--linha);border-radius:10px;padding:14px 18px;margin:0 0 12px}
 footer{margin:64px 0 40px;padding-top:20px;border-top:1px solid var(--linha);color:var(--suave);font:13px/1.6 ui-sans-serif,system-ui,sans-serif}
 .selo{font:12px/1 ui-sans-serif,system-ui,sans-serif;color:var(--suave)}
@@ -67,8 +68,20 @@ ${corpo}
 </html>
 `;
 
+const FORMA = { prosa: 'prosa', rimado: 'rimado', palavras_chave: 'palavras-chave', tete_beche: 'tête-bêche' };
+const COLS = {
+  idade_editora:  { cab: 'Idade<br>indicada', cel: l => vv(l, 'idade_editora') === 'nao_coberto' ? '<span class="nao">n/i</span>' : esc(vv(l, 'idade_editora')) },
+  paginas:        { cab: 'Págs.',             cel: l => l.paginas ? String(l.paginas) : '<span class="nao">n/i</span>' },
+  forma:          { cab: 'Forma<br>do texto', cel: l => FORMA[vv(l, 'forma')] || '<span class="nao">–</span>' },
+  narrador:       { cab: 'Narrador<br>é criança', cel: l => bin(vv(l, 'narrador'), 'crianca') },
+  nomeia_evento:  { cab: 'Nomeia<br>o evento', cel: l => bin(vv(l, 'nomeia_evento'), 'direto') },
+  enquadramento:  { cab: 'Enquadr.<br>religioso', cel: l => vv(l, 'enquadramento') === 'religioso' ? SIM : NAO },
+  material_adulto:{ cab: 'Material<br>pro adulto', cel: l => bin(vv(l, 'material_adulto'), 'sim') },
+  disponibilidade:{ cab: 'À venda',           cel: l => l.disponibilidade?.estado === 'esgotado' ? '<span class="nao">esgotado</span>' : SIM },
+};
 const SIM = '<span class="sim">sim</span>', NAO = '<span class="nao">–</span>';
 const bin = (v, quando) => v === quando ? SIM : (v === 'nao_coberto' || v === undefined ? NAO : NAO);
+const vv = (l, campo) => { const v = (l.rubrica || {})[campo]; return typeof v === 'object' ? v?.valor : v; };
 const val = (r, campo) => { const v = r?.[campo]; return typeof v === 'object' ? v?.valor : v; };
 
 const situacoes = lerTodos(P.situacoes);
@@ -102,18 +115,11 @@ ${situacoes.filter(s => (porSit.get(s.slug) || []).length).map(s => `  <li class
 for (const s of situacoes) {
   const arr = porSit.get(s.slug) || [];
   if (!arr.length) continue;
-  const linhas = arr.map(l => {
-    const r = l.rubrica || {};
-    return `      <tr>
+  const cols = s.colunas?.length ? s.colunas : ['idade_editora', 'paginas', 'forma', 'narrador', 'disponibilidade'];
+  const linhas = arr.map(l => `      <tr>
         <td><a href="/l/${esc(l.isbn13)}">${esc(l.titulo)}</a><br><span class="selo">${esc(l.autor)}</span></td>
-        <td class="c">${val(r, 'idade_editora') === 'nao_coberto' ? '<span class="nao">n/i</span>' : esc(val(r, 'idade_editora'))}</td>
-        <td class="c">${bin(val(r, 'nomeia_evento'), 'direto')}</td>
-        <td class="c">${val(r, 'enquadramento') === 'religioso' ? SIM : NAO}</td>
-        <td class="c">${bin(val(r, 'narrador'), 'crianca')}</td>
-        <td class="c">${bin(val(r, 'material_adulto'), 'sim')}</td>
-        <td class="c">${l.disponibilidade?.estado === 'esgotado' ? '<span class="nao">esgotado</span>' : SIM}</td>
-      </tr>`;
-  }).join('\n');
+${cols.map(c => `        <td class="c">${COLS[c].cel(l)}</td>`).join('\n')}
+      </tr>`).join('\n');
   const picks = (s.faixas || []).map(f => {
     const l = livros.find(x => x.isbn13 === f.isbn13);
     if (!l) return '';
@@ -131,7 +137,7 @@ for (const s of situacoes) {
 ${picks}
 <h2>Os ${arr.length} livros, lado a lado</h2>
 <div class="rolo"><table>
-  <thead><tr><th>Livro</th><th>Idade<br>indicada</th><th>Nomeia<br>o evento</th><th>Enquadr.<br>religioso</th><th>Narrador<br>é criança</th><th>Material<br>pro adulto</th><th>À venda</th></tr></thead>
+  <thead><tr><th>Livro</th>${cols.map(c => `<th>${COLS[c].cab}</th>`).join('')}</tr></thead>
   <tbody>
 ${linhas}
   </tbody>
@@ -162,6 +168,7 @@ for (const l of livros) {
 </ul>
 <h2>De onde vem cada afirmação</h2>
 ${evs.map((e, i) => `<div class="ev" id="ev${i}"><div class="meta">${esc((e.veiculo || e.tipo).replace(/_/g, ' '))}${e.autor ? ` · ${esc(e.autor)}` : ''} · acessado ${dataBr(e.acessado_em)}</div><q>${esc(e.trecho)}</q><div style="margin-top:.6em"><a href="${esc(e.url)}">abrir a fonte</a></div></div>`).join('\n')}
+${l.nota ? `<p class="nota">${esc(l.nota)}</p>` : ''}
 <h2>O que a evidência não cobre</h2>
 <p class="aviso">${esc(l.nao_coberto)}</p>
 ${l.nao_aborda ? `<h2>O que este livro não aborda</h2>\n<p class="aviso">${esc(l.nao_aborda)}</p>` : ''}

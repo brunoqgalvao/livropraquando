@@ -26,6 +26,10 @@
     },
     "material_adulto": {
       "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "palavras_chave",
+      "base": 0
     }
   },
   "evidencias": [
