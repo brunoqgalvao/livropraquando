@@ -43,6 +43,16 @@
   "nao_aborda": "A sinopse situa a história com o bebê já em casa, e não fala de gravidez nem do tempo de espera antes do nascimento.",
   "disponibilidade": {
     "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Alta Books",
+        "url": "https://altabooks.com.br/produto/o-bebe-chegou/"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6560250423"
+      }
+    ],
     "resolucoes": [
       {
         "fonte": "google_books",
@@ -59,5 +69,13 @@
     ]
   },
   "curadoria": "agente",
-  "verificado_em": "2026-09-18"
+  "verificado_em": "2026-09-18",
+  "outras_edicoes": [
+    {
+      "isbn13": "9786560250970",
+      "formato": "digital",
+      "url": "https://play.google.com/store/books/details?id=Oi6FEQAAQBAJ",
+      "verificado_em": "2026-09-18"
+    }
+  ]
 }

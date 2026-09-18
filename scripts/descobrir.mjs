@@ -1,7 +1,7 @@
 // Descoberta de candidatos pra uma situação. Não escreve no catálogo:
 // cospe candidatos com a sinopse, pra curadoria (humana ou do agente) decidir.
 import { googleBooks, edicaoBrasileira } from './resolve.mjs';
-import { P, hoje } from './lib.mjs';
+import { P, hoje, lerTodos } from './lib.mjs';
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -26,9 +26,7 @@ for (const q of sit.consultas) {
   await new Promise(r => setTimeout(r, 400));
 }
 
-const catalogo = new Set(
-  (await import('node:fs')).readdirSync(P.livros).map(f => f.replace('.json', ''))
-);
+const catalogo = new Set(lerTodos(P.livros).flatMap(l => [l.isbn13, ...(l.outras_edicoes || []).map(o => o.isbn13)]));
 const novos = [...vistos.values()].filter(c => !catalogo.has(c.isbn13));
 
 mkdirSync(P.runtime, { recursive: true });

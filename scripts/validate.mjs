@@ -110,6 +110,15 @@ for (const l of livros) {
     }
   }
 
+  // 5b. edições alternativas e links de loja
+  for (const o of (l.outras_edicoes || [])) {
+    if (!isbn13Valido(o.isbn13)) err(f, `outras_edicoes: ISBN-13 inválido: "${o.isbn13}"`);
+    if (o.isbn13 === l.isbn13) err(f, 'outras_edicoes repete o ISBN da própria página');
+  }
+  for (const c of (l.disponibilidade?.compra || [])) {
+    if (!c.loja || !/^https:\/\//.test(c.url || '')) err(f, `compra inválida: ${JSON.stringify(c)}`);
+  }
+
   // 6. linguagem prescritiva no texto do agente (não nas citações)
   lintPrescritivo(l.arquivo, 'nao_coberto', l.nao_coberto);
   lintPrescritivo(l.arquivo, 'nao_aborda', l.nao_aborda);
@@ -117,7 +126,7 @@ for (const l of livros) {
 }
 
 const dup = {};
-for (const l of livros) dup[l.isbn13] = (dup[l.isbn13] || 0) + 1;
+for (const l of livros) for (const i of [l.isbn13, ...(l.outras_edicoes || []).map(o => o.isbn13)]) dup[i] = (dup[i] || 0) + 1;
 for (const [i, n] of Object.entries(dup)) if (n > 1) err('catálogo', `ISBN duplicado: ${i} (${n}x)`);
 
 console.log(`situações: ${situacoes.length}  livros: ${livros.length}`);

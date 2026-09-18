@@ -181,9 +181,12 @@ for (const l of livros) {
   ${Object.entries(rot).filter(([k]) => k !== 'idade_editora').map(([k, label]) => `<li><b>${label}</b> <span>${esc(legivel[val(r, k)] ?? '—')}${(typeof r[k] === 'object' && r[k]?.base !== undefined && evs[r[k].base]) ? ` <a class="selo" href="#ev${r[k].base}">fonte ↓</a>` : ''}</span></li>`).join('\n  ')}
   ${l.origem ? `<li><b>Origem</b> <span>${esc(l.origem === 'traducao' ? `tradução${l.ano_original ? `, original de ${l.ano_original}` : ''}` : 'nacional')}</span></li>` : ''}
   ${l.paginas ? `<li><b>Páginas</b> <span>${l.paginas}</span></li>` : ''}
-  <li><b>ISBN</b> <span>${esc(l.isbn13)}</span></li>
+  <li><b>ISBN</b> <span>${esc(l.isbn13)}${(l.outras_edicoes || []).map(o => `<br><span class="selo">edição ${esc(o.formato || 'alternativa')}: ${o.url ? `<a href="${esc(o.url)}" rel="noopener">${esc(o.isbn13)}</a>` : esc(o.isbn13)}</span>`).join('')}</span></li>
   <li><b>Conferido em</b> <span>${dataBr(l.verificado_em)}</span></li>
 </ul>
+${(l.disponibilidade?.compra || []).length ? `<h2>Onde encontrar</h2>
+<ul class="lojas">${l.disponibilidade.compra.map(c => `<li><a href="${esc(c.url)}" rel="noopener">${esc(c.loja)} ↗</a>${c.edicao ? ` <span class="selo">${esc(c.edicao)}</span>` : ''}</li>`).join('')}</ul>
+<p class="selo">Links diretos, sem comissão. Conferidos em ${dataBr(l.verificado_em)}; preço e estoque mudam.</p>` : ''}
 <h2>De onde vem cada afirmação</h2>
 ${evs.map((e, i) => `<div class="ev" id="ev${i}"><div class="meta">${esc((e.veiculo || e.tipo).replace(/_/g, ' '))}${e.autor ? ` · ${esc(e.autor)}` : ''} · acessado ${dataBr(e.acessado_em)}</div><q>${esc(e.trecho)}</q><a class="abrir" href="${esc(e.url)}" rel="noopener">abrir a fonte ↗</a></div>`).join('\n')}
 ${l.nota ? `<p class="nota">${esc(l.nota)}</p>` : ''}
