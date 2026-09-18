@@ -6,9 +6,12 @@ import { googleBooks } from './resolve.mjs';
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 
-const FALHAS_PRA_ESGOTAR = 3;   // três verificações válidas, sem sucesso no meio,
-                                // vindas de três fontes diferentes
-const JANELA = 12;              // observações guardadas por livro
+const FALHAS_PRA_ESGOTAR = 3;   // três falhas de LOJA, em três dias distintos, sem sucesso
+                                // de loja no meio. Catálogo (google_books, open_library)
+                                // diz que o livro existe, não que tem estoque: o ISBN de
+                                // livro esgotado continua resolvendo pra sempre. Por isso
+                                // sucesso de catálogo não zera falha de loja.
+const JANELA = 24;              // observações guardadas por livro
 
 const ARQ = join(P.runtime, 'availability.json');
 mkdirSync(P.runtime, { recursive: true });
@@ -65,12 +68,13 @@ for (const l of livros) {
   reg.observacoes = reg.observacoes.slice(-JANELA);
   reg.ultima_sonda = hoje();
 
-  // três falhas consecutivas, de três fontes distintas, sem sucesso no meio
-  const rev = [...reg.observacoes].reverse();
+  // uma leitura por dia: rodar o script duas vezes no mesmo dia não vira duas falhas
+  const porDia = new Map();
+  for (const o of reg.observacoes) if (o.fonte === 'loja') porDia.set(o.em, o);
+  const rev = [...porDia.values()].reverse();
   const corte = rev.findIndex(o => o.ok);
   const falhasRecentes = corte === -1 ? rev : rev.slice(0, corte);
-  const fontesFalhando = new Set(falhasRecentes.map(o => o.fonte));
-  const deveEsgotar = falhasRecentes.length >= FALHAS_PRA_ESGOTAR && fontesFalhando.size >= FALHAS_PRA_ESGOTAR;
+  const deveEsgotar = falhasRecentes.length >= FALHAS_PRA_ESGOTAR;
 
   const atual = l.disponibilidade?.estado || 'a_venda';
   const alvo = deveEsgotar ? 'esgotado' : (atual === 'esgotado' && falhasRecentes.length === 0 ? 'a_venda' : atual);
