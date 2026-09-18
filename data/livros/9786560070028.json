@@ -1,0 +1,58 @@
+{
+  "isbn13": "9786560070028",
+  "titulo": "Minha irmã tem superpoderes",
+  "autor": "Silvia Campos",
+  "ilustrador": "Thassiel Melo",
+  "editora": "Tudo! Editora",
+  "ano": 2023,
+  "situacoes": [
+    "vai-nascer-um-irmao"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse da editora no Google Books",
+      "url": "https://books.google.com.br/books?id=4EQn0AEACAAJ",
+      "trecho": "Descubra os segredos de uma bebê adorável e rechonchuda que esconde habilidades superespeciais, as quais somente seu irmão mais velho é capaz de reconhecer. […] abordando temas como: o papel do irmão mais velho, a nova dinâmica familiar, o amor fraternal e o relacionamento entre irmãos.",
+      "acessado_em": "2026-09-18"
+    }
+  ],
+  "nao_coberto": "A sinopse da editora é escrita como texto de venda e não descreve o enredo além da premissa. Não dá para saber quem narra nem como termina.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "id": "4EQn0AEACAAJ",
+        "isbn13": "9786560070028",
+        "titulo_bateu": true,
+        "em": "2026-09-18"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-09-18"
+      }
+    ]
+  },
+  "curadoria": "humano",
+  "verificado_em": "2026-09-18"
+}

@@ -1,0 +1,59 @@
+{
+  "isbn13": "9786550791421",
+  "titulo": "Tina agora tem um irmão",
+  "autor": "Sônia Portes",
+  "editora": "Páginas Editora",
+  "ano": 2022,
+  "paginas": 39,
+  "situacoes": [
+    "vai-nascer-um-irmao"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse da editora no Google Books",
+      "url": "https://books.google.com.br/books?id=N0x0EAAAQBAJ",
+      "trecho": "A Tina ganhou um irmãozinho e viu tudo em casa mudar. Mas a mudança maior foi com a mamãe, que ficou sem ninguém para cuidar dela e muito cansada. E o papai, cadê ele para dividir tanta tarefa? Vendo isso, Tina teve uma grande ideia!",
+      "acessado_em": "2026-09-18"
+    }
+  ],
+  "nao_coberto": "A sinopse guarda a ideia da Tina para o livro: não diz o que ela faz nem como termina.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "id": "N0x0EAAAQBAJ",
+        "isbn13": "9786550791421",
+        "titulo_bateu": true,
+        "em": "2026-09-18"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-09-18"
+      }
+    ]
+  },
+  "curadoria": "humano",
+  "verificado_em": "2026-09-18",
+  "nota": "Entre os oito, é o único cuja sinopse coloca o cansaço da mãe e a ausência do pai no centro, e não o ciúme da criança."
+}

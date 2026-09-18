@@ -1,0 +1,57 @@
+{
+  "isbn13": "9788538068617",
+  "titulo": "Mas e eu?",
+  "autor": "Emily Johnson",
+  "editora": "Ciranda Cultural",
+  "ano": 2017,
+  "situacoes": [
+    "vai-nascer-um-irmao"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse da editora no Google Books",
+      "url": "https://books.google.com.br/books?id=wZn3zwEACAAJ",
+      "trecho": "Com a chegada da irmãzinha recém-nascida, Breno elabora um plano ultrassecreto para conseguir chamar a atenção do papai e da mamãe. Será que Breno, agora o irmão mais velho, vai conseguir?",
+      "acessado_em": "2026-09-18"
+    }
+  ],
+  "nao_coberto": "A sinopse não diz quem narra, se o plano do Breno dá certo, nem quantas páginas o livro tem.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "id": "wZn3zwEACAAJ",
+        "isbn13": "9788538068617",
+        "titulo_bateu": true,
+        "em": "2026-09-18"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-09-18"
+      }
+    ]
+  },
+  "curadoria": "humano",
+  "verificado_em": "2026-09-18"
+}

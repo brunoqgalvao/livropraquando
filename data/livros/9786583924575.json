@@ -1,0 +1,60 @@
+{
+  "isbn13": "9786583924575",
+  "titulo": "O melhor irmão do mundo / A melhor irmã do mundo",
+  "autor": "Marcela Saint Martin",
+  "editora": "Texugo",
+  "ano": 2026,
+  "paginas": 39,
+  "situacoes": [
+    "vai-nascer-um-irmao"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "crianca",
+      "base": 0
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse da editora no Google Books",
+      "url": "https://books.google.com.br/books?id=VZevEQAAQBAJ",
+      "trecho": "Quando um bebê está para chegar, o mundo parece mudar um pouco também. […] Cada lado do livro apresenta uma voz narrativa diferente — ora o irmão, ora a irmã — permitindo que a criança se identifique e reflita sobre o papel que ocupa na família. O formato tête-bêche torna a experiência de leitura interativa e encantadora: duas capas, duas histórias, um mesmo amor.",
+      "acessado_em": "2026-09-18"
+    }
+  ],
+  "nao_coberto": "A sinopse não diz se os dois lados contam a mesma história de dois pontos de vista ou duas histórias diferentes.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "id": "VZevEQAAQBAJ",
+        "isbn13": "9786583924575",
+        "titulo_bateu": true,
+        "em": "2026-09-18"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-09-18"
+      }
+    ]
+  },
+  "curadoria": "humano",
+  "verificado_em": "2026-09-18",
+  "nota": "Formato tête-bêche: duas capas, uma de cada lado."
+}

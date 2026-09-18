@@ -1,0 +1,59 @@
+{
+  "isbn13": "9786559312016",
+  "titulo": "Eu só só eu",
+  "autor": "Ana Saldanha",
+  "ilustrador": "Yara Kono",
+  "editora": "Editora Peirópolis",
+  "ano": 2022,
+  "paginas": 35,
+  "situacoes": [
+    "vai-nascer-um-irmao"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse da editora no Google Books",
+      "url": "https://books.google.com.br/books?id=gt11EAAAQBAJ",
+      "trecho": "Já não era mais segredo que o menino queria tudo para si, só para si mesmo. O balanço no jardim, o papagaio colorido, o triciclo azul, o livro de histórias, o colo quentinho da mamãe. Até que uma surpresa acontece e muda a vida de toda a família. […] esse irresistível livro de Ana Saldanha compartilha o lirismo e a comoção sentidos pelas crianças com a chegada de um irmão.",
+      "acessado_em": "2026-09-18"
+    }
+  ],
+  "nao_coberto": "Dentro da história a chegada do irmão aparece como \"uma surpresa\"; quem nomeia o evento é a sinopse, não necessariamente o texto. A sinopse também não diz como a família fica depois.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "id": "gt11EAAAQBAJ",
+        "isbn13": "9786559312016",
+        "titulo_bateu": true,
+        "em": "2026-09-18"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-09-18"
+      }
+    ]
+  },
+  "curadoria": "humano",
+  "verificado_em": "2026-09-18"
+}

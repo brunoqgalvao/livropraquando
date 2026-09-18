@@ -1,0 +1,61 @@
+{
+  "isbn13": "9786556121475",
+  "titulo": "Meu irmãozinho me atrapalha",
+  "autor": "Ruth Rocha",
+  "ilustrador": "Mariana Massarani",
+  "editora": "Global Editora",
+  "ano": 2021,
+  "origem": "nacional",
+  "paginas": 46,
+  "situacoes": [
+    "vai-nascer-um-irmao"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "crianca",
+      "base": 0
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse da editora no Google Books",
+      "url": "https://books.google.com.br/books?id=wSk9EAAAQBAJ",
+      "trecho": "A primeira obra infantojuvenil […] aborda a trajetória de Miguel com a chegada de seu irmão mais novo, o Pedrinho, e como essa novidade vai ser digerida pelo primogênito. […] As brincadeiras fora do ritmo, as atenções voltadas ao bebê e diferença de idade são temas trabalhados por meio do olhar de uma criança em desenvolvimento.",
+      "acessado_em": "2026-09-18"
+    }
+  ],
+  "nao_coberto": "A sinopse não diz como a história termina, nem para que idade a editora indica o livro, nem se há material para o adulto.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "id": "wSk9EAAAQBAJ",
+        "isbn13": "9786556121475",
+        "titulo_bateu": true,
+        "em": "2026-09-18"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-09-18"
+      }
+    ]
+  },
+  "curadoria": "humano",
+  "verificado_em": "2026-09-18"
+}

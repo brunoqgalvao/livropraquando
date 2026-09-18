@@ -75,7 +75,12 @@ const situacoes = lerTodos(P.situacoes);
 const livros = lerTodos(P.livros);
 const porSit = new Map(situacoes.map(s => [s.slug, []]));
 for (const l of livros) for (const s of (l.situacoes || [])) if (porSit.has(s)) porSit.get(s).push(l);
-for (const [, arr] of porSit) arr.sort((a, b) => String(a.idade_editora).localeCompare(String(b.idade_editora)) || a.titulo.localeCompare(b.titulo, 'pt'));
+for (const [, arr] of porSit) arr.sort((a, b) => {
+  const ia = a.rubrica?.idade_editora?.valor ?? 'nao_coberto', ib = b.rubrica?.idade_editora?.valor ?? 'nao_coberto';
+  if (ia === 'nao_coberto' && ib !== 'nao_coberto') return 1;
+  if (ib === 'nao_coberto' && ia !== 'nao_coberto') return -1;
+  return String(ia).localeCompare(String(ib)) || a.titulo.localeCompare(b.titulo, 'pt');
+});
 
 if (existsSync(P.site)) rmSync(P.site, { recursive: true });
 const urls = [];
@@ -101,7 +106,7 @@ for (const s of situacoes) {
     const r = l.rubrica || {};
     return `      <tr>
         <td><a href="/l/${esc(l.isbn13)}">${esc(l.titulo)}</a><br><span class="selo">${esc(l.autor)}</span></td>
-        <td class="c">${esc(l.idade_editora)}</td>
+        <td class="c">${val(r, 'idade_editora') === 'nao_coberto' ? '<span class="nao">n/i</span>' : esc(val(r, 'idade_editora'))}</td>
         <td class="c">${bin(val(r, 'nomeia_evento'), 'direto')}</td>
         <td class="c">${val(r, 'enquadramento') === 'religioso' ? SIM : NAO}</td>
         <td class="c">${bin(val(r, 'narrador'), 'crianca')}</td>
@@ -113,7 +118,7 @@ for (const s of situacoes) {
     const l = livros.find(x => x.isbn13 === f.isbn13);
     if (!l) return '';
     const ev = (l.evidencias || [])[f.base ?? 0];
-    return `<div class="pick"><h3>Se for comprar um só · ${esc(f.faixa)}</h3>
+    return `<div class="pick"><h3>Se for comprar um só${f.faixa ? ` · ${esc(f.faixa)}` : ''}</h3>
   <div class="t"><a href="/l/${esc(l.isbn13)}">${esc(l.titulo)}</a></div>
   ${ev ? `<blockquote>“${esc(ev.trecho)}” — <a href="${esc(ev.url)}">${esc(ev.veiculo || ev.tipo.replace(/_/g, ' '))}</a></blockquote>` : ''}</div>`;
   }).join('\n');
@@ -126,7 +131,7 @@ for (const s of situacoes) {
 ${picks}
 <h2>Os ${arr.length} livros, lado a lado</h2>
 <div class="rolo"><table>
-  <thead><tr><th>Livro</th><th>Idade</th><th>Nomeia<br>o evento</th><th>Enquadr.<br>religioso</th><th>Narrador<br>é criança</th><th>Material<br>pro adulto</th><th>À venda</th></tr></thead>
+  <thead><tr><th>Livro</th><th>Idade<br>indicada</th><th>Nomeia<br>o evento</th><th>Enquadr.<br>religioso</th><th>Narrador<br>é criança</th><th>Material<br>pro adulto</th><th>À venda</th></tr></thead>
   <tbody>
 ${linhas}
   </tbody>
@@ -139,7 +144,7 @@ ${linhas}
 for (const l of livros) {
   const evs = l.evidencias || [];
   const r = l.rubrica || {};
-  const rot = { nomeia_evento: 'Nomeia o evento', enquadramento: 'Enquadramento', narrador: 'Narrador', material_adulto: 'Material pro adulto' };
+  const rot = { idade_editora: 'Idade', nomeia_evento: 'Nomeia o evento', enquadramento: 'Enquadramento', narrador: 'Narrador', material_adulto: 'Material pro adulto' };
   const legivel = { direto: 'diz o nome', metafora: 'usa metáfora', religioso: 'religioso', secular: 'secular', ambiguo: 'ambíguo', crianca: 'criança', adulto: 'adulto', animal: 'animal', objeto: 'objeto', sim: 'sim', nao: 'não', nao_coberto: 'a fonte não diz' };
   escreve(`l/${l.isbn13}.html`, pagina({
     titulo: `${l.titulo}, de ${l.autor} — pra que idade e o que traz`,
@@ -148,8 +153,8 @@ for (const l of livros) {
     corpo: `<h1>${esc(l.titulo)}</h1>
 <p class="sub">${esc(l.autor)}${l.ilustrador ? ` · ilustração de ${esc(l.ilustrador)}` : ''} · ${esc(l.editora)}${l.ano ? `, ${l.ano}` : ''}</p>
 <ul class="ficha">
-  <li><b>Idade indicada</b> <span>${esc(l.idade_editora)} <span class="selo">(pela editora)</span></span></li>
-  ${Object.entries(rot).map(([k, label]) => `<li><b>${label}</b> <span>${esc(legivel[val(r, k)] ?? '—')}${(typeof r[k] === 'object' && r[k]?.base !== undefined && evs[r[k].base]) ? ` <a class="selo" href="#ev${r[k].base}">fonte ↓</a>` : ''}</span></li>`).join('\n  ')}
+  <li><b>Idade indicada</b> <span>${val(r, 'idade_editora') === 'nao_coberto' ? 'a editora não indica' : `${esc(val(r, 'idade_editora'))} <span class="selo">(pela editora)</span>`}</span></li>
+  ${Object.entries(rot).filter(([k]) => k !== 'idade_editora').map(([k, label]) => `<li><b>${label}</b> <span>${esc(legivel[val(r, k)] ?? '—')}${(typeof r[k] === 'object' && r[k]?.base !== undefined && evs[r[k].base]) ? ` <a class="selo" href="#ev${r[k].base}">fonte ↓</a>` : ''}</span></li>`).join('\n  ')}
   ${l.origem ? `<li><b>Origem</b> <span>${esc(l.origem === 'traducao' ? `tradução${l.ano_original ? `, original de ${l.ano_original}` : ''}` : 'nacional')}</span></li>` : ''}
   ${l.paginas ? `<li><b>Páginas</b> <span>${l.paginas}</span></li>` : ''}
   <li><b>ISBN</b> <span>${esc(l.isbn13)}</span></li>

@@ -1,0 +1,62 @@
+{
+  "isbn13": "9788574068039",
+  "titulo": "Nós agora somos quatro",
+  "autor": "Lilli L'arronge",
+  "tradutor": "Julia Bussius",
+  "editora": "Pequena Zahar",
+  "ano": 2017,
+  "origem": "traducao",
+  "paginas": 40,
+  "situacoes": [
+    "vai-nascer-um-irmao"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse da editora no Google Books",
+      "url": "https://books.google.com.br/books?id=NyXyswEACAAJ",
+      "trecho": "Tudo muda na vida desta família com a chegada de um novo pequenininho. De repente, a casa fica cheia de barulho, ninguém tem mais hora para dormir e há confusão por todo canto. Com ilustrações delicadas e um texto escrito com palavras-chave, este livro mostra para adultos e crianças de todas as idades quantas alegrias e quanto amor um novo bebê é capaz de trazer.",
+      "acessado_em": "2026-09-18"
+    }
+  ],
+  "nao_coberto": "\"Texto escrito com palavras-chave\" é a descrição da editora, e ela não explica o que isso significa na prática — quantas palavras por página, se há frases inteiras.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "id": "NyXyswEACAAJ",
+        "isbn13": "9788574068039",
+        "titulo_bateu": true,
+        "em": "2026-09-18"
+      },
+      {
+        "fonte": "open_library",
+        "id": "/works/OL26416013W",
+        "isbn13": "9788574068039",
+        "titulo_bateu": true,
+        "em": "2026-09-18"
+      }
+    ]
+  },
+  "curadoria": "humano",
+  "verificado_em": "2026-09-18"
+}

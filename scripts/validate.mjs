@@ -22,6 +22,7 @@ const PRESCRITIVO = [
 
 const TIPOS_EVIDENCIA = new Set(['sinopse_editora', 'ficha_catalografica', 'resenha_assinada', 'material_editora']);
 const RUBRICA = {
+  idade_editora: ['nao_coberto'],   // ou uma faixa livre, ver abaixo
   nomeia_evento: ['direto', 'metafora', 'nao_coberto'],
   enquadramento: ['religioso', 'secular', 'ambiguo', 'nao_coberto'],
   narrador: ['crianca', 'adulto', 'animal', 'objeto', 'nao_coberto'],
@@ -65,7 +66,7 @@ for (const l of livros) {
   else if (!res.some(r => r.titulo_bateu)) err(f, 'nenhuma resolução externa confirmou o título');
 
   // 2. campos obrigatórios
-  for (const c of ['titulo', 'autor', 'editora', 'idade_editora', 'situacoes', 'curadoria', 'verificado_em']) {
+  for (const c of ['titulo', 'autor', 'editora', 'situacoes', 'curadoria', 'verificado_em']) {
     if (l[c] === undefined || l[c] === '' || (Array.isArray(l[c]) && !l[c].length)) err(f, `falta campo "${c}"`);
   }
   if (!['humano', 'agente'].includes(l.curadoria)) err(f, `curadoria inválida: "${l.curadoria}"`);
@@ -96,7 +97,11 @@ for (const l of livros) {
     const v = r[campo];
     if (v === undefined) { err(f, `rubrica falta "${campo}"`); continue; }
     const valor = typeof v === 'object' ? v.valor : v;
-    if (!valores.includes(valor)) err(f, `rubrica.${campo} valor inválido: "${valor}"`);
+    if (campo === 'idade_editora') {
+      if (valor !== 'nao_coberto' && !/^\d{1,2}(\+|\s*a\s*\d{1,2})?$/.test(String(valor))) {
+        err(f, `rubrica.idade_editora deve ser faixa ("3 a 6", "6+") ou "nao_coberto": "${valor}"`);
+      }
+    } else if (!valores.includes(valor)) err(f, `rubrica.${campo} valor inválido: "${valor}"`);
     if (valor !== 'nao_coberto') {
       const base = typeof v === 'object' ? v.base : undefined;
       if (base === undefined) err(f, `rubrica.${campo}="${valor}" sem "base" apontando pra evidência`);
