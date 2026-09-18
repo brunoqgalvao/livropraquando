@@ -98,8 +98,25 @@ for (const l of livros) {
   const aviso = (m) => diario.push({ isbn13: l.isbn13, titulo: l.titulo, aviso: m });
   // preço: prefere loja que estava com estoque. Preço de prateleira vazia manda
   // a pessoa pra uma página onde não dá pra comprar.
+  //
+  // O `|| comPreco[0]` que estava aqui desfazia essa frase: sem loja com
+  // estoque, ele pegava a primeira que tivesse preço -- inclusive uma que a
+  // sonda tinha acabado de ler como indisponível. Deu no que tinha que dar:
+  // "Mas e eu?" anunciava R$ 31,41 na Ciranda no topo e, quatro parágrafos
+  // abaixo, "cirandacultural.com.br: Produto Indisponível". A página se
+  // desmentia sozinha.
+  //
+  // `ok === false` é observação ("olhei, não tem"); `ok === null` é ignorância
+  // ("não consegui olhar"). A ignorância pode servir de preço com ressalva; a
+  // prateleira vazia confirmada, não -- é o preço de algo que não dá pra
+  // comprar. Sem loja utilizável, a coluna fica em "–", que a página já sabe
+  // dizer.
   const comPreco = leituras.filter(x => x.preco);
-  const escolhidoPreco = comPreco.find(x => x.estoque.ok === true) || comPreco[0];
+  const escolhidoPreco = comPreco.find(x => x.estoque.ok === true)
+    || comPreco.find(x => x.estoque.ok === null);
+  if (!escolhidoPreco && comPreco.length) {
+    aviso(`ignorei R$ ${comPreco[0].preco.valor.toFixed(2)}: ${comPreco[0].host} está sem estoque`);
+  }
   if (escolhidoPreco) {
     precos[l.isbn13] = {
       preco: escolhidoPreco.preco.valor,
@@ -214,6 +231,16 @@ for (const [isbn, e] of Object.entries(estoque)) {
 }
 for (const [isbn, pr] of Object.entries(precos)) {
   (mercado.livros[isbn] ||= {}).loja = pr;
+}
+// Preço gravado ontem numa loja que hoje está confirmada sem estoque some. Não
+// basta parar de escrever: o arquivo é o que a página lê, e o registro velho
+// continuaria anunciando preço de prateleira vazia até alguém reparar.
+for (const [isbn, reg] of Object.entries(mercado.livros)) {
+  if (!precos[isbn] && reg.loja && reg.estoque?.a_venda === false
+      && (reg.estoque.onde || []).some(o => reg.loja.url.includes(String(o).split(':')[0]))) {
+    console.log(`  → ${isbn}: removi preço de ${reg.loja.onde} (sem estoque hoje)`);
+    delete reg.loja;
+  }
 }
 mercado.atualizado_em = hoje();
 gravar(ARQ_MERCADO, JSON.stringify(mercado, null, 2) + '\n');

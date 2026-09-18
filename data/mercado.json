@@ -238,15 +238,6 @@
           "cirandacultural.com.br: Produto Indisponível"
         ],
         "em": "2026-09-18"
-      },
-      "loja": {
-        "preco": 31.41,
-        "moeda": "BRL",
-        "formato": "impresso",
-        "onde": "Ciranda Cultural",
-        "url": "https://www.cirandacultural.com.br/produto/livro-mas-e-eu-72713",
-        "base": "dado estruturado (schema.org)",
-        "em": "2026-09-18"
       }
     },
     "9788562500824": {
