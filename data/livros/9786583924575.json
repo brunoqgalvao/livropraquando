@@ -77,5 +77,11 @@
     "obtida_em": "2026-09-18",
     "bytes": 19143
   },
-  "nota": "Formato tête-bêche: duas capas, uma de cada lado."
+  "nota": "Formato tête-bêche: duas capas, uma de cada lado.",
+  "previa": {
+    "folheavel": true,
+    "volume": "VZevEQAAQBAJ",
+    "alcance": "PARTIAL",
+    "conferida_em": "2026-09-18"
+  }
 }

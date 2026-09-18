@@ -20,7 +20,7 @@ const mercado = existsSync(ARQ_MERCADO) ? JSON.parse(readFileSync(ARQ_MERCADO, '
 // hashes conhecidos do placeholder "image not available" do Google
 const PLACEHOLDERS = new Set(['bc6a3a797b93ed6aa75aa73b206e1582bbd9496d']);
 const hashes = new Map();
-let capas = 0, precos = 0;
+let capas = 0, precos = 0, previas = 0;
 for (const l of lerTodos(P.livros)) {
   const { dados, erro } = await buscaJSON(`https://www.googleapis.com/books/v1/volumes?q=isbn:${l.isbn13}&country=BR&key=${chave}`);
   if (erro) { console.log(`  -- ${l.isbn13}: ${erro}`); continue; }
@@ -55,6 +55,18 @@ for (const l of lerTodos(P.livros)) {
     } catch (e) { console.log(`  -- capa ${l.isbn13}: ${e.message}`); }
   }
 
+  // Previa folheavel: 7 dos 14 tem. Para livro ilustrado, ver duas paginas
+  // decide mais que qualquer sinopse.
+  const acesso = item.accessInfo || {};
+  const podeFolhear = acesso.embeddable === true && acesso.viewability && acesso.viewability !== 'NO_PAGES';
+  if (podeFolhear !== !!l.previa?.folheavel) {
+    limpo.previa = podeFolhear
+      ? { folheavel: true, volume: item.id, alcance: acesso.viewability, conferida_em: hoje() }
+      : undefined;
+    if (!podeFolhear) delete limpo.previa;
+    if (gravar(arquivo, canonicalLivro(limpo))) previas++;
+  }
+
   const venda = item.saleInfo || {};
   const preco = venda.listPrice || venda.retailPrice;
   if (preco || venda.saleability) {
@@ -71,4 +83,4 @@ for (const l of lerTodos(P.livros)) {
 
 mercado.atualizado_em = hoje();
 gravar(ARQ_MERCADO, JSON.stringify(mercado, null, 2) + '\n');
-console.log(`${capas} capa(s) nova(s) · ${precos} preço(s) · mercado em data/mercado.json`);
+console.log(`${capas} capa(s) · ${previas} prévia(s) · ${precos} preço(s) · mercado em data/mercado.json`);

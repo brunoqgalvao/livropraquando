@@ -72,5 +72,11 @@
     "obtida_em": "2026-09-18",
     "bytes": 12480
   },
-  "nota": "São 10 páginas, com texto rimado em letra bastão, e a família é de pandas."
+  "nota": "São 10 páginas, com texto rimado em letra bastão, e a família é de pandas.",
+  "previa": {
+    "folheavel": true,
+    "volume": "ojjnDwAAQBAJ",
+    "alcance": "PARTIAL",
+    "conferida_em": "2026-09-18"
+  }
 }

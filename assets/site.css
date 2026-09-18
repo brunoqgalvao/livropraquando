@@ -131,3 +131,14 @@ td:first-child a > span{min-width:0}
   .capa-livro.grande{width:96px;height:144px;flex:0 0 96px}
   .capa-livro.media{width:62px;height:93px;flex:0 0 62px}
 }
+
+/* Prévia folheável. O script do Google só entra no clique: embed de terceiro
+   não pode pesar numa página que acabou de ser consertada de 4,9s pra 0,4s. */
+.folhear{margin:1.1em 0 0;font:600 .92rem/1 var(--texto);color:var(--caixa);background:var(--acento);
+  border:0;border-radius:999px;padding:12px 20px;cursor:pointer;transition:filter .15s}
+.folhear:hover{filter:brightness(1.08)}
+.folhear:disabled{opacity:.6;cursor:default}
+#visor{margin:0 0 2.2em}
+#visor-alvo{height:min(78vh,620px);border:1px solid var(--linha);border-radius:12px;overflow:hidden;background:var(--caixa)}
+#visor .selo{display:block;margin-top:.6em}
+.folhear-link{font-weight:600}
