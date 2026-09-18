@@ -4,8 +4,12 @@ import { execSync } from 'node:child_process';
 
 function chaveBooks() {
   if (process.env.GOOGLE_BOOKS_API_KEY) return process.env.GOOGLE_BOOKS_API_KEY;
+  // Keychain só existe no Mac. Na VM isso cuspia "security: not found" em todo
+  // log de rodada — erro falso é pior que erro nenhum: manda o próximo agente
+  // caçar um problema que não existe.
+  if (process.platform !== 'darwin') return null;
   try {
-    return execSync('security find-generic-password -a livropraisso -s GOOGLE_BOOKS_API_KEY -w', { encoding: 'utf8' }).trim();
+    return execSync('security find-generic-password -a livropraisso -s GOOGLE_BOOKS_API_KEY -w', { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
   } catch { return null; }
 }
 
