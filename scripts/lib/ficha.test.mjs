@@ -1,6 +1,6 @@
 // Casos tirados de páginas reais (colhidas em 18/09/2026). Se um deles quebrar,
 // alguma loja mudou o layout e a extração virou chute.
-import { idadeDaEditora, idadeDaAmazon, faixaDoTexto, estoqueDaPagina, valorBr, precoDaLoja, paginasDaFicha } from './ficha.mjs';
+import { idadeDaEditora, idadeDaAmazon, faixaDoTexto, estoqueDaPagina, valorBr, precoDaLoja, paginasDaFicha, ilustradorDaFicha } from './ficha.mjs';
 import assert from 'node:assert/strict';
 
 let ok = 0, falhou = 0;
@@ -127,6 +127,29 @@ t('paginas da ficha da editora', () =>
 
 t('paginas: sem ficha, nada', () =>
   assert.equal(paginasDaFicha({ texto: 'Um livro sobre 32 maneiras de brincar' }), null));
+
+
+// --- ilustrador: strings reais das fichas de 18/09 -----------------------
+t('Ciranda: corta no rotulo seguinte, nao engole "Idioma"', () =>
+  assert.equal(ilustradorDaFicha({ texto: 'Autor: Emily Johnson Ilustrador: Spike Maguire Idioma Portugues Paginas 24' }).valor, 'Spike Maguire'));
+
+t('Cia das Letras: "Ilustra\u00e7\u00e3o: X" seguido de "Tradu\u00e7\u00e3o:" (string real da p\u00e1gina)', () =>
+  assert.equal(ilustradorDaFicha({ texto: 'ISBN: 978-65-565-4072-6 Selo: Brinque-Book Capa: Silvana Rando Ilustra\u00e7\u00e3o: Silvana Rando Tradu\u00e7\u00e3o:' }).valor, 'Silvana Rando'));
+
+t('mesma ficha sem acento (loja escreve dos dois jeitos)', () =>
+  assert.equal(ilustradorDaFicha({ texto: 'Capa: Silvana Rando Ilustracao: Silvana Rando Traducao:' }).valor, 'Silvana Rando'));
+
+t('Amazon: "(Ilustrador)" no byline', () =>
+  assert.equal(ilustradorDaFicha({ amazon: { byline: 'por Danielle Graf (Autor), Gunther Jakobs (Ilustrador) Formato: Capa comum' } }).valor, 'Gunther Jakobs'));
+
+t('Amazon so com "(Autor)" nao inventa ilustrador', () =>
+  assert.equal(ilustradorDaFicha({ amazon: { byline: 'por Emily Johnson (Autor) Formato: Capa comum' }, texto: 'Com ilustracoes delicadas e um texto curto' }), null));
+
+t('mencao em prosa nao e credito', () =>
+  assert.equal(ilustradorDaFicha({ texto: 'Com ilustracoes delicadas e um texto escrito com palavras-chave, este livro' }), null));
+
+t('rotulo vazio nao vira nome', () =>
+  assert.equal(ilustradorDaFicha({ texto: 'Ilustracao: Traducao: Capa: Fulano' }), null));
 
 console.log(`${ok} passaram, ${falhou} falharam`);
 process.exit(falhou ? 1 : 0);

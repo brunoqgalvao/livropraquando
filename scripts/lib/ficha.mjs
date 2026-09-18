@@ -175,3 +175,51 @@ export function paginasDaFicha({ texto, amazon }) {
   if (m) return { valor: Number(m[1]), trecho: m[0] };
   return null;
 }
+
+// --- ilustrador ---------------------------------------------------------
+// Rendimento medido em 18/09: 1 de 8. A Amazon credita "(Autor)" e mais nada,
+// mesmo quando o ilustrador está impresso na capa; só a Ciranda e a Companhia
+// das Letras publicam o campo. Fica mesmo assim porque a página já é carregada
+// pra idade e preço, e porque livro novo entra toda semana.
+//
+// Nunca se lê ilustrador da imagem da capa: dá pra ver o nome ali, mas ver não
+// é fonte que o leitor possa abrir e conferir.
+const CREDITOS = [
+  // Loja escreve "Ilustração" e "Ilustracao"; o acento não pode decidir se o
+  // dado entra. (Isso veio de um teste que quebrou, não de suposição.)
+  /Autor\/Ilustrador(?:a)?\s*:\s*(.{2,60})/i,
+  /Ilustra(?:[çc][ãa]o|[çc][õo]es|dor|dora)\s*(?::|de|por)\s*(.{2,60})/i,
+  /Ilustrad[oa]\s+por\s+(.{2,60})/i,
+  /([A-ZÁÂÃÀÉÊÍÓÔÕÚÜÇ][\wÀ-ÿ'.-]+(?:\s+[A-ZÁÂÃÀÉÊÍÓÔÕÚÜÇ][\wÀ-ÿ'.-]+){0,3})\s*\((?:Ilustrador|Ilustradora|Illustrator)\)/,
+];
+
+// A ficha é uma fileira de rótulos sem pontuação entre eles: "Ilustrador: Spike
+// Maguire Idioma Português". Sem cortar no rótulo seguinte o nome sai com
+// "Idioma" colado — foi o que a primeira versão fez.
+const ROTULO_VIZINHO = /\b(?:Tradu[çc][ãa]o|Capa|ISBN|Selo|P[áa]ginas|Formato|Peso|Acabamento|Lan[çc]amento|Idioma|Editora|Autor|Idade|Assuntos|Linha|Dimens[õo]es|Encaderna[çc][ãa]o|Cole[çc][ãa]o|Ano|Edi[çc][ãa]o|Sobre|Produto|Categoria|Marca|Pre[çc]o|Disponibilidade|Entrega|Sinopse)\b/i;
+
+function nomeLimpo(bruto) {
+  let s = semMarcas(bruto).split(ROTULO_VIZINHO)[0];
+  s = s.split(/[|;·•\n]|\s{2,}|\s+-\s+/)[0].replace(/[,:.\s]+$/, '').trim();
+  const palavras = s.split(/\s+/);
+  if (palavras.length < 1 || palavras.length > 5) return null;
+  // nome próprio: começa maiúsculo e não é uma frase
+  if (!/^[A-ZÁÂÃÀÉÊÍÓÔÕÚÜÇ]/.test(s)) return null;
+  if (s.length < 3 || s.length > 60) return null;
+  if (/\d/.test(s)) return null;
+  return s;
+}
+
+export function ilustradorDaFicha({ texto, amazon }) {
+  const fontes = [(amazon?.ficha || []).join(' '), amazon?.byline, texto].filter(Boolean);
+  for (const fonte of fontes) {
+    const t = semMarcas(fonte);
+    for (const re of CREDITOS) {
+      const m = t.match(re);
+      if (!m) continue;
+      const valor = nomeLimpo(m[1]);
+      if (valor) return { valor, trecho: semMarcas(m[0]).slice(0, 90) };
+    }
+  }
+  return null;
+}

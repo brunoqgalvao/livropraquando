@@ -11,7 +11,7 @@
 // recusado aqui — entra como `idade_leitores`, que a página rotula como tal.
 import { P, lerTodos, gravar, canonicalLivro, hoje } from './lib.mjs';
 import { renderizar } from './navegador.mjs';
-import { idadeDaEditora, idadeDaAmazon, estoqueDaPagina, isbnDaPagina, precoDaLoja, paginasDaFicha } from './lib/ficha.mjs';
+import { idadeDaEditora, idadeDaAmazon, estoqueDaPagina, isbnDaPagina, precoDaLoja, paginasDaFicha, ilustradorDaFicha } from './lib/ficha.mjs';
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -33,6 +33,7 @@ const EXTRATOR = `(() => {
   }
   const amazon = /amazon\\./.test(location.hostname) ? {
     estoque: limpo(document.querySelector('#availability')),
+    byline: limpo(document.querySelector('#bylineInfo')),
     core: limpo(document.querySelector('#corePriceDisplay_desktop_feature_div'))
        || limpo(document.querySelector('#corePrice_feature_div')),
     ficha: [...document.querySelectorAll('#detailBullets_feature_div li, #productDetailsTable li, #detailBulletsWrapper_feature_div li')]
@@ -51,6 +52,7 @@ const livros = lerTodos(P.livros).filter(l => !SO.length || SO.includes(l.isbn13
 const estoque = {};
 const precos = {};
 const paginas = {};
+const ilustradores = {};
 const diario = [];
 let escritos = 0;
 
@@ -69,6 +71,7 @@ for (const l of livros) {
         host, url: alvo.url, loja: alvo.loja, estoque: est,
         preco: precoDaLoja(dados),
         paginas: paginasDaFicha(dados),
+        ilustrador: ilustradorDaFicha(dados),
         isbn_pagina: isbnDaPagina(dados),
         idade: amz && !amz.deLeitores ? { ...amz, fonte: 'ficha da loja (metadado da editora)' }
              : edi && !edi.ambigua ? { ...edi, fonte: 'página da editora' } : null,
@@ -145,6 +148,20 @@ for (const l of livros) {
     }
   }
 
+  // ilustrador: só preenche o que falta, e só com crédito rotulado. Em livro
+  // ilustrado o desenho é metade do livro, mas a Amazon credita "(Autor)" e
+  // mais nada — o campo vive na ficha da editora, quando ela preenche.
+  if (!l.ilustrador) {
+    const i = leituras.map(x => x.ilustrador).filter(Boolean)[0];
+    if (i) {
+      ilustradores[l.isbn13] = i.valor;
+      const { arquivo: arqI, ...comIlu } = l;
+      comIlu.ilustrador = i.valor;
+      if (gravar(arqI, canonicalLivro(comIlu))) console.log(`  → ilustrador ${i.valor} ("${i.trecho}")`);
+      l.ilustrador = i.valor;
+    }
+  }
+
   if (!escolhida) continue;
 
   // Trava de plausibilidade: livro ilustrado de 24 páginas com "12 anos e acima"
@@ -202,5 +219,5 @@ mercado.atualizado_em = hoje();
 gravar(ARQ_MERCADO, JSON.stringify(mercado, null, 2) + '\n');
 writeFileSync(join(P.runtime, `render-${hoje()}.json`), JSON.stringify({ em: hoje(), avisos: diario }, null, 2) + '\n');
 
-console.log(`\n${livros.length} livros · ${escritos} idade(s) · ${Object.keys(precos).length} preço(s) de loja · ${Object.keys(paginas).length} página(s) · ${diario.length} aviso(s)`);
+console.log(`\n${livros.length} livros · ${escritos} idade(s) · ${Object.keys(precos).length} preço(s) de loja · ${Object.keys(paginas).length} página(s) · ${Object.keys(ilustradores).length} ilustrador(es) · ${diario.length} aviso(s)`);
 for (const a of diario) console.log(`  ! ${a.titulo}: ${a.aviso}`);
