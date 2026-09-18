@@ -19,7 +19,7 @@ const arte = (nome, alt, { eager = false, sizes = '(min-width:860px) 480px, 100v
 const LOGO = '<svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1f4e5a"/><path d="M16 10.5c-2.6-1.8-5.6-2.2-9-1.6v13c3.4-.6 6.4-.2 9 1.6 2.6-1.8 5.6-2.2 9-1.6v-13c-3.4-.6-6.4-.2-9 1.6z" fill="#fbf6ec"/><path d="M16 10.5v13" stroke="#ab4124" stroke-width="1.6"/><circle cx="23.5" cy="7.5" r="2.5" fill="#d9a441"/></svg>';
 const MARCA = `<a class="marca" href="/">${LOGO}<span>${esc(NOME)}</span></a>`;
 
-const pagina = ({ titulo, desc, corpo, canon, imagem = 'capa' }) => `<!doctype html>
+const pagina = ({ titulo, desc, corpo, canon, imagem = 'capa', dados }) => `<!doctype html>
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
@@ -43,7 +43,7 @@ ${existsSync(join(ASSETS, 'img', `${imagem}-og.jpg`)) ? `<meta property="og:imag
 <link rel="preload" href="/assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/figtree.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css?v=${VERSAO}">
-</head>
+${dados ? `<script type="application/ld+json">${ld(dados)}</script>\n` : ''}</head>
 <body>
 <header><div class="env">${MARCA}<nav><a href="/#situacoes">Situações</a></nav></div></header>
 <main class="env">
@@ -186,6 +186,57 @@ function listaPt(itens) {
   return `${itens.slice(0, -1).join(', ')} ou ${itens.at(-1)}`;
 }
 
+// Dado estruturado. Sai só o que já foi verificado e já está impresso na
+// página: nada de aggregateRating nem review, que é o slop clássico de SEO —
+// este site não tem nota nem resenha, e inventar as duas no JSON-LD seria
+// mentir exatamente onde ninguém olha.
+//
+// `typicalAgeRange` existe no schema.org e é a pergunta que traz a pessoa aqui
+// ("livro pra criança de 4 anos"). É o campo que custou três passadas pra
+// preencher; deixar ele só no HTML seria desperdiçar o trabalho.
+const ld = (o) => JSON.stringify(o, null, 2).replace(/</g, '\\u003c');
+
+const faixaSchema = (v) => {
+  if (!v || v === 'nao_coberto') return undefined;
+  const m = String(v).match(/^(\d+)\s*(?:a\s*(\d+))?/);
+  if (!m) return undefined;
+  return m[2] ? `${m[1]}-${m[2]}` : `${m[1]}-`;      // "4-10" ou "4-", como o schema pede
+};
+
+const ESTOQUE_SCHEMA = { true: 'https://schema.org/InStock', false: 'https://schema.org/OutOfStock' };
+
+function dadosDoLivro(l) {
+  // Offer só com preço de loja. O único livro cujo preço é do e-book no Google
+  // Play fica sem offer: a entidade Book aqui é o livro impresso, e anunciar o
+  // preço do arquivo como preço dele repetiria, no JSON-LD, a imprecisão que
+  // acabou de sair da coluna visível.
+  const pr = MERCADO[l.isbn13]?.loja?.preco !== undefined ? precoDe(l) : null;
+  const est = MERCADO[l.isbn13]?.estoque;
+  const semVazio = (o) => Object.fromEntries(Object.entries(o).filter(([, v]) => v !== undefined && v !== null && v !== ''));
+  return semVazio({
+    '@context': 'https://schema.org',
+    '@type': 'Book',
+    name: l.titulo,
+    url: `${SITE}/l/${l.isbn13}`,
+    isbn: l.isbn13,
+    inLanguage: 'pt-BR',
+    author: l.autor ? { '@type': 'Person', name: l.autor } : undefined,
+    illustrator: l.ilustrador ? { '@type': 'Person', name: l.ilustrador } : undefined,
+    publisher: l.editora ? { '@type': 'Organization', name: l.editora } : undefined,
+    datePublished: l.ano ? String(l.ano) : undefined,
+    numberOfPages: l.paginas || undefined,
+    image: l.capa?.arquivo ? `${SITE}/capas/${l.capa.arquivo}` : undefined,
+    typicalAgeRange: faixaSchema(vv(l, 'idade_editora')),
+    offers: pr ? semVazio({
+      '@type': 'Offer',
+      price: pr.valor,
+      priceCurrency: 'BRL',
+      url: MERCADO[l.isbn13]?.loja?.url,
+      availability: est ? ESTOQUE_SCHEMA[String(est.a_venda)] : undefined,
+    }) : undefined,
+  });
+}
+
 const situacoes = lerTodos(P.situacoes);
 const livros = lerTodos(P.livros);
 const FONTES_EM_USO = listaPt([...new Set(livros.flatMap(l => (l.evidencias || []).map(e => e.tipo)))]
@@ -253,6 +304,20 @@ ${cols.map(c => `        <td class="c">${COLS[c].cel(l)}</td>`).join('\n')}
     titulo: `${s.titulo} — livro infantil por idade`,
     desc: descricao,
     canon: `${SITE}/s/${s.slug}`,
+    dados: {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: s.titulo,
+      url: `${SITE}/s/${s.slug}`,
+      inLanguage: 'pt-BR',
+      mainEntity: {
+        '@type': 'ItemList',
+        numberOfItems: arr.length,
+        itemListElement: arr.map((l, i) => ({
+          '@type': 'ListItem', position: i + 1, url: `${SITE}/l/${l.isbn13}`, name: l.titulo,
+        })),
+      },
+    },
     imagem: temArte(s.slug) ? s.slug : 'capa',
     corpo: `<section class="heroi sit">
   <div>
@@ -288,6 +353,7 @@ for (const l of livros) {
     titulo: `${l.titulo}, de ${l.autor} — pra que idade e o que traz`,
     desc: `${l.titulo} (${l.editora}, ${l.ano || 's/d'}): idade indicada, o que a fonte da editora afirma e o que ela não cobre.`,
     canon: `${SITE}/l/${l.isbn13}`,
+    dados: dadosDoLivro(l),
     imagem: (l.situacoes || []).find(temArte) || 'capa',
     corpo: `<div class="estreito" style="padding-top:20px">
 <p class="olho">${(l.situacoes || []).map(sl => situacoes.find(x => x.slug === sl)).filter(Boolean).map(s => `<a href="/s/${esc(s.slug)}">${esc(s.titulo)}</a>`).join(' · ') || 'Livro'}</p>
