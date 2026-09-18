@@ -6,7 +6,7 @@
 // declaradamente mecânico, pra não sujar o diff editorial que mede slop.
 import { P, lerTodos, gravar, canonicalLivro, hoje, buscaJSON } from './lib.mjs';
 import { execSync } from 'node:child_process';
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 
 const chave = process.env.GOOGLE_BOOKS_API_KEY
@@ -25,13 +25,20 @@ for (const l of lerTodos(P.livros)) {
 
   const img = item.volumeInfo?.imageLinks;
   const { arquivo, ...limpo } = l;
+  // O hotlink do books.google.com leva ~5s por imagem e trava a pagina.
+  // Baixa uma vez, versiona, serve do proprio dominio.
   if (img?.thumbnail && !l.capa) {
-    limpo.capa = {
-      url: `https://books.google.com/books/content?id=${item.id}&printsec=frontcover&img=1&zoom=2`,
-      fonte: 'google_books',
-      obtida_em: hoje(),
-    };
-    if (gravar(arquivo, canonicalLivro(limpo))) capas++;
+    const remota = `https://books.google.com/books/content?id=${item.id}&printsec=frontcover&img=1&zoom=2`;
+    try {
+      const r = await fetch(remota, { signal: AbortSignal.timeout(30000) });
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      const buf = Buffer.from(await r.arrayBuffer());
+      if (buf.length < 2000) throw new Error('imagem vazia (placeholder do Google)');
+      mkdirSync(join(P.ROOT, 'data/capas'), { recursive: true });
+      writeFileSync(join(P.ROOT, 'data/capas', `${l.isbn13}.jpg`), buf);
+      limpo.capa = { arquivo: `${l.isbn13}.jpg`, fonte: 'google_books', obtida_em: hoje(), bytes: buf.length };
+      if (gravar(arquivo, canonicalLivro(limpo))) capas++;
+    } catch (e) { console.log(`  -- capa ${l.isbn13}: ${e.message}`); }
   }
 
   const venda = item.saleInfo || {};

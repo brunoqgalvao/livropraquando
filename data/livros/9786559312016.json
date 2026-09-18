@@ -71,8 +71,9 @@
   "curadoria": "humano",
   "verificado_em": "2026-09-18",
   "capa": {
-    "url": "https://books.google.com/books/content?id=gt11EAAAQBAJ&printsec=frontcover&img=1&zoom=2",
+    "arquivo": "9786559312016.jpg",
     "fonte": "google_books",
-    "obtida_em": "2026-09-18"
+    "obtida_em": "2026-09-18",
+    "bytes": 7937
   }
 }

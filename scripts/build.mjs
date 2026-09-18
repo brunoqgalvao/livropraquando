@@ -71,8 +71,8 @@ const COLS = {
 };
 const SIM = '<span class="sim">sim</span>', NAO = '<span class="nao">–</span>';
 // Capa é como pai reconhece livro. Sem ela a tabela é um extrato bancário.
-const capa = (l, cls = '') => l.capa?.url
-  ? `<img class="capa ${cls}" src="${esc(l.capa.url)}" alt="Capa de ${esc(l.titulo)}" loading="lazy" width="80" height="120">`
+const capa = (l, cls = '') => l.capa?.arquivo
+  ? `<img class="capa ${cls}" src="/capas/${esc(l.capa.arquivo)}" alt="Capa de ${esc(l.titulo)}" loading="lazy" decoding="async" width="80" height="120">`
   : `<span class="capa vazia ${cls}" aria-hidden="true"></span>`;
 const bin = (v, quando) => v === quando ? SIM : (v === 'nao_coberto' || v === undefined ? NAO : NAO);
 const vv = (l, campo) => { const v = (l.rubrica || {})[campo]; return typeof v === 'object' ? v?.valor : v; };
@@ -219,6 +219,14 @@ gravar(join(P.site, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
 ${urls.map(u => `  <url><loc>${SITE}${u}</loc></url>`).join('\n')}
 </urlset>
 `);
+// capas versionadas -> site
+{
+  const dir = join(ROOT_DADOS, 'data/capas');
+  if (existsSync(dir)) for (const f of readdirSync(dir)) {
+    mkdirSync(join(P.site, 'capas'), { recursive: true });
+    copyFileSync(join(dir, f), join(P.site, 'capas', f));
+  }
+}
 gravar(join(P.site, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
 
 console.log(`gerado: ${urls.length} páginas (${situacoes.filter(s => (porSit.get(s.slug) || []).length).length} situações, ${livros.length} livros)`);
