@@ -43,6 +43,12 @@
   "nao_coberto": "A sinopse pede que você vire as páginas para descobrir o desfecho, então ela não diz como termina. Também não indica idade.",
   "disponibilidade": {
     "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Estante Virtual",
+        "url": "https://www.estantevirtual.com.br/livro/conta-comigo-um-novo-irmao-sera-que-e-bom-06Z-1719-000-BK"
+      }
+    ],
     "resolucoes": [
       {
         "fonte": "google_books",

@@ -44,6 +44,17 @@
   "nao_coberto": "A sinopse não diz como a história termina, nem para que idade a editora indica o livro, nem se há material para o adulto.",
   "disponibilidade": {
     "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Global Editora",
+        "url": "https://grupoeditorialglobal.com.br/catalogos/livro/?id=4491"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6556121045",
+        "edicao": "impresso, ISBN 9786556121048"
+      }
+    ],
     "resolucoes": [
       {
         "fonte": "google_books",

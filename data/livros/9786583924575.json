@@ -43,6 +43,17 @@
   "nao_coberto": "A sinopse não diz se os dois lados contam a mesma história de dois pontos de vista ou duas histórias diferentes.",
   "disponibilidade": {
     "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6583924560",
+        "edicao": "ISBN 9786583924568"
+      },
+      {
+        "loja": "Editora Texugo",
+        "url": "https://editoratexugo.com.br/o-melhor-irmao-do-mundo-a-melhor-irma-do-mundo"
+      }
+    ],
     "resolucoes": [
       {
         "fonte": "google_books",

@@ -40,6 +40,17 @@
   "nao_coberto": "A sinopse não diz quem narra, se o plano do Breno dá certo, nem quantas páginas o livro tem.",
   "disponibilidade": {
     "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Ciranda Cultural",
+        "url": "https://www.cirandacultural.com.br/produto/livro-mas-e-eu-72713",
+        "esgotado_se": "produto-comprar hide"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/853806861X"
+      }
+    ],
     "resolucoes": [
       {
         "fonte": "google_books",
@@ -56,5 +67,6 @@
     ]
   },
   "curadoria": "humano",
-  "verificado_em": "2026-09-18"
+  "verificado_em": "2026-09-18",
+  "nota": "Em 18/09/2026 a loja da editora e a Livraria da Travessa marcavam este título como indisponível. A Amazon ainda tem página para ele; vale conferir o estoque antes de contar com o livro."
 }

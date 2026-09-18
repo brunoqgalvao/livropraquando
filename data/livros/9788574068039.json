@@ -44,6 +44,16 @@
   "nao_coberto": "\"Texto escrito com palavras-chave\" é a descrição da editora, e ela não explica o que isso significa na prática — quantas palavras por página, se há frases inteiras.",
   "disponibilidade": {
     "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Companhia das Letras",
+        "url": "https://www.companhiadasletras.com.br/livro/9788574068039/nos-agora-somos-quatro"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8574068039"
+      }
+    ],
     "resolucoes": [
       {
         "fonte": "google_books",

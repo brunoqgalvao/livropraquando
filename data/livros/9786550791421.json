@@ -41,6 +41,18 @@
   "nao_coberto": "A sinopse guarda a ideia da Tina para o livro: não diz o que ela faz nem como termina.",
   "disponibilidade": {
     "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/655079093X",
+        "edicao": "impresso, ISBN 9786550790936"
+      },
+      {
+        "loja": "Apple Books",
+        "url": "https://books.apple.com/br/book/tina-agora-tem-um-irm%C3%A3o/id6442967071",
+        "edicao": "digital"
+      }
+    ],
     "resolucoes": [
       {
         "fonte": "google_books",

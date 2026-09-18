@@ -27,19 +27,29 @@ async function sondaOpenLibrary(l) {
   return { fonte: 'open_library', ok: !erro, nota: erro ? 'não catalogado' : undefined };
 }
 
+// A loja é a única sonda que enxerga estoque. Percorre `compra` em ordem e fica
+// com a primeira resposta válida. 403/429/202/5xx são parede de bot ou servidor
+// fora do ar (a Amazon devolve 500 em metade das leituras) — não contam.
+// `esgotado_se` é um trecho do HTML que só aparece quando a loja marca
+// indisponível. `sem_loja: true` = garimpo não achou loja nenhuma; conta como falha.
 async function sondaLoja(l) {
-  const alvo = (l.disponibilidade?.compra || [])[0];
-  if (!alvo?.url) return { fonte: 'loja', ok: null, nota: 'sem link de compra' };
-  try {
-    const ctrl = new AbortController();
-    const t = setTimeout(() => ctrl.abort(), 20000);
-    const r = await fetch(alvo.url, { signal: ctrl.signal, redirect: 'follow', headers: { 'user-agent': 'Mozilla/5.0 (compatible; livropraisso/1.0)' } });
-    clearTimeout(t);
-    if (r.status === 403 || r.status === 429) return { fonte: 'loja', ok: null, nota: `bloqueio ${r.status}` };
-    return { fonte: 'loja', ok: r.ok, nota: r.ok ? undefined : `HTTP ${r.status}` };
-  } catch (e) {
-    return { fonte: 'loja', ok: null, nota: String(e.message || e) };   // rede caiu != livro sumiu
+  const d = l.disponibilidade || {};
+  if (d.sem_loja) return { fonte: 'loja', ok: false, nota: 'nenhuma loja encontrada' };
+  const alvos = (d.compra || []).filter(c => c.url);
+  if (!alvos.length) return { fonte: 'loja', ok: null, nota: 'sem link de compra' };
+  let ultima = 'sem resposta válida';
+  for (const alvo of alvos) {
+    try {
+      const r = await fetch(alvo.url, { signal: AbortSignal.timeout(20000), redirect: 'follow', headers: { 'user-agent': 'Mozilla/5.0 (compatible; livropraisso/1.0)' } });
+      if ([202, 403, 429].includes(r.status) || r.status >= 500) { ultima = `${alvo.loja}: bloqueio ${r.status}`; continue; }
+      if (!r.ok) return { fonte: 'loja', ok: false, nota: `${alvo.loja}: HTTP ${r.status}` };
+      if (alvo.esgotado_se && (await r.text()).includes(alvo.esgotado_se)) return { fonte: 'loja', ok: false, nota: `${alvo.loja}: marca indisponível` };
+      return { fonte: 'loja', ok: true };
+    } catch (e) {
+      ultima = `${alvo.loja}: ${String(e.message || e)}`;   // rede caiu != livro sumiu
+    }
   }
+  return { fonte: 'loja', ok: null, nota: ultima };
 }
 
 const livros = lerTodos(P.livros);

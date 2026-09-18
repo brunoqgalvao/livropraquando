@@ -42,6 +42,17 @@
   "nao_coberto": "Dentro da história a chegada do irmão aparece como \"uma surpresa\"; quem nomeia o evento é a sinopse, não necessariamente o texto. A sinopse também não diz como a família fica depois.",
   "disponibilidade": {
     "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Editora Peirópolis",
+        "url": "https://www.editorapeiropolis.com.br/produto/eu-so-so-eu/"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8575963368",
+        "edicao": "impresso de 2014, ISBN 9788575963364"
+      }
+    ],
     "resolucoes": [
       {
         "fonte": "google_books",

@@ -41,6 +41,12 @@
   "nao_coberto": "A sinopse da editora é escrita como texto de venda e não descreve o enredo além da premissa. Não dá para saber quem narra nem como termina.",
   "disponibilidade": {
     "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6560070026"
+      }
+    ],
     "resolucoes": [
       {
         "fonte": "google_books",
