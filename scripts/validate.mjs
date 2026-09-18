@@ -61,8 +61,10 @@ for (const s of situacoes) {
   // número na mão envelhece calado: a frase "nenhuma das nove editoras indica
   // faixa etária" virou falsa em 18/09 sem ninguém editar nada. Placeholder que
   // o build não conhece iria cru pra página, então trava aqui.
-  for (const m of String(s.descricao ?? '').matchAll(/\{([^}]*)\}/g)) {
-    if (!CONTADORES.has(m[1].toLowerCase())) err(f, `descricao pede "{${m[1]}}", que o build não sabe preencher`);
+  for (const campo of ['descricao', 'lacuna']) {
+    for (const m of String(s[campo] ?? '').matchAll(/\{([^}]*)\}/g)) {
+      if (!CONTADORES.has(m[1].toLowerCase())) err(f, `${campo} pede "{${m[1]}}", que o build não sabe preencher`);
+    }
   }
   lintPrescritivo(s.arquivo, 'descricao', s.descricao);
   lintPrescritivo(s.arquivo, 'pergunta', s.pergunta);
