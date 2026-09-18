@@ -83,6 +83,16 @@ incompleto vale mais que um catálogo completo e inventado.
 14. Search Console: `node scripts/gsc.mjs [query|page|date]`. Anote que
     busca trouxe gente e que situação está faltando. Isso vai no relatório, não
     vira situação nova por sua conta.
+
+    Zero em `query` não quer dizer nada sozinho: pode ser "ninguém buscou" ou
+    "o Google nunca viu a página", e a diferença muda o que você faz no dia. Só
+    `node scripts/gsc.mjs inspecionar <url>` separa os dois. Rode numa página de
+    livro, não só na home — em 18/09 a home estava indexada e as 14 páginas de
+    livro nunca tinham sido rastreadas, o que zerou tudo. Se vier "nunca
+    rastreada", confira `node scripts/gsc.mjs sitemap`: se a contagem de URLs do
+    Google for menor que a do sitemap no ar, ele está com uma cópia velha —
+    `node scripts/gsc.mjs reenviar-sitemap` e anote no relatório. Não reenvie
+    todo dia: reenvio repetido não apressa nada.
 15. Relatório: `SendMessage` pra sessão `brunodeqgalvao-5c` e cópia em `runtime/report-<data>.md`.
     Não vai pro self-chat do WhatsApp do Bruno.
 
