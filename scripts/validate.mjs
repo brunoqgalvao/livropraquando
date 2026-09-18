@@ -1,4 +1,4 @@
-import { P, lerTodos, isbn13Valido } from './lib.mjs';
+import { P, lerTodos, isbn13Valido, EDITORA_PAGA } from './lib.mjs';
 import { basename } from 'node:path';
 
 // Linguagem prescritiva: a trava ética. Descrever o livro é permitido,
@@ -123,6 +123,21 @@ for (const l of livros) {
   lintPrescritivo(l.arquivo, 'nao_coberto', l.nao_coberto);
   lintPrescritivo(l.arquivo, 'nao_aborda', l.nao_aborda);
   if (l.nota) lintPrescritivo(l.arquivo, 'nota', l.nota);
+}
+
+// régua editorial: editora paga pelo autor só em situação com menos de 4 títulos,
+// marcada na página, e nunca em "se for comprar um só"
+for (const l of livros) {
+  const f = basename(l.arquivo);
+  const paga = l.editora_paga === true || EDITORA_PAGA.test(l.editora || '');
+  if (!paga) continue;
+  if (l.editora_paga !== true) err(f, `"${l.editora}" é editora paga pelo autor: fora da curadoria, ou marque editora_paga: true (SPEC, régua editorial)`);
+  for (const sl of (l.situacoes || [])) {
+    const s = slugs.get(sl); if (!s) continue;
+    if ((s.faixas || []).some(x => x.isbn13 === l.isbn13)) err(f, `editora paga pelo autor não pode ser "se for comprar um só" em "${sl}"`);
+    const n = livros.filter(x => (x.situacoes || []).includes(sl)).length;
+    if (n >= 4) (l.curadoria === 'agente' && l.verificado_em > '2026-09-18' ? err : avi)(f, `editora paga pelo autor em "${sl}", que já tem ${n} títulos — a régua só admite com menos de 4`);
+  }
 }
 
 const dup = {};

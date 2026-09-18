@@ -33,13 +33,15 @@ incompleto vale mais que um catálogo completo e inventado.
 
 1. `git pull`
 2. `node scripts/check.mjs` — disponibilidade. **Não interfira.** A regra de três
-   falhas existe porque bloqueio de bot parece livro esgotado. Se o script não
+   falhas de loja em dias distintos existe porque bloqueio de bot parece livro esgotado. Se o script não
    mudou o estado, o estado está certo.
 3. `node scripts/descobrir.mjs <slug>` numa situação que já existe, rodando as
    situações em rodízio. Os candidatos caem em `runtime/candidatos-<slug>.json`.
 4. Escolha **no máximo 2**. O teto não é sugestão. Ele existe porque encher o
    catálogo é a forma mais fácil de parecer produtivo sem ser útil.
    Descarte sem dó: a descoberta traz romance adulto e livro de teologia junto.
+   Editora paga pelo autor (Dialética, Clube de Autores, Appris, Autografia…) não entra:
+   veja "Régua editorial" no SPEC. `descobrir.mjs` já filtra as conhecidas.
 5. Para cada escolhido, monte `data/livros/<isbn13>.json`:
    - fato vem da resolução externa;
    - cada campo da rúbrica aponta com `base` para o índice da evidência que o

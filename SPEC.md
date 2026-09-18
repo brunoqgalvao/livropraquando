@@ -63,8 +63,16 @@ Livro só entra se o ISBN tiver checksum válido **e** resolver em catálogo ext
 Sem isso, não vira página.
 
 ### Anti-churn (o furo mais provável)
-`esgotado` só depois de **3 falhas consecutivas em fontes distintas**. Uma leitura falha nunca muda estado.
-Bloqueio de bot e URL que muda de lugar são o caso comum, não o livro sumir.
+`esgotado` só depois de **3 falhas de loja em dias distintos, sem sucesso de loja no meio**. Uma leitura
+falha nunca muda estado. Bloqueio de bot e URL que muda de lugar são o caso comum, não o livro sumir —
+por isso 403/429/5xx não contam como falha. Sucesso de catálogo (Google Books, Open Library) **não zera**
+falha de loja: ISBN de livro esgotado continua resolvendo pra sempre. A transição põe nota factual na página.
+
+### Régua editorial
+Só entra livro de **editora comercial ou selo reconhecido**. Editora paga pelo autor (vanity press: Dialética,
+Clube de Autores, Appris, Autografia, Scortecci e similares) fica fora da curadoria por padrão. Exceção: situação
+com **menos de 4 títulos**, e aí com `editora_paga: true` no JSON e o aviso visível na página.
+Vanity press **nunca** entra em "se for comprar um só".
 
 ### Anti-slop
 Toda afirmação da rúbrica aponta para uma evidência com URL e trecho. Sem fonte, campo `nao_coberto`.

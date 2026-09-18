@@ -190,6 +190,8 @@ ${(l.disponibilidade?.compra || []).length ? `<h2>Onde encontrar</h2>
 <h2>De onde vem cada afirmação</h2>
 ${evs.map((e, i) => `<div class="ev" id="ev${i}"><div class="meta">${esc((e.veiculo || e.tipo).replace(/_/g, ' '))}${e.autor ? ` · ${esc(e.autor)}` : ''} · acessado ${dataBr(e.acessado_em)}</div><q>${esc(e.trecho)}</q><a class="abrir" href="${esc(e.url)}" rel="noopener">abrir a fonte ↗</a></div>`).join('\n')}
 ${l.nota ? `<p class="nota">${esc(l.nota)}</p>` : ''}
+${l.editora_paga ? `<p class="nota">${esc(l.editora)} publica mediante pagamento do autor: o livro não passou pela seleção de uma editora comercial. Está aqui porque a situação tem poucos títulos, e não entra em "se for comprar um só".</p>` : ''}
+${l.disponibilidade?.estado === 'esgotado' ? `<p class="nota">Marcado como esgotado em ${dataBr(l.disponibilidade.mudou_em)}, depois de três verificações em dias distintos sem encontrar o livro à venda: ${esc((l.disponibilidade.evidencia || []).join('; '))}. Pode haver exemplar em sebo.</p>` : ''}
 <h2>O que a evidência não cobre</h2>
 <p class="aviso">${esc(l.nao_coberto)}</p>
 ${l.nao_aborda ? `<h2>O que este livro não aborda</h2>\n<p class="aviso">${esc(l.nao_aborda)}</p>` : ''}

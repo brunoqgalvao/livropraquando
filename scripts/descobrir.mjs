@@ -1,7 +1,7 @@
 // Descoberta de candidatos pra uma situação. Não escreve no catálogo:
 // cospe candidatos com a sinopse, pra curadoria (humana ou do agente) decidir.
 import { googleBooks, edicaoBrasileira } from './resolve.mjs';
-import { P, hoje, lerTodos } from './lib.mjs';
+import { P, hoje, lerTodos, EDITORA_PAGA } from './lib.mjs';
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -20,6 +20,7 @@ for (const q of sit.consultas) {
   if (r.erro) { console.error(`  consulta "${q}": ${r.erro}`); continue; }
   for (const it of (r.itens || [])) {
     if (!it.isbn13 || !edicaoBrasileira(it.isbn13)) continue;   // só edição brasileira
+    if (EDITORA_PAGA.test(it.editora || '')) continue;               // régua editorial do SPEC
     if (!it.sinopse) continue;                                   // sem sinopse não há evidência
     if (!vistos.has(it.isbn13)) vistos.set(it.isbn13, { ...it, achado_por: q });
   }

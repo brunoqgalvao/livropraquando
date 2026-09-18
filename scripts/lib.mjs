@@ -59,6 +59,9 @@ export function isbn13Valido(s) {
   return (10 - (soma % 10)) % 10 === Number(d[12]);
 }
 
+// Editora paga pelo autor. SPEC, "Régua editorial": fora da curadoria por padrão.
+export const EDITORA_PAGA = /dial[ée]tica|clube de autores|appris|autografia|scortecci|uiclap|viseu|kelps|paco editorial|bara[úu]na/i;
+
 export const hoje = () => new Date().toISOString().slice(0, 10);
 
 export async function buscaJSON(url, opts = {}) {

@@ -2,7 +2,7 @@
   "slug": "primeiro-dia-de-aula",
   "titulo": "Livro pra quando chega o primeiro dia de aula",
   "pergunta": "Qual livro ler antes de começar na escola ou na creche?",
-  "descricao": "Sete livros com edição brasileira sobre começar na escola. A tabela traz o que a fonte da editora sustenta: idade indicada, tamanho, se a sinopse fala mesmo em primeiro dia, e a forma do texto. Nenhuma das sete sinopses fala de creche nem da despedida na porta — isso está dito em cada página, não escondido.",
+  "descricao": "Cinco livros com edição brasileira sobre começar na escola. A tabela traz o que a fonte da editora sustenta: idade indicada, tamanho, se a sinopse fala mesmo em primeiro dia, e se a editora oferece material pro adulto. Nenhuma das cinco sinopses fala de creche nem da despedida na porta — isso está dito em cada página, não escondido.",
   "faixas": [
     {
       "isbn13": "9788526259416",
@@ -16,7 +16,7 @@
     "idade_editora",
     "paginas",
     "nomeia_evento",
-    "forma",
+    "material_adulto",
     "disponibilidade"
   ],
   "consultas": [
