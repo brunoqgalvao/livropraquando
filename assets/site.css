@@ -124,7 +124,10 @@ td:first-child a{display:flex;gap:11px;align-items:center}
 td:first-child a > span{min-width:0}
 .pick{display:flex;gap:18px;align-items:flex-start}
 .pick-c{min-width:0;flex:1}
-.topo-livro{display:flex;gap:22px;align-items:flex-start;margin-bottom:1.6em;flex-wrap:wrap}
+.topo-livro{display:flex;gap:22px;align-items:flex-start;margin-bottom:1.6em}
+/* o h1 precisa poder encolher, senao o flex-wrap joga a capa pra cima do titulo */
+.topo-livro > div:last-child{flex:1;min-width:0}
+@media (max-width:420px){.topo-livro{flex-wrap:wrap}}
 .preco{font:600 .95rem/1 var(--texto);margin:.9em 0 0}
 .preco .selo{font-weight:400}
 @media (max-width:560px){
