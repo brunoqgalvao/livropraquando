@@ -47,34 +47,6 @@ ${existsSync(join(ASSETS, 'img', `${imagem}-og.jpg`)) ? `<meta property="og:imag
 <header><div class="env">${MARCA}<nav><a href="/#situacoes">Situações</a></nav></div></header>
 <main class="env">
 ${corpo}
-<script>
-(() => {
-  const b = document.querySelector('.folhear'); if (!b) return;
-  const visor = document.getElementById('visor');
-  let carregado = false;
-  const abrir = () => {
-    visor.hidden = false; b.disabled = true; b.textContent = 'Carregando a amostra…';
-    if (carregado) return; carregado = true;
-    const s = document.createElement('script');
-    s.src = 'https://www.google.com/books/jsapi.js';
-    // padrao documentado: load() e depois setOnLoadCallback. Passar callback
-    // direto em load() carrega a api mas nunca dispara o retorno.
-    s.onload = () => {
-      google.books.load();
-      google.books.setOnLoadCallback(() => {
-        const v = new google.books.DefaultViewer(document.getElementById('visor-alvo'));
-        v.load('ISBN:' + b.dataset.isbn,
-               () => { b.textContent = 'A editora não liberou amostra deste.'; b.disabled = false; visor.hidden = true; },
-               () => { b.hidden = true; visor.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
-      });
-    };
-    s.onerror = () => { b.textContent = 'Não consegui carregar a amostra.'; visor.hidden = true; };
-    document.head.appendChild(s);
-  };
-  b.addEventListener('click', abrir);
-  if (location.hash === '#visor') abrir();
-})();
-</script>
 </main>
 <footer><div class="env">
   ${MARCA}
@@ -96,7 +68,7 @@ const COLS = {
   material_adulto:{ cab: 'Material<br>pro adulto', cel: l => bin(vv(l, 'material_adulto'), 'sim') },
   disponibilidade:{ cab: 'À venda',           cel: l => l.disponibilidade?.estado === 'esgotado' ? '<span class="nao">esgotado</span>' : SIM },
   preco:          { cab: 'Preço',             cel: l => precoBr(l) || '<span class="nao">–</span>' },
-  previa:         { cab: 'Dá pra<br>folhear',  cel: l => l.previa?.folheavel ? `<a class="folhear-link" href="/l/${esc(l.isbn13)}#visor">ver</a>` : NAO },
+  previa:         { cab: 'Dá pra<br>folhear',  cel: l => l.previa?.folheavel ? `<a class="folhear-link" href="https://books.google.com.br/books?id=${esc(l.previa.volume)}&printsec=frontcover" rel="noopener" target="_blank">ver ↗</a>` : NAO },
 };
 const SIM = '<span class="sim">sim</span>', NAO = '<span class="nao">–</span>';
 // Capa é como pai reconhece livro. Sem ela a tabela é um extrato bancário.
@@ -219,8 +191,8 @@ for (const l of livros) {
 <div class="topo-livro">${capa(l, 'grande')}<div><h1>${esc(l.titulo)}</h1>
 <p class="sub">${esc(l.autor)}${l.ilustrador ? ` · ilustração de ${esc(l.ilustrador)}` : ''} · ${esc(l.editora)}${l.ano ? `, ${l.ano}` : ''}</p>
 ${precoBr(l) ? `<p class="preco">${precoBr(l)} <span class="selo">no Google Play, conferido em ${dataBr(MERCADO[l.isbn13].em)}</span></p>` : ''}
-${l.previa?.folheavel ? `<button class="folhear" type="button" data-isbn="${esc(l.isbn13)}">Folhear as primeiras páginas</button>` : ''}</div></div>
-${l.previa?.folheavel ? `<div id="visor" hidden><div id="visor-alvo"></div><p class="selo">Amostra do Google Livros, fornecida pela editora. Nem todo o livro está disponível.</p></div>` : ''}
+${l.previa?.folheavel ? `<p><a class="folhear" href="https://books.google.com.br/books?id=${esc(l.previa.volume)}&printsec=frontcover" rel="noopener" target="_blank">Folhear as primeiras páginas ↗</a></p>
+<p class="selo">Amostra no Google Livros, liberada pela editora. Abre em outra aba; nem todo o livro está disponível.</p>` : ''}</div></div>
 <ul class="ficha">
   <li><b>Idade indicada</b> <span>${val(r, 'idade_editora') === 'nao_coberto' ? 'a editora não indica' : `${esc(val(r, 'idade_editora'))} <span class="selo">(pela editora)</span>`}</span></li>
   ${Object.entries(rot).filter(([k]) => k !== 'idade_editora').map(([k, label]) => `<li><b>${label}</b> <span>${esc(legivel[val(r, k)] ?? '—')}${(typeof r[k] === 'object' && r[k]?.base !== undefined && evs[r[k].base]) ? ` <a class="selo" href="#ev${r[k].base}">fonte ↓</a>` : ''}</span></li>`).join('\n  ')}
