@@ -53,6 +53,7 @@ for (const s of situacoes) {
   for (const c of ['titulo', 'pergunta', 'descricao', 'curadoria']) if (!s[c]) err(f, `falta campo "${c}"`);
   lintPrescritivo(s.arquivo, 'descricao', s.descricao);
   lintPrescritivo(s.arquivo, 'pergunta', s.pergunta);
+  lintPrescritivo(s.arquivo, 'lacuna', s.lacuna);
   if (!['humano', 'agente'].includes(s.curadoria)) err(f, `curadoria inválida: "${s.curadoria}"`);
 }
 
@@ -136,7 +137,7 @@ for (const l of livros) {
     const s = slugs.get(sl); if (!s) continue;
     if ((s.faixas || []).some(x => x.isbn13 === l.isbn13)) err(f, `editora paga pelo autor não pode ser "se for comprar um só" em "${sl}"`);
     const n = livros.filter(x => (x.situacoes || []).includes(sl)).length;
-    if (n >= 4) (l.curadoria === 'agente' && l.verificado_em > '2026-09-18' ? err : avi)(f, `editora paga pelo autor em "${sl}", que já tem ${n} títulos — a régua só admite com menos de 4`);
+    if (n >= 4) err(f, `editora paga pelo autor em "${sl}", que já tem ${n} títulos — a régua só admite com menos de 4`);
   }
 }
 

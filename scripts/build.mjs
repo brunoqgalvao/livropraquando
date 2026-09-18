@@ -157,6 +157,7 @@ ${picks}
 ${linhas}
   </tbody>
 </table></div>
+${s.lacuna ? `<h2>O que falta nesta página</h2>\n<p class="aviso">${esc(s.lacuna)}</p>` : ''}
 <p class="selo legenda">Coluna vazia quer dizer que a fonte não cobre aquilo — não que a resposta seja não.</p>`,
   }));
 }
