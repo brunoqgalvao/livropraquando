@@ -19,7 +19,7 @@ header .env{display:flex;align-items:center;justify-content:space-between;gap:16
 header nav a{font-size:.93rem;font-weight:500;color:var(--suave);text-decoration:none}
 header nav a:hover{color:var(--tinta)}
 
-main{padding-bottom:72px}
+main.env{padding-bottom:72px}
 h1,h2,h3{font-family:var(--titulo);font-weight:600;text-wrap:balance}
 h1{font-size:clamp(2.05rem,6.4vw,3.5rem);line-height:1.06;letter-spacing:-.02em;margin:0 0 .45em;font-variation-settings:'opsz' 60}
 h1 em{font-style:italic;font-weight:400;color:var(--acento)}
