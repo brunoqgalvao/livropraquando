@@ -111,3 +111,23 @@ body>footer .marca em{color:var(--ocre)}
 .lojas a{font-weight:600;text-decoration:none}
 .lojas a:hover{text-decoration:underline}
 .lojas .selo{display:block;margin-top:.15em}
+
+/* Capas de livro. Baixadas e servidas daqui: o hotlink do Google levava ~5s
+   por imagem. Dimensão fixa em CSS pra reservar o espaço e o texto não pular. */
+.capa-livro{border-radius:4px;background:var(--linha);object-fit:cover;display:block;
+  box-shadow:0 1px 2px rgba(0,0,0,.18),0 6px 16px rgba(0,0,0,.10)}
+.capa-livro.vazia{border:1px dashed var(--linha);box-shadow:none;background:transparent}
+.capa-livro.mini{width:42px;height:63px;flex:0 0 42px}
+.capa-livro.media{width:88px;height:132px;flex:0 0 88px}
+.capa-livro.grande{width:136px;height:204px;flex:0 0 136px}
+td:first-child a{display:flex;gap:11px;align-items:center}
+td:first-child a > span{min-width:0}
+.pick{display:flex;gap:18px;align-items:flex-start}
+.pick-c{min-width:0;flex:1}
+.topo-livro{display:flex;gap:22px;align-items:flex-start;margin-bottom:1.6em;flex-wrap:wrap}
+.preco{font:600 .95rem/1 var(--texto);margin:.9em 0 0}
+.preco .selo{font-weight:400}
+@media (max-width:560px){
+  .capa-livro.grande{width:96px;height:144px;flex:0 0 96px}
+  .capa-livro.media{width:62px;height:93px;flex:0 0 62px}
+}

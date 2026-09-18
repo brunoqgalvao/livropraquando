@@ -72,8 +72,8 @@ const COLS = {
 const SIM = '<span class="sim">sim</span>', NAO = '<span class="nao">–</span>';
 // Capa é como pai reconhece livro. Sem ela a tabela é um extrato bancário.
 const capa = (l, cls = '') => l.capa?.arquivo
-  ? `<img class="capa ${cls}" src="/capas/${esc(l.capa.arquivo)}" alt="Capa de ${esc(l.titulo)}" loading="lazy" decoding="async" width="80" height="120">`
-  : `<span class="capa vazia ${cls}" aria-hidden="true"></span>`;
+  ? `<img class="capa-livro ${cls}" src="/capas/${esc(l.capa.arquivo)}" alt="Capa de ${esc(l.titulo)}" loading="lazy" decoding="async" width="80" height="120">`
+  : `<span class="capa-livro vazia ${cls}" aria-hidden="true"></span>`;
 const bin = (v, quando) => v === quando ? SIM : (v === 'nao_coberto' || v === undefined ? NAO : NAO);
 const vv = (l, campo) => { const v = (l.rubrica || {})[campo]; return typeof v === 'object' ? v?.valor : v; };
 const val = (r, campo) => { const v = r?.[campo]; return typeof v === 'object' ? v?.valor : v; };
