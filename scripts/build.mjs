@@ -99,7 +99,7 @@ escreve('index.html', pagina({
   <div>
     <p class="olho">Livro infantil por situação</p>
     <h1>Tem um livro pra <em>essa conversa.</em></h1>
-    <p class="sub">Vai nascer um irmão, morreu alguém, o quarto ficou escuro demais. Escolha a situação; a página diz qual livro, pra que idade, e de onde veio cada afirmação.</p>
+    <p class="sub">Escolha o momento que a sua casa está vivendo. A página diz qual livro, pra que idade, e de onde veio cada afirmação — com a fonte aberta do lado.</p>
   </div>
   <figure class="arte">${arte('capa', 'Ilustração: um adulto e uma criança lendo juntos numa poltrona, à noite', { eager: true })}</figure>
 </section>
