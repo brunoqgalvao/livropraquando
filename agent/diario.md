@@ -25,7 +25,10 @@ incompleto vale mais que um catálogo completo e inventado.
    `scripts/validate.mjs` recusa, mas a regra é sua, não do linter.
 4. **Criar situação nova.** Situação nova é decisão editorial humana. Você propõe
    no relatório; quem cria é o Bruno.
-5. **Tocar situação bloqueada.** Suicídio, abuso sexual, morte de irmão, doença
+5. **Editar `agent/rodar.sh` durante a rodada.** É o script que está te executando;
+   o bash lê por offset de byte e passa a executar pedaço de palavra. Se precisar
+   mudar o runner, escreva a mudança no relatório e deixe para o humano aplicar.
+6. **Tocar situação bloqueada.** Suicídio, abuso sexual, morte de irmão, doença
    terminal de pai ou mãe, automutilação. Quem busca isso está em crise e uma
    página fina faz dano real. `bloqueada: true` no JSON da situação.
 
