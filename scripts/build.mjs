@@ -3,8 +3,8 @@ import { join } from 'node:path';
 import { rmSync, existsSync, cpSync, readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 
-const SITE = process.env.SITE_URL || 'https://temlivropraisso.com';
-const NOME = process.env.SITE_NOME || 'Tem livro pra isso';
+const SITE = process.env.SITE_URL || 'https://livropraquando.com';
+const NOME = process.env.SITE_NOME || 'Livro pra quando';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const dataBr = (d) => d ? String(d).split('-').reverse().join('/') : '';
@@ -79,7 +79,7 @@ const vv = (l, campo) => { const v = (l.rubrica || {})[campo]; return typeof v =
 const val = (r, campo) => { const v = r?.[campo]; return typeof v === 'object' ? v?.valor : v; };
 
 const MERCADO = (() => {
-  try { return JSON.parse(readFileSync(join(ROOT_DADOS, 'data/mercado.json'), 'utf8')).livros || {}; }
+  try { return JSON.parse(readFileSync(join(ROOT, 'data/mercado.json'), 'utf8')).livros || {}; }
   catch { return {}; }
 })();
 const preco = (l) => MERCADO[l.isbn13]?.preco;
@@ -221,11 +221,8 @@ ${urls.map(u => `  <url><loc>${SITE}${u}</loc></url>`).join('\n')}
 `);
 // capas versionadas -> site
 {
-  const dir = join(ROOT_DADOS, 'data/capas');
-  if (existsSync(dir)) for (const f of readdirSync(dir)) {
-    mkdirSync(join(P.site, 'capas'), { recursive: true });
-    copyFileSync(join(dir, f), join(P.site, 'capas', f));
-  }
+  const dir = join(ROOT, 'data/capas');
+  if (existsSync(dir)) cpSync(dir, join(P.site, 'capas'), { recursive: true });
 }
 gravar(join(P.site, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
 
