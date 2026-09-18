@@ -93,6 +93,13 @@ const capa = (l, cls = '') => l.capa?.arquivo
 const bin = (v, quando) => v === quando ? SIM : (v === 'nao_coberto' || v === undefined ? NAO : NAO);
 const vv = (l, campo) => { const v = (l.rubrica || {})[campo]; return typeof v === 'object' ? v?.valor : v; };
 const val = (r, campo) => { const v = r?.[campo]; return typeof v === 'object' ? v?.valor : v; };
+// A idade era o único campo da ficha sem link pra fonte — justo o que decide a
+// compra. O site inteiro se sustenta em "toda afirmação aponta pra quem disse";
+// deixar o campo mais consultado fora disso esvaziava a promessa.
+const fonteDe = (r, campo, evs) => {
+  const v = r?.[campo];
+  return (typeof v === 'object' && v?.base !== undefined && evs[v.base]) ? ` <a class="selo" href="#ev${v.base}">fonte ↓</a>` : '';
+};
 
 const MERCADO = (() => {
   try { return JSON.parse(readFileSync(join(ROOT, 'data/mercado.json'), 'utf8')).livros || {}; }
@@ -234,8 +241,8 @@ ${precoBr(l) ? `<p class="preco">${precoBr(l)} <span class="selo">no Google Play
 ${l.previa?.folheavel ? `<p><a class="folhear" href="https://books.google.com.br/books?id=${esc(l.previa.volume)}&printsec=frontcover" rel="noopener" target="_blank">Folhear as primeiras páginas ↗</a></p>
 <p class="selo">Amostra no Google Livros, liberada pela editora. Abre em outra aba; nem todo o livro está disponível.</p>` : ''}</div></div>
 <ul class="ficha">
-  <li><b>Idade indicada</b> <span>${val(r, 'idade_editora') === 'nao_coberto' ? 'a editora não indica' : `${esc(val(r, 'idade_editora'))} <span class="selo">(pela editora)</span>`}</span></li>
-  ${Object.entries(rot).filter(([k]) => k !== 'idade_editora').map(([k, label]) => `<li><b>${label}</b> <span>${esc(legivel[val(r, k)] ?? '—')}${(typeof r[k] === 'object' && r[k]?.base !== undefined && evs[r[k].base]) ? ` <a class="selo" href="#ev${r[k].base}">fonte ↓</a>` : ''}</span></li>`).join('\n  ')}
+  <li><b>Idade indicada</b> <span>${val(r, 'idade_editora') === 'nao_coberto' ? 'a editora não indica' : `${esc(val(r, 'idade_editora'))} <span class="selo">(pela editora)</span>${fonteDe(r, 'idade_editora', evs)}`}</span></li>
+  ${Object.entries(rot).filter(([k]) => k !== 'idade_editora').map(([k, label]) => `<li><b>${label}</b> <span>${esc(legivel[val(r, k)] ?? '—')}${fonteDe(r, k, evs)}</span></li>`).join('\n  ')}
   ${l.origem ? `<li><b>Origem</b> <span>${esc(l.origem === 'traducao' ? `tradução${l.ano_original ? `, original de ${l.ano_original}` : ''}` : 'nacional')}</span></li>` : ''}
   ${l.paginas ? `<li><b>Páginas</b> <span>${l.paginas}</span></li>` : ''}
   <li><b>ISBN</b> <span>${esc(l.isbn13)}${(l.outras_edicoes || []).map(o => `<br><span class="selo">edição ${esc(o.formato || 'alternativa')}: ${o.url ? `<a href="${esc(o.url)}" rel="noopener">${esc(o.isbn13)}</a>` : esc(o.isbn13)}</span>`).join('')}</span></li>
