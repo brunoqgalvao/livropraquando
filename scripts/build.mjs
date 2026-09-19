@@ -1,5 +1,6 @@
 import { P, ROOT, lerTodos, gravar, dataBr } from './lib.mjs';
 import { dimensao } from './lib/imagem.mjs';
+import { faixaSchema } from './lib/schema.mjs';
 import { join } from 'node:path';
 import { rmSync, existsSync, cpSync, readFileSync, readdirSync } from 'node:fs';
 import { createHash } from 'node:crypto';
@@ -212,12 +213,6 @@ function listaPt(itens) {
 // preencher; deixar ele só no HTML seria desperdiçar o trabalho.
 const ld = (o) => JSON.stringify(o, null, 2).replace(/</g, '\\u003c');
 
-const faixaSchema = (v) => {
-  if (!v || v === 'nao_coberto') return undefined;
-  const m = String(v).match(/^(\d+)\s*(?:a\s*(\d+))?/);
-  if (!m) return undefined;
-  return m[2] ? `${m[1]}-${m[2]}` : `${m[1]}-`;      // "4-10" ou "4-", como o schema pede
-};
 
 const ESTOQUE_SCHEMA = { true: 'https://schema.org/InStock', false: 'https://schema.org/OutOfStock' };
 
