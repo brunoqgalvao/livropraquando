@@ -1,6 +1,6 @@
 import { P, ROOT, lerTodos, gravar, dataBr } from './lib.mjs';
 import { dimensao } from './lib/imagem.mjs';
-import { faixaSchema } from './lib/schema.mjs';
+import { faixaSchema, descricaoLivro } from './lib/schema.mjs';
 import { join } from 'node:path';
 import { rmSync, existsSync, cpSync, readFileSync, readdirSync } from 'node:fs';
 import { createHash } from 'node:crypto';
@@ -382,7 +382,7 @@ for (const l of livros) {
   const legivel = { direto: 'diz o nome', metafora: 'usa metáfora', religioso: 'religioso', secular: 'secular', ambiguo: 'ambíguo', crianca: 'criança', adulto: 'adulto', animal: 'animal', objeto: 'objeto', sim: 'sim', nao: 'não', nao_coberto: 'a fonte não diz' };
   escreve(`l/${l.isbn13}.html`, pagina({
     titulo: `${l.titulo}, de ${l.autor} — pra que idade e o que traz`,
-    desc: `${l.titulo} (${l.editora}, ${l.ano || 's/d'}): idade indicada, o que a fonte da editora afirma e o que ela não cobre.`,
+    desc: descricaoLivro({ titulo: l.titulo, editora: l.editora, ano: l.ano, idade: val(r, 'idade_editora'), paginas: l.paginas, nomeia: val(r, 'nomeia_evento') }),
     canon: `${SITE}/l/${l.isbn13}`,
     dados: dadosDoLivro(l),
     imagem: (l.situacoes || []).find(temArte) || 'capa',
