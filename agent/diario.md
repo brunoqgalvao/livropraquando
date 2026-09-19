@@ -122,7 +122,14 @@ incompleto vale mais que um catálogo completo e inventado.
 
 11. `node scripts/validate.mjs`. Vermelho não sobe. Conserte a causa, não o sintoma:
    se o linter pegou linguagem prescritiva, o problema é a frase, não o linter.
-12. `node scripts/build.mjs` e confira que as páginas novas existem.
+12. `node scripts/build.mjs`, e depois `node scripts/conferir-site.mjs`.
+
+    O `validate` é o portão do catálogo; o `conferir-site` é o portão do que o
+    build produziu. Dá pra passar num catálogo íntegro e gerar página com capa
+    quebrada, meta description repetida nas quinze ou JSON-LD discordando do
+    que a página mostra — os três já aconteceram. Ele não substitui abrir a
+    página: olho pega "esta imagem não é a capa deste livro", que script nenhum
+    pega. Pega o resto.
 
     O que o site afirma pro Google não é o que ele mostra pra pessoa. O HTML
     você abre no navegador toda passada; o JSON-LD ninguém relê, e ele ficou
