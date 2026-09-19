@@ -284,6 +284,24 @@
         "base": "preço do físico",
         "em": "2026-09-19"
       }
+    },
+    "9786556171081": {
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "amazon.com.br: Em estoque"
+        ],
+        "em": "2026-09-19"
+      },
+      "loja": {
+        "preco": 19.9,
+        "moeda": "BRL",
+        "formato": "impresso",
+        "onde": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6556171085",
+        "base": "preço do buy box",
+        "em": "2026-09-19"
+      }
     }
   }
 }

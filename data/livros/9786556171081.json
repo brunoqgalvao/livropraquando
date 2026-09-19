@@ -1,0 +1,88 @@
+{
+  "isbn13": "9786556171081",
+  "titulo": "Gire o disco! O primeiro dia do urso na escola",
+  "autor": "Tulip Books",
+  "ilustrador": "Louise Hargreaves",
+  "editora": "Todolivro",
+  "ano": 2021,
+  "origem": "traducao",
+  "paginas": 16,
+  "situacoes": [
+    "primeiro-dia-de-aula"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "3 a 5",
+      "base": 1
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse da Todolivro no Google Livros",
+      "url": "https://books.google.com.br/books?id=-B7yzwEACAAJ",
+      "trecho": "Hoje é o primeiro dia do urso na escola. Um dia com muitas emoções diferentes. Gire o disco para ver o que o urso está sentindo. Você consegue demonstrar seus sentimentos também?",
+      "acessado_em": "2026-09-19"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/6556171085",
+      "trecho": "Tulip Books (Autor), Louise Hargreaves (Ilustrador), Ruth Marschalek (Tradutor) […] Editora : Todolivro […] Número de páginas : 16 páginas […] Idade de leitura : 3 - 5 anos",
+      "acessado_em": "2026-09-19"
+    }
+  ],
+  "nao_coberto": "A sinopse não diz quem narra, não conta como o dia do urso termina e não menciona material para o adulto. Também não diz quantas emoções o disco mostra.",
+  "nao_aborda": "A sinopse não fala de creche nem da despedida de quem leva a criança até a porta: fica no dia do urso e no disco que mostra o que ele sente.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6556171085"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "id": "-B7yzwEACAAJ",
+        "isbn13": "9786556171081",
+        "titulo_bateu": true,
+        "em": "2026-09-19"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-09-19"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-09-19",
+  "capa": {
+    "arquivo": "9786556171081.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/61Y8VTKHorS._SL1200_.jpg",
+    "obtida_em": "2026-09-19",
+    "sha1": "7eee8e94710ed9c840c42e0cfb6af75f686e671b",
+    "largura": 600,
+    "altura": 600
+  },
+  "nota": "Livro de página cartonada com um disco giratório. Google Livros e a ficha da Amazon divergem no tamanho — 8 e 16 páginas; a tabela usa o número da ficha da Amazon."
+}
