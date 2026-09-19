@@ -130,6 +130,16 @@ const MERCADO = (() => {
 // Num catálogo de livro ilustrado isso engana de verdade: o pai compara R$ 28
 // com R$ 67,90 sem saber que um é arquivo e o outro é o livro na mão. Preço de
 // loja manda; o e-book só aparece quando é tudo que existe, e rotulado.
+// Em livro ilustrado é comum quem escreve também desenhar, e aí repetir o nome
+// soa a erro de banco de dados: "Anna Llenas · ilustração de Anna Llenas".
+const creditoIlustracao = (l) => {
+  if (!l.ilustrador) return '';
+  const norm = (x) => String(x).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+  return norm(l.ilustrador) === norm(l.autor)
+    ? ' · texto e ilustração'
+    : ` · ilustração de ${esc(l.ilustrador)}`;
+};
+
 const precoDe = (l) => {
   const m = MERCADO[l.isbn13];
   if (m?.loja?.preco !== undefined) {
@@ -358,7 +368,7 @@ for (const l of livros) {
     corpo: `<div class="estreito" style="padding-top:20px">
 <p class="olho">${(l.situacoes || []).map(sl => situacoes.find(x => x.slug === sl)).filter(Boolean).map(s => `<a href="/s/${esc(s.slug)}">${esc(s.titulo)}</a>`).join(' · ') || 'Livro'}</p>
 <div class="topo-livro">${capa(l, 'grande', { jaVisivel: true })}<div><h1>${esc(l.titulo)}</h1>
-<p class="sub">${esc(l.autor)}${l.ilustrador ? ` · ilustração de ${esc(l.ilustrador)}` : ''} · ${esc(l.editora)}${l.ano ? `, ${l.ano}` : ''}</p>
+<p class="sub">${esc(l.autor)}${creditoIlustracao(l)} · ${esc(l.editora)}${l.ano ? `, ${l.ano}` : ''}</p>
 ${precoBr(l) ? `<p class="preco">${precoBr(l)} <span class="selo">${esc(precoRotulo(l))}</span></p>` : ''}
 ${l.previa?.folheavel ? `<p><a class="folhear" href="https://books.google.com.br/books?id=${esc(l.previa.volume)}&printsec=frontcover" rel="noopener" target="_blank">Folhear as primeiras páginas ↗</a></p>
 <p class="selo">Amostra no Google Livros, liberada pela editora. Abre em outra aba; nem todo o livro está disponível.</p>` : ''}</div></div>
