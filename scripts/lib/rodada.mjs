@@ -26,3 +26,22 @@ export function mesclaEstoque(antes, novo, hoje) {
   const mantidos = antes?.em === hoje ? antes.livros || {} : {};
   return { em: hoje, livros: { ...mantidos, ...novo } };
 }
+
+// Diário do dia.
+//
+// A trava de uma-passada-por-dia lê `completo` deste arquivo. Substituir o
+// arquivo fazia uma rodada de um livro só (depuração, ou um livro novo que
+// acabou de entrar) apagar o `completo` da passada completa que já tinha
+// rodado de manhã — e a próxima rodada abriria as ~28 páginas de loja de novo,
+// que é exatamente o que a trava existe pra evitar. De quebra, os avisos dos
+// outros treze livros sumiam do diário do dia.
+//
+// Passada completa manda: ela reescreve o dia inteiro. Rodada parcial atualiza
+// os avisos dos livros que ela olhou e não toca no resto.
+export function mesclaDiario(antes, novo, isbnsDaRodada = []) {
+  if (antes?.em !== novo.em) return novo;
+  if (novo.completo) return novo;
+  const tocados = new Set(isbnsDaRodada);
+  const herdados = (antes.avisos || []).filter(a => !tocados.has(a.isbn13));
+  return { em: novo.em, completo: antes.completo === true, avisos: [...herdados, ...(novo.avisos || [])] };
+}

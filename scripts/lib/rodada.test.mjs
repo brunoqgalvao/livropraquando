@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { devePular, mesclaEstoque } from './rodada.mjs';
+import { devePular, mesclaEstoque, mesclaDiario } from './rodada.mjs';
 
 let ok = 0, falhou = 0;
 const t = (nome, fn) => { try { fn(); ok++; } catch (e) { falhou++; console.log(`FALHOU: ${nome}\n  ${e.message}`); } };
@@ -39,6 +39,30 @@ t('leitura de ontem não sobrevive à virada do dia', () => {
   const r = mesclaEstoque({ em: '2026-09-18', livros: { A: { ok: true }, B: { ok: true } } }, { A: { ok: true } }, '2026-09-19');
   assert.deepEqual(Object.keys(r.livros), ['A']);
   assert.equal(r.em, '2026-09-19');
+});
+
+// O diário do dia. `completo` é o que a trava lê; uma rodada de um livro só não
+// pode apagá-lo, senão a passada das ~28 páginas roda duas vezes no mesmo dia.
+t('rodada de um livro não apaga o `completo` da passada completa de hoje', () => {
+  const r = mesclaDiario({ em: '2026-09-19', completo: true, avisos: [] }, { em: '2026-09-19', completo: false, avisos: [] }, ['A']);
+  assert.equal(r.completo, true);
+});
+
+t('rodada de um livro preserva os avisos dos outros livros do dia', () => {
+  const antes = { em: '2026-09-19', completo: true, avisos: [{ isbn13: 'A', aviso: 'a1' }, { isbn13: 'B', aviso: 'b1' }] };
+  const r = mesclaDiario(antes, { em: '2026-09-19', completo: false, avisos: [{ isbn13: 'A', aviso: 'a2' }] }, ['A']);
+  assert.deepEqual(r.avisos, [{ isbn13: 'B', aviso: 'b1' }, { isbn13: 'A', aviso: 'a2' }]);
+});
+
+t('passada completa reescreve o dia inteiro', () => {
+  const antes = { em: '2026-09-19', completo: false, avisos: [{ isbn13: 'A', aviso: 'a1' }] };
+  const r = mesclaDiario(antes, { em: '2026-09-19', completo: true, avisos: [{ isbn13: 'B', aviso: 'b1' }] }, []);
+  assert.deepEqual(r, { em: '2026-09-19', completo: true, avisos: [{ isbn13: 'B', aviso: 'b1' }] });
+});
+
+t('diário de ontem não contamina o de hoje', () => {
+  const r = mesclaDiario({ em: '2026-09-18', completo: true, avisos: [{ isbn13: 'A', aviso: 'a1' }] }, { em: '2026-09-19', completo: false, avisos: [] }, ['A']);
+  assert.deepEqual(r, { em: '2026-09-19', completo: false, avisos: [] });
 });
 
 console.log(`${ok} passaram, ${falhou} falharam`);

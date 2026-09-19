@@ -11,7 +11,7 @@
 // recusado aqui — entra como `idade_leitores`, que a página rotula como tal.
 import { P, lerTodos, gravar, canonicalLivro, hoje } from './lib.mjs';
 import { renderizar } from './navegador.mjs';
-import { devePular, mesclaEstoque } from './lib/rodada.mjs';
+import { devePular, mesclaEstoque, mesclaDiario } from './lib/rodada.mjs';
 import { idadeDaEditora, idadeDaAmazon, estoqueDaPagina, isbnDaPagina, precoDaLoja, paginasDaFicha, ilustradorDaFicha } from './lib/ficha.mjs';
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
@@ -276,7 +276,7 @@ for (const [isbn, reg] of Object.entries(mercado.livros)) {
 }
 mercado.atualizado_em = hoje();
 gravar(ARQ_MERCADO, JSON.stringify(mercado, null, 2) + '\n');
-writeFileSync(ARQ_DIA, JSON.stringify({ em: hoje(), completo: !SO.length, avisos: diario }, null, 2) + '\n');
+writeFileSync(ARQ_DIA, JSON.stringify(mesclaDiario(leJson(ARQ_DIA), { em: hoje(), completo: !SO.length, avisos: diario }, livros.map(l => l.isbn13)), null, 2) + '\n');
 
 console.log(`\n${livros.length} livros · ${escritos} idade(s) · ${Object.keys(precos).length} preço(s) de loja · ${Object.keys(paginas).length} página(s) · ${Object.keys(ilustradores).length} ilustrador(es) · ${diario.length} aviso(s)`);
 for (const a of diario) console.log(`  ! ${a.titulo}: ${a.aviso}`);
