@@ -263,7 +263,27 @@ for (const [, arr] of porSit) arr.sort((a, b) => {
 if (existsSync(P.site)) rmSync(P.site, { recursive: true });
 cpSync(ASSETS, join(P.site, 'assets'), { recursive: true });
 const urls = [];
-const escreve = (rel, html) => { gravar(join(P.site, rel), html); urls.push(rel === 'index.html' ? '/' : '/' + rel.replace(/\.html$/, '')); };
+const escreve = (rel, html, desde) => {
+  gravar(join(P.site, rel), html);
+  urls.push({ u: rel === 'index.html' ? '/' : '/' + rel.replace(/\.html$/, ''), desde });
+};
+
+// `lastmod` é o que o Google usa pra decidir quando voltar. Carimbar a data de
+// hoje em todo build seria mentira — a página não mudou só porque o build
+// rodou — e sitemap que diz "tudo novo todo dia" o Google aprende a ignorar.
+// Então a data sai do dado: é a leitura mais recente que a própria página
+// mostra ao leitor. Nas páginas de livro ela anda quase todo dia, porque a
+// sondagem de estoque anda — e isso não é inflar o número: a página imprime
+// "em 18/09/2026 um navegador abriu essas páginas e leu", esse texto muda, e
+// saber quando alguém conferiu é o produto aqui. Se as sondas pararem, o
+// lastmod para junto.
+const maiorData = (...ds) => ds.flat().filter(d => /^\d{4}-\d{2}-\d{2}$/.test(d || '')).sort().at(-1);
+const dataDoLivro = (l) => maiorData(
+  l.verificado_em,
+  (l.evidencias || []).map(e => e.acessado_em),
+  MERCADO[l.isbn13]?.estoque?.em,
+  MERCADO[l.isbn13]?.loja?.em,
+);
 
 // ---- home
 const comLivro = situacoes.filter(s => (porSit.get(s.slug) || []).length);
@@ -289,7 +309,7 @@ ${comLivro.map(s => `  <li class="cartao">${arte(s.slug, '', { sizes: '(min-widt
   <li><b>Com a fonte à vista</b>Cada afirmação aponta pra ${FONTES_EM_USO}, com link e data.</li>
   <li><b>O que não sabemos, dizemos</b>Ninguém aqui finge ter lido o livro. Se a fonte não cobre, a página avisa.</li>
 </ol>`,
-}));
+}), maiorData(livros.map(dataDoLivro), situacoes.flatMap(s => (s.evidencias || []).map(e => e.acessado_em))));
 
 // ---- situação: matriz, não lista
 for (const s of situacoes) {
@@ -350,7 +370,7 @@ ${linhas}
 </table></div>
 ${s.lacuna ? `<h2>O que falta nesta página</h2>\n<p class="aviso">${esc(preenche(s.lacuna, contagens(arr)))}</p>` : ''}
 <p class="selo legenda">Coluna vazia quer dizer que a fonte não cobre aquilo — não que a resposta seja não.</p>`,
-  }));
+  }), maiorData((s.evidencias || []).map(e => e.acessado_em), arr.map(dataDoLivro)));
 }
 
 // ---- livro
@@ -393,12 +413,12 @@ ${l.disponibilidade?.estado === 'esgotado' ? `<p class="nota">Marcado como esgot
 ${l.nao_aborda ? `<h2>O que este livro não aborda</h2>\n<p class="aviso">${esc(l.nao_aborda)}</p>` : ''}
 ${(l.situacoes || []).length ? `<h2>Aparece em</h2>\n<ul class="grade">${(l.situacoes || []).map(sl => { const s = situacoes.find(x => x.slug === sl); return s ? `<li class="cartao mini">${arte(s.slug, '', { sizes: '112px' })}<div class="c"><a href="/s/${esc(s.slug)}">${esc(s.titulo)}</a></div></li>` : ''; }).join('')}</ul>` : ''}
 </div>`,
-  }));
+  }), dataDoLivro(l));
 }
 
 gravar(join(P.site, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map(u => `  <url><loc>${SITE}${u}</loc></url>`).join('\n')}
+${urls.map(({ u, desde }) => `  <url><loc>${SITE}${u}</loc>${desde ? `<lastmod>${desde}</lastmod>` : ''}</url>`).join('\n')}
 </urlset>
 `);
 // capas versionadas -> site
