@@ -1,7 +1,7 @@
 // Disponibilidade. O furo mais provável do projeto é churn: marcar livro bom
 // como esgotado porque uma leitura falhou. Então o contador mora em runtime/
 // (fora do git) e o catálogo só muda na TRANSIÇÃO de estado, com evidência.
-import { P, lerTodos, gravar, canonicalLivro, hoje, buscaJSON } from './lib.mjs';
+import { P, lerTodos, gravar, canonicalLivro, hoje, dataBr, buscaJSON } from './lib.mjs';
 import { decideEstado, poda, FALHAS_PRA_ESGOTAR } from './lib/estoque.mjs';
 import { googleBooks } from './resolve.mjs';
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
@@ -75,7 +75,7 @@ for (const l of livros) {
       ...(l.disponibilidade || {}),
       estado: alvo,
       mudou_em: hoje(),
-      evidencia: falhasRecentes.slice(0, FALHAS_PRA_ESGOTAR).map(o => `${o.fonte}: ${o.nota || 'falhou'} (${o.em})`),
+      evidencia: falhasRecentes.slice(0, FALHAS_PRA_ESGOTAR).map(o => `${o.nota || 'não respondeu'} (${dataBr(o.em)})`),
     };
     if (alvo === 'a_venda') delete limpo.disponibilidade.evidencia;
     gravar(arquivo, canonicalLivro(limpo));

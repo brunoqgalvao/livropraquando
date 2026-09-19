@@ -69,6 +69,8 @@ export const EDITORA_PAGA = /dial[ée]tica|clube de autores|appris|autografia|sc
 // num site cujo argumento inteiro é que o dado foi conferido e quando. Achei
 // rodando a rotina às 21h07; de manhã, que é quando o agente diário roda, o
 // defeito não aparece.
+export const dataBr = (d) => d ? String(d).split('-').reverse().join('/') : '';
+
 export const hoje = () => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo' }).format(new Date());
 
 export async function buscaJSON(url, opts = {}) {

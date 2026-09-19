@@ -1,4 +1,4 @@
-import { P, ROOT, lerTodos, gravar } from './lib.mjs';
+import { P, ROOT, lerTodos, gravar, dataBr } from './lib.mjs';
 import { dimensao } from './lib/imagem.mjs';
 import { join } from 'node:path';
 import { rmSync, existsSync, cpSync, readFileSync, readdirSync } from 'node:fs';
@@ -8,7 +8,6 @@ const SITE = process.env.SITE_URL || 'https://livropraquando.com';
 const NOME = process.env.SITE_NOME || 'Livro pra quando';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-const dataBr = (d) => d ? String(d).split('-').reverse().join('/') : '';
 
 const ASSETS = join(ROOT, 'assets');
 const VERSAO = createHash('sha1').update(readFileSync(join(ASSETS, 'site.css'))).digest('hex').slice(0, 8);
@@ -108,6 +107,13 @@ const deitada = (l) => (FORMATO.get(l.capa?.arquivo) ?? 0) > 1.15;
 // A capa do topo da pagina do livro esta acima da dobra e e o maior elemento:
 // carregar preguicoso atrasa o LCP de proposito. Nao aparecia antes porque quase
 // nenhum livro tinha capa -- o defeito nasceu junto com a correcao.
+// O aviso de esgotado fica ACIMA dos links de compra, não no rodapé. Ele estava
+// no fim da página, depois de todas as evidências: quem chegava em "Onde
+// encontrar", lia "Links diretos" e clicava na loja nunca via que o livro não
+// está à venda. Aviso que aparece depois da decisão não é aviso.
+const esgotadoNota = (l) => l.disponibilidade?.estado !== 'esgotado' ? '' :
+  `<p class="nota">Marcado como esgotado em ${dataBr(l.disponibilidade.mudou_em)}, depois de três verificações em dias distintos sem encontrar o livro à venda: ${esc((l.disponibilidade.evidencia || []).join('; '))}. Os links abaixo continuam aqui porque a loja pode repor; pode haver exemplar em sebo.</p>`;
+
 const capa = (l, cls = '', { jaVisivel = false } = {}) => l.capa?.arquivo
   ? `<img class="capa-livro ${cls}${deitada(l) ? ' deitada' : ''}" src="/capas/${esc(l.capa.arquivo)}" alt="Capa de ${esc(l.titulo)}" ${jaVisivel ? 'fetchpriority="high" decoding="sync"' : 'loading="lazy" decoding="async"'} width="80" height="120">`
   : `<span class="capa-livro vazia ${cls}" aria-hidden="true"></span>`;
@@ -401,13 +407,12 @@ ${l.previa?.folheavel ? `<p><a class="folhear" href="https://books.google.com.br
   <li><b>Conferido em</b> <span>${dataBr(l.verificado_em)}</span></li>
 </ul>
 ${(l.disponibilidade?.compra || []).length ? `<h2>Onde encontrar</h2>
-<ul class="lojas">${l.disponibilidade.compra.map(c => `<li><a href="${esc(c.url)}" rel="noopener">${esc(c.loja)} ↗</a>${c.edicao ? ` <span class="selo">${esc(c.edicao)}</span>` : ''}</li>`).join('')}</ul>
+${esgotadoNota(l)}<ul class="lojas">${l.disponibilidade.compra.map(c => `<li><a href="${esc(c.url)}" rel="noopener">${esc(c.loja)} ↗</a>${c.edicao ? ` <span class="selo">${esc(c.edicao)}</span>` : ''}</li>`).join('')}</ul>
 <p class="selo">Links diretos, sem comissão.${venda(l) ? ` Em ${dataBr(venda(l).em)} um navegador abriu essas páginas e leu: ${esc((venda(l).onde || []).join('; ').replace(/[.;\s]+$/, ''))}.` : ' Na última passagem nenhuma loja respondeu de forma legível, então não dá pra afirmar que está à venda hoje.'} Preço e estoque mudam.</p>` : ''}
 <h2>De onde vem cada afirmação</h2>
 ${evs.map((e, i) => `<div class="ev" id="ev${i}"><div class="meta">${esc((e.veiculo || e.tipo).replace(/_/g, ' '))}${e.autor ? ` · ${esc(e.autor)}` : ''} · acessado ${dataBr(e.acessado_em)}</div><q>${esc(e.trecho)}</q><a class="abrir" href="${esc(e.url)}" rel="noopener">abrir a fonte ↗</a></div>`).join('\n')}
 ${l.nota ? `<p class="nota">${esc(l.nota)}</p>` : ''}
 ${l.editora_paga ? `<p class="nota">${esc(l.editora)} publica mediante pagamento do autor: o livro não passou pela seleção de uma editora comercial. Está aqui porque a situação tem poucos títulos, e não entra em "se for comprar um só".</p>` : ''}
-${l.disponibilidade?.estado === 'esgotado' ? `<p class="nota">Marcado como esgotado em ${dataBr(l.disponibilidade.mudou_em)}, depois de três verificações em dias distintos sem encontrar o livro à venda: ${esc((l.disponibilidade.evidencia || []).join('; '))}. Pode haver exemplar em sebo.</p>` : ''}
 <h2>O que a evidência não cobre</h2>
 <p class="aviso">${esc(l.nao_coberto)}</p>
 ${l.nao_aborda ? `<h2>O que este livro não aborda</h2>\n<p class="aviso">${esc(l.nao_aborda)}</p>` : ''}
