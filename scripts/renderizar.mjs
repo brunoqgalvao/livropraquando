@@ -241,7 +241,16 @@ for (const l of livros) {
 }
 
 mkdirSync(P.runtime, { recursive: true });
-writeFileSync(join(P.runtime, 'estoque-render.json'), JSON.stringify({ em: hoje(), livros: estoque }, null, 2) + '\n');
+// Rodada de um livro só não pode apagar a leitura dos outros treze. Rodei
+// `renderizar.mjs <isbn>` na VM pra depurar e o arquivo caiu de 14 livros pra 1
+// — se o agente não fosse re-renderizar em seguida, o dia perdia o estoque
+// inteiro em silêncio. Mesmo erro que o mercado.json já teve: substituir onde
+// era pra mesclar. Leitura de hoje entra por cima; leitura de ontem que ninguém
+// refez sai, porque estoque velho não é estoque.
+const ARQ_ESTOQUE = join(P.runtime, 'estoque-render.json');
+const antes = existsSync(ARQ_ESTOQUE) ? JSON.parse(readFileSync(ARQ_ESTOQUE, 'utf8')) : null;
+const mantidos = antes?.em === hoje() ? antes.livros || {} : {};
+writeFileSync(ARQ_ESTOQUE, JSON.stringify({ em: hoje(), livros: { ...mantidos, ...estoque } }, null, 2) + '\n');
 
 // Estoque é dado de mercado, não editorial: vai pro mesmo arquivo do preço, que
 // existe exatamente pra isso. Se fosse pro JSON do livro, os 14 arquivos
