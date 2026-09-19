@@ -91,7 +91,7 @@ incompleto vale mais que um catálogo completo e inventado.
 9. Se a situação ganhou livro, reveja `faixas` — o "se for comprar um só" por faixa
    etária. Trocar o escolhido exige que a citação nova seja melhor, não só diferente.
 10. Se você mexeu em qualquer `.mjs`, rode os testes antes de seguir:
-    `for t in scripts/lib/ficha.test.mjs scripts/auditoria.test.mjs scripts/lib/estoque.test.mjs; do node $t; done`
+    `for t in scripts/lib/*.test.mjs scripts/auditoria.test.mjs; do node $t; done`
     Vermelho aqui é bug seu, não da fonte. O `validate.mjs` confere o catálogo;
     estes conferem as regras que produzem o catálogo, e são coisas diferentes.
     Você edita script sozinho — mexeu no `descobrir.mjs` em 18/09 — e nada

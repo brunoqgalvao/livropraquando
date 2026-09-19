@@ -11,6 +11,7 @@
 // recusado aqui — entra como `idade_leitores`, que a página rotula como tal.
 import { P, lerTodos, gravar, canonicalLivro, hoje } from './lib.mjs';
 import { renderizar } from './navegador.mjs';
+import { devePular, mesclaEstoque } from './lib/rodada.mjs';
 import { idadeDaEditora, idadeDaAmazon, estoqueDaPagina, isbnDaPagina, precoDaLoja, paginasDaFicha, ilustradorDaFicha } from './lib/ficha.mjs';
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
@@ -34,9 +35,8 @@ const FORCAR = process.argv.includes('--forcar');
 // livro de madrugada. O dia morreria calado: sem leitura de loja, o check passa
 // sem observação e o site fica com o estoque de ontem.
 const ARQ_DIA = join(P.runtime, `render-${hoje()}.json`);
-const jaRodouCompleto = existsSync(ARQ_DIA)
-  && (() => { try { return JSON.parse(readFileSync(ARQ_DIA, 'utf8')).completo === true; } catch { return false; } })();
-if (!FORCAR && !SO.length && jaRodouCompleto) {
+const leJson = (f) => { try { return existsSync(f) ? JSON.parse(readFileSync(f, 'utf8')) : null; } catch { return null; } };
+if (devePular({ diaAnterior: leJson(ARQ_DIA), forcar: FORCAR, umLivroSo: SO.length > 0 })) {
   console.log(`já rodou hoje (${hoje()}). Preço e estoque não mudam de hora em hora e cada passada abre ~28 páginas de loja.`);
   console.log('Use --forcar se precisar mesmo, ou passe um ISBN pra olhar um livro só.');
   process.exit(0);
@@ -248,9 +248,7 @@ mkdirSync(P.runtime, { recursive: true });
 // era pra mesclar. Leitura de hoje entra por cima; leitura de ontem que ninguém
 // refez sai, porque estoque velho não é estoque.
 const ARQ_ESTOQUE = join(P.runtime, 'estoque-render.json');
-const antes = existsSync(ARQ_ESTOQUE) ? JSON.parse(readFileSync(ARQ_ESTOQUE, 'utf8')) : null;
-const mantidos = antes?.em === hoje() ? antes.livros || {} : {};
-writeFileSync(ARQ_ESTOQUE, JSON.stringify({ em: hoje(), livros: { ...mantidos, ...estoque } }, null, 2) + '\n');
+writeFileSync(ARQ_ESTOQUE, JSON.stringify(mesclaEstoque(leJson(ARQ_ESTOQUE), estoque, hoje()), null, 2) + '\n');
 
 // Estoque é dado de mercado, não editorial: vai pro mesmo arquivo do preço, que
 // existe exatamente pra isso. Se fosse pro JSON do livro, os 14 arquivos
