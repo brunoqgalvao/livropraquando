@@ -78,6 +78,15 @@
   },
   "curadoria": "humano",
   "verificado_em": "2026-09-18",
+  "capa": {
+    "arquivo": "9786559312016.jpg",
+    "fonte": "editorapeiropolis.com.br",
+    "url": "https://www.editorapeiropolis.com.br/lj26/wp-content/uploads/2018/03/338.jpg",
+    "obtida_em": "2026-09-19",
+    "sha1": "b82963d55f261a21d0b3d44f4ab8c5a1dad66183",
+    "largura": 573,
+    "altura": 600
+  },
   "previa": {
     "folheavel": true,
     "volume": "gt11EAAAQBAJ",
