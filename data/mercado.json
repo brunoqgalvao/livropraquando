@@ -57,7 +57,7 @@
       "estoque": {
         "a_venda": true,
         "onde": [
-          "amazon.com.br: Somente 6 em estoque."
+          "amazon.com.br: Somente 5 em estoque."
         ],
         "em": "2026-09-19"
       },

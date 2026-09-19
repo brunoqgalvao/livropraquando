@@ -43,6 +43,16 @@ incompleto vale mais que um catálogo completo e inventado.
    pelo cliente" da Amazon: é enquete de comprador, e a página imprime "(pela
    editora)" ao lado do número. Os avisos ficam em `runtime/render-<data>.json`;
    leve os que pedem gente para o relatório.
+   **Idade está no teto com as fontes de hoje: 7 de 14.** Não gaste rodada
+   atrás dos outros 7 sem fonte nova. Dois só têm a "Idade sugerida pelo
+   cliente" da Amazon e dependem de decisão do Bruno; dois têm página da
+   editora que simplesmente não indica idade (Alta Books, Texugo); e três não
+   têm página de editora que dê pra abrir — conferido em 19/09: o site da
+   Girassol está com certificado vencido (`ERR_CERT_DATE_INVALID`), "O gatinho
+   Pete e o primeiro dia de aula" é exclusivo Leiturinha e não tem página na
+   HarperCollins, e a Tudo! Editora não tem ficha do livro fora de marketplace.
+   Se alguma dessas mudar, aí sim vale voltar.
+
 3. `node scripts/capas.mjs` se algum livro estiver sem capa. Ele colhe candidatos
    da pagina da loja e deixa em `runtime/capas-espera/`, **sem publicar**. Antes de
    `node scripts/capas.mjs --promover`, **abra cada imagem e confira que e o livro
