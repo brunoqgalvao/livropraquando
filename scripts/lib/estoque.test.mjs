@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { decideEstado, falhasSeguidas, porDia, poda, DIAS_GUARDADOS } from './estoque.mjs';
+import { decideEstado, falhasSeguidas, porDia, poda, jaSondouHoje, DIAS_GUARDADOS } from './estoque.mjs';
 
 let ok = 0, falhou = 0;
 const t = (nome, fn) => { try { fn(); ok++; } catch (e) { falhou++; console.log(`FALHOU: ${nome}\n  ${e.message}`); } };
@@ -85,6 +85,23 @@ t('poda corta o dia mais velho de cada fonte, não o do vizinho', () => {
 t('poda preserva a ordem do arquivo', () => {
   const h = [loja('2026-09-19', false), cat('2026-09-18'), loja('2026-09-18', false)];
   assert.deepEqual(poda(h).map(o => `${o.fonte}:${o.em}`), h.map(o => `${o.fonte}:${o.em}`));
+});
+
+// --- não sondar de novo o que já se sabe hoje -----------------------------
+t('fonte já lida hoje não precisa de outra chamada', () =>
+  assert.equal(jaSondouHoje([cat('2026-09-19')], 'google_books', '2026-09-19'), true));
+
+t('leitura de ontem não conta como hoje', () =>
+  assert.equal(jaSondouHoje([cat('2026-09-18')], 'google_books', '2026-09-19'), false));
+
+t('uma fonte lida não dispensa a outra', () => {
+  const h = [cat('2026-09-19')];
+  assert.equal(jaSondouHoje(h, 'open_library', '2026-09-19'), false);
+});
+
+t('histórico vazio nunca dispensa a sonda', () => {
+  assert.equal(jaSondouHoje([], 'google_books', '2026-09-19'), false);
+  assert.equal(jaSondouHoje(undefined, 'google_books', '2026-09-19'), false);
 });
 
 console.log(`${ok} passaram, ${falhou} falharam`);

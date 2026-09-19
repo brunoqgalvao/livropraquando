@@ -2,7 +2,7 @@
 // como esgotado porque uma leitura falhou. Então o contador mora em runtime/
 // (fora do git) e o catálogo só muda na TRANSIÇÃO de estado, com evidência.
 import { P, lerTodos, gravar, canonicalLivro, hoje, dataBr, buscaJSON } from './lib.mjs';
-import { decideEstado, poda, FALHAS_PRA_ESGOTAR } from './lib/estoque.mjs';
+import { decideEstado, poda, jaSondouHoje, FALHAS_PRA_ESGOTAR } from './lib/estoque.mjs';
 import { googleBooks } from './resolve.mjs';
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
@@ -53,12 +53,22 @@ function sondaLoja(l) {
   return { fonte: 'loja', ok: r.ok, nota: (r.detalhe || []).join('; ') };
 }
 
+const FORCAR = process.argv.includes('--forcar');
+
 const livros = lerTodos(P.livros);
-let transicoes = 0;
+let transicoes = 0, poupadas = 0;
 
 for (const l of livros) {
-  const sondas = [...await Promise.all([sondaGoogle(l), sondaOpenLibrary(l)]), sondaLoja(l)];
   const reg = estado[l.isbn13] ||= { observacoes: [] };
+  // Sonda de rede já lida hoje não vira chamada nova: a poda guardaria a mesma
+  // casa. A da loja é local e sempre roda — ela depende do renderizar.mjs, que
+  // pode chegar depois no dia.
+  const pular = (fonte) => !FORCAR && jaSondouHoje(reg.observacoes, fonte, hoje());
+  const daRede = [];
+  if (pular('google_books') && pular('open_library')) poupadas++;
+  if (!pular('google_books')) daRede.push(sondaGoogle(l));
+  if (!pular('open_library')) daRede.push(sondaOpenLibrary(l));
+  const sondas = [...await Promise.all(daRede), sondaLoja(l)];
   for (const s of sondas) {
     if (s.ok === null) continue;                    // sonda inválida não vira observação
     reg.observacoes.push({ fonte: s.fonte, ok: s.ok, em: hoje(), ...(s.nota ? { nota: s.nota } : {}) });
@@ -85,4 +95,4 @@ for (const l of livros) {
 }
 
 writeFileSync(ARQ, JSON.stringify(estado, null, 2) + '\n');
-console.log(`sondados ${livros.length} livros · ${transicoes} transição(ões) de estado · contador em runtime/, fora do git`);
+console.log(`sondados ${livros.length} livros · ${transicoes} transição(ões) de estado${poupadas ? ` · ${poupadas} com catálogo já lido hoje (use --forcar pra insistir)` : ''} · contador em runtime/, fora do git`);
