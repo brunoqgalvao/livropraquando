@@ -108,9 +108,14 @@ incompleto vale mais que um catálogo completo e inventado.
 
     Zero em `query` não quer dizer nada sozinho: pode ser "ninguém buscou" ou
     "o Google nunca viu a página", e a diferença muda o que você faz no dia. Só
-    `node scripts/gsc.mjs inspecionar <url>` separa os dois. Rode numa página de
-    livro, não só na home — em 18/09 a home estava indexada e as 14 páginas de
-    livro nunca tinham sido rastreadas, o que zerou tudo. Se vier "nunca
+    `node scripts/gsc.mjs inspecionar <url>` separa os dois. Rode numa AMOSTRA:
+    a home, cada situação e dois ou três livros. Não generalize de uma URL —
+    eu fiz isso e errei. Em 18/09 inspecionei a home e uma situação, vi as duas
+    indexadas e passei a repetir "a home e as duas situações estão indexadas".
+    Em 19/09 inspecionei a outra situação: nunca rastreada. O Google conhece 2
+    das 17 URLs, e as 2 são exatamente as que existiam em 17/09 — ele passou uma
+    vez, em 18/09, e viu o site antes da expansão daquele dia. A conclusão não
+    mudou (é fila dele), mas o número que eu vinha dando estava errado. Se vier "nunca
     rastreada", confira `node scripts/gsc.mjs sitemap`: se a contagem de URLs do
     Google for menor que a do sitemap no ar, ele está com uma cópia velha —
     `node scripts/gsc.mjs reenviar-sitemap` e anote no relatório. Não reenvie
