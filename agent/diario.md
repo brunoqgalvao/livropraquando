@@ -74,13 +74,25 @@ incompleto vale mais que um catálogo completo e inventado.
    placeholder que ele não conhece.
 9. Se a situação ganhou livro, reveja `faixas` — o "se for comprar um só" por faixa
    etária. Trocar o escolhido exige que a citação nova seja melhor, não só diferente.
-10. `node scripts/validate.mjs`. Vermelho não sobe. Conserte a causa, não o sintoma:
+10. Se você mexeu em qualquer `.mjs`, rode os testes antes de seguir:
+    `for t in scripts/lib/ficha.test.mjs scripts/auditoria.test.mjs scripts/lib/estoque.test.mjs; do node $t; done`
+    Vermelho aqui é bug seu, não da fonte. O `validate.mjs` confere o catálogo;
+    estes conferem as regras que produzem o catálogo, e são coisas diferentes.
+    Você edita script sozinho — mexeu no `descobrir.mjs` em 18/09 — e nada
+    conferia se o resto continuava de pé.
+
+    Se você criar regra nova que decide alguma coisa (o que entra, o que sai, o
+    que a página afirma), ela nasce com teste. Regra que nunca rodou e ninguém
+    testou é palpite: a dos 3 esgotados ficou três dias assim e estava com bug
+    de ordenação que esgotaria livro à venda.
+
+11. `node scripts/validate.mjs`. Vermelho não sobe. Conserte a causa, não o sintoma:
    se o linter pegou linguagem prescritiva, o problema é a frase, não o linter.
-11. `node scripts/build.mjs` e confira que as páginas novas existem.
-12. Commit com mensagem que diz **o que entrou e por quê**, uma linha por livro.
+12. `node scripts/build.mjs` e confira que as páginas novas existem.
+13. Commit com mensagem que diz **o que entrou e por quê**, uma linha por livro.
    O diff é como o Bruno mede se você está fazendo trabalho ou barulho.
-13. `git push` — o CI valida de novo e publica.
-14. Search Console: `node scripts/gsc.mjs [query|page|date]`. Anote que
+14. `git push` — o CI valida de novo e publica.
+15. Search Console: `node scripts/gsc.mjs [query|page|date]`. Anote que
     busca trouxe gente e que situação está faltando. Isso vai no relatório, não
     vira situação nova por sua conta.
 
@@ -93,7 +105,7 @@ incompleto vale mais que um catálogo completo e inventado.
     Google for menor que a do sitemap no ar, ele está com uma cópia velha —
     `node scripts/gsc.mjs reenviar-sitemap` e anote no relatório. Não reenvie
     todo dia: reenvio repetido não apressa nada.
-15. Auditoria, uma vez por semana (ou depois de mexer em citação):
+16. Auditoria, uma vez por semana (ou depois de mexer em citação):
     `LIVRO_CDP=... node scripts/auditoria.mjs`. Ela abre cada URL citada e
     procura o trecho na página, e varre a prosa atrás de frase prescritiva —
     é o critério 2 do SPEC virado comando. Sai != 0 se alguma citação não
@@ -108,7 +120,7 @@ incompleto vale mais que um catálogo completo e inventado.
     typo da editora ao colher, e uma citação corrigida em silêncio é uma
     citação que não confere.
 
-16. Relatório: `SendMessage` pra sessão `brunodeqgalvao-5c` e cópia em `runtime/report-<data>.md`.
+17. Relatório: `SendMessage` pra sessão `brunodeqgalvao-5c` e cópia em `runtime/report-<data>.md`.
     Não vai pro self-chat do WhatsApp do Bruno.
 
 ## O relatório
