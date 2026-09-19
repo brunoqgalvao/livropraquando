@@ -16,6 +16,31 @@ import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 
 const SO = process.argv.slice(2).filter(a => /^\d{13}$/.test(a));
+const FORCAR = process.argv.includes('--forcar');
+
+// Uma passada por dia, e não porque seja bonito: cada rodada abre ~28 páginas de
+// loja. O agente diário roda uma vez, mas em 19/09 eu estava rodando isto de
+// hora em hora pra "conferir o estado" — 24 vezes o volume combinado, contra
+// Amazon e editoras, pra colher zero informação nova, porque preço e estoque não
+// mudam de hora em hora. É assim que se ganha bloqueio de bot, e bloqueio de bot
+// aqui não é inconveniente: a sonda passa a ler prateleira vazia onde tem livro,
+// e a regra dos 3 esgotados apaga o livro da tabela. O loop se sabota sozinho.
+//
+// `--forcar` existe pra depurar um livro específico, não pra rotina.
+//
+// A trava olha `completo`, não a existência do arquivo. Uma rodada de um livro
+// só (pra depurar) também grava o diário do dia, e a primeira versão disto teria
+// feito a rodada das 08:35 pular a coleta inteira porque eu tinha olhado UM
+// livro de madrugada. O dia morreria calado: sem leitura de loja, o check passa
+// sem observação e o site fica com o estoque de ontem.
+const ARQ_DIA = join(P.runtime, `render-${hoje()}.json`);
+const jaRodouCompleto = existsSync(ARQ_DIA)
+  && (() => { try { return JSON.parse(readFileSync(ARQ_DIA, 'utf8')).completo === true; } catch { return false; } })();
+if (!FORCAR && !SO.length && jaRodouCompleto) {
+  console.log(`já rodou hoje (${hoje()}). Preço e estoque não mudam de hora em hora e cada passada abre ~28 páginas de loja.`);
+  console.log('Use --forcar se precisar mesmo, ou passe um ISBN pra olhar um livro só.');
+  process.exit(0);
+}
 
 // Roda dentro da página. Devolve o texto renderizado e, na Amazon, os campos
 // que precisam de seletor (o innerText da Amazon mistura a ficha com o menu:
@@ -244,7 +269,7 @@ for (const [isbn, reg] of Object.entries(mercado.livros)) {
 }
 mercado.atualizado_em = hoje();
 gravar(ARQ_MERCADO, JSON.stringify(mercado, null, 2) + '\n');
-writeFileSync(join(P.runtime, `render-${hoje()}.json`), JSON.stringify({ em: hoje(), avisos: diario }, null, 2) + '\n');
+writeFileSync(ARQ_DIA, JSON.stringify({ em: hoje(), completo: !SO.length, avisos: diario }, null, 2) + '\n');
 
 console.log(`\n${livros.length} livros · ${escritos} idade(s) · ${Object.keys(precos).length} preço(s) de loja · ${Object.keys(paginas).length} página(s) · ${Object.keys(ilustradores).length} ilustrador(es) · ${diario.length} aviso(s)`);
 for (const a of diario) console.log(`  ! ${a.titulo}: ${a.aviso}`);

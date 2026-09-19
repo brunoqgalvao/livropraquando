@@ -43,6 +43,12 @@ incompleto vale mais que um catálogo completo e inventado.
    pelo cliente" da Amazon: é enquete de comprador, e a página imprime "(pela
    editora)" ao lado do número. Os avisos ficam em `runtime/render-<data>.json`;
    leve os que pedem gente para o relatório.
+   Se ele imprimir "já rodou hoje", **não force**. A passada completa abre ~28
+   páginas de loja e preço e estoque não mudam de hora em hora; insistir só
+   rende bloqueio de bot, e bloqueio aqui faz a sonda ler prateleira vazia onde
+   tem livro — o que acaba apagando o livro da tabela pela regra dos 3
+   esgotados. Pra olhar um livro específico, passe o ISBN.
+
    **Idade está no teto com as fontes de hoje: 7 de 14.** Não gaste rodada
    atrás dos outros 7 sem fonte nova. Dois só têm a "Idade sugerida pelo
    cliente" da Amazon e dependem de decisão do Bruno; dois têm página da
