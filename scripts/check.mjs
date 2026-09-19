@@ -2,14 +2,15 @@
 // como esgotado porque uma leitura falhou. Então o contador mora em runtime/
 // (fora do git) e o catálogo só muda na TRANSIÇÃO de estado, com evidência.
 import { P, lerTodos, gravar, canonicalLivro, hoje, buscaJSON } from './lib.mjs';
-import { decideEstado, FALHAS_PRA_ESGOTAR } from './lib/estoque.mjs';
+import { decideEstado, poda, FALHAS_PRA_ESGOTAR } from './lib/estoque.mjs';
 import { googleBooks } from './resolve.mjs';
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 
 // A decisão mora em lib/estoque.mjs, com teste: é a única regra do projeto que
-// pode apagar um livro bom da tabela, e ela nunca disparou em produção.
-const JANELA = 24;              // observações guardadas por livro
+// pode apagar um livro bom da tabela, e ela nunca disparou em produção. A poda
+// do histórico mora lá pelo mesmo motivo — quem decide o que esquecer decide o
+// que a regra enxerga.
 
 const ARQ = join(P.runtime, 'availability.json');
 mkdirSync(P.runtime, { recursive: true });
@@ -62,7 +63,7 @@ for (const l of livros) {
     if (s.ok === null) continue;                    // sonda inválida não vira observação
     reg.observacoes.push({ fonte: s.fonte, ok: s.ok, em: hoje(), ...(s.nota ? { nota: s.nota } : {}) });
   }
-  reg.observacoes = reg.observacoes.slice(-JANELA);
+  reg.observacoes = poda(reg.observacoes);
   reg.ultima_sonda = hoje();
 
   const atual = l.disponibilidade?.estado || 'a_venda';

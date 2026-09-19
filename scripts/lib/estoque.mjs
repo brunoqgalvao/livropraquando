@@ -43,3 +43,32 @@ export function decideEstado(observacoes = [], atual = 'a_venda') {
   }
   return { estado: atual, falhas };
 }
+
+// A poda do histórico. Era `slice(-24)` no check.mjs: 24 observações por livro,
+// contando todas as fontes juntas. Cada rodada escreve três (google_books,
+// open_library, loja), então o catálogo — que não tem nada a ver com prateleira
+// — empurrava a leitura de loja pra fora da janela. Em 19/09 o arquivo local já
+// tinha perdido o 18/09 de "Mas e eu?" e mostrava 1 falha onde havia 2; a VM
+// estava em 21 de 24, ou seja, a rodada de 20/09 ia estourar o teto e apagar o
+// 18/09 exatamente no dia em que a regra dos 3 fecharia. O contador zeraria
+// sozinho, sem erro, sem log, e o livro esgotado seguiria na tabela como à
+// venda.
+//
+// Agora a janela é por FONTE e por DIA: uma observação por fonte por dia, os
+// últimos `dias` dias de cada uma. Sonda de catálogo não desaloja leitura de
+// loja, e rodar o script dez vezes numa tarde não desaloja nada — o que o
+// `porDia` já descartava não chega nem a ser guardado.
+export const DIAS_GUARDADOS = 10;
+
+export function poda(observacoes = [], dias = DIAS_GUARDADOS) {
+  const porFonte = new Map();
+  for (const o of observacoes) {
+    if (!porFonte.has(o.fonte)) porFonte.set(o.fonte, new Map());
+    porFonte.get(o.fonte).set(o.em, o);          // empate do dia: a mais recente
+  }
+  const guardadas = new Set();
+  for (const m of porFonte.values()) {
+    for (const d of [...m.keys()].sort().slice(-dias)) guardadas.add(m.get(d));
+  }
+  return observacoes.filter(o => guardadas.has(o));   // preserva a ordem do arquivo
+}

@@ -68,6 +68,15 @@ incompleto vale mais que um catálogo completo e inventado.
 4. `node scripts/check.mjs` — disponibilidade. **Não interfira.** A regra de três
    falhas de loja em dias distintos existe porque bloqueio de bot parece livro esgotado. Se o script não
    mudou o estado, o estado está certo.
+
+   O histórico em `runtime/availability.json` é podado por fonte e por dia
+   (`poda`, em `lib/estoque.mjs`). Não troque por um corte no total: era
+   `slice(-24)` e as duas sondas de catálogo, que não sabem nada de prateleira,
+   empurravam a leitura de loja pra fora da janela. Em 19/09 isso já tinha
+   apagado o 18/09 de "Mas e eu?" na máquina local, e a VM estava a uma rodada
+   de fazer o mesmo — no dia exato em que a regra dos 3 fecharia. O contador
+   zeraria sem erro e sem log. Regra que esquece o que precisa lembrar é pior
+   que regra que não existe: essa a gente sabe que não tem.
 5. `node scripts/descobrir.mjs <slug>` numa situação que já existe, rodando as
    situações em rodízio. Os candidatos caem em `runtime/candidatos-<slug>.json`.
 6. Escolha **no máximo 2**. O teto não é sugestão. Ele existe porque encher o
