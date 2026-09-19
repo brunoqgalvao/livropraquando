@@ -73,7 +73,13 @@ incompleto vale mais que um catálogo completo e inventado.
    desde o dia em que entraram. O `validate.mjs` agora compara o sha1 do
    arquivo com o registro e recusa divergência, mas ele só sabe se os bytes
    mudaram; se a imagem errada entrar certa desde o começo, quem pega é olho.
-4. `node scripts/check.mjs` — disponibilidade. **Não interfira.** A regra de três
+4. `node scripts/check.mjs` — disponibilidade. Como o `renderizar.mjs`, ele
+   agora pula a sonda de rede que já tem leitura de hoje: a poda guarda uma
+   observação por fonte por dia, então rodar de novo só gasta cota. Em 19/09 eu
+   rodei sete vezes numa tarde e estourei a cota diária do Google Books, que é
+   compartilhada — a sonda ficou cega o resto do dia por nada. A da loja roda
+   sempre, porque lê arquivo local e depende do render, que chega mais tarde.
+   **Não interfira.** A regra de três
    falhas de loja em dias distintos existe porque bloqueio de bot parece livro esgotado. Se o script não
    mudou o estado, o estado está certo.
 
