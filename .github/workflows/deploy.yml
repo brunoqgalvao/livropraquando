@@ -24,6 +24,18 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: '22' }
 
+      # Os testes das regras vêm antes do validador porque respondem a perguntas
+      # diferentes: o validate confere o catálogo, os testes conferem as regras
+      # que produzem o catálogo. Dá pra passar no validate com um extrator que
+      # aprendeu a inventar crédito de ilustrador.
+      #
+      # Não rodavam aqui, e quem garantia que passavam era o agente à mão, só
+      # quando ele lembrava de ter mexido em `.mjs`. Foi ele que apontou.
+      # `auditoria.test.mjs` entra; `auditoria.mjs` NÃO — aquele abre as páginas
+      # citadas na rede, e reprovar o deploy porque a Amazon caiu seria trocar
+      # um erro por outro.
+      - run: for t in scripts/lib/*.test.mjs scripts/auditoria.test.mjs; do node "$t"; done
+
       # O validador é o portão. Catálogo quebrado não vai pro ar.
       - run: node scripts/validate.mjs
 

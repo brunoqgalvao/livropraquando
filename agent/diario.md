@@ -90,7 +90,8 @@ incompleto vale mais que um catálogo completo e inventado.
    placeholder que ele não conhece.
 9. Se a situação ganhou livro, reveja `faixas` — o "se for comprar um só" por faixa
    etária. Trocar o escolhido exige que a citação nova seja melhor, não só diferente.
-10. Se você mexeu em qualquer `.mjs`, rode os testes antes de seguir:
+10. Rode os testes antes de seguir (o CI também roda desde 19/09, mas achar
+    vermelho aqui custa um minuto e achar no CI custa um push):
     `for t in scripts/lib/*.test.mjs scripts/auditoria.test.mjs; do node $t; done`
     Vermelho aqui é bug seu, não da fonte. O `validate.mjs` confere o catálogo;
     estes conferem as regras que produzem o catálogo, e são coisas diferentes.
