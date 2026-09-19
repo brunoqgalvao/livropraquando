@@ -63,7 +63,13 @@ export function isbn13Valido(s) {
 // Editora paga pelo autor. SPEC, "Régua editorial": fora da curadoria por padrão.
 export const EDITORA_PAGA = /dial[ée]tica|clube de autores|appris|autografia|scortecci|uiclap|viseu|kelps|paco editorial|bara[úu]na/i;
 
-export const hoje = () => new Date().toISOString().slice(0, 10);
+// O site é em português e quem lê a data está no Brasil. `toISOString` é UTC:
+// depois das 21h de Brasília ele já carimba o dia seguinte, e a página passa a
+// dizer "conferido em 19/09" na noite do dia 18 — data no futuro pra quem lê,
+// num site cujo argumento inteiro é que o dado foi conferido e quando. Achei
+// rodando a rotina às 21h07; de manhã, que é quando o agente diário roda, o
+// defeito não aparece.
+export const hoje = () => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo' }).format(new Date());
 
 export async function buscaJSON(url, opts = {}) {
   const ctrl = new AbortController();

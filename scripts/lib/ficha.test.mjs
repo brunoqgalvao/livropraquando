@@ -151,5 +151,28 @@ t('mencao em prosa nao e credito', () =>
 t('rotulo vazio nao vira nome', () =>
   assert.equal(ilustradorDaFicha({ texto: 'Ilustracao: Traducao: Capa: Fulano' }), null));
 
+// Strings que as lojas serviram em 18/09 quando fui atras dos 7 livros sem
+// ilustrador. Seis das sete paginas nao creditam ninguem -- o que essas paginas
+// tem e mencao em resenha e anuncio de outro livro. Os testes negativos aqui
+// valem mais que o positivo: e deles que depende a diferenca entre "a fonte nao
+// diz" e credito inventado.
+t('byline com papeis juntos: quem escreveu tambem desenhou', () =>
+  assert.equal(ilustradorDaFicha({ amazon: { byline: "por Anna Llenas (Autor, Ilustrador), Rosana Mont'Alverne (Tradutor), & 2 mais Formato: Capa dura" } }).valor, 'Anna Llenas'));
+
+t('"imagem ilustrativa" nao e credito', () =>
+  assert.equal(ilustradorDaFicha({ texto: 'Foto do produto: imagem ilustrativa. Estante Virtual' }), null));
+
+t('anuncio de outro livro na mesma pagina nao e credito', () =>
+  assert.equal(ilustradorDaFicha({ texto: 'Presente Chamado Irmao, Livro Infantil Ilustrado, Capa Dura, OrvalhoKids' }), null));
+
+t('resenha de comprador elogiando arte nao e credito', () =>
+  assert.equal(ilustradorDaFicha({ texto: 'Maravilhoso! Ilustracoes lindas que conversam de uma maneira fofa com texto.' }), null));
+
+t('resenha negativa citando ilustracoes nao e credito', () =>
+  assert.equal(ilustradorDaFicha({ texto: 'Qualidade do material e ilustracoes nao muito boas.' }), null));
+
+t('bio do autor na Amazon nao vira credito de ilustrador de outro livro', () =>
+  assert.equal(ilustradorDaFicha({ texto: 'Sou autora e ilustradora e exploro o mundo das emocoes atraves de imagens e historias.' }), null));
+
 console.log(`${ok} passaram, ${falhou} falharam`);
 process.exit(falhou ? 1 : 0);

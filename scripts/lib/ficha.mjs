@@ -188,9 +188,16 @@ const CREDITOS = [
   // Loja escreve "Ilustração" e "Ilustracao"; o acento não pode decidir se o
   // dado entra. (Isso veio de um teste que quebrou, não de suposição.)
   /Autor\/Ilustrador(?:a)?\s*:\s*(.{2,60})/i,
-  /Ilustra(?:[çc][ãa]o|[çc][õo]es|dor|dora)\s*(?::|de|por)\s*(.{2,60})/i,
+  // `de` e `por` precisam de fronteira de palavra. Sem ela, "ilustrações
+  // delicadas" casa como "ilustrações de" + "licadas", porque "delicadas"
+  // começa com "de". Só não virou nome inventado porque o nomeLimpo exige
+  // inicial maiúscula -- acerto por acidente não é trava.
+  /Ilustra(?:[çc][ãa]o|[çc][õo]es|dor|dora)\s*(?::|\bde\b|\bpor\b)\s*(.{2,60})/i,
   /Ilustrad[oa]\s+por\s+(.{2,60})/i,
-  /([A-ZÁÂÃÀÉÊÍÓÔÕÚÜÇ][\wÀ-ÿ'.-]+(?:\s+[A-ZÁÂÃÀÉÊÍÓÔÕÚÜÇ][\wÀ-ÿ'.-]+){0,3})\s*\((?:Ilustrador|Ilustradora|Illustrator)\)/,
+  // A Amazon lista papéis juntos: "por Anna Llenas (Autor, Ilustrador)". Quando
+  // quem escreveu também desenhou, esse é o único lugar da página que credita.
+  // Exigir "(Ilustrador)" sozinho perdia exatamente esse caso.
+  /([A-ZÁÂÃÀÉÊÍÓÔÕÚÜÇ][\wÀ-ÿ'.-]+(?:\s+[A-ZÁÂÃÀÉÊÍÓÔÕÚÜÇ][\wÀ-ÿ'.-]+){0,3})\s*\((?:[^)]{0,30},\s*)?(?:Ilustrador|Ilustradora|Illustrator)a?\s*(?:,[^)]{0,30})?\)/,
 ];
 
 // A ficha é uma fileira de rótulos sem pontuação entre eles: "Ilustrador: Spike
