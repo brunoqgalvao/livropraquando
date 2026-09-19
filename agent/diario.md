@@ -93,7 +93,22 @@ incompleto vale mais que um catálogo completo e inventado.
     Google for menor que a do sitemap no ar, ele está com uma cópia velha —
     `node scripts/gsc.mjs reenviar-sitemap` e anote no relatório. Não reenvie
     todo dia: reenvio repetido não apressa nada.
-15. Relatório: `SendMessage` pra sessão `brunodeqgalvao-5c` e cópia em `runtime/report-<data>.md`.
+15. Auditoria, uma vez por semana (ou depois de mexer em citação):
+    `LIVRO_CDP=... node scripts/auditoria.mjs`. Ela abre cada URL citada e
+    procura o trecho na página, e varre a prosa atrás de frase prescritiva —
+    é o critério 2 do SPEC virado comando. Sai != 0 se alguma citação não
+    confere. Não roda no build: depende de rede, e reprovar o deploy porque a
+    Amazon caiu seria trocar um erro por outro.
+
+    Se uma citação não conferir, a saída diz em que palavra ela descola da
+    página. Quase sempre é a fonte que mudou a sinopse — nesse caso atualize o
+    trecho pelo que está lá hoje. **Copie o que a página escreve, com typo e
+    tudo.** Em 18/09 a citação de "Meu irmãozinho me atrapalha" dizia
+    "brincadeiras" e a página da Global diz "brincandeiras": alguém corrigiu o
+    typo da editora ao colher, e uma citação corrigida em silêncio é uma
+    citação que não confere.
+
+16. Relatório: `SendMessage` pra sessão `brunodeqgalvao-5c` e cópia em `runtime/report-<data>.md`.
     Não vai pro self-chat do WhatsApp do Bruno.
 
 ## O relatório
