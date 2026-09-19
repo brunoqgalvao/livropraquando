@@ -129,8 +129,22 @@ incompleto vale mais que um catálogo completo e inventado.
     eu fiz isso e errei. Em 18/09 inspecionei a home e uma situação, vi as duas
     indexadas e passei a repetir "a home e as duas situações estão indexadas".
     Em 19/09 inspecionei a outra situação: nunca rastreada. O Google conhece 2
-    das 17 URLs, e as 2 são exatamente as que existiam em 17/09 — ele passou uma
-    vez, em 18/09, e viu o site antes da expansão daquele dia. A conclusão não
+    das 18 URLs, e as 2 são exatamente as que existiam em 17/09 — ele passou uma
+    vez, em 18/09, e viu o site antes da expansão daquele dia.
+
+    Tire a lista de URLs do `sitemap.xml`, nunca da memória. Ainda em 19/09
+    inspecionei `/s/primeiro-dia-na-escola` (o slug é `primeiro-dia-de-aula`) e
+    um ISBN que não existe no acervo, e a API respondeu "nunca rastreada" pros
+    dois — que é a resposta certa pra URL que não existe. Dois terços da amostra
+    eram lixo e a saída parecia idêntica à de uma página real não indexada.
+    "Nunca rastreada" e "não existe" têm a mesma cara; só o sitemap separa.
+
+    Antes de culpar a fila do Google, confira o que está no seu alcance: se as
+    URLs do sitemap respondem 200 e se o `canonical` de cada página aponta pra
+    forma que o sitemap lista. O site serve `/l/<isbn>` e `/l/<isbn>.html`, os
+    dois com 200; se o canonical apontasse pra forma errada, o sitemap inteiro
+    estaria mandando o Google pra um lugar e as páginas pra outro. Conferido em
+    19/09: batem. A conclusão não
     mudou (é fila dele), mas o número que eu vinha dando estava errado. Se vier "nunca
     rastreada", confira `node scripts/gsc.mjs sitemap`: se a contagem de URLs do
     Google for menor que a do sitemap no ar, ele está com uma cópia velha —
