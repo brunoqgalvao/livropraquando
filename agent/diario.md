@@ -115,6 +115,14 @@ incompleto vale mais que um catálogo completo e inventado.
 11. `node scripts/validate.mjs`. Vermelho não sobe. Conserte a causa, não o sintoma:
    se o linter pegou linguagem prescritiva, o problema é a frase, não o linter.
 12. `node scripts/build.mjs` e confira que as páginas novas existem.
+
+    O que o site afirma pro Google não é o que ele mostra pra pessoa. O HTML
+    você abre no navegador toda passada; o JSON-LD ninguém relê, e ele ficou
+    três dias dizendo que "4+" era "4-" — que se lê como "até 4 anos", o
+    contrário do que a editora escreveu. Regra nova que gera JSON-LD nasce em
+    `scripts/lib/schema.mjs` com teste, como as outras. Se uma fonte trouxer
+    formato de idade que a `faixaSchema` não conhece, ela devolve `undefined` e
+    o campo some: afirmação errada é pior que campo ausente.
 13. Commit com mensagem que diz **o que entrou e por quê**, uma linha por livro.
    O diff é como o Bruno mede se você está fazendo trabalho ou barulho.
 14. `git push` — o CI valida de novo e publica.
