@@ -51,3 +51,23 @@ export function descricaoLivro({ titulo, editora, ano, idade, paginas, nomeia } 
   }
   return partes.join(' ');
 }
+
+// A descrição da situação é prosa editorial do Bruno e aparece inteira na
+// página. Como meta description ela não cabe: as duas tinham 332 e 294
+// caracteres, e o Google mostra ~160 — o resto não existe, e o corte dele cai
+// no meio da frase.
+//
+// Aqui o corte é por frase inteira, a mesma regra da descrição do livro: mais
+// vale uma frase a menos que meia frase. O texto na página não muda.
+export function descricaoCurta(texto, limite = LIMITE_DESC) {
+  const t = String(texto || '').trim();
+  if (!t || t.length <= limite) return t || undefined;
+  const frases = t.match(/[^.!?]+[.!?]+(\s|$)/g) || [];
+  let saida = '';
+  for (const f of frases) {
+    const tentativa = (saida + f).trimEnd();
+    if (tentativa.length > limite) break;
+    saida = tentativa + ' ';
+  }
+  return saida.trim() || undefined;   // nem a primeira frase coube: melhor nada
+}

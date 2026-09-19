@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { faixaSchema, descricaoLivro } from './schema.mjs';
+import { faixaSchema, descricaoLivro, descricaoCurta } from './schema.mjs';
 
 let ok = 0, falhou = 0;
 const t = (nome, fn) => { try { fn(); ok++; } catch (e) { falhou++; console.log(`FALHOU: ${nome}\n  ${e.message}`); } };
@@ -65,6 +65,29 @@ t('frase que não cabe fica de fora inteira, não pela metade', () => {
 });
 
 t('sem título não há descrição', () => assert.equal(descricaoLivro({}), undefined));
+
+// --- corte da descrição da situação ---------------------------------------
+t('texto curto passa inteiro', () =>
+  assert.equal(descricaoCurta('Uma frase só.'), 'Uma frase só.'));
+
+t('corta em frase inteira, nunca no meio', () => {
+  const t332 = 'Seis livros com edição brasileira sobre começar na escola. A tabela traz o que a fonte da editora sustenta: idade indicada, tamanho, se a sinopse fala mesmo em primeiro dia, e se a editora oferece material pro adulto. Nenhuma das seis sinopses fala de creche nem da despedida na porta — isso está dito em cada página, não escondido.';
+  const r = descricaoCurta(t332);
+  assert.ok(r.length <= 160, `${r.length}`);
+  assert.ok(/[.!?]$/.test(r), `terminou em "${r.slice(-20)}"`);
+  assert.ok(t332.startsWith(r), 'saiu do começo do texto original');
+});
+
+t('leva quantas frases couberem', () => {
+  const r = descricaoCurta('Nove livros com edição brasileira sobre a chegada de um irmão. A tabela traz o que a fonte da editora sustenta: tamanho, forma do texto, e quem narra. E mais uma frase que não cabe de jeito nenhum aqui dentro do limite.');
+  assert.ok(r.includes('quem narra.'), r);
+  assert.ok(!r.includes('não cabe'), r);
+});
+
+t('primeira frase gigante vira nada, não vira meia frase', () =>
+  assert.equal(descricaoCurta('P'.repeat(200) + '.'), undefined));
+
+t('vazio não vira string vazia', () => assert.equal(descricaoCurta(''), undefined));
 
 console.log(`${ok} passaram, ${falhou} falharam`);
 if (falhou) process.exit(1);

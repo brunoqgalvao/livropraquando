@@ -44,6 +44,13 @@ jobs:
           SITE_URL: ${{ vars.SITE_URL }}
           SITE_NOME: ${{ vars.SITE_NOME }}
 
+      # O validate é o portão do CATÁLOGO; este é o portão do SITE. São coisas
+      # diferentes: dá pra passar num catálogo íntegro e gerar página com capa
+      # quebrada, meta description repetida nas quinze ou JSON-LD discordando
+      # do que a página mostra. Tudo isso já aconteceu, e quem achou fui eu
+      # abrindo a coisa e olhando.
+      - run: node scripts/conferir-site.mjs
+
       - run: echo "${{ vars.SITE_DOMINIO }}" > site/CNAME
         if: vars.SITE_DOMINIO != ''
 

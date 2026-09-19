@@ -1,6 +1,6 @@
 import { P, ROOT, lerTodos, gravar, dataBr } from './lib.mjs';
 import { dimensao } from './lib/imagem.mjs';
-import { faixaSchema, descricaoLivro } from './lib/schema.mjs';
+import { faixaSchema, descricaoLivro, descricaoCurta } from './lib/schema.mjs';
 import { join } from 'node:path';
 import { rmSync, existsSync, cpSync, readFileSync, readdirSync } from 'node:fs';
 import { createHash } from 'node:crypto';
@@ -333,7 +333,7 @@ ${cols.map(c => `        <td class="c">${COLS[c].cel(l)}</td>`).join('\n')}
   const descricao = preenche(s.descricao, contagens(arr));
   escreve(`s/${s.slug}.html`, pagina({
     titulo: `${s.titulo} — livro infantil por idade`,
-    desc: descricao,
+    desc: descricaoCurta(descricao),
     canon: `${SITE}/s/${s.slug}`,
     dados: {
       '@context': 'https://schema.org',
