@@ -65,6 +65,14 @@ incompleto vale mais que um catálogo completo e inventado.
    certo** — a heuristica ja escolheu banner de loja e "imagem indisponivel" antes,
    e "esta e a capa de X" e uma afirmacao como qualquer outra do site. Se a imagem
    nao for do livro, nao promova: registre no relatorio.
+
+   Isso vale pras capas que JÁ estão no ar, não só pras novas. Em 19/09
+   reconferi as quinze e uma estava errada: "Eu só só eu" publicava uma
+   ilustração de miolo — sem título, sem autor, sem selo — enquanto a página
+   dizia `alt="Capa de Eu só só eu"`. Ninguém tinha reaberto aquelas imagens
+   desde o dia em que entraram. O `validate.mjs` agora compara o sha1 do
+   arquivo com o registro e recusa divergência, mas ele só sabe se os bytes
+   mudaram; se a imagem errada entrar certa desde o começo, quem pega é olho.
 4. `node scripts/check.mjs` — disponibilidade. **Não interfira.** A regra de três
    falhas de loja em dias distintos existe porque bloqueio de bot parece livro esgotado. Se o script não
    mudou o estado, o estado está certo.
