@@ -119,7 +119,10 @@ incompleto vale mais que um catálogo completo e inventado.
     O que o site afirma pro Google não é o que ele mostra pra pessoa. O HTML
     você abre no navegador toda passada; o JSON-LD ninguém relê, e ele ficou
     três dias dizendo que "4+" era "4-" — que se lê como "até 4 anos", o
-    contrário do que a editora escreveu. Regra nova que gera JSON-LD nasce em
+    contrário do que a editora escreveu. A `<meta description>` é a mesma
+    história: as 15 páginas de livro traziam uma frase só, mudando o título, e
+    a idade — o dado que a pessoa procura — não aparecia em nenhuma delas.
+    Regra nova que gera JSON-LD ou meta nasce em
     `scripts/lib/schema.mjs` com teste, como as outras. Se uma fonte trouxer
     formato de idade que a `faixaSchema` não conhece, ela devolve `undefined` e
     o campo some: afirmação errada é pior que campo ausente.
