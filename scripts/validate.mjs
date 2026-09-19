@@ -1,5 +1,7 @@
 import { P, lerTodos, isbn13Valido, EDITORA_PAGA } from './lib.mjs';
-import { basename } from 'node:path';
+import { basename, join } from 'node:path';
+import { existsSync, readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 
 // Linguagem prescritiva: a trava ética. Descrever o livro é permitido,
 // prometer efeito terapêutico não. Só roda em texto que o agente escreveu —
@@ -154,6 +156,23 @@ for (const l of livros) {
     const n = livros.filter(x => (x.situacoes || []).includes(sl)).length;
     if (n >= 4) err(f, `editora paga pelo autor em "${sl}", que já tem ${n} títulos — a régua só admite com menos de 4`);
   }
+}
+
+// "Esta é a capa de X" é uma afirmação como qualquer outra do site, e era a
+// única sem quem a conferisse. O `sha1` existe pra provar que o arquivo servido
+// é o que alguém abriu e aprovou — mas nada comparava o registro com o disco, e
+// sete das quinze capas estavam com a impressão digital de outros bytes (as que
+// vieram do `enriquecer.mjs`, redimensionadas depois sem atualizar o registro).
+// Enquanto o número não era conferido, ele não provava nada: foi assim que "Eu
+// só só eu" ficou dias publicando uma ilustração de miolo como capa.
+for (const l of livros) {
+  const c = l.capa;
+  if (!c?.arquivo) continue;
+  const caminho = join(P.ROOT, 'data/capas', c.arquivo);
+  if (!existsSync(caminho)) { err(l.isbn13, `capa ${c.arquivo} não existe em data/capas`); continue; }
+  if (!c.sha1) { avi(l.isbn13, "capa sem sha1 — não dá pra provar que é a imagem conferida"); continue; }
+  const real = createHash('sha1').update(readFileSync(caminho)).digest('hex');
+  if (real !== c.sha1) err(l.isbn13, `sha1 da capa não bate com o arquivo (registro ${c.sha1.slice(0, 12)}, disco ${real.slice(0, 12)}) — alguém trocou os bytes sem reconferir a imagem`);
 }
 
 const dup = {};
