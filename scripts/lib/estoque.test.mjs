@@ -104,8 +104,6 @@ t('histórico vazio nunca dispensa a sonda', () => {
   assert.equal(jaSondouHoje(undefined, 'google_books', '2026-09-19'), false);
 });
 
-console.log(`${ok} passaram, ${falhou} falharam`);
-process.exit(falhou ? 1 : 0);
 
 t('veredito: loja que nao respondeu aparece na evidencia, nao some', () => {
   const v = vereditoEstoque([
@@ -131,3 +129,7 @@ t('veredito: so silencio e "nao sei", nunca esgotado', () => {
   ], '2026-09-20');
   assert.equal(v.ok, null);
 });
+
+
+console.log(`${ok} passaram, ${falhou} falharam`);
+process.exit(falhou ? 1 : 0);

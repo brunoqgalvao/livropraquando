@@ -1,4 +1,6 @@
 import assert from 'node:assert/strict';
+import { readdirSync, readFileSync } from 'node:fs';
+import { join, basename } from 'node:path';
 import { devePular, mesclaEstoque, mesclaDiario } from './rodada.mjs';
 
 let ok = 0, falhou = 0;
@@ -63,6 +65,23 @@ t('passada completa reescreve o dia inteiro', () => {
 t('diário de ontem não contamina o de hoje', () => {
   const r = mesclaDiario({ em: '2026-09-18', completo: true, avisos: [{ isbn13: 'A', aviso: 'a1' }] }, { em: '2026-09-19', completo: false, avisos: [] }, ['A']);
   assert.deepEqual(r, { em: '2026-09-19', completo: false, avisos: [] });
+});
+
+// Em 20/09 eu colei dois testes no fim do ficha.test.mjs e eles ficaram DEPOIS
+// do process.exit: nunca rodaram, e o runner seguiu dizendo "51 passaram". Um
+// portão que mente assim é pior que não ter portão. Isso não dá pra pegar em
+// runtime — o código depois do exit não executa —, então a checagem é no texto.
+t('nenhum teste mora depois do process.exit', () => {
+  const dir = new URL('.', import.meta.url).pathname;
+  const arquivos = [...readdirSync(dir).filter(f => f.endsWith('.test.mjs')).map(f => join(dir, f)),
+                    join(dir, '..', 'auditoria.test.mjs')];
+  for (const f of arquivos) {
+    const txt = readFileSync(f, 'utf8');
+    const m = txt.match(/^process\.exit\(/m);   // o de verdade, não o citado em comentário
+    if (!m) continue;
+    const depois = txt.slice(m.index);
+    assert.ok(!/^t\(/m.test(depois), `${basename(f)}: tem t(...) depois do process.exit — esses testes não rodam`);
+  }
 });
 
 console.log(`${ok} passaram, ${falhou} falharam`);

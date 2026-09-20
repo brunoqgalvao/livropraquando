@@ -192,5 +192,20 @@ t('resenha negativa citando ilustracoes nao e credito', () =>
 t('bio do autor na Amazon nao vira credito de ilustrador de outro livro', () =>
   assert.equal(ilustradorDaFicha({ texto: 'Sou autora e ilustradora e exploro o mundo das emocoes atraves de imagens e historias.' }), null));
 
+
+// A nota vira evidência na página do livro esgotado. Cortar no seco produzia
+// "…estará disponível nova", que é o tipo de frase que ninguém relê.
+t('nota longa corta em palavra inteira, com reticencia', () => {
+  const n = estoqueDaPagina({ host: 'amazon.com.br', amazon: { estoque:
+    'Não disponível. Não temos previsão de quando este produto estará disponível novamente.' } }).nota;
+  assert.ok(n.endsWith('…'), n);
+  assert.ok(!/\bnova$/.test(n.replace('…', '')), n);
+  assert.ok(n.length <= 81, n);
+});
+
+t('nota curta fica inteira, sem reticencia', () =>
+  assert.equal(estoqueDaPagina({ host: 'amazon.com.br', amazon: { estoque: 'Em estoque' } }).nota, 'Em estoque'));
+
+
 console.log(`${ok} passaram, ${falhou} falharam`);
 process.exit(falhou ? 1 : 0);

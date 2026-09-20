@@ -82,12 +82,22 @@ const TEM = [/em estoque/i, /adicionar ao carrinho/i, /comprar agora/i, /compre 
 
 // `ok: null` = não deu pra ver. É diferente de "não tem", e a diferença é o
 // projeto inteiro: a coluna antiga dizia "sim" porque o HTTP devolveu 200.
+// A nota da loja pode virar evidência numa página pública (é o que a nota de
+// esgotado imprime). Cortar em 80 no seco deixava "…estará disponível nova".
+const corta = (s, n = 80) => {
+  const t = String(s || '').trim();
+  if (t.length <= n) return t;
+  const c = t.slice(0, n);
+  const esp = c.lastIndexOf(' ');
+  return (esp > n * 0.6 ? c.slice(0, esp) : c).replace(/[ ,.;:]+$/, '') + '…';
+};
+
 export function estoqueDaPagina({ host, texto, titulo, amazon }) {
   if (/amazon\./.test(host)) {
     const s = semMarcas(amazon?.estoque);
     if (!s) return { ok: null, nota: 'Amazon não mostrou bloco de disponibilidade' };
-    if (FORA.some(re => re.test(s))) return { ok: false, nota: s.slice(0, 80) };
-    if (TEM.some(re => re.test(s))) return { ok: true, nota: s.slice(0, 80) };
+    if (FORA.some(re => re.test(s))) return { ok: false, nota: corta(s) };
+    if (TEM.some(re => re.test(s))) return { ok: true, nota: corta(s) };
     return { ok: null, nota: `disponibilidade ilegível: ${s.slice(0, 60)}` };
   }
   if (/403|forbidden|acesso negado|access denied/i.test(titulo || '')) return { ok: null, nota: 'loja barrou o navegador' };
