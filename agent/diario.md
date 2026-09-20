@@ -66,6 +66,14 @@ incompleto vale mais que um catálogo completo e inventado.
    e "esta e a capa de X" e uma afirmacao como qualquer outra do site. Se a imagem
    nao for do livro, nao promova: registre no relatorio.
 
+   Capa em formato paisagem existe, e larga não quer dizer errada. Em 19/09
+   desconfiei da capa de "Um novo irmão, será que é bom?" por ser 2:1 e disse
+   que o próprio `capas.mjs` a recusaria — errado nas duas pontas: o limite
+   dele é 2.2, e a imagem, buscada em 5656x2828 pela sonda com chave, é a
+   frente de um cartonado paisagem. O que decidiu foi a AUSÊNCIA DE CÓDIGO DE
+   BARRAS: capa de fundo praticamente sempre tem um, então imagem larga sem
+   código de barras é capa inteira, não frente+verso. Guarde esse critério.
+
    Isso vale pras capas que JÁ estão no ar, não só pras novas. Em 19/09
    reconferi as quinze e uma estava errada: "Eu só só eu" publicava uma
    ilustração de miolo — sem título, sem autor, sem selo — enquanto a página
