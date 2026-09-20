@@ -72,7 +72,11 @@ incompleto vale mais que um catálogo completo e inventado.
    dele é 2.2, e a imagem, buscada em 5656x2828 pela sonda com chave, é a
    frente de um cartonado paisagem. O que decidiu foi a AUSÊNCIA DE CÓDIGO DE
    BARRAS: capa de fundo praticamente sempre tem um, então imagem larga sem
-   código de barras é capa inteira, não frente+verso. Guarde esse critério.
+   código de barras é capa inteira, não frente+verso. Guarde esse critério —
+   com uma ressalva que eu mesmo encontrei no dia seguinte: livro tête-bêche
+   tem duas frentes e nenhum verso, então o código de barras acaba impresso
+   numa das capas. "O melhor irmão do mundo" é assim. Código de barras numa
+   imagem em retrato, com título e logo da editora, não desqualifica a capa.
 
    Isso vale pras capas que JÁ estão no ar, não só pras novas. Em 19/09
    reconferi as quinze e uma estava errada: "Eu só só eu" publicava uma
