@@ -69,7 +69,11 @@ export function idadeDaAmazon(amazon) {
 
 const FORA = [/produto\s+indispon[íi]vel/i, /atualmente\s+indispon[íi]vel/i, /fora de estoque/i,
               /sem estoque/i, /esgotad[oa]\b/i, /avise-me quando (?:chegar|estiver)/i,
-              /n[ãa]o (?:est[áa]|se encontra) dispon[íi]vel/i];
+              /n[ãa]o (?:est[áa]|se encontra) dispon[íi]vel/i,
+              // A Amazon avisa assim quando o item não é comprável, e a frase é
+              // longa o bastante pra não confundir com "Imagem não disponível",
+              // que é placeholder de foto em página de livro à venda.
+              /n[ãa]o temos previs[ãa]o de quando este produto estar[áa] dispon[íi]vel/i];
 // "Estimativa de envio de 2 a 3 dias" só aparece em item comprável: quando a
 // Amazon não tem, ela escreve "Temporariamente fora de estoque" ou
 // "Atualmente indisponível", que já estão em FORA e são checados antes.

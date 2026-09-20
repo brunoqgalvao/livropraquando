@@ -94,3 +94,24 @@ export function poda(observacoes = [], dias = DIAS_GUARDADOS) {
 export function jaSondouHoje(observacoes = [], fonte, hoje) {
   return (observacoes || []).some(o => o.fonte === fonte && o.em === hoje);
 }
+
+// O veredito de prateleira do dia, a partir das leituras de cada loja da página.
+//
+// Mora aqui, e não solto no renderizar.mjs, porque em 20/09 a versão inline
+// escondeu uma loja: o `detalhe` filtrava as leituras `null` fora, e o "Mas e
+// eu?" foi a esgotado com evidência que citava só a Ciranda — enquanto a página
+// continuava mostrando um link da Amazon que a gente nunca tinha conseguido ler.
+// Quem lê a nota no site não tinha como saber disso.
+//
+// A decisão de `ok` é a de sempre e não muda: leitura negativa explícita vale
+// mais que silêncio, positiva só conta se nenhuma loja disse o contrário. O que
+// muda é que o silêncio agora aparece escrito.
+export function vereditoEstoque(leituras = [], em) {
+  const nota = (x) => `${x.host}: ${x.estoque.ok === null ? `não deu leitura (${x.estoque.nota})` : x.estoque.nota}`;
+  const vistos = leituras.map(x => x.estoque).filter(x => x.ok !== null);
+  return {
+    ok: vistos.length ? vistos.some(v => v.ok === true) && !vistos.every(v => v.ok === false) : null,
+    detalhe: leituras.map(nota),
+    em,
+  };
+}

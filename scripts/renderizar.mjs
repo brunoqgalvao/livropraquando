@@ -12,6 +12,7 @@
 import { P, lerTodos, gravar, canonicalLivro, hoje } from './lib.mjs';
 import { renderizar } from './navegador.mjs';
 import { devePular, mesclaEstoque, mesclaDiario } from './lib/rodada.mjs';
+import { vereditoEstoque } from './lib/estoque.mjs';
 import { idadeDaEditora, idadeDaAmazon, estoqueDaPagina, isbnDaPagina, precoDaLoja, paginasDaFicha, ilustradorDaFicha } from './lib/ficha.mjs';
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
@@ -57,7 +58,11 @@ const EXTRATOR = `(() => {
     if (e) micro[k] = e.content || e.getAttribute('content') || e.innerText.trim().slice(0, 40);
   }
   const amazon = /amazon\\./.test(location.hostname) ? {
-    estoque: limpo(document.querySelector('#availability')),
+    // Quando o item não é comprável a Amazon não renderiza #availability
+    // nenhum; o aviso vai pro #outOfStockBuyBox. Sem esse fallback a gente
+    // lia "não sei" onde a loja dizia "não tem".
+    estoque: limpo(document.querySelector('#availability'))
+       || limpo(document.querySelector('#outOfStockBuyBox, #outOfStock')),
     byline: limpo(document.querySelector('#bylineInfo')),
     core: limpo(document.querySelector('#corePriceDisplay_desktop_feature_div'))
        || limpo(document.querySelector('#corePrice_feature_div')),
@@ -112,13 +117,9 @@ for (const l of livros) {
     await new Promise(r => setTimeout(r, 1200));
   }
 
-  // estoque: uma leitura negativa explícita vale mais que silêncio; positiva só
-  // conta se nenhuma loja disse o contrário.
-  const vistos = leituras.map(x => x.estoque).filter(x => x.ok !== null);
-  estoque[l.isbn13] = vistos.length
-    ? { ok: vistos.some(v => v.ok === true) && !vistos.every(v => v.ok === false),
-        detalhe: leituras.filter(x => x.estoque.ok !== null).map(x => `${x.host}: ${x.estoque.nota}`), em: hoje() }
-    : { ok: null, detalhe: leituras.map(x => `${x.host}: ${x.estoque.nota}`), em: hoje() };
+  // A regra mora em lib/estoque.mjs, com teste: ela decide o que a página vai
+  // dizer que a gente olhou.
+  estoque[l.isbn13] = vereditoEstoque(leituras, hoje());
 
   const aviso = (m) => diario.push({ isbn13: l.isbn13, titulo: l.titulo, aviso: m });
   // preço: prefere loja que estava com estoque. Preço de prateleira vazia manda

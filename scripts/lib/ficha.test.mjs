@@ -78,6 +78,24 @@ t('Amazon: "Estimativa de envio" e livro comprável', () =>
 t('Amazon: fora de estoque ganha, mesmo com prazo de envio na mesma frase', () =>
   assert.equal(estoqueDaPagina({ host: 'amazon.com.br', amazon: { estoque: 'Temporariamente fora de estoque. Estimativa de envio de 2 a 3 dias.' } }).ok, false));
 
+// Caso real do "Mas e eu?" em 20/09: quando o item não é comprável, a Amazon não
+// renderiza `#availability` nenhum — o aviso vai pro `#outOfStockBuyBox`. A gente
+// lia `null` ("não consegui olhar") onde a loja estava dizendo, com todas as
+// letras, que não tem. Livro só-Amazon nunca chegava a esgotado por isso.
+t('Amazon: "não temos previsão" e esgotado, nao "nao sei"', () =>
+  assert.equal(estoqueDaPagina({ host: 'amazon.com.br', amazon: { estoque:
+    'Não disponível. Não temos previsão de quando este produto estará disponível novamente.' } }).ok, false));
+
+// A mesma frase vale em loja de editora, onde a leitura e o texto inteiro.
+t('frase de sem-previsao tambem vale fora da Amazon', () =>
+  assert.equal(estoqueDaPagina({ host: 'cirandacultural.com.br', titulo: 'Mas e eu?',
+    texto: 'Não temos previsão de quando este produto estará disponível novamente. '.repeat(6) }).ok, false));
+
+// Guarda contra o oposto: "Imagem não disponível" e placeholder de foto e
+// aparece em pagina de livro a venda. Nao pode virar esgotado.
+t('"Imagem nao disponivel" nao e sinal de estoque', () =>
+  assert.equal(estoqueDaPagina({ host: 'amazon.com.br', amazon: { estoque: 'Imagem não disponível Em estoque' } }).ok, true));
+
 
 // --- preço: casos reais de 18/09, todos da mesma pagina ------------------
 const CIA = 'BIBO NA ESCOLA Autor/Ilustrador: Silvana Rando Livro fisico R$ 67,90 / A vista Comprar agora '

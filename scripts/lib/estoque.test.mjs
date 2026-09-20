@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { decideEstado, falhasSeguidas, porDia, poda, jaSondouHoje, DIAS_GUARDADOS } from './estoque.mjs';
+import { decideEstado, falhasSeguidas, porDia, poda, jaSondouHoje, DIAS_GUARDADOS, vereditoEstoque } from './estoque.mjs';
 
 let ok = 0, falhou = 0;
 const t = (nome, fn) => { try { fn(); ok++; } catch (e) { falhou++; console.log(`FALHOU: ${nome}\n  ${e.message}`); } };
@@ -106,3 +106,28 @@ t('histórico vazio nunca dispensa a sonda', () => {
 
 console.log(`${ok} passaram, ${falhou} falharam`);
 process.exit(falhou ? 1 : 0);
+
+t('veredito: loja que nao respondeu aparece na evidencia, nao some', () => {
+  const v = vereditoEstoque([
+    { host: 'cirandacultural.com.br', estoque: { ok: false, nota: 'Produto Indisponível' } },
+    { host: 'amazon.com.br', estoque: { ok: null, nota: 'Amazon não mostrou bloco de disponibilidade' } },
+  ], '2026-09-20');
+  assert.equal(v.ok, false);
+  assert.equal(v.detalhe.length, 2);
+  assert.match(v.detalhe[1], /amazon\.com\.br: não deu leitura/);
+});
+
+t('veredito: uma loja com estoque basta, mesmo com outra em silencio', () => {
+  const v = vereditoEstoque([
+    { host: 'amazon.com.br', estoque: { ok: true, nota: 'Em estoque' } },
+    { host: 'editora.com.br', estoque: { ok: null, nota: 'página voltou vazia' } },
+  ], '2026-09-20');
+  assert.equal(v.ok, true);
+});
+
+t('veredito: so silencio e "nao sei", nunca esgotado', () => {
+  const v = vereditoEstoque([
+    { host: 'play.google.com', estoque: { ok: null, nota: 'nenhum sinal de estoque na página' } },
+  ], '2026-09-20');
+  assert.equal(v.ok, null);
+});
