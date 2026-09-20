@@ -235,7 +235,8 @@
       "estoque": {
         "a_venda": false,
         "onde": [
-          "cirandacultural.com.br: Produto Indisponível"
+          "cirandacultural.com.br: Produto Indisponível",
+          "amazon.com.br: Não disponível. Não temos previsão de quando este produto estará disponível nova"
         ],
         "em": "2026-09-20"
       }
