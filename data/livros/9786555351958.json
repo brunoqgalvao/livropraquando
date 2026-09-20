@@ -1,0 +1,89 @@
+{
+  "isbn13": "9786555351958",
+  "titulo": "As aventuras de Mike 2: o bebê chegou!",
+  "autor": "Gabriel Dearo, Manu Digilio",
+  "ilustrador": "Mack",
+  "editora": "Outro Planeta",
+  "ano": 2020,
+  "origem": "nacional",
+  "paginas": 176,
+  "situacoes": [
+    "vai-nascer-um-irmao"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse da editora no Google Play Livros (edição digital, ISBN 9788542221282)",
+      "url": "https://play.google.com/store/books/details?id=sxu2EAAAQBAJ",
+      "trecho": "Muita coisa muda com a notícia da chegada de um bebê na casa de Mike. Principalmente a barriga da sua mãe, que pode explodir a qualquer momento. Mas Mike, Nando e a Priminha Irritante estão ansiosos para descobrir o que mais um bebê pode fazer (além de sujar a fralda a cada trinta minutos).",
+      "acessado_em": "2026-09-20"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/6555351950",
+      "trecho": "Editora : Outro Planeta […] Número de páginas : 176 páginas […] ISBN-13 : 978-6555351958 […] Livro 2 de 5 : Aventuras de Mike",
+      "acessado_em": "2026-09-20"
+    }
+  ],
+  "nao_coberto": "A sinopse não indica faixa etária, não diz quem narra nem se o texto é em primeira pessoa, e não conta como Mike fica depois que o bebê nasce. A Amazon só traz idade \"sugerida pelo cliente\", que é enquete de comprador e não entrou na tabela. Não há material para o adulto anunciado em nenhuma das duas fontes, e nenhuma delas credita o ilustrador no texto.",
+  "nao_aborda": "É o único título da situação “vai nascer um irmão” que não é livro ilustrado de leitura compartilhada: são 176 páginas de texto, segundo volume de uma série de humor. A sinopse não fala de parto, de hospital nem do que acontece na maternidade.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6555351950"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "id": "KaovzwEACAAJ",
+        "isbn13": "9786555351958",
+        "titulo_bateu": true,
+        "em": "2026-09-20"
+      },
+      {
+        "fonte": "open_library",
+        "id": "/works/OL26414140W",
+        "isbn13": "9786555351958",
+        "titulo_bateu": true,
+        "em": "2026-09-20"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-09-20",
+  "capa": {
+    "arquivo": "9786555351958.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/81m23SywNxL._SL1200_.jpg",
+    "obtida_em": "2026-09-20",
+    "sha1": "9ba421dc2b96a9d6827b6cffb006f2c3fcfe0ff3",
+    "largura": 389,
+    "altura": 600
+  },
+  "nota": "As fontes divergem no ano e no tamanho: a Amazon registra dezembro de 2020 e 176 páginas, o Google Livros 2021 e 174, a Open Library 2019. A tabela usa os números da ficha da Amazon, que é a edição à venda. A sinopse citada é a da edição digital (ISBN 9788542221282), porque a ficha do impresso não traz texto de sinopse. O crédito de ilustração (\"Mack\") está impresso na capa desta edição, não na ficha da Amazon nem na página do Google Play."
+}

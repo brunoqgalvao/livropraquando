@@ -49,7 +49,7 @@
   ],
   "nao_coberto": "A sinopse não diz quem narra, se o plano do Breno dá certo, nem quantas páginas o livro tem.",
   "disponibilidade": {
-    "estado": "a_venda",
+    "estado": "esgotado",
     "compra": [
       {
         "loja": "Ciranda Cultural",
@@ -74,6 +74,12 @@
         "titulo_bateu": false,
         "em": "2026-09-18"
       }
+    ],
+    "mudou_em": "2026-09-20",
+    "evidencia": [
+      "cirandacultural.com.br: Produto Indisponível (20/09/2026)",
+      "cirandacultural.com.br: Produto Indisponível (19/09/2026)",
+      "cirandacultural.com.br: Produto Indisponível (18/09/2026)"
     ]
   },
   "curadoria": "humano",
