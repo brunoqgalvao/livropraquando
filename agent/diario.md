@@ -75,9 +75,16 @@ incompleto vale mais que um catálogo completo e inventado.
    mudaram; se a imagem errada entrar certa desde o começo, quem pega é olho.
 4. `node scripts/check.mjs` — disponibilidade. Como o `renderizar.mjs`, ele
    agora pula a sonda de rede que já tem leitura de hoje: a poda guarda uma
-   observação por fonte por dia, então rodar de novo só gasta cota. Em 19/09 eu
-   rodei sete vezes numa tarde e estourei a cota diária do Google Books, que é
-   compartilhada — a sonda ficou cega o resto do dia por nada. A da loja roda
+   observação por fonte por dia, então rodar de novo não descobre nada: em
+   19/09 eu rodei sete vezes numa tarde e as ~90 chamadas extras sobrescreveram
+   sempre a mesma casa.
+
+   Enquanto isso, não confunda as duas cotas do Google Books. O `googleBooks()`
+   usa chave de API e tem cota própria; `curl` na mão, sem chave, cai na cota
+   anônima compartilhada, que vive estourada. Em 19/09 eu vi 429 nos meus curls
+   e concluí que tinha cegado a sonda do projeto — não tinha: com a chave ela
+   respondia normalmente o tempo todo. Se for diagnosticar a sonda, chame ela,
+   não a URL pública. A da loja roda
    sempre, porque lê arquivo local e depende do render, que chega mais tarde.
    **Não interfira.** A regra de três
    falhas de loja em dias distintos existe porque bloqueio de bot parece livro esgotado. Se o script não

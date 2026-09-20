@@ -77,11 +77,16 @@ export function poda(observacoes = [], dias = DIAS_GUARDADOS) {
 // fonte por dia, então a segunda rodada do dia sobrescreve a mesma casa: custa
 // rede e não produz informação nenhuma.
 //
-// Não é teórico. Em 19/09 rodei o check umas sete vezes numa tarde, cada uma
-// batendo 15 vezes no Google Books, e às 14h a API começou a responder 429 —
-// cota diária estourada, numa cota que é compartilhada. As ~90 chamadas extras
-// não geraram uma observação nova e deixaram a sonda cega pro resto do dia.
+// Em 19/09 rodei o check umas sete vezes numa tarde: ~90 chamadas ao Google
+// Books e outras tantas à Open Library que não geraram UMA observação nova.
 // O `renderizar.mjs` já tinha essa trava desde 18/09; o check não tinha.
+//
+// (Correção do que eu escrevi aqui primeiro: eu tinha culpado essas rodadas
+// por estourar a cota do Google Books. Não foi isso. O `googleBooks()` usa
+// chave de API e tem cota própria; o 429 que eu via era dos meus `curl`
+// manuais, sem chave, na cota anônima compartilhada. A trava continua certa
+// pelo motivo simples — a segunda rodada do dia não descobre nada —, mas a
+// sonda do projeto nunca esteve em risco.)
 //
 // Vale só pras sondas de rede. A da loja lê um arquivo local que o
 // `renderizar.mjs` escreve mais tarde no dia — pular ela deixaria a leitura de
