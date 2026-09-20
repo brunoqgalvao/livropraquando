@@ -217,7 +217,36 @@ incompleto vale mais que um catálogo completo e inventado.
     typo da editora ao colher, e uma citação corrigida em silêncio é uma
     citação que não confere.
 
-17. Relatório: `SendMessage` pra sessão `brunodeqgalvao-5c` e cópia em `runtime/report-<data>.md`.
+17. Quando um livro virar `esgotado`, **abra a nota que foi pro ar e compare com
+    os links que a página mostra**. Em 20/09 o "Mas e eu?" fechou os 3 dias e a
+    evidência citava só a Ciranda — com um link da Amazon logo abaixo. Não era a
+    Amazon estar à venda: era ela dizendo "Não temos previsão de quando este
+    produto estará disponível novamente" num bloco (`#outOfStockBuyBox`) que a
+    gente não sondava, porque quando o item não é comprável a Amazon simplesmente
+    não renderiza `#availability`. Líamos `null` ("não consegui olhar") onde a
+    loja dizia `false` ("não tem"), e livro que só tem loja Amazon nunca
+    conseguia chegar a esgotado.
+
+    Pior: o `detalhe` filtrava as leituras `null` fora, então a loja calada sumia
+    da evidência sem deixar rastro — foi isso que escondeu o buraco de mim. A
+    regra virou `vereditoEstoque()` em `lib/estoque.mjs`, com teste: `ok` decide
+    igual (negativo explícito ganha de silêncio, positivo só vale se ninguém
+    disse o contrário), mas o silêncio agora **aparece escrito** na evidência.
+
+    Regra que sai disso: quando a sonda voltar `null`, desconfie do seletor antes
+    de aceitar "não deu pra ler". Abra a página na mão. `null` é caro — é o que
+    trava a regra dos 3.
+
+18. **Teste que você acabou de escrever tem que aparecer na contagem.** Em 20/09
+    colei cinco testes no fim do `ficha.test.mjs` e do `estoque.test.mjs`, e os
+    dois arquivos terminam em `process.exit`: tudo que veio depois virou código
+    morto, e o runner seguiu dizendo "51 passaram, 0 falharam". Eu li o "0
+    falharam" e achei que estava coberto. Antes e depois de mexer, confira o
+    número — se subiu menos do que você escreveu, seus testes não rodaram. O
+    `rodada.test.mjs` agora tem uma trava estática pra isso (não dá pra pegar em
+    runtime: código depois do exit não executa).
+
+19. Relatório: `SendMessage` pra sessão `brunodeqgalvao-5c` e cópia em `runtime/report-<data>.md`.
     Não vai pro self-chat do WhatsApp do Bruno.
 
 ## O relatório
@@ -244,3 +273,13 @@ Pare, não improvise, e pergunte por `SendMessage` pra `brunodeqgalvao-5c`:
 - um livro bom só existe em edição de Portugal;
 - uma busca do Search Console aponta insistentemente para situação que não existe;
 - qualquer coisa que exija criar situação nova ou mexer em tema bloqueado.
+
+## Duas correções pro relatório da rodada (20/09)
+
+- A sugestão "o CI não roda `scripts/lib/*.test.mjs` nem `auditoria.test.mjs`"
+  está **velha**: entraram no `.github/workflows/deploy.yml` em 19/09, junto com
+  o `conferir-site.mjs`. Confira o arquivo antes de sugerir de novo.
+- "a Ciranda, **única loja** da página" está errado: o `Mas e eu?` lista duas
+  lojas (Ciranda e Amazon). O que havia era uma leitura só — que é exatamente o
+  que o item 17 acima conserta. Ao escrever a evidência, conte as lojas da
+  página, não as leituras que você conseguiu.
