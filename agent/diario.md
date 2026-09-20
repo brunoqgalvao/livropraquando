@@ -49,9 +49,10 @@ incompleto vale mais que um catálogo completo e inventado.
    tem livro — o que acaba apagando o livro da tabela pela regra dos 3
    esgotados. Pra olhar um livro específico, passe o ISBN.
 
-   **Idade está no teto com as fontes de hoje: 7 de 14.** Não gaste rodada
-   atrás dos outros 7 sem fonte nova. Dois só têm a "Idade sugerida pelo
-   cliente" da Amazon e dependem de decisão do Bruno; dois têm página da
+   **Idade está no teto com as fontes de hoje: 8 de 16 (em 20/09).** Não gaste
+   rodada atrás dos outros 8 sem fonte nova. Três só têm a "Idade sugerida pelo
+   cliente" da Amazon e dependem de decisão do Bruno ("O primeiro dia de Chu na
+   escola", "Nós agora somos quatro" e "As aventuras de Mike 2"); dois têm página da
    editora que simplesmente não indica idade (Alta Books, Texugo); e três não
    têm página de editora que dê pra abrir — conferido em 19/09: o site da
    Girassol está com certificado vencido (`ERR_CERT_DATE_INVALID`), "O gatinho
