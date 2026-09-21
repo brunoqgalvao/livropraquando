@@ -49,11 +49,16 @@ incompleto vale mais que um catálogo completo e inventado.
    tem livro — o que acaba apagando o livro da tabela pela regra dos 3
    esgotados. Pra olhar um livro específico, passe o ISBN.
 
-   **Idade está no teto com as fontes de hoje: 8 de 16 (em 20/09).** Não gaste
+   **Idade está no teto com as fontes de hoje: 8 de 16 (em 21/09).** Não gaste
    rodada atrás dos outros 8 sem fonte nova. Três só têm a "Idade sugerida pelo
    cliente" da Amazon e dependem de decisão do Bruno ("O primeiro dia de Chu na
-   escola", "Nós agora somos quatro" e "As aventuras de Mike 2"); dois têm página da
-   editora que simplesmente não indica idade (Alta Books, Texugo); e três não
+   escola", "Nós agora somos quatro" e "As aventuras de Mike 2"); um tem página da
+   editora que simplesmente não indica idade (Alta Books); um é a Texugo, e esse
+   não é caso de ausência — conferido em 21/09, a editora indica **duas** idades
+   ("Indicado para bebês e crianças pequenas (leitura compartilhada); e a partir
+   de 5 anos (leitura independente)") e a coluna da tabela cabe uma só. O campo
+   está vazio por ambiguidade, não por falta de fonte, e escolher entre as duas
+   é decisão do Bruno; e três não
    têm página de editora que dê pra abrir — conferido em 19/09: o site da
    Girassol está com certificado vencido (`ERR_CERT_DATE_INVALID`), "O gatinho
    Pete e o primeiro dia de aula" é exclusivo Leiturinha e não tem página na
