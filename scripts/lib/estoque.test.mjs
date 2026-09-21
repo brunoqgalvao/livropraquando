@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { decideEstado, falhasSeguidas, porDia, poda, jaSondouHoje, DIAS_GUARDADOS, vereditoEstoque, evidenciaEsgotado, evidenciaAtualizada } from './estoque.mjs';
+import { decideEstado, falhasSeguidas, porDia, poda, jaSondouHoje, DIAS_GUARDADOS, vereditoEstoque, evidenciaEsgotado, evidenciaAtualizada, podaOrfas } from './estoque.mjs';
 import { dataBr } from '../lib.mjs';
 
 let ok = 0, falhou = 0;
@@ -189,6 +189,20 @@ t('veredito: loja com estoque ganha de loja sem estoque — livro compravel nao 
   ], '2026-09-21');
   assert.equal(v.ok, true);
   assert.equal(v.detalhe.length, 2);
+});
+
+t('poda orfas: some com estado de livro que saiu do catalogo', () => {
+  const { estado, saíram } = podaOrfas(
+    { '111': { observacoes: [] }, '222': { observacoes: [] } }, ['111']);
+  assert.deepEqual(Object.keys(estado), ['111']);
+  assert.deepEqual(saíram, ['222']);
+});
+
+t('poda orfas: catalogo inteiro preservado, nada sai', () => {
+  const { estado, saíram } = podaOrfas({ '111': { x: 1 }, '222': { x: 2 } }, ['111', '222']);
+  assert.equal(Object.keys(estado).length, 2);
+  assert.equal(saíram.length, 0);
+  assert.equal(estado['222'].x, 2);
 });
 
 console.log(`${ok} passaram, ${falhou} falharam`);

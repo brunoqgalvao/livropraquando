@@ -2,7 +2,7 @@
 // como esgotado porque uma leitura falhou. Então o contador mora em runtime/
 // (fora do git) e o catálogo só muda na TRANSIÇÃO de estado, com evidência.
 import { P, lerTodos, gravar, canonicalLivro, hoje, dataBr, buscaJSON } from './lib.mjs';
-import { decideEstado, poda, jaSondouHoje, evidenciaEsgotado, evidenciaAtualizada } from './lib/estoque.mjs';
+import { decideEstado, poda, jaSondouHoje, evidenciaEsgotado, evidenciaAtualizada, podaOrfas } from './lib/estoque.mjs';
 import { googleBooks } from './resolve.mjs';
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
@@ -109,5 +109,7 @@ for (const l of livros) {
   }
 }
 
-writeFileSync(ARQ, JSON.stringify(estado, null, 2) + '\n');
+const { estado: vivos, saíram } = podaOrfas(estado, livros.map(l => l.isbn13));
+if (saíram.length) console.log(`  esqueci o contador de ${saíram.length} livro(s) que saíram do catálogo: ${saíram.join(', ')}`);
+writeFileSync(ARQ, JSON.stringify(vivos, null, 2) + '\n');
 console.log(`sondados ${livros.length} livros · ${transicoes} transição(ões) de estado${poupadas ? ` · ${poupadas} com catálogo já lido hoje (use --forcar pra insistir)` : ''} · contador em runtime/, fora do git`);

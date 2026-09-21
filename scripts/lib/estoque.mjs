@@ -158,3 +158,19 @@ export function evidenciaAtualizada(atual = [], falhas = [], fmtData = (x) => x)
   const igual = nova.length === velha.length && nova.every((l, i) => l === velha[i]);
   return igual ? null : nova;
 }
+
+// Livro que sai do catálogo deixa o contador dele pra trás. Em 21/09 o
+// availability.json tinha 17 entradas pra 16 livros: a sobra era o "Tem um bebê
+// na barriga da mamãe", descartado em 18/09 pela régua editorial, com as
+// observações congeladas naquele dia. Não quebra nada — o check itera pelo
+// catálogo, nunca pelo estado —, mas é afirmação velha guardada, e uma contagem
+// minha já tropeçou nela. Quem decide o que esquecer decide o que a regra
+// enxerga, então mora aqui, com teste.
+export function podaOrfas(estado = {}, isbns = []) {
+  const vivos = new Set(isbns);
+  const limpo = {}, saíram = [];
+  for (const [isbn, reg] of Object.entries(estado)) {
+    if (vivos.has(isbn)) limpo[isbn] = reg; else saíram.push(isbn);
+  }
+  return { estado: limpo, saíram };
+}
