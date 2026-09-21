@@ -113,7 +113,7 @@ const deitada = (l) => (FORMATO.get(l.capa?.arquivo) ?? 0) > 1.15;
 // encontrar", lia "Links diretos" e clicava na loja nunca via que o livro não
 // está à venda. Aviso que aparece depois da decisão não é aviso.
 const esgotadoNota = (l) => l.disponibilidade?.estado !== 'esgotado' ? '' :
-  `<p class="nota">Marcado como esgotado em ${dataBr(l.disponibilidade.mudou_em)}, depois de três verificações em dias distintos sem encontrar o livro à venda nas lojas que responderam: ${esc((l.disponibilidade.evidencia || []).join('; '))}. Os links abaixo continuam aqui porque a loja pode repor; pode haver exemplar em sebo.</p>`;
+  `<p class="nota">Marcado como esgotado em ${dataBr(l.disponibilidade.mudou_em)}, depois de três verificações em dias distintos sem encontrar o livro à venda nas lojas que responderam: ${esc((l.disponibilidade.evidencia || []).join(' · '))}. Os links abaixo continuam aqui porque a loja pode repor; pode haver exemplar em sebo.</p>`;
 
 const capa = (l, cls = '', { jaVisivel = false } = {}) => l.capa?.arquivo
   ? `<img class="capa-livro ${cls}${deitada(l) ? ' deitada' : ''}" src="/capas/${esc(l.capa.arquivo)}" alt="Capa de ${esc(l.titulo)}" ${jaVisivel ? 'fetchpriority="high" decoding="sync"' : 'loading="lazy" decoding="async"'} width="80" height="120">`

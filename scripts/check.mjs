@@ -2,7 +2,7 @@
 // como esgotado porque uma leitura falhou. Então o contador mora em runtime/
 // (fora do git) e o catálogo só muda na TRANSIÇÃO de estado, com evidência.
 import { P, lerTodos, gravar, canonicalLivro, hoje, dataBr, buscaJSON } from './lib.mjs';
-import { decideEstado, poda, jaSondouHoje, FALHAS_PRA_ESGOTAR } from './lib/estoque.mjs';
+import { decideEstado, poda, jaSondouHoje, evidenciaEsgotado, evidenciaAtualizada } from './lib/estoque.mjs';
 import { googleBooks } from './resolve.mjs';
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
@@ -85,12 +85,27 @@ for (const l of livros) {
       ...(l.disponibilidade || {}),
       estado: alvo,
       mudou_em: hoje(),
-      evidencia: falhasRecentes.slice(0, FALHAS_PRA_ESGOTAR).map(o => `${o.nota || 'não respondeu'} (${dataBr(o.em)})`),
+      evidencia: evidenciaEsgotado(falhasRecentes, dataBr),
     };
     if (alvo === 'a_venda') delete limpo.disponibilidade.evidencia;
     gravar(arquivo, canonicalLivro(limpo));
     transicoes++;
     console.log(`  TRANSIÇÃO ${l.isbn13} ${l.titulo}: ${atual} -> ${alvo}`);
+    continue;
+  }
+
+  // Sem transição, o catálogo não muda — com uma exceção: a nota de esgotado
+  // que a página exibe. Ela citava as lojas que tinham respondido NO DIA da
+  // transição, e loja que passou a responder depois ficava de fora pra sempre.
+  // Aqui ela acompanha as três leituras mais recentes que sustentam o estado.
+  if (alvo === 'esgotado') {
+    const nova = evidenciaAtualizada(l.disponibilidade?.evidencia, falhasRecentes, dataBr);
+    if (nova) {
+      const { arquivo, ...limpo } = l;
+      limpo.disponibilidade = { ...(l.disponibilidade || {}), evidencia: nova };
+      gravar(arquivo, canonicalLivro(limpo));
+      console.log(`  nota de esgotado atualizada ${l.isbn13} ${l.titulo}: ${nova.join('; ')}`);
+    }
   }
 }
 

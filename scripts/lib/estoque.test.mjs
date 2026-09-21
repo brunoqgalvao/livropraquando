@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
-import { decideEstado, falhasSeguidas, porDia, poda, jaSondouHoje, DIAS_GUARDADOS, vereditoEstoque } from './estoque.mjs';
+import { decideEstado, falhasSeguidas, porDia, poda, jaSondouHoje, DIAS_GUARDADOS, vereditoEstoque, evidenciaEsgotado, evidenciaAtualizada } from './estoque.mjs';
+import { dataBr } from '../lib.mjs';
 
 let ok = 0, falhou = 0;
 const t = (nome, fn) => { try { fn(); ok++; } catch (e) { falhou++; console.log(`FALHOU: ${nome}\n  ${e.message}`); } };
@@ -130,6 +131,65 @@ t('veredito: so silencio e "nao sei", nunca esgotado', () => {
   assert.equal(v.ok, null);
 });
 
+
+t('evidencia de esgotado: as tres leituras mais recentes, na ordem em que sustentam o estado', () => {
+  const falhas = falhasSeguidas([
+    loja('2026-09-18', false, 'ciranda: Produto Indisponível'),
+    loja('2026-09-19', false, 'ciranda: Produto Indisponível'),
+    loja('2026-09-20', false, 'ciranda: Produto Indisponível'),
+    loja('2026-09-21', false, 'ciranda: Produto Indisponível; amazon: Não disponível'),
+  ]);
+  const ev = evidenciaEsgotado(falhas, dataBr);
+  assert.equal(ev.length, 3);
+  assert.match(ev[0], /\(21\/09\/2026\)$/);
+  assert.match(ev[0], /amazon/);
+  assert.match(ev[2], /\(19\/09\/2026\)$/);
+});
+
+t('evidencia de esgotado: leitura sem nota nao vira linha vazia', () => {
+  assert.deepEqual(
+    evidenciaEsgotado(falhasSeguidas([loja('2026-09-19', false), loja('2026-09-20', false), loja('2026-09-21', false)]), dataBr),
+    ['não respondeu (21/09/2026)', 'não respondeu (20/09/2026)', 'não respondeu (19/09/2026)'],
+  );
+});
+
+t('reescreve a nota quando uma loja que estava calada passa a responder', () => {
+  const falhas = falhasSeguidas([
+    loja('2026-09-18', false, 'ciranda: Produto Indisponível'),
+    loja('2026-09-19', false, 'ciranda: Produto Indisponível'),
+    loja('2026-09-21', false, 'ciranda: Produto Indisponível; amazon: Não disponível'),
+  ]);
+  const antiga = ['ciranda: Produto Indisponível (19/09/2026)', 'ciranda: Produto Indisponível (18/09/2026)', 'ciranda: Produto Indisponível (17/09/2026)'];
+  const nova = evidenciaAtualizada(antiga, falhas, dataBr);
+  assert.ok(nova, 'devia reescrever');
+  assert.match(nova[0], /amazon/);
+});
+
+t('nao reescreve a nota quando as leituras sao as mesmas', () => {
+  const obs = [loja('2026-09-19', false, 'ciranda: Produto Indisponível'), loja('2026-09-20', false, 'ciranda: Produto Indisponível'), loja('2026-09-21', false, 'ciranda: Produto Indisponível')];
+  const ev = evidenciaEsgotado(falhasSeguidas(obs), dataBr);
+  assert.equal(evidenciaAtualizada(ev, falhasSeguidas(obs), dataBr), null);
+});
+
+t('nao encolhe a nota: com menos de 3 falhas na janela, a evidencia velha fica', () => {
+  // A poda guarda 10 dias por fonte. Livro esgotado que para de receber leitura
+  // de loja acaba com 2 falhas na janela — reescrever ali deixaria a página com
+  // duas linhas embaixo de uma frase que promete três verificações.
+  const antiga = ['ciranda: Produto Indisponível (20/09/2026)', 'ciranda: Produto Indisponível (19/09/2026)', 'ciranda: Produto Indisponível (18/09/2026)'];
+  const falhas = falhasSeguidas([loja('2026-09-25', false, 'ciranda: Produto Indisponível'), loja('2026-09-26', false, 'ciranda: Produto Indisponível')]);
+  assert.equal(evidenciaAtualizada(antiga, falhas, dataBr), null);
+});
+
+t('veredito: loja com estoque ganha de loja sem estoque — livro compravel nao e esgotado', () => {
+  // O contrário esgotaria livro à venda quando uma das lojas da página some com
+  // o produto, que é o caso comum (tiragem que acaba numa loja e não na outra).
+  const v = vereditoEstoque([
+    { host: 'cirandacultural.com.br', estoque: { ok: false, nota: 'Produto Indisponível' } },
+    { host: 'amazon.com.br', estoque: { ok: true, nota: 'Em estoque' } },
+  ], '2026-09-21');
+  assert.equal(v.ok, true);
+  assert.equal(v.detalhe.length, 2);
+});
 
 console.log(`${ok} passaram, ${falhou} falharam`);
 process.exit(falhou ? 1 : 0);

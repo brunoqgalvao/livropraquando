@@ -103,15 +103,58 @@ export function jaSondouHoje(observacoes = [], fonte, hoje) {
 // continuava mostrando um link da Amazon que a gente nunca tinha conseguido ler.
 // Quem lê a nota no site não tinha como saber disso.
 //
-// A decisão de `ok` é a de sempre e não muda: leitura negativa explícita vale
-// mais que silêncio, positiva só conta se nenhuma loja disse o contrário. O que
-// muda é que o silêncio agora aparece escrito.
+// A decisão de `ok`: silêncio (`null`) não vota; entre as lojas que votaram,
+// basta UMA com estoque pra o livro estar à venda, porque à venda numa loja é
+// à venda. O contrário esgotaria livro comprável toda vez que uma das lojas da
+// página ficasse sem a tiragem — que é o caso comum.
+//
+// (A frase que estava aqui dizia "positiva só conta se nenhuma loja disse o
+// contrário", e a condição `&& !vistos.every(v => v.ok === false)` que a
+// acompanhava não fazia nada: se alguém disse `true`, nem todos disseram
+// `false`. Código e comentário discordavam, e quem lê acreditava no comentário.
+// Ficou o que o código sempre fez, agora com teste.)
 export function vereditoEstoque(leituras = [], em) {
   const nota = (x) => `${x.host}: ${x.estoque.ok === null ? `não deu leitura (${x.estoque.nota})` : x.estoque.nota}`;
   const vistos = leituras.map(x => x.estoque).filter(x => x.ok !== null);
   return {
-    ok: vistos.length ? vistos.some(v => v.ok === true) && !vistos.every(v => v.ok === false) : null,
+    ok: vistos.length ? vistos.some(v => v.ok === true) : null,
     detalhe: leituras.map(nota),
     em,
   };
+}
+
+// A evidência que a página mostra embaixo de "esgotado", e quando ela é
+// reescrita.
+//
+// Ela nascia congelada no dia da transição e nunca mais mudava. Em 20/09 o
+// "Mas e eu?" foi a esgotado com três linhas da Ciranda — e a página mostra
+// DUAS lojas, porque a leitura da Amazon era `null` naquele dia (o seletor não
+// enxergava o `#outOfStockBuyBox`). Consertado o seletor, em 21/09 a Amazon
+// passou a responder "Não temos previsão de quando este produto estará
+// disponível novamente": a loja que faltava na nota agora diz, com todas as
+// letras, a mesma coisa que a Ciranda. Com a evidência congelada, quem lê a
+// página continuaria vendo só metade do que a gente sabe.
+//
+// Então: enquanto o estado seguir `esgotado`, a evidência são as três leituras
+// de loja mais recentes que o sustentam. `mudou_em` não se move — a data da
+// transição é história, não leitura.
+export function evidenciaEsgotado(falhas = [], fmtData = (x) => x) {
+  return falhas.slice(0, FALHAS_PRA_ESGOTAR).map(o => `${o.nota || 'não respondeu'} (${fmtData(o.em)})`);
+}
+
+// A releitura só vale se ainda houver as três leituras que a frase da página
+// promete ("depois de três verificações em dias distintos"). A poda guarda 10
+// dias por fonte: um livro que fica esgotado e para de receber leitura de loja
+// acaba com menos de três falhas na janela, e reescrever a nota ali a
+// encolheria — a página exibiria duas linhas embaixo de uma frase que fala em
+// três. Nesse caso a evidência velha fica: ela é o que de fato aconteceu.
+//
+// Devolve `null` quando não há o que reescrever, pra quem chama não precisar
+// comparar array na mão.
+export function evidenciaAtualizada(atual = [], falhas = [], fmtData = (x) => x) {
+  if (falhas.length < FALHAS_PRA_ESGOTAR) return null;
+  const nova = evidenciaEsgotado(falhas, fmtData);
+  const velha = atual || [];
+  const igual = nova.length === velha.length && nova.every((l, i) => l === velha[i]);
+  return igual ? null : nova;
 }
