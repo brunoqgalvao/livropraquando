@@ -1,6 +1,6 @@
 // Casos tirados de páginas reais (colhidas em 18/09/2026). Se um deles quebrar,
 // alguma loja mudou o layout e a extração virou chute.
-import { idadeDaEditora, idadeDaAmazon, faixaDoTexto, estoqueDaPagina, valorBr, precoDaLoja, paginasDaFicha, ilustradorDaFicha } from './ficha.mjs';
+import { idadeDaEditora, idadeDaAmazon, faixaDoTexto, estoqueDaPagina, valorBr, precoDaLoja, paginasDaFicha, ilustradorDaFicha, rotuloIdadeAusente } from './ficha.mjs';
 import assert from 'node:assert/strict';
 
 let ok = 0, falhou = 0;
@@ -206,6 +206,17 @@ t('nota longa corta em palavra inteira, com reticencia', () => {
 t('nota curta fica inteira, sem reticencia', () =>
   assert.equal(estoqueDaPagina({ host: 'amazon.com.br', amazon: { estoque: 'Em estoque' } }).nota, 'Em estoque'));
 
+
+// A linha "Idade indicada" não pode desmentir o parágrafo que explica por que
+// ela está vazia.
+t('sem recusa, a linha diz que a editora calou', () =>
+  assert.equal(rotuloIdadeAusente({ isbn13: '1' }), 'a editora não indica'));
+
+t('com recusa, a linha nao afirma que ninguem indicou', () =>
+  assert.equal(rotuloIdadeAusente({ idade_recusada: [{ valor: '0 a 3' }] }), 'a única indicação que achamos não confere'));
+
+t('lista de recusa vazia volta pro caso comum', () =>
+  assert.equal(rotuloIdadeAusente({ idade_recusada: [] }), 'a editora não indica'));
 
 console.log(`${ok} passaram, ${falhou} falharam`);
 process.exit(falhou ? 1 : 0);

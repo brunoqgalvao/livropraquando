@@ -11,7 +11,7 @@
 // recusado aqui — entra como `idade_leitores`, que a página rotula como tal.
 import { P, lerTodos, gravar, canonicalLivro, hoje } from './lib.mjs';
 import { renderizar } from './navegador.mjs';
-import { devePular, mesclaEstoque, mesclaDiario } from './lib/rodada.mjs';
+import { devePular, mesclaEstoque, mesclaDiario, idadeRecusada } from './lib/rodada.mjs';
 import { vereditoEstoque } from './lib/estoque.mjs';
 import { idadeDaEditora, idadeDaAmazon, estoqueDaPagina, isbnDaPagina, precoDaLoja, paginasDaFicha, ilustradorDaFicha } from './lib/ficha.mjs';
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'node:fs';
@@ -212,6 +212,15 @@ for (const l of livros) {
   const piso = Number(String(escolhida.idade.valor).match(/\d+/)?.[0] ?? 0);
   if (l.paginas && l.paginas <= 48 && piso >= 10) {
     aviso(`ignorei "${escolhida.idade.valor}" de ${escolhida.host}: livro de ${l.paginas} páginas não é leitura de ${piso} anos — parece erro de cadastro`);
+    continue;
+  }
+  // Recusa escrita no próprio livro: a faixa já foi examinada e não serve.
+  // Sem isto o campo deixado em `nao_coberto` de propósito voltava a ser
+  // preenchido na passada seguinte, e a página afirmava de manhã o que alguém
+  // tinha recusado na véspera.
+  const rec = idadeRecusada(l.idade_recusada, escolhida);
+  if (rec) {
+    aviso(`ignorei "${escolhida.idade.valor}" de ${escolhida.host}: recusada em ${rec.em} — ${rec.motivo}`);
     continue;
   }
   if (escolhida.isbn_pagina && escolhida.isbn_pagina !== l.isbn13) {

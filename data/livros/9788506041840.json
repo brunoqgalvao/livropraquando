@@ -1,0 +1,94 @@
+{
+  "isbn13": "9788506041840",
+  "titulo": "Quero ser meu irmãozinho!",
+  "autor": "Sandra Saruê",
+  "ilustrador": "Marcelo Boffa",
+  "editora": "Melhoramentos",
+  "ano": 2003,
+  "origem": "nacional",
+  "paginas": 24,
+  "situacoes": [
+    "vai-nascer-um-irmao"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse da editora na página da Amazon",
+      "url": "https://www.amazon.com.br/dp/8506041848",
+      "trecho": "O ciúme do irmãozinho recém-nascido faz Guigo, um garoto de seis anos, querer trocar de lugar. Então descobre que vida de bebê não é nada fácil: tem de tomar leite do peito em vez de sorvete, fazer cocô e xixi na fralda e ficar com o bumbum assado. E o pior é perder a importante final do campeonato de futebol.",
+      "acessado_em": "2026-09-22"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/8506041848",
+      "trecho": "Editora : Melhoramentos Data da publicação : 1 janeiro 2003 Edição : 1ª Idioma : Português Número de páginas : 24 páginas",
+      "acessado_em": "2026-09-22"
+    }
+  ],
+  "nao_coberto": "A sinopse conta a premissa e o que Guigo descobre, mas não diz como a história termina nem quem narra. A única indicação de idade que alguma fonte publica é a da ficha da Amazon, \"Idade de leitura : 0 - 3 anos\", e ela não bate com a sinopse impressa na mesma página, que fala de um garoto de seis anos e de uma final de campeonato de futebol; por isso a coluna de idade fica em \"n/i\". A Melhoramentos não tem página deste título no site, e não encontramos ficha catalográfica nem resenha assinada.",
+  "nao_aborda": "A sinopse situa a história com o irmãozinho já nascido: não fala da gravidez nem do tempo de espera antes do parto. Também não diz nada sobre como os adultos da casa reagem.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8506041848"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "id": "zkRonwK0zcYC",
+        "isbn13": "9788506041840",
+        "titulo_bateu": true,
+        "em": "2026-09-22"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-09-22"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-09-22",
+  "capa": {
+    "arquivo": "9788506041840.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/71HD3cVhSDL._SL1200_.jpg",
+    "obtida_em": "2026-09-22",
+    "sha1": "d8bbebb753767e5935e408c53142c3a283d65feb",
+    "largura": 600,
+    "altura": 590
+  },
+  "idade_recusada": [
+    {
+      "valor": "0 a 3",
+      "fonte": "amazon.com.br",
+      "motivo": "a ficha diz \"0 - 3 anos\" na mesma página em que a sinopse da editora fala de um garoto de seis anos e de uma final de campeonato de futebol",
+      "em": "2026-09-22"
+    }
+  ]
+}

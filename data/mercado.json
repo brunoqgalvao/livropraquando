@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-09-21",
+  "atualizado_em": "2026-09-22",
   "livros": {
     "9786550791421": {
       "preco": 28,
@@ -13,7 +13,7 @@
           "amazon.com.br: Somente 5 em estoque.",
           "books.apple.com: não deu leitura (nenhum sinal de estoque na página)"
         ],
-        "em": "2026-09-21"
+        "em": "2026-09-22"
       },
       "loja": {
         "preco": 40,
@@ -23,7 +23,7 @@
         "url": "https://www.amazon.com.br/dp/655079093X",
         "base": "preço do buy box",
         "edicao": "9786550790936",
-        "em": "2026-09-21"
+        "em": "2026-09-22"
       }
     },
     "9786555300628": {
@@ -37,7 +37,7 @@
         "onde": [
           "estantevirtual.com.br: em estoque"
         ],
-        "em": "2026-09-21"
+        "em": "2026-09-22"
       },
       "loja": {
         "preco": 22.3,
@@ -46,7 +46,7 @@
         "onde": "Estante Virtual",
         "url": "https://www.estantevirtual.com.br/livro/conta-comigo-um-novo-irmao-sera-que-e-bom-06Z-1719-000-BK",
         "base": "dado estruturado (schema.org)",
-        "em": "2026-09-21"
+        "em": "2026-09-22"
       }
     },
     "9786556121475": {
@@ -59,9 +59,9 @@
         "a_venda": true,
         "onde": [
           "grupoeditorialglobal.com.br: não deu leitura (nenhum sinal de estoque na página)",
-          "amazon.com.br: Somente 4 em estoque."
+          "amazon.com.br: Somente 3 em estoque."
         ],
-        "em": "2026-09-21"
+        "em": "2026-09-22"
       },
       "loja": {
         "preco": 39.9,
@@ -71,7 +71,7 @@
         "url": "https://www.amazon.com.br/dp/6556121045",
         "base": "preço do buy box",
         "edicao": "9786556121048",
-        "em": "2026-09-21"
+        "em": "2026-09-22"
       }
     },
     "9786556540726": {
@@ -82,7 +82,7 @@
         "onde": [
           "companhiadasletras.com.br: Adicionar ao carrinho"
         ],
-        "em": "2026-09-21"
+        "em": "2026-09-22"
       },
       "loja": {
         "preco": 67.9,
@@ -91,7 +91,7 @@
         "onde": "Companhia das Letras",
         "url": "https://www.companhiadasletras.com.br/livro/9786556540726/bibo-na-escola",
         "base": "preço do físico",
-        "em": "2026-09-21"
+        "em": "2026-09-22"
       }
     },
     "9786559312016": {
@@ -106,7 +106,7 @@
           "editorapeiropolis.com.br: Adicionar ao carrinho",
           "amazon.com.br: Somente 1 em estoque."
         ],
-        "em": "2026-09-21"
+        "em": "2026-09-22"
       },
       "loja": {
         "preco": 84,
@@ -115,7 +115,7 @@
         "onde": "Editora Peirópolis",
         "url": "https://www.editorapeiropolis.com.br/produto/eu-so-so-eu/",
         "base": "dado estruturado (schema.org)",
-        "em": "2026-09-21"
+        "em": "2026-09-22"
       }
     },
     "9786559803019": {
@@ -133,7 +133,7 @@
         "onde": [
           "amazon.com.br: Estimativa de envio de 2 a 3 dias"
         ],
-        "em": "2026-09-21"
+        "em": "2026-09-22"
       },
       "loja": {
         "preco": 47.9,
@@ -142,7 +142,7 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6560070026",
         "base": "preço do buy box",
-        "em": "2026-09-21"
+        "em": "2026-09-22"
       }
     },
     "9786560250420": {
@@ -154,7 +154,7 @@
           "altabooks.com.br: Em estoque",
           "amazon.com.br: Somente 4 em estoque."
         ],
-        "em": "2026-09-21"
+        "em": "2026-09-22"
       },
       "loja": {
         "preco": 27.9,
@@ -163,7 +163,7 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6560250423",
         "base": "preço do buy box",
-        "em": "2026-09-21"
+        "em": "2026-09-22"
       }
     },
     "9786583924575": {
@@ -178,7 +178,7 @@
           "amazon.com.br: Em estoque",
           "editoratexugo.com.br: não deu leitura (loja barrou o navegador)"
         ],
-        "em": "2026-09-21"
+        "em": "2026-09-22"
       },
       "loja": {
         "preco": 19.18,
@@ -188,7 +188,7 @@
         "url": "https://www.amazon.com.br/dp/6583924560",
         "base": "preço do buy box",
         "edicao": "9786583924568",
-        "em": "2026-09-21"
+        "em": "2026-09-22"
       }
     },
     "9786586881363": {
@@ -200,7 +200,7 @@
           "aletria.com.br: não deu leitura (nenhum sinal de estoque na página)",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-09-21"
+        "em": "2026-09-22"
       },
       "loja": {
         "preco": 61.99,
@@ -209,7 +209,7 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6586881366",
         "base": "preço do buy box",
-        "em": "2026-09-21"
+        "em": "2026-09-22"
       }
     },
     "9788526259416": {
@@ -221,7 +221,7 @@
           "coletivoleitor.com.br: Comprar Agora",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-09-21"
+        "em": "2026-09-22"
       },
       "loja": {
         "preco": 60.43,
@@ -230,7 +230,7 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8526259415",
         "base": "preço do buy box",
-        "em": "2026-09-21"
+        "em": "2026-09-22"
       }
     },
     "9788538068617": {
@@ -242,7 +242,7 @@
           "cirandacultural.com.br: Produto Indisponível",
           "amazon.com.br: Não disponível. Não temos previsão de quando este produto estará disponível…"
         ],
-        "em": "2026-09-21"
+        "em": "2026-09-22"
       }
     },
     "9788562500824": {
@@ -254,20 +254,19 @@
       "estoque": {
         "a_venda": true,
         "onde": [
-          "rocco.com.br: não deu leitura (nenhum sinal de estoque na página)",
+          "rocco.com.br: Adicionar ao carrinho",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-09-21"
+        "em": "2026-09-22"
       },
       "loja": {
-        "preco": 40.72,
+        "preco": 59.9,
         "moeda": "BRL",
         "formato": "impresso",
-        "onde": "Amazon",
-        "url": "https://www.amazon.com.br/dp/6589642214",
-        "base": "preço do buy box",
-        "edicao": "9786589642213",
-        "em": "2026-09-21"
+        "onde": "Editora Rocco",
+        "url": "https://rocco.com.br/produto/o-primeiro-dia-de-chu-na-escola/",
+        "base": "dado estruturado (schema.org)",
+        "em": "2026-09-22"
       }
     },
     "9788574068039": {
@@ -279,7 +278,7 @@
           "companhiadasletras.com.br: Adicionar ao carrinho",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-09-21"
+        "em": "2026-09-22"
       },
       "loja": {
         "preco": 69.9,
@@ -288,7 +287,7 @@
         "onde": "Companhia das Letras",
         "url": "https://www.companhiadasletras.com.br/livro/9788574068039/nos-agora-somos-quatro",
         "base": "preço do físico",
-        "em": "2026-09-21"
+        "em": "2026-09-22"
       }
     },
     "9786556171081": {
@@ -297,7 +296,7 @@
         "onde": [
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-09-21"
+        "em": "2026-09-22"
       },
       "loja": {
         "preco": 19.01,
@@ -306,7 +305,7 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6556171085",
         "base": "preço do buy box",
-        "em": "2026-09-21"
+        "em": "2026-09-22"
       }
     },
     "9786555351958": {
@@ -315,7 +314,7 @@
         "onde": [
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-09-21"
+        "em": "2026-09-22"
       },
       "loja": {
         "preco": 41.8,
@@ -324,7 +323,16 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6555351950",
         "base": "preço do buy box",
-        "em": "2026-09-21"
+        "em": "2026-09-22"
+      }
+    },
+    "9788506041840": {
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "amazon.com.br: Somente 1 em estoque."
+        ],
+        "em": "2026-09-22"
       }
     }
   }

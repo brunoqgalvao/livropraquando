@@ -244,3 +244,18 @@ export function ilustradorDaFicha({ texto, amazon }) {
   }
   return null;
 }
+
+// O que a ficha da página escreve na linha "Idade indicada" quando o campo
+// está em `nao_coberto`.
+//
+// "a editora não indica" é a frase certa pro caso comum — a editora calou. Ela
+// vira afirmação errada quando o campo está vazio porque alguém OLHOU uma
+// indicação e a recusou: aí existe um número por aí, e dizer que não existe é
+// esconder o motivo do vazio embaixo de uma frase confortável. A página já
+// conta a história inteira em "O que a evidência não cobre"; o que esta linha
+// precisa é não desmentir aquele parágrafo.
+export function rotuloIdadeAusente(livro) {
+  return (livro?.idade_recusada || []).length
+    ? 'a única indicação que achamos não confere'
+    : 'a editora não indica';
+}

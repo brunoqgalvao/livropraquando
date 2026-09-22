@@ -34,14 +34,18 @@ const FRASE_NOMEIA = {
   metafora: 'A sinopse trata o assunto por metáfora.',
 };
 
-export function descricaoLivro({ titulo, editora, ano, idade, paginas, nomeia } = {}) {
+// `idadeContestada`: o livro tem uma indicação recusada (ver `idade_recusada`).
+// Aí "A editora não indica idade" é falso — indicou, e a gente é que não
+// publicou. Em 160 caracteres não cabe explicar por quê, e a explicação inteira
+// está na página; então a frase de idade simplesmente não sai. Campo sem frase
+// é o padrão daqui: o que a fonte não sustenta não vira texto.
+export function descricaoLivro({ titulo, editora, ano, idade, paginas, nomeia, idadeContestada = false } = {}) {
   if (!titulo) return undefined;
   const onde = [editora, ano].filter(Boolean).join(', ');
   const partes = [onde ? `${titulo} (${onde}).` : `${titulo}.`];
 
-  partes.push(idade && idade !== 'nao_coberto'
-    ? `Idade indicada pela editora: ${idade}.`
-    : 'A editora não indica idade.');
+  if (idade && idade !== 'nao_coberto') partes.push(`Idade indicada pela editora: ${idade}.`);
+  else if (!idadeContestada) partes.push('A editora não indica idade.');
   if (paginas) partes.push(`${paginas} páginas.`);
 
   // As frases opcionais entram só enquanto couberem: o Google corta em ~160 e

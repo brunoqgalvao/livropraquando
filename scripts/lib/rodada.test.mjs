@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { readdirSync, readFileSync } from 'node:fs';
 import { join, basename } from 'node:path';
-import { devePular, mesclaEstoque, mesclaDiario } from './rodada.mjs';
+import { devePular, mesclaEstoque, mesclaDiario, idadeRecusada } from './rodada.mjs';
 
 let ok = 0, falhou = 0;
 const t = (nome, fn) => { try { fn(); ok++; } catch (e) { falhou++; console.log(`FALHOU: ${nome}\n  ${e.message}`); } };
@@ -66,6 +66,31 @@ t('diário de ontem não contamina o de hoje', () => {
   const r = mesclaDiario({ em: '2026-09-18', completo: true, avisos: [{ isbn13: 'A', aviso: 'a1' }] }, { em: '2026-09-19', completo: false, avisos: [] }, ['A']);
   assert.deepEqual(r, { em: '2026-09-19', completo: false, avisos: [] });
 });
+
+// A recusa é do valor, não do campo: ela existe pra que uma ficha que
+// contradiz a própria sinopse da página não volte pro ar na passada seguinte.
+const RECUSA = [{ valor: '0 a 3', fonte: 'amazon.com.br', motivo: 'contradiz a sinopse da mesma página', em: '2026-09-22' }];
+
+t('idade recusada na mesma fonte nao volta', () =>
+  assert.ok(idadeRecusada(RECUSA, { host: 'amazon.com.br', idade: { valor: '0 a 3' } })));
+
+t('mesma faixa escrita com outro espacamento ainda e a recusada', () =>
+  assert.ok(idadeRecusada(RECUSA, { host: 'amazon.com.br', idade: { valor: '0a3' } })));
+
+t('loja corrigiu a ficha: faixa nova entra', () =>
+  assert.equal(idadeRecusada(RECUSA, { host: 'amazon.com.br', idade: { valor: '4 a 10' } }), null));
+
+t('mesma faixa vinda de outra fonte nao esta recusada', () =>
+  assert.equal(idadeRecusada(RECUSA, { host: 'editoramelhoramentos.com.br', idade: { valor: '0 a 3' } }), null));
+
+t('recusa sem fonte vale pra qualquer loja', () =>
+  assert.ok(idadeRecusada([{ valor: '0 a 3' }], { host: 'qualquer.com.br', idade: { valor: '0 a 3' } })));
+
+t('leitura sem idade nunca casa com recusa', () =>
+  assert.equal(idadeRecusada(RECUSA, { host: 'amazon.com.br', idade: null }), null));
+
+t('livro sem recusa nenhuma passa', () =>
+  assert.equal(idadeRecusada(undefined, { host: 'amazon.com.br', idade: { valor: '0 a 3' } }), null));
 
 // Em 20/09 eu colei dois testes no fim do ficha.test.mjs e eles ficaram DEPOIS
 // do process.exit: nunca rodaram, e o runner seguiu dizendo "51 passaram". Um

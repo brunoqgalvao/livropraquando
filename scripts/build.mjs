@@ -1,3 +1,4 @@
+import { rotuloIdadeAusente } from './lib/ficha.mjs';
 import { P, ROOT, lerTodos, gravar, dataBr } from './lib.mjs';
 import { dimensao } from './lib/imagem.mjs';
 import { faixaSchema, descricaoLivro, descricaoCurta } from './lib/schema.mjs';
@@ -382,7 +383,7 @@ for (const l of livros) {
   const legivel = { direto: 'diz o nome', metafora: 'usa metáfora', religioso: 'religioso', secular: 'secular', ambiguo: 'ambíguo', crianca: 'criança', adulto: 'adulto', animal: 'animal', objeto: 'objeto', sim: 'sim', nao: 'não', nao_coberto: 'a fonte não diz' };
   escreve(`l/${l.isbn13}.html`, pagina({
     titulo: `${l.titulo}, de ${l.autor} — pra que idade e o que traz`,
-    desc: descricaoLivro({ titulo: l.titulo, editora: l.editora, ano: l.ano, idade: val(r, 'idade_editora'), paginas: l.paginas, nomeia: val(r, 'nomeia_evento') }),
+    desc: descricaoLivro({ titulo: l.titulo, editora: l.editora, ano: l.ano, idade: val(r, 'idade_editora'), paginas: l.paginas, nomeia: val(r, 'nomeia_evento'), idadeContestada: (l.idade_recusada || []).length > 0 }),
     canon: `${SITE}/l/${l.isbn13}`,
     dados: dadosDoLivro(l),
     imagem: (l.situacoes || []).find(temArte) || 'capa',
@@ -394,7 +395,7 @@ ${precoBr(l) ? `<p class="preco">${precoBr(l)} <span class="selo">${esc(precoRot
 ${l.previa?.folheavel ? `<p><a class="folhear" href="https://books.google.com.br/books?id=${esc(l.previa.volume)}&printsec=frontcover" rel="noopener" target="_blank">Folhear as primeiras páginas ↗</a></p>
 <p class="selo">Amostra no Google Livros, liberada pela editora. Abre em outra aba; nem todo o livro está disponível.</p>` : ''}</div></div>
 <ul class="ficha">
-  <li><b>Idade indicada</b> <span>${val(r, 'idade_editora') === 'nao_coberto' ? 'a editora não indica' : `${esc(val(r, 'idade_editora'))} <span class="selo">(pela editora)</span>${fonteDe(r, 'idade_editora', evs)}`}</span></li>
+  <li><b>Idade indicada</b> <span>${val(r, 'idade_editora') === 'nao_coberto' ? esc(rotuloIdadeAusente(l)) : `${esc(val(r, 'idade_editora'))} <span class="selo">(pela editora)</span>${fonteDe(r, 'idade_editora', evs)}`}</span></li>
   ${Object.entries(rot).filter(([k]) => k !== 'idade_editora').map(([k, label]) => `<li><b>${label}</b> <span>${esc(legivel[val(r, k)] ?? '—')}${fonteDe(r, k, evs)}</span></li>`).join('\n  ')}
   ${l.origem ? `<li><b>Origem</b> <span>${esc(l.origem === 'traducao' ? `tradução${l.ano_original ? `, original de ${l.ano_original}` : ''}` : 'nacional')}</span></li>` : ''}
   ${l.paginas ? `<li><b>Páginas</b> <span>${l.paginas}</span></li>` : ''}

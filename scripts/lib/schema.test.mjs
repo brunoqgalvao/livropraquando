@@ -89,5 +89,19 @@ t('primeira frase gigante vira nada, não vira meia frase', () =>
 
 t('vazio não vira string vazia', () => assert.equal(descricaoCurta(''), undefined));
 
+t('livro com indicacao recusada nao afirma que a editora calou', () => {
+  const d = descricaoLivro({ titulo: 'Quero ser meu irmãozinho!', editora: 'Melhoramentos', ano: 2003, idade: 'nao_coberto', paginas: 24, nomeia: 'direto', idadeContestada: true });
+  assert.ok(!/editora n[ãa]o indica/i.test(d), d);
+  assert.ok(/24 p[áa]ginas/.test(d), d);
+});
+
+t('sem recusa, a frase de idade ausente continua saindo', () =>
+  assert.ok(/A editora não indica idade\./.test(
+    descricaoLivro({ titulo: 'X', editora: 'Y', ano: 2020, idade: 'nao_coberto', paginas: 24 }))));
+
+t('idade presente ganha da recusa', () =>
+  assert.ok(/Idade indicada pela editora: 3 a 5\./.test(
+    descricaoLivro({ titulo: 'X', idade: '3 a 5', idadeContestada: true }))));
+
 console.log(`${ok} passaram, ${falhou} falharam`);
 if (falhou) process.exit(1);

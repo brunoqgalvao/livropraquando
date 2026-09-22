@@ -49,7 +49,7 @@ incompleto vale mais que um catálogo completo e inventado.
    tem livro — o que acaba apagando o livro da tabela pela regra dos 3
    esgotados. Pra olhar um livro específico, passe o ISBN.
 
-   **Idade está no teto com as fontes de hoje: 8 de 16 (em 21/09).** Não gaste
+   **Idade está no teto com as fontes de hoje: 8 de 17 (em 22/09).** Não gaste
    rodada atrás dos outros 8 sem fonte nova. Três só têm a "Idade sugerida pelo
    cliente" da Amazon e dependem de decisão do Bruno ("O primeiro dia de Chu na
    escola", "Nós agora somos quatro" e "As aventuras de Mike 2"); um tem página da
@@ -64,6 +64,16 @@ incompleto vale mais que um catálogo completo e inventado.
    Pete e o primeiro dia de aula" é exclusivo Leiturinha e não tem página na
    HarperCollins, e a Tudo! Editora não tem ficha do livro fora de marketplace.
    Se alguma dessas mudar, aí sim vale voltar.
+
+   O nono sem idade é caso diferente dos outros e tem trava própria: "Quero ser
+   meu irmãozinho!" TEM indicação na ficha da Amazon ("0 - 3 anos") e ela foi
+   **recusada** em 22/09, porque a sinopse da editora na mesma página fala de um
+   garoto de seis anos e de uma final de campeonato de futebol. A recusa mora no
+   `idade_recusada` do JSON do livro e o `renderizar.mjs` a respeita
+   (`idadeRecusada`, em `lib/rodada.mjs`, com teste). Ela é do VALOR: se a loja
+   corrigir a ficha pra outra faixa, a nova entra sozinha. Não apague a recusa
+   pra "preencher a coluna" — foi ela que impediu a página de imprimir "0 a 3
+   (pela editora)" embaixo da própria sinopse que a desmente.
 
 3. `node scripts/capas.mjs` se algum livro estiver sem capa. Ele colhe candidatos
    da pagina da loja e deixa em `runtime/capas-espera/`, **sem publicar**. Antes de

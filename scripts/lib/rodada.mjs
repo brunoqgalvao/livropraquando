@@ -45,3 +45,32 @@ export function mesclaDiario(antes, novo, isbnsDaRodada = []) {
   const herdados = (antes.avisos || []).filter(a => !tocados.has(a.isbn13));
   return { em: novo.em, completo: antes.completo === true, avisos: [...herdados, ...(novo.avisos || [])] };
 }
+
+// Idade que já foi olhada e recusada não volta sozinha.
+//
+// A ficha da Amazon de "Quero ser meu irmãozinho!" diz "Idade de leitura : 0 -
+// 3 anos" quatro parágrafos abaixo da sinopse da própria editora, que conta a
+// história de "Guigo, um garoto de seis anos" e de uma final de campeonato de
+// futebol. É erro de cadastro, e a trava de plausibilidade do renderizar.mjs
+// não pega: ela só desconfia de piso ALTO em livro curto ("12+" em 24 páginas).
+// Aqui o teto é que é baixo demais, e isso nenhuma regra genérica enxerga —
+// 24 páginas para 0 a 3 anos é o caso comum, não a exceção. Quem viu o
+// desacordo foi o olho, lendo a mesma página.
+//
+// Então a recusa mora no livro, uma por valor e fonte, com motivo escrito. Sem
+// isso a página publicaria "0 a 3 (pela editora)" na manhã seguinte: o
+// renderizar.mjs reescreve `rubrica.idade_editora` toda passada, e o campo
+// deixado em `nao_coberto` de propósito não tem como se defender.
+//
+// A recusa é do VALOR, não do campo: se a loja corrigir a ficha para outra
+// faixa, ela entra normalmente. Recusa que valesse pra sempre seria uma coluna
+// congelada à mão, que é o oposto do que este projeto faz.
+const mesmaFaixa = (a, b) =>
+  String(a || '').replace(/\s+/g, '').toLowerCase() === String(b || '').replace(/\s+/g, '').toLowerCase();
+
+export function idadeRecusada(recusas, leitura) {
+  if (!leitura?.idade?.valor) return null;
+  return (recusas || []).find(r =>
+    mesmaFaixa(r.valor, leitura.idade.valor)
+    && (!r.fonte || r.fonte === leitura.host)) || null;
+}
