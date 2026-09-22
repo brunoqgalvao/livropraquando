@@ -261,7 +261,20 @@ incompleto vale mais que um catálogo completo e inventado.
     `rodada.test.mjs` agora tem uma trava estática pra isso (não dá pra pegar em
     runtime: código depois do exit não executa).
 
-19. Relatório: `SendMessage` pra sessão `brunodeqgalvao-5c` e cópia em `runtime/report-<data>.md`.
+19. **Publicou livro novo? Rode o `check.mjs` de novo antes de fechar o dia.**
+    O check roda cedo na rotina, com o catálogo de ontem; livro que entra depois
+    fica sem contador de disponibilidade até a rodada seguinte. Em 22/09 entrou o
+    "Quero ser meu irmãozinho!" com **1 exemplar e loja única** — exatamente o
+    perfil que pode sumir da prateleira em dias — e ele passou o dia sem uma
+    única observação de loja. O `renderizar.mjs` já tinha lido a página dele, o
+    dado estava lá; só faltava o check olhar.
+
+    Custa nada: as sondas de rede do dia já estão marcadas e são puladas, e a da
+    loja lê arquivo local. E confira o número que você vai escrever no relatório
+    — o de 22/09 dizia "17 sondados" quando o availability.json tinha 16. O
+    `check` imprime a contagem certa; copie dela, não da sua cabeça.
+
+20. Relatório: `SendMessage` pra sessão `brunodeqgalvao-5c` e cópia em `runtime/report-<data>.md`.
     Não vai pro self-chat do WhatsApp do Bruno.
 
 ## O relatório
