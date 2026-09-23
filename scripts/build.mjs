@@ -1,6 +1,6 @@
 import { rotuloIdadeAusente } from './lib/ficha.mjs';
 import { P, ROOT, lerTodos, gravar, dataBr } from './lib.mjs';
-import { dimensao } from './lib/imagem.mjs';
+import { dimensao, mostrarInteira } from './lib/imagem.mjs';
 import { faixaSchema, descricaoLivro, descricaoCurta } from './lib/schema.mjs';
 import { join } from 'node:path';
 import { rmSync, existsSync, cpSync, readFileSync, readdirSync } from 'node:fs';
@@ -91,7 +91,8 @@ function vendaCel(l) {
 // Capa é como pai reconhece livro. Sem ela a tabela é um extrato bancário.
 // Uma das capas e uma lombada inteira (300x150, Girassol). Num slot 2:3 com
 // `object-fit:cover` ela vira uma tira vertical recortada do meio, que nao
-// parece capa de nada. Capa deitada aparece inteira, menor.
+// parece capa de nada. Capa que nao cabe no slot aparece inteira, menor —
+// quem decide quais e o `mostrarInteira` de lib/imagem.mjs.
 const FORMATO = (() => {
   const m = new Map();
   try {
@@ -104,7 +105,8 @@ const FORMATO = (() => {
   }
   return m;
 })();
-const deitada = (l) => (FORMATO.get(l.capa?.arquivo) ?? 0) > 1.15;
+// A regra mora em lib/imagem.mjs, com teste: ela decide o que o leitor vê da capa.
+const inteira = (l) => mostrarInteira(FORMATO.get(l.capa?.arquivo));
 
 // A capa do topo da pagina do livro esta acima da dobra e e o maior elemento:
 // carregar preguicoso atrasa o LCP de proposito. Nao aparecia antes porque quase
@@ -117,7 +119,7 @@ const esgotadoNota = (l) => l.disponibilidade?.estado !== 'esgotado' ? '' :
   `<p class="nota">Marcado como esgotado em ${dataBr(l.disponibilidade.mudou_em)}, depois de três verificações em dias distintos sem encontrar o livro à venda nas lojas que responderam: ${esc((l.disponibilidade.evidencia || []).join(' · '))}. Os links abaixo continuam aqui porque a loja pode repor; pode haver exemplar em sebo.</p>`;
 
 const capa = (l, cls = '', { jaVisivel = false } = {}) => l.capa?.arquivo
-  ? `<img class="capa-livro ${cls}${deitada(l) ? ' deitada' : ''}" src="/capas/${esc(l.capa.arquivo)}" alt="Capa de ${esc(l.titulo)}" ${jaVisivel ? 'fetchpriority="high" decoding="sync"' : 'loading="lazy" decoding="async"'} width="80" height="120">`
+  ? `<img class="capa-livro ${cls}${inteira(l) ? ' deitada' : ''}" src="/capas/${esc(l.capa.arquivo)}" alt="Capa de ${esc(l.titulo)}" ${jaVisivel ? 'fetchpriority="high" decoding="sync"' : 'loading="lazy" decoding="async"'} width="80" height="120">`
   : `<span class="capa-livro vazia ${cls}" aria-hidden="true"></span>`;
 const bin = (v, quando) => v === quando ? SIM : (v === 'nao_coberto' || v === undefined ? NAO : NAO);
 const vv = (l, campo) => { const v = (l.rubrica || {})[campo]; return typeof v === 'object' ? v?.valor : v; };

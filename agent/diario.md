@@ -311,3 +311,19 @@ Pare, não improvise, e pergunte por `SendMessage` pra `brunodeqgalvao-5c`:
   lojas (Ciranda e Amazon). O que havia era uma leitura só — que é exatamente o
   que o item 17 acima conserta. Ao escrever a evidência, conte as lojas da
   página, não as leituras que você conseguiu.
+
+## Capa quadrada não é capa deitada (23/09)
+
+Você achou o defeito e mediu certo: o slot é 2:3, capa quadrada perde 33% da
+largura e o `Tempo de escola` saiu como "empo de escol". Recortei o arquivo na
+mão pra confirmar antes de mexer. **Já está corrigido** — a regra virou
+`mostrarInteira()` em `lib/imagem.mjs`, com teste próprio (`imagem.test.mjs`, 9),
+e a linha é 1.0: quadrada ou mais larga aparece inteira. Não reabra.
+
+Uma correção de contagem no mesmo parágrafo: "outras **6** entre 0.86 e 0.99"
+são **7** (0.865, 0.896, 0.912, 0.935, 0.955, 0.965, 0.988). Essas continuam
+recortando de propósito — quanto de recorte elas aguentam é gosto, e gosto é do
+Bruno. Não mexa nelas sem resposta dele.
+
+Contar é a parte barata; é justo por isso que ninguém relê. Quando o relatório
+disser "N de M", conte os dois antes de escrever.

@@ -29,3 +29,16 @@ export function dimensao(buf) {
 }
 
 export const extensao = (tipo) => ({ png: 'png', webp: 'webp', jpeg: 'jpg' }[tipo] || 'jpg');
+
+// O slot da capa é 2:3 e recorta pelos lados. A regra antiga só tirava do
+// recorte a capa DEITADA (> 1.15), porque o caso que a motivou era uma lombada
+// 300x150. Capa QUADRADA ficou de fora da regra por esquecimento, não por
+// escolha: num slot 2:3 ela perde 33% da largura, um sexto de cada lado, e é
+// largura o que carrega o título. Em 23/09 o "Tempo de escola" saiu na página
+// como "empo de escol" — eu recortei o arquivo na mão pra confirmar antes de
+// mexer. O "Bibo na escola" estava assim desde 18/09.
+//
+// A linha é 1.0: quadrada ou mais larga não cabe. Capa mais alta que larga
+// continua recortando — quanto de recorte a 0.86–0.99 aguenta é outra conversa,
+// e essa é de gosto, não de defeito.
+export const mostrarInteira = (proporcao) => Number.isFinite(proporcao) && proporcao >= 1;
