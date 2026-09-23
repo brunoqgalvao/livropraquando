@@ -1,0 +1,88 @@
+{
+  "isbn13": "9788516048259",
+  "titulo": "E essa tal de escola? Como será?",
+  "autor": "Bel Linares",
+  "ilustrador": "Alcy",
+  "editora": "Salamandra",
+  "ano": 2008,
+  "origem": "nacional",
+  "paginas": 24,
+  "situacoes": [
+    "primeiro-dia-de-aula"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "6 a 8",
+      "base": 1
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse da editora na ficha da Amazon",
+      "url": "https://www.amazon.com.br/dp/851604825X",
+      "trecho": "O ingresso na escola é cercado por medos e incertezas que começam na escolha da instituição por parte dos pais e persistem até a criança estar adaptada. Este livro é um instrumento para ajudar a criança a enfrentar esse momento ao mesmo tempo em que favorece a conversa sobre inclusão e diferenças. Observando-se as ilustrações nota-se a presença de uma criança com síndrome de Down já adaptada à escola.",
+      "acessado_em": "2026-09-23"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "detalhes do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/851604825X",
+      "trecho": "Editora : Salamandra Data da publicação : 7 abril 2008 Idioma : Português Número de páginas : 24 páginas ISBN-10 : 851604825X ISBN-13 : 978-8516048259 […] Idade de leitura : 6 - 8 anos",
+      "acessado_em": "2026-09-23"
+    }
+  ],
+  "nao_coberto": "A sinopse da editora diz para que o livro serve, não o que acontece nele: não há personagem nomeado, não se sabe quem narra nem como a história termina. O único detalhe do miolo que ela dá é sobre as ilustrações. As fontes também discordam do ano: a ficha da Amazon registra 7 de abril de 2008 para este ISBN e o Google Books registra 2005.",
+  "nao_aborda": "A sinopse começa na escolha da escola pelos pais e vai até a adaptação. Não fala de creche, nem da despedida na porta, nem do que acontece dentro da sala de aula.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/851604825X"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "id": "yJOlPgAACAAJ",
+        "isbn13": "9788516048259",
+        "titulo_bateu": true,
+        "em": "2026-09-23"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-09-23"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-09-23",
+  "capa": {
+    "arquivo": "9788516048259.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/71ZJufpTStL._SL1200_.jpg",
+    "obtida_em": "2026-09-23",
+    "sha1": "5f44d42336f178a202803559faced05e3b00712b",
+    "largura": 459,
+    "altura": 600
+  },
+  "nota": "É o único livro desta situação cuja ficha da editora fala em inclusão: segundo ela, uma das crianças desenhadas tem síndrome de Down. A frase sobre o que o livro faz pela criança é da editora, citada acima, não uma afirmação desta página."
+}

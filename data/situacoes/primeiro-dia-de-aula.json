@@ -6,12 +6,13 @@
   "faixas": [
     {
       "isbn13": "9788526259416",
-      "base": 0
+      "base": 0,
+      "faixa": "0 a 5 anos"
     }
   ],
   "bloqueada": false,
   "curadoria": "agente",
-  "verificado_em": "2026-09-18",
+  "verificado_em": "2026-09-23",
   "colunas": [
     "idade_editora",
     "paginas",

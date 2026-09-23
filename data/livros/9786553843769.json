@@ -1,0 +1,101 @@
+{
+  "isbn13": "9786553843769",
+  "titulo": "Tempo de escola",
+  "autor": "Dejanira Rainha",
+  "ilustrador": "Fernanda Rodrigues",
+  "editora": "Ciranda na Escola (Ciranda Cultural)",
+  "ano": 2024,
+  "origem": "nacional",
+  "paginas": 32,
+  "situacoes": [
+    "primeiro-dia-de-aula"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "4+",
+      "base": 1
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "apresentação da autora no site da Ciranda Cultural",
+      "url": "https://www.cirandacultural.com.br/produto/livro-tempo-de-escola-74911",
+      "trecho": "Escrevi este texto para apresentar às crianças um pouco dos medos e das alegrias que senti quando criança, ao ter de ir para a escola pela primeira vez. Mas escrevi também para dizer que, ao chegar lá, os medos diminuíram e aumentaram as alegrias, porque eram grandes e luminosas as novidades que a escola apresentava para mim. Fernanda Rodrigues leu nas entrelinhas desse texto e o ilustrou de maneira sensível e delicada.",
+      "acessado_em": "2026-09-23"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha do produto no site da Ciranda Cultural",
+      "url": "https://www.cirandacultural.com.br/produto/livro-tempo-de-escola-74911",
+      "trecho": "Editora: Ciranda na Escola Edição: 1, 2024 Autor: Dejanira Rainha Ilustrador: Fernanda Rodrigues Idioma: Português Páginas: 32 […] ISBN: 9786553843578 […] Faixa Etária: + 4 anos",
+      "acessado_em": "2026-09-23"
+    }
+  ],
+  "nao_coberto": "O texto que a editora publica é uma apresentação da autora sobre o próprio livro, não uma sinopse da história: não diz se há um personagem, quem é, nem quem narra. Também não diz se o texto é em verso ou em prosa, nem quais são as \"novidades\" que a escola apresenta. Não há resenha assinada nas fontes que consultamos.",
+  "nao_aborda": "A apresentação fala da primeira vez de ir à escola. Não fala de creche, de despedida na porta nem de mudança de uma escola para outra.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Ciranda Cultural",
+        "url": "https://www.cirandacultural.com.br/produto/livro-tempo-de-escola-74911",
+        "esgotado_se": "produto-comprar hide"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6553843570"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "id": "82D2EAAAQBAJ",
+        "isbn13": "9786553843769",
+        "titulo_bateu": true,
+        "em": "2026-09-23"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-09-23"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-09-23",
+  "capa": {
+    "arquivo": "9786553843769.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/71EsCgFNfiL._SL1200_.jpg",
+    "obtida_em": "2026-09-23",
+    "sha1": "5369691a726e36431ef6cd295170b90dafc26e5d",
+    "largura": 600,
+    "altura": 600
+  },
+  "nota": "Os dois ISBN desta edição não estão nos mesmos lugares: o catálogo externo que registra o livro (Google Books) traz o da edição digital, 9786553843769, que é o número desta página; a edição impressa que as lojas vendem traz 9786553843578, que é o número da ficha da editora citada acima e não aparece nem no Google Books nem na Open Library.",
+  "outras_edicoes": [
+    {
+      "isbn13": "9786553843578",
+      "formato": "impressa de 2024",
+      "url": "https://www.cirandacultural.com.br/produto/livro-tempo-de-escola-74911",
+      "verificado_em": "2026-09-23"
+    }
+  ]
+}

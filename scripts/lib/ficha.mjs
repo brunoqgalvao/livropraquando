@@ -80,6 +80,12 @@ const FORA = [/produto\s+indispon[íi]vel/i, /atualmente\s+indispon[íi]vel/i, /
 const TEM = [/em estoque/i, /adicionar ao carrinho/i, /comprar agora/i, /compre (?:agora|j[áa])/i,
              /estimativa de envio/i, /envio em \d/i];
 
+// Rótulo de botão de compra, e só os que a loja desenha na tela. O mesmo
+// <input value="Comprar"> existe no DOM da Ciranda esgotada e da Ciranda à
+// venda — o que muda é o tamanho: 260x43 numa, 0x0 na outra. Casar pelo texto
+// do botão sem olhar se ele aparece diria "à venda" para as duas.
+const BOTAO_TEM = [/adicionar ao carrinho/i, /\bcomprar\b/i, /\bcompre\b/i];
+
 // `ok: null` = não deu pra ver. É diferente de "não tem", e a diferença é o
 // projeto inteiro: a coluna antiga dizia "sim" porque o HTTP devolveu 200.
 // A nota da loja pode virar evidência numa página pública (é o que a nota de
@@ -92,7 +98,14 @@ const corta = (s, n = 80) => {
   return (esp > n * 0.6 ? c.slice(0, esp) : c).replace(/[ ,.;:]+$/, '') + '…';
 };
 
-export function estoqueDaPagina({ host, texto, titulo, amazon }) {
+// A loja pode dizer "à venda" sem escrever nada: na Ciranda o botão de compra é
+// um <input>, e rótulo de input mora no `value`, não no innerText. A página de
+// "Tempo de escola" voltava `null` — "não deu pra ler" — com o botão Comprar
+// visível na tela. `null` é caro (item 17 do diário), então o rótulo de botão
+// entra como sinal positivo. Só positivo: FORA continua sendo checado antes e
+// ganha, porque a Ciranda esgotada mantém o botão no DOM e escreve "Produto
+// Indisponível" no texto.
+export function estoqueDaPagina({ host, texto, titulo, amazon, botoes }) {
   if (/amazon\./.test(host)) {
     const s = semMarcas(amazon?.estoque);
     if (!s) return { ok: null, nota: 'Amazon não mostrou bloco de disponibilidade' };
@@ -107,6 +120,8 @@ export function estoqueDaPagina({ host, texto, titulo, amazon }) {
   // "Produto Indisponível" na mesma tela.
   for (const re of FORA) { const m = t.match(re); if (m) return { ok: false, nota: m[0] }; }
   for (const re of TEM) { const m = t.match(re); if (m) return { ok: true, nota: m[0] }; }
+  const b = semMarcas(botoes);
+  for (const re of BOTAO_TEM) { if (re.test(b)) return { ok: true, nota: `botão de compra na tela: "${corta(b, 40)}"` }; }
   return { ok: null, nota: 'nenhum sinal de estoque na página' };
 }
 

@@ -69,11 +69,17 @@ const EXTRATOR = `(() => {
     ficha: [...document.querySelectorAll('#detailBullets_feature_div li, #productDetailsTable li, #detailBulletsWrapper_feature_div li')]
       .map(e => e.innerText.replace(/\\s+/g, ' ').trim()).filter(Boolean),
   } : null;
+  // Rótulo de <input> mora no value, não no innerText: o botão Comprar da
+  // Ciranda não chega em \`texto\` nenhum. Só os que a loja desenha na tela —
+  // o esgotado guarda o mesmo input escondido em 0x0.
+  const botoes = [...document.querySelectorAll('input[type=submit], input[type=button], input[type=image]')]
+    .filter(e => { const r = e.getBoundingClientRect(); return r.width > 0 && r.height > 0; })
+    .map(e => (e.value || e.alt || '').trim()).filter(Boolean).join(' | ');
   return {
     url: location.href,
     titulo: document.title,
     texto: document.body ? document.body.innerText : '',
-    jsonld, micro, amazon,
+    jsonld, micro, amazon, botoes,
   };
 })()`;
 

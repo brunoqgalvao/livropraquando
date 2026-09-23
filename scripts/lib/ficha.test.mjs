@@ -218,5 +218,38 @@ t('com recusa, a linha nao afirma que ninguem indicou', () =>
 t('lista de recusa vazia volta pro caso comum', () =>
   assert.equal(rotuloIdadeAusente({ idade_recusada: [] }), 'a editora não indica'));
 
+
+// O botão de compra da Ciranda é um <input>: o rótulo mora no value e nunca
+// chega ao innerText. Sem isto, "Tempo de escola" voltava `null` com o botão
+// Comprar desenhado na tela — e `null` trava a regra dos 3 (item 17 do diário).
+const PAGINA_CIRANDA = 'Livro Tempo de escola SKU 9786553843578 Avalie R$ 39,90 Quantidade - + Consulte frete e prazo de entrega Não sabe o CEP? INFORMAÇÕES Escrevi este texto para apresentar às crianças um pouco dos medos e das alegrias que senti quando criança, ao ter de ir para a escola pela primeira vez. Editora: Ciranda na Escola Edição: 1, 2024 Páginas: 32 ISBN: 9786553843578 Faixa Etária: + 4 anos';
+
+t('Ciranda: botão Comprar na tela vale como à venda', () => {
+  const r = estoqueDaPagina({ host: 'cirandacultural.com.br', texto: PAGINA_CIRANDA, botoes: 'Comprar | Ok' });
+  assert.equal(r.ok, true);
+  assert.match(r.nota, /botão de compra na tela/);
+});
+
+t('Ciranda: sem os botões, a mesma página segue ilegível', () =>
+  assert.equal(estoqueDaPagina({ host: 'cirandacultural.com.br', texto: PAGINA_CIRANDA }).ok, null));
+
+// O mesmo <input value="Comprar"> existe no DOM da página esgotada, escondido
+// em 0x0. Quem manda é o texto negativo, que é checado antes.
+t('Produto Indisponível ganha do botão de compra', () => {
+  const r = estoqueDaPagina({
+    host: 'cirandacultural.com.br',
+    texto: PAGINA_CIRANDA + ' Produto Indisponível Avisar por e-mail',
+    botoes: 'Avisar por e-mail | Ok',
+  });
+  assert.equal(r.ok, false);
+  assert.match(r.nota, /Produto Indispon/i);
+});
+
+t('botão de avisar sozinho não vira à venda', () =>
+  assert.equal(estoqueDaPagina({ host: 'cirandacultural.com.br', texto: PAGINA_CIRANDA, botoes: 'Avisar por e-mail | Ok' }).ok, null));
+
+t('botão não mexe na Amazon, que tem bloco próprio', () =>
+  assert.equal(estoqueDaPagina({ host: 'amazon.com.br', amazon: {}, botoes: 'Comprar agora' }).ok, null));
+
 console.log(`${ok} passaram, ${falhou} falharam`);
 process.exit(falhou ? 1 : 0);
