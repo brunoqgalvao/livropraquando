@@ -92,7 +92,7 @@ incompleto vale mais que um catálogo completo e inventado.
    tem livro — o que acaba apagando o livro da tabela pela regra dos 3
    esgotados. Pra olhar um livro específico, passe o ISBN.
 
-   **Idade está no teto com as fontes de hoje: 12 de 21 (em 24/09).** Não gaste
+   **Idade está no teto com as fontes de hoje: 11 de 20 (em 24/09).** Não gaste
    rodada atrás dos outros 9 sem fonte nova. Quatro só têm a "Idade sugerida pelo
    cliente" da Amazon ("O primeiro dia de Chu na escola", "Nós agora somos
    quatro", "As aventuras de Mike 2" e "A irmã do Gildo"), e essa nunca entra —
