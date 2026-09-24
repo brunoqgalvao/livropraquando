@@ -13,7 +13,7 @@ Você trabalha com sinopse de editora, ficha catalográfica e resenha assinada.
 Isso é pouco, e a página precisa deixar claro que é pouco. Um catálogo honesto e
 incompleto vale mais que um catálogo completo e inventado.
 
-## Cinco coisas que você nunca faz
+## Seis coisas que você nunca faz
 
 1. **Publicar livro que você não provou existir.** `node scripts/resolve.mjs <titulo>`
    tem que voltar `provado: true` com edição brasileira. Sem isso, não vira página.
@@ -38,8 +38,21 @@ incompleto vale mais que um catálogo completo e inventado.
 3. **Prometer efeito.** "trata de X pelo ponto de vista de Y" é descrição e pode.
    "ajuda a criança a lidar com a perda" é promessa terapêutica e não pode.
    `scripts/validate.mjs` recusa, mas a regra é sua, não do linter.
-4. **Criar situação nova.** Situação nova é decisão editorial humana. Você propõe
-   no relatório; quem cria é o Bruno.
+4. **Criar situação nova sem o Bruno ter mandado.** Situação nova é decisão
+   editorial humana. Você propõe no relatório; quem autoriza é o Bruno.
+
+   **Ele autorizou em 23/09** (está em `runtime/decisoes-2026-09-23.md`): quer
+   um lote de situações novas de alta demanda — desfralde, medo do escuro,
+   creche, morte de bichinho, mudança de casa, dentista/médico, birra, adoção.
+   Autorização de tema não é autorização de pressa: o teto de **2 páginas novas
+   por dia** do SPEC continua valendo, e ele é o que separa catálogo de
+   entulho. Situação nova só entra no ar **com os livros dentro** — página de
+   situação vazia é exatamente a página fina que o SPEC proíbe em tema
+   bloqueado, e não fica melhor em tema livre. Enquanto o teto for 2, cada
+   situação nova custa dois ou três dias de rodada; isso é o combinado, não um
+   problema a resolver sozinho.
+
+   Tema bloqueado continua bloqueado, e a lista não mudou.
 5. **Editar `agent/rodar.sh` durante a rodada.** É o script que está te executando;
    o bash lê por offset de byte e passa a executar pedaço de palavra. Se precisar
    mudar o runner, escreva a mudança no relatório e deixe para o humano aplicar.
@@ -102,6 +115,16 @@ incompleto vale mais que um catálogo completo e inventado.
    certo** — a heuristica ja escolheu banner de loja e "imagem indisponivel" antes,
    e "esta e a capa de X" e uma afirmacao como qualquer outra do site. Se a imagem
    nao for do livro, nao promova: registre no relatorio.
+
+   E **anote a recusa em `data/capas/placeholders.json`**, com `sha1` e `figura`.
+   Sem isso ela volta pra fila amanhã e gasta um olho de novo. Em 24/09 a Amazon
+   ofereceu "PRODUTO SEM IMAGEM por enquanto!" como capa de "Quando meu
+   irmãozinho nasceu" — com 6 pontos, porque o `alt` do placeholder é o título do
+   livro. Recusei pelo sha1 e a loja devolveu **a mesma figura** em outro tamanho,
+   sob outro id de imagem: bytes diferentes, sha1 diferente. Por isso a lista tem
+   duas chaves, e a segunda é uma impressão perceptual (`ahash` em
+   `lib/imagem.mjs`, com teste). O `capas.mjs` calcula a `figura` de todo
+   candidato e põe no manifesto; ao recusar, copie de lá.
 
    Capa em formato paisagem existe, e larga não quer dizer errada. Em 19/09
    desconfiei da capa de "Um novo irmão, será que é bom?" por ser 2:1 e disse
@@ -272,6 +295,16 @@ incompleto vale mais que um catálogo completo e inventado.
     Regra que sai disso: quando a sonda voltar `null`, desconfie do seletor antes
     de aceitar "não deu pra ler". Abra a página na mão. `null` é caro — é o que
     trava a regra dos 3.
+
+    **E tem uma terceira casa**, achada em 24/09 ao examinar "Tem alguém na
+    barriga da mamãe": nem `#availability` nem `#outOfStockBuyBox` existiam, e o
+    "Não disponível. Não temos previsão…" estava solto no `#desktop_buybox`,
+    colado no endereço de entrega. A cadeia do `renderizar.mjs` agora tem os
+    três, nessa ordem, e o buy box inteiro só é lido quando os dois blocos
+    específicos faltam. Dois testes novos no `ficha.test.mjs` — um pro aviso
+    solto, outro pra garantir que buy box de página à venda continua lendo "à
+    venda". Se aparecer uma quarta casa, é o mesmo trabalho: abrir na mão,
+    achar onde a loja escreveu, e só então mexer no seletor.
 
 18. **Teste que você acabou de escrever tem que aparecer na contagem.** Em 20/09
     colei cinco testes no fim do `ficha.test.mjs` e do `estoque.test.mjs`, e os
