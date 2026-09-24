@@ -377,6 +377,18 @@ ${s.lacuna ? `<h2>O que falta nesta página</h2>\n<p class="aviso">${esc(preench
   }), maiorData((s.evidencias || []).map(e => e.acessado_em), arr.map(dataDoLivro)));
 }
 
+// Livro provado só pela ficha da loja (SPEC, anti-alucinação, segunda fonte).
+// A página diz de onde veio a prova porque as duas não valem o mesmo: catálogo
+// externo é um registro que qualquer um reconsulta pelo ISBN; ficha de loja
+// sai do ar com o produto. Quem lê tem direito de saber em qual das duas o
+// "este livro existe" desta página se apoia.
+function provaDeLoja(l) {
+  const res = (l.disponibilidade?.resolucoes || []).filter(r => r.titulo_bateu);
+  if (!res.length || res.some(r => r.fonte !== 'ficha_loja')) return '';
+  const r = res[0];
+  return `<br><span class="selo">edição conferida na ficha de ${esc(r.host || 'loja')} em ${dataBr(r.em)}; nenhum catálogo externo registra este ISBN</span>`;
+}
+
 // ---- livro
 for (const l of livros) {
   const evs = l.evidencias || [];
@@ -401,7 +413,7 @@ ${l.previa?.folheavel ? `<p><a class="folhear" href="https://books.google.com.br
   ${Object.entries(rot).filter(([k]) => k !== 'idade_editora').map(([k, label]) => `<li><b>${label}</b> <span>${esc(legivel[val(r, k)] ?? '—')}${fonteDe(r, k, evs)}</span></li>`).join('\n  ')}
   ${l.origem ? `<li><b>Origem</b> <span>${esc(l.origem === 'traducao' ? `tradução${l.ano_original ? `, original de ${l.ano_original}` : ''}` : 'nacional')}</span></li>` : ''}
   ${l.paginas ? `<li><b>Páginas</b> <span>${l.paginas}</span></li>` : ''}
-  <li><b>ISBN</b> <span>${esc(l.isbn13)}${(l.outras_edicoes || []).map(o => `<br><span class="selo">edição ${esc(o.formato || 'alternativa')}: ${o.url ? `<a href="${esc(o.url)}" rel="noopener">${esc(o.isbn13)}</a>` : esc(o.isbn13)}</span>`).join('')}</span></li>
+  <li><b>ISBN</b> <span>${esc(l.isbn13)}${provaDeLoja(l)}${(l.outras_edicoes || []).map(o => `<br><span class="selo">edição ${esc(o.formato || 'alternativa')}: ${o.url ? `<a href="${esc(o.url)}" rel="noopener">${esc(o.isbn13)}</a>` : esc(o.isbn13)}</span>`).join('')}</span></li>
   <li><b>Conferido em</b> <span>${dataBr(l.verificado_em)}</span></li>
 </ul>
 ${(l.disponibilidade?.compra || []).length ? `<h2>Onde encontrar</h2>

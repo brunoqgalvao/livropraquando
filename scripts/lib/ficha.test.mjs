@@ -251,5 +251,20 @@ t('botão de avisar sozinho não vira à venda', () =>
 t('botão não mexe na Amazon, que tem bloco próprio', () =>
   assert.equal(estoqueDaPagina({ host: 'amazon.com.br', amazon: {}, botoes: 'Comprar agora' }).ok, null));
 
+// Terceira casa do aviso, achada em 24/09 em "Tem alguém na barriga da mamãe":
+// a Amazon não renderizou #availability nem #outOfStockBuyBox, e a frase estava
+// solta no #desktop_buybox — junto do endereço de entrega, que vem depois. Ler
+// `null` ali seria repetir o buraco do item 17 do diário uma camada mais fundo.
+t('Amazon: aviso solto no buy box, com o endereço de entrega colado, e esgotado', () =>
+  assert.equal(estoqueDaPagina({ host: 'amazon.com.br', amazon: { estoque:
+    'Não disponível. Não temos previsão de quando este produto estará disponível novamente. Entregando em Bela Vista, 01319900. Atualizar local Adicionar à Lista' } }).ok, false));
+
+// O outro lado do mesmo fallback: numa página à venda o buy box inteiro traz
+// preço, entrega e o botão. Não pode virar `null` nem, pior, esgotado por causa
+// de alguma palavra solta.
+t('Amazon: buy box de página à venda continua lendo à venda', () =>
+  assert.equal(estoqueDaPagina({ host: 'amazon.com.br', amazon: { estoque:
+    'R$ 29,94 Entrega GRÁTIS quinta-feira, 1 de outubro Em estoque Quantidade: 1 Adicionar ao carrinho Comprar agora' } }).ok, true));
+
 console.log(`${ok} passaram, ${falhou} falharam`);
 process.exit(falhou ? 1 : 0);

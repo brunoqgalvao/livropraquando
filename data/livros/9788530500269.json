@@ -1,0 +1,78 @@
+{
+  "isbn13": "9788530500269",
+  "titulo": "Quando meu irmãozinho nasceu",
+  "autor": "Walcyr Carrasco",
+  "editora": "FTD",
+  "ano": 1996,
+  "origem": "nacional",
+  "paginas": 40,
+  "situacoes": [
+    "vai-nascer-um-irmao"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "6 a 8",
+      "base": 1
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse da editora no Google Books",
+      "url": "https://books.google.com.br/books?id=ZJvCPgAACAAJ",
+      "trecho": "Este livro conta de maneira comovente e divertida, a história de um menino que espera o nascimento de seu irmão, entre jogos de futebol, a namorada que não dá certo e situações com a escola, surgem os sentimento de rejeição e perda. Sentimentos que assustam e causam medo.",
+      "acessado_em": "2026-09-24"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/8530500261",
+      "trecho": "Idade de leitura : 6 - 8 anos",
+      "acessado_em": "2026-09-24"
+    }
+  ],
+  "nao_coberto": "A sinopse não diz quem narra nem como a história termina, e não descreve nenhuma cena — resume os assuntos do livro. O registro do Google Books conta 36 páginas onde a ficha da Amazon conta 40; a página fica com a da ficha.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8530500261"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "via": "titulo",
+        "id": "ZJvCPgAACAAJ",
+        "isbn13": "9788530500269",
+        "titulo_bateu": true,
+        "em": "2026-09-24"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-09-24"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-09-24",
+  "nota": "Edição de 1996, da Coleção Camaleão. Na leitura de 24/09 a Amazon tinha 1 exemplar, e é a única loja que encontramos."
+}

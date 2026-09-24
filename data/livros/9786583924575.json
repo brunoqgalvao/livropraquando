@@ -10,7 +10,8 @@
   ],
   "rubrica": {
     "idade_editora": {
-      "valor": "nao_coberto"
+      "valor": "0+",
+      "base": 1
     },
     "nomeia_evento": {
       "valor": "direto",
@@ -38,6 +39,13 @@
       "url": "https://books.google.com.br/books?id=VZevEQAAQBAJ",
       "trecho": "Quando um bebê está para chegar, o mundo parece mudar um pouco também. […] Cada lado do livro apresenta uma voz narrativa diferente — ora o irmão, ora a irmã — permitindo que a criança se identifique e reflita sobre o papel que ocupa na família. O formato tête-bêche torna a experiência de leitura interativa e encantadora: duas capas, duas histórias, um mesmo amor.",
       "acessado_em": "2026-09-18"
+    },
+    {
+      "tipo": "material_editora",
+      "veiculo": "ficha do livro no site da Editora Texugo",
+      "url": "https://editoratexugo.com.br/o-melhor-irmao-do-mundo-a-melhor-irma-do-mundo",
+      "trecho": "Indicado para bebês e crianças pequenas (leitura compartilhada); e a partir de 5 anos (leitura independente).",
+      "acessado_em": "2026-09-21"
     }
   ],
   "nao_coberto": "A sinopse não diz se os dois lados contam a mesma história de dois pontos de vista ou duas histórias diferentes.",
@@ -70,7 +78,7 @@
     ]
   },
   "curadoria": "humano",
-  "verificado_em": "2026-09-18",
+  "verificado_em": "2026-09-24",
   "capa": {
     "arquivo": "9786583924575.jpg",
     "fonte": "google_books",
@@ -80,7 +88,7 @@
     "largura": 300,
     "altura": 321
   },
-  "nota": "Formato tête-bêche: duas capas, uma de cada lado.",
+  "nota": "Formato tête-bêche: duas capas, uma de cada lado. A Texugo indica duas idades para este livro — bebês e crianças pequenas em leitura compartilhada, e a partir de 5 anos em leitura independente. A coluna da tabela cabe uma, e ficou com a primeira, porque é a leitura que a editora indica primeiro; a frase inteira está na evidência acima.",
   "previa": {
     "folheavel": true,
     "volume": "VZevEQAAQBAJ",

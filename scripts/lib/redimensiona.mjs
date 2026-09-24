@@ -40,3 +40,35 @@ export async function redimensionar(buf, tipoMime, { lado = 600, qualidade = 0.8
     await aba.fechar();
   }
 }
+
+// 8x8 em tons de cinza pelo mesmo canvas, pra alimentar o `ahash`. Aqui só a
+// decodificação; a regra mora em lib/imagem.mjs, com teste.
+export async function cinzas8x8(buf, tipoMime) {
+  const aba = await abrirAba();
+  try {
+    const entrada = `data:${tipoMime};base64,${buf.toString('base64')}`;
+    const { result, exceptionDetails } = await aba.enviar('Runtime.evaluate', {
+      awaitPromise: true, returnByValue: true,
+      expression: `new Promise((ok, erro) => {
+        const im = new Image();
+        im.onerror = () => erro(new Error('o navegador não decodificou a imagem'));
+        im.onload = () => {
+          const c = document.createElement('canvas');
+          c.width = 8; c.height = 8;
+          const ctx = c.getContext('2d');
+          ctx.imageSmoothingQuality = 'high';
+          ctx.drawImage(im, 0, 0, 8, 8);
+          const d = ctx.getImageData(0, 0, 8, 8).data;
+          const out = [];
+          for (let i = 0; i < d.length; i += 4) out.push(Math.round(0.299 * d[i] + 0.587 * d[i + 1] + 0.114 * d[i + 2]));
+          ok(out);
+        };
+        im.src = ${JSON.stringify(entrada)};
+      })`,
+    });
+    if (exceptionDetails) throw new Error(exceptionDetails.exception?.description || 'canvas falhou');
+    return result.value || null;
+  } finally {
+    await aba.fechar();
+  }
+}

@@ -8,10 +8,17 @@ let mudou = 0;
 
 for (const l of lerTodos(P.livros)) {
   if (!forcar && (l.disponibilidade?.resolucoes || []).some(r => r.titulo_bateu)) continue;
-  const r = await resolver({ isbn: l.isbn13 });
+  // As fichas de venda da própria página são a segunda fonte de prova (SPEC,
+  // anti-alucinação): só abrem se o catálogo externo não resolver.
+  const fichas = (l.disponibilidade?.compra || []).map(c => c.url).filter(Boolean);
+  const r = await resolver({ isbn: l.isbn13, titulo: l.titulo, fichas });
   // resolver por ISBN confirma a edição; o título ainda precisa bater com o nosso
   const resolucoes = r.resolucoes.map(x => {
     if (!x.titulo_bateu) return x;
+    // A ficha de venda já conferiu título E ISBN em lib/prova.mjs, e não tem
+    // `candidatos` pra reconferir — cair no `: false` daqui apagaria a prova
+    // que ela acabou de dar.
+    if (x.fonte === 'ficha_loja') return x;
     const cand = r.candidatos.find(c => c.fonte === x.fonte);
     return { ...x, titulo_bateu: cand ? tituloBate(cand.titulo, l.titulo) : false };
   });

@@ -18,6 +18,21 @@ incompleto vale mais que um catálogo completo e inventado.
 1. **Publicar livro que você não provou existir.** `node scripts/resolve.mjs <titulo>`
    tem que voltar `provado: true` com edição brasileira. Sem isso, não vira página.
    Livro inventado reprova o projeto inteiro — não é erro recuperável.
+
+   Desde 24/09 há **três caminhos de prova**, nessa ordem (SPEC, anti-alucinação):
+   `isbn:` no Google Books / Open Library; depois `intitle:` no mesmo Google
+   Books, porque o índice de ISBN dele tem buraco — `isbn:9788530500269` devolve
+   0 e a consulta por título devolve o MESMO volume com esse ISBN; e por último a
+   **ficha de venda** da loja ou da editora, que só prova se a página imprimir o
+   ISBN-13, ele for exatamente o da página do livro e o título bater. A regra
+   mora em `lib/prova.mjs`, com teste. Use assim:
+   `LIVRO_TITULO="A irmã do Gildo" node scripts/resolve.mjs 9788574126234 --ficha <url>`.
+
+   Isso não é afrouxamento: três rodadas trataram "o Google Books não tem" como
+   "o livro não existe" e barraram título de Brinque-Book à venda em loja grande.
+   O que a segunda e a terceira fonte NÃO fazem é dispensar edição brasileira,
+   régua editorial ou evidência citada. Página provada só pela ficha de loja diz
+   isso na linha do ISBN — não esconda.
 2. **Escrever que leu.** Você não leu. Se a sinopse não diz como termina, o campo
    `nao_coberto` diz "a sinopse não descreve o final".
 3. **Prometer efeito.** "trata de X pelo ponto de vista de Y" é descrição e pode.
@@ -49,21 +64,27 @@ incompleto vale mais que um catálogo completo e inventado.
    tem livro — o que acaba apagando o livro da tabela pela regra dos 3
    esgotados. Pra olhar um livro específico, passe o ISBN.
 
-   **Idade está no teto com as fontes de hoje: 8 de 17 (em 22/09).** Não gaste
-   rodada atrás dos outros 8 sem fonte nova. Três só têm a "Idade sugerida pelo
-   cliente" da Amazon e dependem de decisão do Bruno ("O primeiro dia de Chu na
-   escola", "Nós agora somos quatro" e "As aventuras de Mike 2"); um tem página da
-   editora que simplesmente não indica idade (Alta Books); um é a Texugo, e esse
-   não é caso de ausência — conferido em 21/09, a editora indica **duas** idades
-   ("Indicado para bebês e crianças pequenas (leitura compartilhada); e a partir
-   de 5 anos (leitura independente)") e a coluna da tabela cabe uma só. O campo
-   está vazio por ambiguidade, não por falta de fonte, e escolher entre as duas
-   é decisão do Bruno; e três não
+   **Idade está no teto com as fontes de hoje: 12 de 21 (em 24/09).** Não gaste
+   rodada atrás dos outros 9 sem fonte nova. Quatro só têm a "Idade sugerida pelo
+   cliente" da Amazon ("O primeiro dia de Chu na escola", "Nós agora somos
+   quatro", "As aventuras de Mike 2" e "A irmã do Gildo"), e essa nunca entra —
+   é enquete de comprador, não indicação da editora; um tem página da
+   editora que simplesmente não indica idade (Alta Books); e três não
    têm página de editora que dê pra abrir — conferido em 19/09: o site da
    Girassol está com certificado vencido (`ERR_CERT_DATE_INVALID`), "O gatinho
    Pete e o primeiro dia de aula" é exclusivo Leiturinha e não tem página na
    HarperCollins, e a Tudo! Editora não tem ficha do livro fora de marketplace.
    Se alguma dessas mudar, aí sim vale voltar.
+
+   A Texugo **saiu** dessa lista em 24/09, por decisão do Bruno: onde a editora
+   indica duas idades, escolha a mais provável e escreva a frase inteira na
+   página, em vez de deixar a coluna vazia. "O melhor irmão do mundo / A melhor
+   irmã do mundo" ficou com **0+** — a leitura compartilhada, que é a que a
+   editora indica primeiro —, com a frase das duas indicações na evidência e na
+   `nota`. O `renderizar.mjs` continua avisando "indicação dupla, precisa de
+   gente" toda passada, e ele está certo: a fonte segue ambígua. **A decisão já
+   foi tomada; não refaça.** Se aparecer outro livro com indicação dupla, a
+   regra agora é essa.
 
    O nono sem idade é caso diferente dos outros e tem trava própria: "Quero ser
    meu irmãozinho!" TEM indicação na ficha da Amazon ("0 - 3 anos") e ela foi

@@ -83,6 +83,19 @@ for (const l of livros) {
   const res = l.disponibilidade?.resolucoes || [];
   if (res.length === 0) err(f, 'nenhuma resolução externa — o livro não foi provado existir');
   else if (!res.some(r => r.titulo_bateu)) err(f, 'nenhuma resolução externa confirmou o título');
+  // Prova de segunda fonte (SPEC, anti-alucinação): catálogo externo devolve um
+  // id que qualquer um reconsulta; ficha de loja não. Então ela só vale com a
+  // URL e o que estava escrito lá — prova que ninguém consegue reabrir não é
+  // prova, é lembrança.
+  for (const r of res) {
+    if (r.fonte !== 'ficha_loja' || !r.titulo_bateu) continue;
+    for (const c of ['url', 'trecho', 'isbn13', 'em']) {
+      if (!r[c]) err(f, `prova por ficha de loja sem "${c}" — ninguém consegue reabrir`);
+    }
+    if (r.isbn13 && String(r.isbn13) !== String(l.isbn13)) {
+      err(f, `prova por ficha de loja é de outro ISBN (${r.isbn13})`);
+    }
+  }
 
   // 2. campos obrigatórios
   for (const c of ['titulo', 'autor', 'editora', 'situacoes', 'curadoria', 'verificado_em']) {

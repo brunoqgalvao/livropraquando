@@ -1,0 +1,103 @@
+{
+  "isbn13": "9788574126234",
+  "titulo": "A irmã do Gildo",
+  "autor": "Silvana Rando",
+  "ilustrador": "Silvana Rando",
+  "editora": "Brinque-Book",
+  "ano": 2019,
+  "origem": "nacional",
+  "paginas": 32,
+  "situacoes": [
+    "vai-nascer-um-irmao"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site do Grupo Companhia das Letras (selo Brinque-Book)",
+      "url": "https://www.companhiadasletras.com.br/9788574126234-a-irma-do-gildo-3087/p",
+      "trecho": "Certo dia, no café da manhã, Gildo olha a barriga da mãe e pensa: “Ela exagerou na comida!”. Na verdade, havia ali um bebê que, de acordo com o elefante, demorou para chegar.",
+      "acessado_em": "2026-09-24"
+    },
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "descrição do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/8574126233",
+      "trecho": "Até que finalmente Laurinha veio ao mundo, e com ela uma série de mudanças na vida de Gildo. Esperar e compreender a chegada de uma irmã é sempre um processo que envolve muitas emoções, que passam por dividir a atenção da mãe, os brinquedos, as risadas, os gostos e, mais do que tudo, o amor um pelo o outro.",
+      "acessado_em": "2026-09-24"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/8574126233",
+      "trecho": "Editora ‏ : ‎ Brinque-Book. Data da publicação ‏ : ‎ 1 agosto 2019. Número de páginas ‏ : ‎ 32 páginas. ISBN-13 ‏ : ‎ 978-8574126234",
+      "acessado_em": "2026-09-24"
+    }
+  ],
+  "nao_coberto": "A sinopse não diz quem narra, se o texto é em prosa ou rimado, nem como a história termina. A editora não indica faixa etária: a única idade na página da Amazon é a \"sugerida pelo cliente\" (2 a 5 anos), que é enquete de comprador, não indicação da editora.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Companhia das Letras (Brinque-Book)",
+        "url": "https://www.companhiadasletras.com.br/9788574126234-a-irma-do-gildo-3087/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8574126233"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-09-24"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-09-24"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/8574126233",
+        "isbn13": "9788574126234",
+        "titulo_bateu": true,
+        "trecho": "A Irmã do Gildo | Amazon.com.br",
+        "em": "2026-09-24"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-09-24",
+  "capa": {
+    "arquivo": "9788574126234.jpg",
+    "fonte": "companhiadasletras.com.br",
+    "url": "https://ciadasletras.vtexassets.com/arquivos/ids/190840/cdl-9788574126234.jpg?v=639192114401000000",
+    "obtida_em": "2026-09-24",
+    "sha1": "7cead7bdef7d7ae5cfb6d9aae56cd7a1ad64ac17",
+    "largura": 600,
+    "altura": 600
+  }
+}

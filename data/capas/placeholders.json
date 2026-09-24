@@ -1,0 +1,22 @@
+{
+  "comentario": "sha1 e impressao perceptual (aHash 8x8) de imagem que a loja serve no lugar da capa. Versionado porque a recusa e decisao de curadoria: sem isso a mesma imagem volta pra fila todo dia e gasta um olho humano de novo. O sha1 pega a imagem identica; a figura pega a mesma imagem em outro tamanho, que foi como a Amazon devolveu o placeholder duas vezes seguidas em 24/09.",
+  "imagens": [
+    {
+      "sha1": "bc6a3a797b93ed6aa75aa73b206e1582bbd9496d",
+      "motivo": "placeholder de loja, recusado antes de 24/09",
+      "em": "2026-09-19"
+    },
+    {
+      "sha1": "a5cea4a5a7639a5d7030199d32719241dd082804",
+      "motivo": "\"PRODUTO SEM IMAGEM por enquanto!\" servido pela Amazon na página de \"Quando meu irmãozinho nasceu\"; a heurística deu 6 pontos porque o alt do placeholder é o título do livro",
+      "em": "2026-09-24",
+      "figura": "ffc3c3c1dbe7c7ff"
+    },
+    {
+      "sha1": "689bf6a455f2e0be4caff3e22d2c68ad03a43dd1",
+      "figura": "ffc3c3c1dbe7c7ff",
+      "motivo": "o mesmo \"PRODUTO SEM IMAGEM\" da Amazon, em 500x500 e sob outro id de imagem (31latUS2UbL) — bytes diferentes, mesma figura",
+      "em": "2026-09-24"
+    }
+  ]
+}

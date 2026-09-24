@@ -59,8 +59,21 @@ Só entram se uma resenha assinada afirmar literalmente, com a citação no ar.
 ## Travas
 
 ### Anti-alucinação
-Livro só entra se o ISBN tiver checksum válido **e** resolver em catálogo externo com edição brasileira.
-Sem isso, não vira página.
+Livro só entra se o ISBN tiver checksum válido **e** for provado existir em edição brasileira.
+
+São duas provas possíveis, nessa ordem:
+1. **Catálogo externo** (Google Books, Open Library) resolvendo o ISBN com título batendo.
+2. **Ficha de venda** da loja ou da editora — mas só quando a página **imprime o ISBN-13**, ele
+   é exatamente o da página do livro, e o título bate. Sem ISBN impresso não prova: vitrine,
+   busca e página de coleção não trazem ISBN, ficha de produto traz. A prova guarda URL e trecho,
+   porque catálogo devolve um id que qualquer um reconsulta e loja não.
+
+A segunda existe desde 24/09 porque a primeira, sozinha, barrou quatro títulos que existem e estão
+à venda em loja grande (`A Irmã do Gildo`, da Brinque-Book, entre eles): o Google Books não cataloga
+esse canto do infantil brasileiro, e "a fonte não tem" não é "o livro não existe". Ela **não** afrouxa
+o resto — edição brasileira, régua editorial e evidência citada continuam valendo igual.
+
+Livro provado só pela segunda fonte diz isso na própria página, na linha do ISBN.
 
 ### Anti-churn (o furo mais provável)
 `esgotado` só depois de **3 falhas de loja em dias distintos, sem sucesso de loja no meio**. Uma leitura

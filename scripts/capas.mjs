@@ -12,10 +12,10 @@
 import { P, lerTodos, gravar, canonicalLivro, hoje } from './lib.mjs';
 import { renderizar } from './navegador.mjs';
 import { tituloBate } from './resolve.mjs';
-import { dimensao, extensao } from './lib/imagem.mjs';
-import { redimensionar } from './lib/redimensiona.mjs';
+import { dimensao, extensao, ahash, mesmaFigura } from './lib/imagem.mjs';
+import { redimensionar, cinzas8x8 } from './lib/redimensiona.mjs';
 import { createHash } from 'node:crypto';
-import { readFileSync, writeFileSync, mkdirSync, copyFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, copyFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 
 const ESPERA = join(P.runtime, 'capas-espera');
@@ -117,7 +117,21 @@ if (PROMOVER) {
 mkdirSync(ESPERA, { recursive: true });
 const jaUsados = new Map();
 for (const l of lerTodos(P.livros)) if (l.capa?.sha1) jaUsados.set(l.capa.sha1, l.isbn13);
-const PLACEHOLDERS = new Set(['bc6a3a797b93ed6aa75aa73b206e1582bbd9496d']);
+// Placeholder que já foi recusado por olho humano não volta pra fila. A lista
+// morava aqui, num Set com um sha1 escrito à mão; agora é arquivo versionado,
+// porque em 24/09 a Amazon ofereceu "PRODUTO SEM IMAGEM por enquanto!" como
+// capa de "Quando meu irmãozinho nasceu" — com 6 pontos, porque o alt do
+// placeholder é o título do livro. Sem lista durável, essa imagem voltaria a
+// pedir um olho toda rodada, e é justo o olho que este projeto não tem de
+// sobra.
+const ARQ_PLACEHOLDERS = join(DESTINO, 'placeholders.json');
+const RECUSADAS = existsSync(ARQ_PLACEHOLDERS) ? JSON.parse(readFileSync(ARQ_PLACEHOLDERS, 'utf8')).imagens || [] : [];
+const PLACEHOLDERS = new Set(RECUSADAS.map(x => x.sha1).filter(Boolean));
+// Duas chaves porque uma não bastou: o sha1 pega a imagem idêntica, a
+// impressão perceptual pega a MESMA figura em outro tamanho. Na primeira
+// tentativa a lista tinha só sha1, e a Amazon devolveu o mesmo "PRODUTO SEM
+// IMAGEM" em 500x500 logo depois de a de 600x600 ser recusada.
+const FIGURAS = RECUSADAS.map(x => x.figura).filter(Boolean);
 
 const escolhas = {};
 const rejeitados = [];
@@ -142,13 +156,16 @@ for (const l of lerTodos(P.livros)) {
       if (menor) { buf = menor.buf; dim = menor; }
 
       const sha1 = createHash('sha1').update(buf).digest('hex');
-      if (PLACEHOLDERS.has(sha1)) throw new Error('placeholder conhecido');
+      if (PLACEHOLDERS.has(sha1)) throw new Error('placeholder conhecido (sha1)');
       const dono = jaUsados.get(sha1);
       if (dono && dono !== l.isbn13) { PLACEHOLDERS.add(sha1); throw new Error(`mesma imagem de ${dono} — é placeholder da loja`); }
+      const figura = ahash(await cinzas8x8(buf, `image/${dim.tipo}`).catch(() => null));
+      const igual = figura && FIGURAS.find(f => mesmaFigura(f, figura));
+      if (igual) throw new Error('placeholder conhecido (mesma figura em outro tamanho)');
       const arq = `${l.isbn13}.${extensao(dim.tipo)}`;
       writeFileSync(join(ESPERA, arq), buf);
       jaUsados.set(sha1, l.isbn13);
-      escolhas[l.isbn13] = { arquivo: arq, src: c.src, host: c.host, sha1, w: dim.w, h: dim.h, pontos: c.pontos, razoes: c.razoes };
+      escolhas[l.isbn13] = { arquivo: arq, src: c.src, host: c.host, sha1, ...(figura ? { figura } : {}), w: dim.w, h: dim.h, pontos: c.pontos, razoes: c.razoes };
       console.log(`  ✓ ${arq} ${dim.w}x${dim.h} ${(buf.length / 1024).toFixed(0)}KB de ${c.host} (${c.pontos} pts: ${c.razoes.join(', ')})`);
       break;
     } catch (e) {

@@ -61,8 +61,17 @@ const EXTRATOR = `(() => {
     // Quando o item não é comprável a Amazon não renderiza #availability
     // nenhum; o aviso vai pro #outOfStockBuyBox. Sem esse fallback a gente
     // lia "não sei" onde a loja dizia "não tem".
+    //
+    // E há uma terceira casa, achada em 24/09 em "Tem alguém na barriga da
+    // mamãe": nem #availability nem #outOfStockBuyBox existiam, e o "Não
+    // disponível. Não temos previsão de quando este produto estará disponível
+    // novamente" estava solto no #desktop_buybox. Mesmo buraco do item 17 do
+    // diário, uma camada mais fundo. O buy box inteiro só é lido quando os
+    // dois blocos específicos faltam: numa página à venda ele traz preço,
+    // entrega e "Adicionar ao carrinho", que o TEM já sabe ler.
     estoque: limpo(document.querySelector('#availability'))
-       || limpo(document.querySelector('#outOfStockBuyBox, #outOfStock')),
+       || limpo(document.querySelector('#outOfStockBuyBox, #outOfStock'))
+       || limpo(document.querySelector('#desktop_buybox, #buybox')),
     byline: limpo(document.querySelector('#bylineInfo')),
     core: limpo(document.querySelector('#corePriceDisplay_desktop_feature_div'))
        || limpo(document.querySelector('#corePrice_feature_div')),
@@ -127,7 +136,12 @@ for (const l of livros) {
   // dizer que a gente olhou.
   estoque[l.isbn13] = vereditoEstoque(leituras, hoje());
 
-  const aviso = (m) => diario.push({ isbn13: l.isbn13, titulo: l.titulo, aviso: m });
+  // `extra` guarda inteiro o que o aviso corta. A indicação dupla da Texugo saiu
+  // do dia em 140 caracteres — "…em sala de aula. Indicado par" —, e a frase que
+  // um humano precisa pra decidir a faixa etária estava justamente no pedaço
+  // cortado. No dia seguinte a loja respondeu 403 e a frase não existia em lugar
+  // nenhum. Aviso é resumo; o dia guarda o texto.
+  const aviso = (m, extra) => diario.push({ isbn13: l.isbn13, titulo: l.titulo, aviso: m, ...(extra ? { trecho: extra } : {}) });
   // preço: prefere loja que estava com estoque. Preço de prateleira vazia manda
   // a pessoa pra uma página onde não dá pra comprar.
   //
@@ -176,7 +190,7 @@ for (const l of livros) {
   if (conflito.length > 1) aviso(`idades diferentes entre fontes: ${conflito.join(' / ')} — ficou com ${escolhida.idade.valor} (${escolhida.host})`);
   for (const x of leituras) {
     if (x.idade_leitores) aviso(`Amazon só tem "Idade sugerida pelo cliente" (${x.idade_leitores.valor}); não é da editora, não entrou`);
-    if (x.ambigua) aviso(`indicação dupla (leitura compartilhada x independente), precisa de gente: "${x.ambigua.trecho.slice(0, 140)}"`);
+    if (x.ambigua) aviso(`indicação dupla (leitura compartilhada x independente), precisa de gente: "${x.ambigua.trecho.slice(0, 140)}"`, x.ambigua.trecho);
   }
 
   // páginas: só preenche o que falta. Não vale reescrever o que já veio do

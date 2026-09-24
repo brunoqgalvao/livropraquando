@@ -1,5 +1,8 @@
 // Prova que um livro existe. Sem passar por aqui, nada vira página.
 import { buscaJSON, isbn13Valido, hoje } from './lib.mjs';
+import { provaDaFicha } from './lib/prova.mjs';
+import { isbnDaPagina } from './lib/ficha.mjs';
+import { renderizar } from './navegador.mjs';
 import { execSync } from 'node:child_process';
 
 function chaveBooks() {
@@ -39,6 +42,15 @@ export function tituloBate(a, b) {
 // 978-972 / 978-989 são Portugal e não servem pra quem compra aqui.
 export const edicaoBrasileira = (isbn13) =>
   /^(97885|97865)/.test(String(isbn13 || '').replace(/[^0-9]/g, ''));
+
+// O que conta como "este registro é o meu livro". Com ISBN na mão a igualdade
+// do ISBN manda e o título não vota: catálogo escreve "QUANDO MEU IRMAOZINHO
+// NASCEU" sem acento e a comparação de título só criaria chance de errar.
+// Sem ISBN (descoberta por título) sobra o título.
+export function casaEdicao(item, { isbn, titulo }) {
+  if (!item || !edicaoBrasileira(item.isbn13)) return false;
+  return isbn ? item.isbn13 === isbn : tituloBate(item.titulo, titulo);
+}
 
 export async function googleBooks({ isbn, titulo, autor }) {
   const key = chaveBooks();
@@ -87,16 +99,49 @@ export async function openLibrary({ isbn, titulo }) {
   return { fonte: 'open_library', itens };
 }
 
+// --- segunda fonte de prova: a ficha da loja ou da editora --------------
+// A regra mora em lib/prova.mjs, com teste. Aqui é só a rede.
+const EXTRATOR_FICHA = `(() => ({
+  url: location.href,
+  titulo: document.title,
+  texto: document.body ? document.body.innerText : '',
+  amazon: /amazon\\./.test(location.hostname) ? {
+    ficha: [...document.querySelectorAll('#detailBullets_feature_div li, #productDetailsTable li, #detailBulletsWrapper_feature_div li')]
+      .map(e => e.innerText.replace(/\\s+/g, ' ').trim()).filter(Boolean),
+  } : null,
+}))()`;
+
+export async function fichaDeVenda({ isbn, titulo, url }) {
+  const host = new URL(url).hostname.replace(/^www\./, '');
+  let leitura;
+  try {
+    const d = await renderizar(url, EXTRATOR_FICHA);
+    leitura = {
+      host, url,
+      titulo_pagina: d.titulo,
+      texto: d.texto,
+      isbn_pagina: isbnDaPagina({ host, texto: d.texto, amazon: d.amazon }),
+    };
+  } catch (e) {
+    leitura = { host, url, erro: String(e.message || e) };
+  }
+  return provaDaFicha({ isbn13: isbn, titulo, leitura, tituloBate, brasileira: edicaoBrasileira });
+}
+
 // Resolve um candidato contra as fontes externas.
-export async function resolver({ isbn, titulo, autor }) {
+//
+// `fichas` são URLs de ficha de venda (loja ou editora). Elas só são abertas se
+// o catálogo externo não resolver: catálogo é mais barato, roda sem navegador e
+// não depende de a loja deixar. A ordem importa — inverter faria a rotina abrir
+// página de loja para os 19 livros que o Google Books já resolve.
+export async function resolver({ isbn, titulo, autor, fichas = [] }) {
   const fontes = await Promise.all([googleBooks({ isbn, titulo, autor }), openLibrary({ isbn, titulo })]);
   const resolucoes = [];
   const candidatos = [];
   for (const f of fontes) {
     if (f.erro) { resolucoes.push({ fonte: f.fonte, erro: f.erro, em: hoje() }); continue; }
     for (const it of (f.itens || [])) {
-      const bateu = (isbn ? it.isbn13 === isbn : tituloBate(it.titulo, titulo)) && edicaoBrasileira(it.isbn13);
-      if (bateu) {
+      if (casaEdicao(it, { isbn, titulo })) {
         resolucoes.push({ fonte: f.fonte, id: it.id, isbn13: it.isbn13, titulo_bateu: true, em: hoje() });
         candidatos.push(it);
         break;
@@ -104,13 +149,54 @@ export async function resolver({ isbn, titulo, autor }) {
     }
     if (!resolucoes.some(r => r.fonte === f.fonte)) resolucoes.push({ fonte: f.fonte, titulo_bateu: false, em: hoje() });
   }
+
+  // O índice de ISBN do Google Books tem buraco, e o de título não tem o mesmo.
+  // `q=isbn:9788530500269` devolve 0 para "Quando meu irmãozinho nasceu"; a
+  // consulta por título devolve o MESMO volume, com esse ISBN-13 no registro.
+  // Três rodadas trataram isso como "o livro não existe em catálogo" e foram
+  // atrás de loja — quando bastava perguntar de outro jeito ao mesmo catálogo.
+  // Entra antes da loja porque é mais barato, não depende de navegador e prova
+  // com um id que qualquer um reconsulta.
+  if (!resolucoes.some(r => r.titulo_bateu) && isbn && titulo) {
+    const porTitulo = await googleBooks({ titulo, autor });
+    if (!porTitulo.erro) {
+      const it = (porTitulo.itens || []).find(x => casaEdicao(x, { isbn, titulo }));
+      if (it) {
+        resolucoes.push({ fonte: 'google_books', via: 'titulo', id: it.id, isbn13: it.isbn13, titulo_bateu: true, em: hoje() });
+        candidatos.push(it);
+      }
+    }
+  }
+
+  // Sem ISBN não dá pra conferir ficha nenhuma: o que a segunda fonte prova é
+  // que ESTA edição existe, e é o ISBN impresso na página que diz isso.
+  if (!resolucoes.some(r => r.titulo_bateu) && isbn) {
+    for (const url of fichas) {
+      const p = await fichaDeVenda({ isbn, titulo, url });
+      resolucoes.push({
+        fonte: 'ficha_loja', host: p.host, url: p.url,
+        ...(p.isbn13 ? { isbn13: p.isbn13 } : {}),
+        titulo_bateu: p.prova === true,
+        ...(p.trecho ? { trecho: p.trecho } : {}),
+        ...(p.prova ? {} : { motivo: p.motivo }),
+        em: hoje(),
+      });
+      if (p.prova) break;
+    }
+  }
   return { resolucoes, candidatos, provado: resolucoes.some(r => r.titulo_bateu) };
 }
 
 if (process.argv[1]?.endsWith('resolve.mjs')) {
   const arg = process.argv.slice(2).join(' ');
   if (!arg) { console.error('uso: node scripts/resolve.mjs <isbn|titulo>'); process.exit(2); }
-  const isbn = isbn13Valido(arg.replace(/[^0-9]/g, '')) ? arg.replace(/[^0-9]/g, '') : undefined;
-  const r = await resolver(isbn ? { isbn } : { titulo: arg });
+  // `--ficha <url>`: manda abrir a ficha de venda se o catálogo não resolver.
+  // Só faz sentido com ISBN e título juntos — a prova é da edição.
+  const argv = process.argv.slice(2);
+  const fichas = argv.filter((a, i) => argv[i - 1] === '--ficha');
+  const resto = argv.filter((a, i) => a !== '--ficha' && argv[i - 1] !== '--ficha').join(' ');
+  const isbn = isbn13Valido(resto.replace(/[^0-9]/g, '')) ? resto.replace(/[^0-9]/g, '') : undefined;
+  const titulo = process.env.LIVRO_TITULO || (isbn ? undefined : resto);
+  const r = await resolver(isbn ? { isbn, titulo, fichas } : { titulo: resto });
   console.log(JSON.stringify(r, null, 2));
 }
