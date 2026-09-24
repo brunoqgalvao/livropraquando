@@ -33,6 +33,21 @@ incompleto vale mais que um catálogo completo e inventado.
    O que a segunda e a terceira fonte NÃO fazem é dispensar edição brasileira,
    régua editorial ou evidência citada. Página provada só pela ficha de loja diz
    isso na linha do ISBN — não esconda.
+
+   **E prova é de existência, não de ficha.** Isso me custou um livro publicado e
+   despublicado no mesmo dia. "Quando meu irmãozinho nasceu" (9788530500269)
+   passou pela consulta de título: ISBN bate, título bate, edição brasileira.
+   Só que o registro do Google Books que provou diz **Paulinas, 1982, 46
+   páginas** e a ficha da Amazon do mesmo ISBN diz **FTD, 1996, 40 páginas**; a
+   sinopse que eu tinha citado (vinda da API) não aparece na página que o leitor
+   abriria; e nenhuma das duas fontes escreve o nome inteiro do autor — a Amazon
+   credita só "Carrasco". Tirei a página. Depois de provar que o livro existe,
+   **cada campo ainda precisa da fonte dele**, e quando as fontes se contradizem
+   sobre editora e ano, não há campo, há dúvida. Abra a URL da citação antes de
+   publicar: `citada()` do `auditoria.mjs` faz isso em três linhas, e foi ele que
+   pegou. Cuidado com o extrator: `renderizar()` espalha o retorno, então um
+   extrator que devolve string vira objeto e a conferência reprova tudo com
+   "0/33 palavras batem". Devolva `{ texto }`.
 2. **Escrever que leu.** Você não leu. Se a sinopse não diz como termina, o campo
    `nao_coberto` diz "a sinopse não descreve o final".
 3. **Prometer efeito.** "trata de X pelo ponto de vista de Y" é descrição e pode.
