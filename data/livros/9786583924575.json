@@ -11,7 +11,7 @@
   "rubrica": {
     "idade_editora": {
       "valor": "0+",
-      "base": 1
+      "base": 2
     },
     "nomeia_evento": {
       "valor": "direto",
@@ -46,6 +46,13 @@
       "url": "https://editoratexugo.com.br/o-melhor-irmao-do-mundo-a-melhor-irma-do-mundo",
       "trecho": "Indicado para bebês e crianças pequenas (leitura compartilhada); e a partir de 5 anos (leitura independente).",
       "acessado_em": "2026-09-21"
+    },
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "descrição do produto na Amazon (página da tiragem ISBN 9786583924568)",
+      "url": "https://www.amazon.com.br/dp/6583924560",
+      "trecho": "Indicado para bebês e crianças pequenas (leitura compartilhada); e a partir de 5 anos (leitura independente).",
+      "acessado_em": "2026-09-25"
     }
   ],
   "nao_coberto": "A sinopse não diz se os dois lados contam a mesma história de dois pontos de vista ou duas histórias diferentes.",
@@ -78,7 +85,7 @@
     ]
   },
   "curadoria": "humano",
-  "verificado_em": "2026-09-24",
+  "verificado_em": "2026-09-25",
   "capa": {
     "arquivo": "9786583924575.jpg",
     "fonte": "google_books",

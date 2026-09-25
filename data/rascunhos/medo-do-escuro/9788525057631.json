@@ -1,0 +1,87 @@
+{
+  "isbn13": "9788525057631",
+  "titulo": "Orion e o escuro",
+  "autor": "Emma Yarlett",
+  "ilustrador": "Emma Yarlett",
+  "editora": "Globinho",
+  "ano": 2015,
+  "origem": "traducao",
+  "paginas": 40,
+  "situacoes": [
+    "medo-do-escuro"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "descrição do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/8525057630",
+      "trecho": "O menino Orion começa perceber que o mudo pode ser cheio perigos, como tempestades, armários e porões. Mas nada se compara ao pavor que Orion sente do escuro. E por mais que garoto procure as soluções mais criativas, todo dia, sempre chega a hora de apagar a luz para dormir.",
+      "acessado_em": "2026-09-25"
+    },
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "descrição do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/8525057630",
+      "trecho": "Ao lado de um inesperado amigo, o menino vive uma aventura durante a madrugada e descobre que não temia a escuridão, mas o desconhecido.",
+      "acessado_em": "2026-09-25"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/8525057630",
+      "trecho": "Editora ‏ : ‎ Globinho […] Data da publicação ‏ : ‎ 1 fevereiro 2015 […] Número de páginas ‏ : ‎ 40 páginas […] ISBN-13 ‏ : ‎ 978-8525057631",
+      "acessado_em": "2026-09-25"
+    }
+  ],
+  "nao_coberto": "A sinopse não diz quem narra, se o texto é rimado nem quem é o \"inesperado amigo\" da madrugada. A editora não indica faixa etária: a única idade na página da Amazon é a \"sugerida pelo cliente\" (3 a 7 anos), que é enquete de comprador. Nenhuma fonte lida credita tradutor nem dá o ano da edição original.",
+  "nao_aborda": "A sinopse fica no medo do escuro na hora de dormir; não fala de pesadelo nem de dormir fora de casa.",
+  "nota": "A página da Globo Livros recusou acesso (AccessDenied) em 25/09; editora, ano e páginas vêm da ficha da Amazon. O registro do mesmo ISBN no Google Books traz a sinopse em inglês, que é de onde sai a origem de tradução.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8525057630"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "id": "5t6LDAEACAAJ",
+        "isbn13": "9788525057631",
+        "titulo_bateu": true,
+        "em": "2026-09-25"
+      },
+      {
+        "fonte": "open_library",
+        "id": "/works/OL31264339W",
+        "isbn13": "9788525057631",
+        "titulo_bateu": true,
+        "em": "2026-09-25"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-09-25"
+}

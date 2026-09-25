@@ -1,0 +1,87 @@
+{
+  "isbn13": "9786556540092",
+  "titulo": "O coelho, o escuro e a lata de biscoitos",
+  "autor": "Nicola O’Byrne",
+  "ilustrador": "Nicola O’Byrne",
+  "editora": "Brinque-Book",
+  "ano": 2021,
+  "origem": "traducao",
+  "paginas": 32,
+  "situacoes": [
+    "medo-do-escuro"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "nao_coberto"
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site do Grupo Companhia das Letras (selo Brinque-Book)",
+      "url": "https://www.companhiadasletras.com.br/9786556540092-o-coelho--o-escuro-e-a-lata-de-biscoitos-11061/p",
+      "trecho": "Era uma vez um coelho que não queria ir dormir. Então, ele teve uma ideia brilhante para adiar a hora de ir para a cama.",
+      "acessado_em": "2026-09-25"
+    },
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "descrição do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/6556540099",
+      "trecho": "Prendeu o escuro em uma lata de biscoitos! Com o sol iluminando tudo, ele continuaria acordado, certo? Mas será que o escuro só serve para a gente dormir? Nessa aventura, o coelho vai acabar descobrindo que muitos animais – e até plantas – precisam que anoiteça!",
+      "acessado_em": "2026-09-25"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/6556540099",
+      "trecho": "Nicola O’Byrne (Autor, Ilustrador), Gilda de Aquino (Tradutor) […] Editora ‏ : ‎ Brinque-Book […] Data da publicação ‏ : ‎ 29 junho 2021 […] Número de páginas ‏ : ‎ 32 páginas […] ISBN-13 ‏ : ‎ 978-6556540092",
+      "acessado_em": "2026-09-25"
+    }
+  ],
+  "nao_coberto": "A sinopse não diz que o coelho tem medo do escuro: o motivo que ela dá é não querer dormir. Também não diz quem narra, se o texto é rimado nem como a história termina. A editora não indica faixa etária: a única idade na Amazon é a \"sugerida pelo cliente\" (2 a 5 anos), que é enquete de comprador.",
+  "nao_aborda": "O escuro aparece como a hora de dormir e como o tempo de que os bichos e as plantas precisam, não como coisa que assusta. Para quem procura um livro sobre o medo em si, este trata do outro lado da noite.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Companhia das Letras (Brinque-Book)",
+        "url": "https://www.companhiadasletras.com.br/9786556540092-o-coelho--o-escuro-e-a-lata-de-biscoitos-11061/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6556540099"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "id": "9ln0zwEACAAJ",
+        "isbn13": "9786556540092",
+        "titulo_bateu": true,
+        "em": "2026-09-25"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-09-25"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-09-25"
+}
