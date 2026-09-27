@@ -1,0 +1,31 @@
+{
+  "slug": "medo-do-escuro",
+  "titulo": "Livro pra quando a criança tem medo do escuro",
+  "pergunta": "Qual livro ler com a criança que tem medo do escuro?",
+  "descricao": "{N_livros} livros com edição brasileira sobre o escuro e a hora de apagar a luz. A tabela traz o que a fonte da editora sustenta: idade indicada, tamanho, preço e se está à venda. Nem toda sinopse fala em medo: a do coelho fala em não querer dormir, e a página dele diz isso com essas palavras. Idade indicada pela editora: {n_idade} de {n_livros}; onde falta, aparece \"n/i\" em vez de um chute nosso.",
+  "faixas": [
+    {
+      "isbn13": "9788574069197",
+      "base": 0,
+      "faixa": "a partir de 4 anos"
+    }
+  ],
+  "bloqueada": false,
+  "curadoria": "agente",
+  "verificado_em": "2026-09-27",
+  "colunas": [
+    "idade_editora",
+    "paginas",
+    "previa",
+    "preco",
+    "disponibilidade"
+  ],
+  "consultas": [
+    "medo do escuro",
+    "escuro",
+    "escuridão",
+    "hora de dormir",
+    "apagar a luz"
+  ],
+  "ilustracao": "Uma criança pequena sentada na cama, de pijama, segurando uma lanterna acesa cujo facho ilumina a parede do quarto escuro; a porta entreaberta deixa passar uma faixa de luz do corredor; pela janela, lua e estrelas; clima calmo, sem nada assustador."
+}

@@ -1,0 +1,106 @@
+{
+  "isbn13": "9788574069197",
+  "titulo": "E foi assim que eu e a Escuridão ficamos amigas",
+  "autor": "Emicida",
+  "ilustrador": "Aldo Fabrini",
+  "editora": "Companhia das Letrinhas",
+  "ano": 2020,
+  "origem": "nacional",
+  "paginas": 36,
+  "situacoes": [
+    "medo-do-escuro"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "4+",
+      "base": 3
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "rimado",
+      "base": 1
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site do Grupo Companhia das Letras (selo Companhia das Letrinhas)",
+      "url": "https://www.companhiadasletras.com.br/9788574069197-e-foi-assim-que-eu-e-a-escuridao-ficamos-amigas/p",
+      "trecho": "Uma menina tem medo da Escuridão. Quando chega a noite, vem a preocupação e a ansiedade: afinal, o que o escuro pode esconder? O que ela nem imagina é que, do outro lado, a Escuridão também é uma menina — cujo maior medo é a claridade, e todo tipo de coisa que se revela quando nasce o sol.",
+      "acessado_em": "2026-09-27"
+    },
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site do Grupo Companhia das Letras (selo Companhia das Letrinhas)",
+      "url": "https://www.companhiadasletras.com.br/9788574069197-e-foi-assim-que-eu-e-a-escuridao-ficamos-amigas/p",
+      "trecho": "É o que Emicida conta, por meio de versos, em seu segundo livro infantil. […] Livro indicado para leitores a partir de 4 anos.",
+      "acessado_em": "2026-09-27"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha técnica no site do Grupo Companhia das Letras",
+      "url": "https://www.companhiadasletras.com.br/9788574069197-e-foi-assim-que-eu-e-a-escuridao-ficamos-amigas/p",
+      "trecho": "Companhia das Letrinhas […] Lançamento […] 05/10/2020 […] ISBN […] 978-85-7406-919-7 […] Páginas […] 36 […] Ilustração […] Aldo Fabrini",
+      "acessado_em": "2026-09-27"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/8574069191",
+      "trecho": "indicado para leitores a partir de 4 anos",
+      "acessado_em": "2026-09-27"
+    }
+  ],
+  "nao_coberto": "A sinopse não diz quem narra — o título fala em \"eu\", mas não diz se o eu é a menina ou a Escuridão — nem como as duas meninas se encontram. Diz que elas \"vão descobrir\" algo sobre enfrentar o medo, mas não descreve a cena final. A página da editora tem uma seção \"Para educadores\" que não abri, então não digo se há material pro adulto.",
+  "nao_aborda": "A sinopse trata o medo do escuro como medo do desconhecido, com a Escuridão personificada numa menina; não fala de hora de dormir, de luz acesa nem de pesadelo.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Companhia das Letras",
+        "url": "https://www.companhiadasletras.com.br/9788574069197-e-foi-assim-que-eu-e-a-escuridao-ficamos-amigas/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8574069191"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "id": "lykIzgEACAAJ",
+        "isbn13": "9788574069197",
+        "titulo_bateu": true,
+        "em": "2026-09-27"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-09-27"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-09-27",
+  "capa": {
+    "arquivo": "9788574069197.jpg",
+    "fonte": "companhiadasletras.com.br",
+    "url": "https://ciadasletras.vtexassets.com/arquivos/ids/190104/cdl-9788574069197.jpg?v=639232752187570000",
+    "obtida_em": "2026-09-27",
+    "sha1": "3927dc1573c1a701d6b1a3b09682c1ada316b704",
+    "largura": 600,
+    "altura": 600
+  }
+}

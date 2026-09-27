@@ -83,5 +83,14 @@
     ]
   },
   "curadoria": "agente",
-  "verificado_em": "2026-09-25"
+  "verificado_em": "2026-09-25",
+  "capa": {
+    "arquivo": "9786556540092.jpg",
+    "fonte": "companhiadasletras.com.br",
+    "url": "https://ciadasletras.vtexassets.com/arquivos/ids/220570/capa-9786556540092.jpg?v=639253417318900000",
+    "obtida_em": "2026-09-27",
+    "sha1": "f1abe2b7d5d99ad5daf71b65ec3ad511c90fc1e2",
+    "largura": 600,
+    "altura": 600
+  }
 }

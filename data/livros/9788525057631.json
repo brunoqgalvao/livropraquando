@@ -56,7 +56,6 @@
   ],
   "nao_coberto": "A sinopse não diz quem narra, se o texto é rimado nem quem é o \"inesperado amigo\" da madrugada. A editora não indica faixa etária: a única idade na página da Amazon é a \"sugerida pelo cliente\" (3 a 7 anos), que é enquete de comprador. Nenhuma fonte lida credita tradutor nem dá o ano da edição original.",
   "nao_aborda": "A sinopse fica no medo do escuro na hora de dormir; não fala de pesadelo nem de dormir fora de casa.",
-  "nota": "A página da Globo Livros recusou acesso (AccessDenied) em 25/09; editora, ano e páginas vêm da ficha da Amazon. O registro do mesmo ISBN no Google Books traz a sinopse em inglês, que é de onde sai a origem de tradução.",
   "disponibilidade": {
     "estado": "a_venda",
     "compra": [
@@ -83,5 +82,15 @@
     ]
   },
   "curadoria": "agente",
-  "verificado_em": "2026-09-25"
+  "verificado_em": "2026-09-25",
+  "capa": {
+    "arquivo": "9788525057631.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/91CzQqXIgkL._SL1200_.jpg",
+    "obtida_em": "2026-09-27",
+    "sha1": "76cd21d5c6ec98d1a0bc317f158b440843614ac5",
+    "largura": 600,
+    "altura": 600
+  },
+  "nota": "A página da Globo Livros recusou acesso (AccessDenied) em 25/09; editora, ano e páginas vêm da ficha da Amazon. O registro do mesmo ISBN no Google Books traz a sinopse em inglês, que é de onde sai a origem de tradução."
 }
