@@ -1,0 +1,84 @@
+{
+  "isbn13": "9788574065229",
+  "titulo": "Cadê o meu penico?",
+  "autor": "Mij Kelly",
+  "ilustrador": "Mary McQuillan",
+  "tradutor": "Eduardo Brandão",
+  "editora": "Companhia das Letrinhas",
+  "ano": 2012,
+  "origem": "traducao",
+  "paginas": 40,
+  "situacoes": [
+    "desfralde"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "rimado",
+      "base": 0
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site do Grupo Companhia das Letras (selo Companhia das Letrinhas)",
+      "url": "https://www.companhiadasletras.com.br/9788574065229-cade-o-meu-penico-/p",
+      "trecho": "A coitada da Hortênsia estava louca de vontade de fazer “uma tal coisa”, mas não encontrava o seu penico por nada... Enquanto isso, a bicharada toda se divertia com um objeto misterioso. Seria uma gamela? Um tigelão? Quando eles descobrem que aquele pote serve para fazer xixi e cocô, ficam encantados com a novidade: estão todos muito apertados e não querem mais saber de sujar o terreiro! […] Escrita em versos rimados, esta história fala de maneira divertida sobre uma fase de crescimento e aprendizado na vida das crianças pequenas.",
+      "acessado_em": "2026-09-28"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha técnica no site do Grupo Companhia das Letras",
+      "url": "https://www.companhiadasletras.com.br/9788574065229-cade-o-meu-penico-/p",
+      "trecho": "Título Original […] Have you seen my potty? […] Selo […] Companhia das Letrinhas […] Lançamento […] 29/03/2012 […] ISBN […] 978-85-7406-522-9 […] Páginas […] 40 […] Tradução […] Eduardo Brandão […] Ilustração […] Mary McQuillan",
+      "acessado_em": "2026-09-28"
+    }
+  ],
+  "nao_coberto": "A sinopse não diz se Hortênsia é uma menina ou um bicho, nem quem narra, e para numa pergunta (\"será que ela vai recuperá-lo a tempo?\"): não descreve o final. Não fala em fralda. A editora não indica faixa etária na página do livro. Nenhuma fonte lida dá o ano da edição original.",
+  "nao_aborda": "A sinopse trata do penico pelo lado da graça — bichos que descobrem para que serve o pote —; não fala de tirar a fralda, de escape nem de noite sem fralda.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Companhia das Letras",
+        "url": "https://www.companhiadasletras.com.br/9788574065229-cade-o-meu-penico-/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8574065226"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "id": "rNX7zwEACAAJ",
+        "isbn13": "9788574065229",
+        "titulo_bateu": true,
+        "em": "2026-09-28"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-09-28"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-09-28",
+  "titulo_original": "Have you seen my potty?"
+}

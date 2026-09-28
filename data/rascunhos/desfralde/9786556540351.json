@@ -1,0 +1,99 @@
+{
+  "isbn13": "9786556540351",
+  "titulo": "De onde vêm os penicos?",
+  "autor": "Guido van Genechten",
+  "ilustrador": "Guido van Genechten",
+  "tradutor": "Camila Werner",
+  "editora": "Brinque-Book",
+  "ano": 2023,
+  "origem": "traducao",
+  "paginas": 40,
+  "situacoes": [
+    "desfralde"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "0+",
+      "base": 1
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site do Grupo Companhia das Letras (selo Brinque-Book)",
+      "url": "https://www.companhiadasletras.com.br/9786556540351-de-onde-vem-os-penicos-/p",
+      "trecho": "O ratinho, personagem do best-seller O que tem dentro da sua fralda?, está de volta para te ajudar a dar tchau às fraldas de uma vez por todas. […] Na hora de testar o presente, o ratinho percebe que a pomba, o bezerro, o cachorrinho e outros animais não sabem bem como usá-lo. Um fica atrás do penico, outro na frente, outro do lado, outro debaixo… até que o esperto ratinho explica para todo mundo exatamente como ele funciona.",
+      "acessado_em": "2026-09-28"
+    },
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site do Grupo Companhia das Letras (selo Brinque-Book)",
+      "url": "https://www.companhiadasletras.com.br/9786556540351-de-onde-vem-os-penicos-/p",
+      "trecho": "Ao final, o livro ainda traz quatro propostas de atividades, como o jogo dos sete erros, para entreter os pequenos leitores e reforçar os conceitos apresentados. […] Indicado para leitores a partir de 0 ano.",
+      "acessado_em": "2026-09-28"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha técnica no site do Grupo Companhia das Letras",
+      "url": "https://www.companhiadasletras.com.br/9786556540351-de-onde-vem-os-penicos-/p",
+      "trecho": "Título Original […] Waar komen de potjes vandaan? […] Selo […] Brinque-Book […] Lançamento […] 23/01/2023 […] ISBN […] 978-65-5654-035-1 […] Acabamento […] Capa dura […] Páginas […] 40 […] Tradução […] Camila Werner […] Ilustração […] Guido van Genechten",
+      "acessado_em": "2026-09-28"
+    }
+  ],
+  "nao_coberto": "A sinopse não diz quem narra nem se o texto é rimado. Os personagens são bichos — o ratinho e os amigos —, e ela não diz se aparece alguma criança. Não descreve como termina além de o ratinho explicar o penico a todos. As quatro atividades do fim são para a criança, não material para o adulto. Nenhuma fonte lida dá o ano da edição original.",
+  "nao_aborda": "A sinopse fica no uso do penico (de onde vem, como sentar); não fala de escape, de medo do vaso sanitário nem de noite sem fralda.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Companhia das Letras (Brinque-Book)",
+        "url": "https://www.companhiadasletras.com.br/9786556540351-de-onde-vem-os-penicos-/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6556540358"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-09-28"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-09-28"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/6556540358",
+        "isbn13": "9786556540351",
+        "titulo_bateu": true,
+        "trecho": "De onde vêm os penicos? | Amazon.com.br",
+        "em": "2026-09-28"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-09-28",
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Amazon, que imprime o ISBN-13. A ficha da editora também imprime o ISBN, com hífens.",
+  "titulo_original": "Waar komen de potjes vandaan?"
+}
