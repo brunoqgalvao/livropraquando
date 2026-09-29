@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-09-28",
+  "atualizado_em": "2026-09-29",
   "livros": {
     "9786550791421": {
       "preco": 28,
@@ -14,7 +14,7 @@
         "onde": "Apple Books",
         "url": "https://books.apple.com/br/book/tina-agora-tem-um-irm%C3%A3o/id6442967071",
         "base": "dado estruturado (schema.org)",
-        "em": "2026-09-28"
+        "em": "2026-09-29"
       }
     },
     "9786555300628": {
@@ -30,14 +30,14 @@
         "onde": "Estante Virtual",
         "url": "https://www.estantevirtual.com.br/livro/conta-comigo-um-novo-irmao-sera-que-e-bom-06Z-1719-000-BK",
         "base": "dado estruturado (schema.org)",
-        "em": "2026-09-28"
+        "em": "2026-09-29"
       },
       "estoque": {
         "a_venda": true,
         "onde": [
           "estantevirtual.com.br: em estoque"
         ],
-        "em": "2026-09-28"
+        "em": "2026-09-29"
       }
     },
     "9786556121475": {
@@ -55,6 +55,14 @@
         "base": "preço do buy box",
         "edicao": "9786556121048",
         "em": "2026-09-25"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "grupoeditorialglobal.com.br: não deu leitura (nenhum sinal de estoque na página)",
+          "amazon.com.br: Comprar novo Para ver os detalhes do produto, adicione este item ao seu…"
+        ],
+        "em": "2026-09-29"
       }
     },
     "9786556540726": {
@@ -67,7 +75,7 @@
         "onde": "Companhia das Letras",
         "url": "https://www.companhiadasletras.com.br/livro/9786556540726/bibo-na-escola",
         "base": "dado estruturado (schema.org)",
-        "em": "2026-09-28"
+        "em": "2026-09-29"
       }
     },
     "9786559312016": {
@@ -82,7 +90,7 @@
           "editorapeiropolis.com.br: Adicionar ao carrinho",
           "amazon.com.br: Comprar novo Para ver os detalhes do produto, adicione este item ao seu…"
         ],
-        "em": "2026-09-28"
+        "em": "2026-09-29"
       },
       "loja": {
         "preco": 84,
@@ -91,7 +99,7 @@
         "onde": "Editora Peirópolis",
         "url": "https://www.editorapeiropolis.com.br/produto/eu-so-so-eu/",
         "base": "dado estruturado (schema.org)",
-        "em": "2026-09-28"
+        "em": "2026-09-29"
       }
     },
     "9786559803019": {
@@ -123,7 +131,7 @@
           "altabooks.com.br: Em estoque",
           "amazon.com.br: Para ver os detalhes do produto, adicione este item ao seu carrinho. Você…"
         ],
-        "em": "2026-09-28"
+        "em": "2026-09-29"
       },
       "loja": {
         "preco": 27.9,
@@ -154,23 +162,15 @@
       "estoque": {
         "a_venda": true,
         "onde": [
-          "amazon.com.br: Oferta 10% reservado(s) 10% comprados Para ver os detalhes do produto, adicione…",
+          "amazon.com.br: Oferta 11% reservado(s) 11% comprados Para ver os detalhes do produto, adicione…",
           "editoratexugo.com.br: não deu leitura (loja barrou o navegador)"
         ],
-        "em": "2026-09-28"
+        "em": "2026-09-29"
       }
     },
     "9786586881363": {
       "venda": "NOT_FOR_SALE",
       "em": "2026-09-18",
-      "estoque": {
-        "a_venda": true,
-        "onde": [
-          "aletria.com.br: não deu leitura (nenhum sinal de estoque na página)",
-          "amazon.com.br: Para ver os detalhes do produto, adicione este item ao seu carrinho. Você…"
-        ],
-        "em": "2026-09-28"
-      },
       "loja": {
         "preco": 88.9,
         "moeda": "BRL",
@@ -178,7 +178,7 @@
         "onde": "Aletria",
         "url": "https://www.aletria.com.br/o-monstro-das-cores-vai-a-escola",
         "base": "microdado (schema.org)",
-        "em": "2026-09-28"
+        "em": "2026-09-29"
       }
     },
     "9788526259416": {
@@ -190,7 +190,7 @@
           "coletivoleitor.com.br: Comprar Agora",
           "amazon.com.br: Comprar novo Oferta 1% reservado(s) 1% comprados Para ver os detalhes do…"
         ],
-        "em": "2026-09-28"
+        "em": "2026-09-29"
       },
       "loja": {
         "preco": 60.43,
@@ -211,7 +211,7 @@
           "cirandacultural.com.br: Produto Indisponível",
           "amazon.com.br: não deu leitura (Amazon não mostrou bloco de disponibilidade)"
         ],
-        "em": "2026-09-28"
+        "em": "2026-09-29"
       }
     },
     "9788562500824": {
@@ -224,9 +224,9 @@
         "a_venda": true,
         "onde": [
           "rocco.com.br: Adicionar ao carrinho",
-          "amazon.com.br: Oferta 3% reservado(s) 3% comprados Para ver os detalhes do produto, adicione…"
+          "amazon.com.br: não deu leitura (Amazon não mostrou bloco de disponibilidade)"
         ],
-        "em": "2026-09-28"
+        "em": "2026-09-29"
       },
       "loja": {
         "preco": 59.9,
@@ -235,7 +235,7 @@
         "onde": "Editora Rocco",
         "url": "https://rocco.com.br/produto/o-primeiro-dia-de-chu-na-escola/",
         "base": "dado estruturado (schema.org)",
-        "em": "2026-09-28"
+        "em": "2026-09-29"
       }
     },
     "9788574068039": {
@@ -247,7 +247,7 @@
           "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
           "amazon.com.br: Para ver os detalhes do produto, adicione este item ao seu carrinho. Você…"
         ],
-        "em": "2026-09-28"
+        "em": "2026-09-29"
       },
       "loja": {
         "preco": 69.9,
@@ -256,7 +256,7 @@
         "onde": "Companhia das Letras",
         "url": "https://www.companhiadasletras.com.br/livro/9788574068039/nos-agora-somos-quatro",
         "base": "dado estruturado (schema.org)",
-        "em": "2026-09-28"
+        "em": "2026-09-29"
       }
     },
     "9786556171081": {
@@ -265,7 +265,7 @@
         "onde": [
           "amazon.com.br: Para ver os detalhes do produto, adicione este item ao seu carrinho. Você…"
         ],
-        "em": "2026-09-28"
+        "em": "2026-09-29"
       },
       "loja": {
         "preco": 19.01,
@@ -286,6 +286,13 @@
         "url": "https://www.amazon.com.br/dp/6555351950",
         "base": "preço do buy box",
         "em": "2026-09-25"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "amazon.com.br: Para ver os detalhes do produto, adicione este item ao seu carrinho. Você…"
+        ],
+        "em": "2026-09-29"
       }
     },
     "9788506041840": {},
@@ -294,9 +301,9 @@
         "a_venda": true,
         "onde": [
           "cirandacultural.com.br: botão de compra na tela: \"Comprar | Ok\"",
-          "amazon.com.br: não deu leitura (Amazon não mostrou bloco de disponibilidade)"
+          "amazon.com.br: Oferta 20% reservado(s) 20% comprados Para ver os detalhes do produto, adicione…"
         ],
-        "em": "2026-09-28"
+        "em": "2026-09-29"
       },
       "loja": {
         "preco": 39.9,
@@ -305,7 +312,7 @@
         "onde": "Ciranda Cultural",
         "url": "https://www.cirandacultural.com.br/produto/livro-tempo-de-escola-74911",
         "base": "dado estruturado (schema.org)",
-        "em": "2026-09-28"
+        "em": "2026-09-29"
       }
     },
     "9788516048259": {
@@ -317,6 +324,13 @@
         "url": "https://www.amazon.com.br/dp/851604825X",
         "base": "preço do buy box",
         "em": "2026-09-25"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "amazon.com.br: Comprar novo Para ver os detalhes do produto, adicione este item ao seu…"
+        ],
+        "em": "2026-09-29"
       }
     },
     "9788574126234": {
@@ -326,7 +340,7 @@
           "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
           "amazon.com.br: Menor preço em 365 dias 42% reservado(s) 42% comprados Para ver os detalhes do…"
         ],
-        "em": "2026-09-28"
+        "em": "2026-09-29"
       },
       "loja": {
         "preco": 62.9,
@@ -335,7 +349,7 @@
         "onde": "Companhia das Letras (Brinque-Book)",
         "url": "https://www.companhiadasletras.com.br/9788574126234-a-irma-do-gildo-3087/p",
         "base": "dado estruturado (schema.org)",
-        "em": "2026-09-28"
+        "em": "2026-09-29"
       }
     },
     "9788530500269": {
@@ -355,7 +369,7 @@
         "onde": "Companhia das Letras (Brinque-Book)",
         "url": "https://www.companhiadasletras.com.br/9786556540092-o-coelho--o-escuro-e-a-lata-de-biscoitos-11061/p",
         "base": "dado estruturado (schema.org)",
-        "em": "2026-09-28"
+        "em": "2026-09-29"
       },
       "estoque": {
         "a_venda": true,
@@ -363,7 +377,7 @@
           "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
           "amazon.com.br: Para ver os detalhes do produto, adicione este item ao seu carrinho. Você…"
         ],
-        "em": "2026-09-28"
+        "em": "2026-09-29"
       }
     },
     "9788525057631": {
@@ -372,7 +386,7 @@
         "onde": [
           "amazon.com.br: Comprar novo Para ver os detalhes do produto, adicione este item ao seu…"
         ],
-        "em": "2026-09-28"
+        "em": "2026-09-29"
       }
     },
     "9788574069197": {
@@ -380,9 +394,9 @@
         "a_venda": true,
         "onde": [
           "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
-          "amazon.com.br: Para ver os detalhes do produto, adicione este item ao seu carrinho. Você…"
+          "amazon.com.br: Comprar novo Para ver os detalhes do produto, adicione este item ao seu…"
         ],
-        "em": "2026-09-28"
+        "em": "2026-09-29"
       },
       "loja": {
         "preco": 54.9,
@@ -391,7 +405,56 @@
         "onde": "Companhia das Letras",
         "url": "https://www.companhiadasletras.com.br/9788574069197-e-foi-assim-que-eu-e-a-escuridao-ficamos-amigas/p",
         "base": "dado estruturado (schema.org)",
-        "em": "2026-09-28"
+        "em": "2026-09-29"
+      }
+    },
+    "9788578886271": {
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "pandabooks.com.br: não deu leitura (nenhum sinal de estoque na página)",
+          "amazon.com.br: Comprar novo Oferta 0% reservado(s) 0% comprados Para ver os detalhes do…"
+        ],
+        "em": "2026-09-29"
+      },
+      "loja": {
+        "preco": 71.9,
+        "moeda": "BRL",
+        "formato": "impresso",
+        "onde": "Panda Books",
+        "url": "https://www.pandabooks.com.br/infantil/bebes/o-penico-do-bebe",
+        "base": "microdado (schema.org)",
+        "em": "2026-09-29"
+      }
+    },
+    "9786556540351": {
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
+          "amazon.com.br: Para ver os detalhes do produto, adicione este item ao seu carrinho. Você…"
+        ],
+        "em": "2026-09-29"
+      },
+      "loja": {
+        "preco": 89.9,
+        "moeda": "BRL",
+        "formato": "impresso",
+        "onde": "Companhia das Letras (Brinque-Book)",
+        "url": "https://www.companhiadasletras.com.br/9786556540351-de-onde-vem-os-penicos-/p",
+        "base": "dado estruturado (schema.org)",
+        "em": "2026-09-29"
+      }
+    },
+    "9788574065229": {
+      "loja": {
+        "preco": 67.9,
+        "moeda": "BRL",
+        "formato": "impresso",
+        "onde": "Companhia das Letras",
+        "url": "https://www.companhiadasletras.com.br/9788574065229-cade-o-meu-penico-/p",
+        "base": "dado estruturado (schema.org)",
+        "em": "2026-09-29"
       }
     }
   }

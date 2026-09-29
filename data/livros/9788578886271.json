@@ -1,0 +1,112 @@
+{
+  "isbn13": "9788578886271",
+  "titulo": "O penico do bebê",
+  "autor": "Josca Ailine Baroukh",
+  "ilustrador": "Eve Ferretti",
+  "editora": "Panda Books",
+  "ano": 2017,
+  "origem": "nacional",
+  "paginas": 24,
+  "situacoes": [
+    "desfralde"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site da Panda Books",
+      "url": "https://www.pandabooks.com.br/infantil/bebes/o-penico-do-bebe",
+      "trecho": "Certo dia, o bebê percebe que os bichos não usam fralda, e que crianças de sua idade já estão usando o penico e a privada do banheiro da escola para fazer suas necessidades. Ele decide, então, fazer uma mudança radical em sua vida: trocar a fralda pelo penico.",
+      "acessado_em": "2026-09-29"
+    },
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site da Panda Books",
+      "url": "https://www.pandabooks.com.br/infantil/bebes/o-penico-do-bebe",
+      "trecho": "Eve Ferretti contribui com artísticas ilustrações feitas com tinta acrílica, que transformam a leitura numa atividade conjunta entre os adultos e os bebês. Obra em capa dura, possui os candos arredondados para que possa ser manuseada pela própria criança.",
+      "acessado_em": "2026-09-29"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha técnica no site da Panda Books",
+      "url": "https://www.pandabooks.com.br/infantil/bebes/o-penico-do-bebe",
+      "trecho": "Ano da edição 2017 […] Ilustrador Ferretti, Eve […] ISBN 978-85-7888-627-1 […] Formato: (largura x altura x profundidade) 18,0 x 18,0 x 0,2 […] Número de Páginas: 24",
+      "acessado_em": "2026-09-29"
+    }
+  ],
+  "nao_coberto": "A sinopse não diz quem narra nem se o texto é rimado, e para na decisão do bebê de trocar a fralda pelo penico: não descreve como a troca acontece nem como termina. A editora não indica faixa etária — a página diz só \"Para pequenos leitores\" e põe o livro em \"Bebês\". Nenhuma fonte lida diz se há material para o adulto no fim.",
+  "nao_aborda": "A sinopse fica na decisão do bebê de largar a fralda, puxada pelos bichos e pelas crianças da escola; não fala de escape, de medo do vaso sanitário nem de noite sem fralda.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Panda Books",
+        "url": "https://www.pandabooks.com.br/infantil/bebes/o-penico-do-bebe"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8578886275"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-09-29"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-09-29"
+      },
+      {
+        "fonte": "google_books",
+        "via": "titulo",
+        "id": "KzI4swEACAAJ",
+        "isbn13": "9788578886271",
+        "titulo_bateu": true,
+        "em": "2026-09-29"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-09-29",
+  "capa": {
+    "arquivo": "9788578886271.png",
+    "fonte": "pandabooks.com.br",
+    "url": "https://images.tcdn.com.br/img/img_prod/783226/o_penico_do_bebe_333_1_20200630211250.png",
+    "obtida_em": "2026-09-29",
+    "sha1": "b14c5ad3c6eb01265df585b2cf0abc483a7f81dd",
+    "largura": 347,
+    "altura": 347
+  },
+  "nota": "O Google Books entrega primeiro a edição digital (9786556972114, de 2023); esta página é a do impresso em capa dura, 18 x 18 cm, cujo ISBN a ficha da Panda Books imprime.",
+  "outras_edicoes": [
+    {
+      "isbn13": "9786556972114",
+      "formato": "e-book de 2023",
+      "url": "https://play.google.com/store/books/details?id=FqOtEAAAQBAJ",
+      "verificado_em": "2026-09-29"
+    }
+  ]
+}

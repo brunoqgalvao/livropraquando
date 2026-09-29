@@ -80,5 +80,14 @@
   },
   "curadoria": "agente",
   "verificado_em": "2026-09-28",
+  "capa": {
+    "arquivo": "9788574065229.jpg",
+    "fonte": "companhiadasletras.com.br",
+    "url": "https://ciadasletras.vtexassets.com/arquivos/ids/190390/cdl-9788574065229.jpg?v=639205317037700000",
+    "obtida_em": "2026-09-29",
+    "sha1": "b0e02538df5916883368df4c05f1cabc38c7f690",
+    "largura": 600,
+    "altura": 600
+  },
   "titulo_original": "Have you seen my potty?"
 }

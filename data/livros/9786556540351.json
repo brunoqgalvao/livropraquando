@@ -14,7 +14,7 @@
   "rubrica": {
     "idade_editora": {
       "valor": "0+",
-      "base": 1
+      "base": 3
     },
     "nomeia_evento": {
       "valor": "direto",
@@ -54,6 +54,13 @@
       "url": "https://www.companhiadasletras.com.br/9786556540351-de-onde-vem-os-penicos-/p",
       "trecho": "Título Original […] Waar komen de potjes vandaan? […] Selo […] Brinque-Book […] Lançamento […] 23/01/2023 […] ISBN […] 978-65-5654-035-1 […] Acabamento […] Capa dura […] Páginas […] 40 […] Tradução […] Camila Werner […] Ilustração […] Guido van Genechten",
       "acessado_em": "2026-09-28"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/6556540358",
+      "trecho": "Indicado para leitores a partir de 0 ano",
+      "acessado_em": "2026-09-29"
     }
   ],
   "nao_coberto": "A sinopse não diz quem narra nem se o texto é rimado. Os personagens são bichos — o ratinho e os amigos —, e ela não diz se aparece alguma criança. Não descreve como termina além de o ratinho explicar o penico a todos. As quatro atividades do fim são para a criança, não material para o adulto. Nenhuma fonte lida dá o ano da edição original.",
@@ -94,6 +101,15 @@
   },
   "curadoria": "agente",
   "verificado_em": "2026-09-28",
+  "capa": {
+    "arquivo": "9786556540351.jpg",
+    "fonte": "companhiadasletras.com.br",
+    "url": "https://ciadasletras.vtexassets.com/arquivos/ids/220278/capa-escala-9786556540351.jpg?v=639246703618200000",
+    "obtida_em": "2026-09-29",
+    "sha1": "da0f6b89997041c95c164ff87955db9aed5b6131",
+    "largura": 600,
+    "altura": 600
+  },
   "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Amazon, que imprime o ISBN-13. A ficha da editora também imprime o ISBN, com hífens.",
   "titulo_original": "Waar komen de potjes vandaan?"
 }

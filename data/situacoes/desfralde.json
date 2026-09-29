@@ -1,0 +1,31 @@
+{
+  "slug": "desfralde",
+  "titulo": "Livro pra quando a criança está largando a fralda",
+  "pergunta": "Qual livro ler com a criança que está deixando a fralda e começando no penico?",
+  "descricao": "{N_livros} livros com edição brasileira sobre largar a fralda e usar o penico. A tabela traz o que a fonte da editora sustenta: idade indicada, tamanho, preço e se está à venda. Nem toda sinopse fala em fralda: a de \"Cadê o meu penico?\" fala só do penico, e a página dele diz isso. Idade indicada pela editora: {n_idade} de {n_livros}; onde falta, aparece \"n/i\" em vez de um chute nosso.",
+  "faixas": [
+    {
+      "isbn13": "9786556540351",
+      "base": 0,
+      "faixa": "desde bebê (0+ pela editora)"
+    }
+  ],
+  "bloqueada": false,
+  "curadoria": "agente",
+  "verificado_em": "2026-09-29",
+  "colunas": [
+    "idade_editora",
+    "paginas",
+    "previa",
+    "preco",
+    "disponibilidade"
+  ],
+  "consultas": [
+    "desfralde",
+    "penico",
+    "fralda",
+    "xixi e cocô",
+    "usar o banheiro"
+  ],
+  "ilustracao": "Uma criança pequena sentada num penico no meio de um banheiro claro, segurando um livro ilustrado aberto no colo; ao lado, um ursinho de pelúcia sentado no chão; toalha pendurada, azulejos simples, janela com luz de manhã; clima calmo e doméstico."
+}
