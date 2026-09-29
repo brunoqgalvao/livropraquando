@@ -13,7 +13,7 @@
   LOG="$HOME/livropraquando/runtime/diario-$(date +%F).log"
   {
     echo "=== $(date -Is) ==="
-    claude -p "Leia e execute agent/diario.md. Voce esta no diretorio ~/livropraquando na VM. O relatorio final vai por SendMessage pra sessao brunodeqgalvao-ba e fica em runtime/report-\$(date +%F).md. Nao mande nada pro self-chat do WhatsApp do Bruno." \
+    claude -p "Leia e execute agent/diario.md. Voce esta no diretorio ~/livropraquando na VM. O relatorio final vai por SendMessage pra sessao do assistente cujo nome comeca com brunodeqgalvao- (confira com ListAgents; o sufixo muda a cada reboot da VM) e fica em runtime/report-\$(date +%F).md. Nao mande nada pro self-chat do WhatsApp do Bruno." \
       --permission-mode bypassPermissions --model opus 2>&1
   } | tee -a "$LOG"
   exit 0

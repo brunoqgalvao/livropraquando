@@ -343,7 +343,7 @@ incompleto vale mais que um catálogo completo e inventado.
     — o de 22/09 dizia "17 sondados" quando o availability.json tinha 16. O
     `check` imprime a contagem certa; copie dela, não da sua cabeça.
 
-20. Relatório: `SendMessage` pra sessão `brunodeqgalvao-ba` e cópia em `runtime/report-<data>.md`.
+20. Relatório: `SendMessage` pra a sessão do assistente `brunodeqgalvao-*` (nome atual via `ListAgents`; muda a cada reboot) e cópia em `runtime/report-<data>.md`.
     Não vai pro self-chat do WhatsApp do Bruno.
 
 ## O relatório
@@ -364,7 +364,7 @@ Se você não publicou nada hoje, diga isso e diga por quê. Dia sem publicaçã
 
 ## Quando parar e perguntar
 
-Pare, não improvise, e pergunte por `SendMessage` pra `brunodeqgalvao-ba`:
+Pare, não improvise, e pergunte por `SendMessage` pra a sessão do assistente `brunodeqgalvao-*` (nome atual via `ListAgents`; muda a cada reboot):
 
 - a descoberta não trouxe nada aproveitável duas rodadas seguidas para a mesma situação;
 - um livro bom só existe em edição de Portugal;
