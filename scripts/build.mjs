@@ -8,6 +8,7 @@ import { createHash } from 'node:crypto';
 
 const SITE = process.env.SITE_URL || 'https://livropraquando.com';
 const NOME = process.env.SITE_NOME || 'Livro pra quando';
+const INDEXNOW = 'b7c4e19a52d84f0e9a3c6d1f28e5b0a4';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
@@ -442,5 +443,13 @@ ${urls.map(({ u, desde }) => `  <url><loc>${SITE}${u}</loc>${desde ? `<lastmod>$
   if (existsSync(dir)) cpSync(dir, join(P.site, 'capas'), { recursive: true });
 }
 gravar(join(P.site, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
+gravar(join(P.site, 'llms.txt'), `# ${NOME}
+
+> Catálogo de livros infantis com edição brasileira, organizado por situação da vida da criança. Cada livro tem ficha conferida (ISBN, editora, idade indicada pela editora) e cada afirmação cita a fonte com link e data de acesso.
+
+## Situações
+${situacoes.filter(s => (porSit.get(s.slug) || []).length).map(s => `- [${s.titulo}](${SITE}/s/${s.slug}): ${s.pergunta} ${(porSit.get(s.slug) || []).length} livros.`).join('\n')}
+`);
+gravar(join(P.site, `${INDEXNOW}.txt`), INDEXNOW);
 
 console.log(`gerado: ${urls.length} páginas (${situacoes.filter(s => (porSit.get(s.slug) || []).length).length} situações, ${livros.length} livros)`);
