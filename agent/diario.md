@@ -396,3 +396,7 @@ Bruno. Não mexa nelas sem resposta dele.
 
 Contar é a parte barata; é justo por isso que ninguém relê. Quando o relatório
 disser "N de M", conte os dois antes de escrever.
+
+## AEO: aparecer na resposta das AIs (30/09)
+
+O Bruno quer que o site seja citado quando um pai pergunta pro ChatGPT, Claude, Gemini ou Perplexity. A linha de base de 30/09 foi 0 de 36 respostas. Toda segunda, rode `node scripts/aeo.mjs` (usa OPENROUTER_API_KEY de ~/.config/keys.env e grava runtime/aeo-<data>.json) e ponha no relatório uma linha: "AEO: X/36 citam o site; fontes do topo: ...". Quando publicar página nova ou mudar uma existente, avise o IndexNow com as URLs alteradas (chave em scripts/build.mjs, POST em https://api.indexnow.org/indexnow). Não mude conteúdo só pra AEO sem o Bruno aprovar.
