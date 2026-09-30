@@ -1,0 +1,91 @@
+{
+  "isbn13": "9788574065328",
+  "titulo": "Soltei o pum na escola!",
+  "autor": "Blandina Franco",
+  "ilustrador": "José Carlos Lollo",
+  "editora": "Companhia das Letrinhas",
+  "ano": 2012,
+  "paginas": 36,
+  "situacoes": [
+    "primeiro-dia-de-aula"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site do Grupo Companhia das Letras (selo Companhia das Letrinhas)",
+      "url": "https://www.companhiadasletras.com.br/9788574065328-soltei-o-pum-na-escola-/p",
+      "trecho": "Geralmente, ficamos nervosos no primeiro dia de aula. Até os cachorros ficam! O Pum, por exemplo, quando visitou a escola do seu dono, ficou todo quietinho no começo. Mas logo se soltou e saiu correndo feito um rojão! Nem a diretora conseguiu segurar o Pum! […] nesta segunda aventura, sai de casa para explorar o universo da escola.",
+      "acessado_em": "2026-09-30"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha técnica no site do Grupo Companhia das Letras",
+      "url": "https://www.companhiadasletras.com.br/9788574065328-soltei-o-pum-na-escola-/p",
+      "trecho": "Selo […] Companhia das Letrinhas […] Lançamento […] 29/05/2012 […] ISBN […] 978-85-7406-532-8 […] Acabamento […] Livro brochura […] Páginas […] 36",
+      "acessado_em": "2026-09-30"
+    }
+  ],
+  "nao_coberto": "A sinopse é do ponto de vista do Pum, o cachorro, que visita a escola do dono; não diz se é o primeiro dia do dono, quantos anos ele tem, nem quem narra. Não descreve o final além da correria. A editora não indica faixa etária na página do livro, e a única idade na ficha da Amazon é a \"sugerida pelo cliente\", que não entra. Não encontramos resenha assinada.",
+  "nao_aborda": "A sinopse trata do nervosismo do começo pelo lado do humor — um cachorro que fica quieto e depois dispara pela escola —; não fala de despedida dos pais, de creche nem de choro na porta.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Companhia das Letras",
+        "url": "https://www.companhiadasletras.com.br/9788574065328-soltei-o-pum-na-escola-/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8574065323"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "id": "_JtXzwEACAAJ",
+        "isbn13": "9788574065328",
+        "titulo_bateu": true,
+        "em": "2026-09-30"
+      },
+      {
+        "fonte": "open_library",
+        "id": "/works/OL35280903W",
+        "isbn13": "9788574065328",
+        "titulo_bateu": true,
+        "em": "2026-09-30"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-09-30",
+  "capa": {
+    "arquivo": "9788574065328.jpg",
+    "fonte": "companhiadasletras.com.br",
+    "url": "https://ciadasletras.vtexassets.com/arquivos/ids/190394/cdl-9788574065328.jpg?v=639232224559430000",
+    "obtida_em": "2026-09-30",
+    "sha1": "b803c600300b70165f1eed996fada90a49ed5029",
+    "largura": 600,
+    "altura": 600
+  }
+}

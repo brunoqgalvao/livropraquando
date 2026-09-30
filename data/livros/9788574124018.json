@@ -1,0 +1,99 @@
+{
+  "isbn13": "9788574124018",
+  "titulo": "Escola de chuva",
+  "autor": "James Rumford",
+  "ilustrador": "James Rumford",
+  "editora": "Brinque-Book",
+  "ano": 2012,
+  "paginas": 32,
+  "situacoes": [
+    "primeiro-dia-de-aula"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site do Grupo Companhia das Letras (selo Brinque-Book)",
+      "url": "https://www.companhiadasletras.com.br/9788574124018-escola-de-chuva/p",
+      "trecho": "É o primeiro dia de aula em Kelo, no Chade, na África. As crianças caminham pela estrada. “Vou ganhar um caderno?”, pergunta Tomás. “Vou ganhar um lápis? Vou aprender a ler como vocês?”. Mas quando ele e as outras crianças chegam à escola, não há sala de aula nem carteiras. Apenas uma professora. “A primeira lição é construir a nossa escola”, diz ela.",
+      "acessado_em": "2026-09-30"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha técnica no site do Grupo Companhia das Letras",
+      "url": "https://www.companhiadasletras.com.br/9788574124018-escola-de-chuva/p",
+      "trecho": "Selo […] Brinque-Book […] Lançamento […] 13/09/2012 […] ISBN […] 978-85-7412-401-8 […] Acabamento […] Livro brochura […] Páginas […] 32",
+      "acessado_em": "2026-09-30"
+    },
+    {
+      "tipo": "resenha_assinada",
+      "autor": "A Taba",
+      "veiculo": "resenha especializada da A Taba, na página do livro na Amazon",
+      "url": "https://www.amazon.com.br/dp/857412401X",
+      "trecho": "Começa com as crianças menores, entre elas Tomás, guiadas pelas maiores ao primeiro dia de aula. Por causa das fortes chuvas de verão, elas encontram a escola destruída e têm como primeira lição reconstrui-la. […] Ao período de alfabetização, seguem as férias. E novamente, as chuvas e os ventos fortes desmoronam a escola. O que muda no reinício das aulas é que agora Tomás guia os menores para levantarem a escola.",
+      "acessado_em": "2026-09-30"
+    }
+  ],
+  "nao_coberto": "Nenhuma das fontes diz quem narra nem indica faixa etária pela editora; a da Amazon é \"sugerida pelo cliente\" e não entra. A página da editora não traz título original nem tradutor, então a página não afirma se é tradução. A resenha da Taba descreve o ano inteiro até a volta às aulas; ela é a única fonte que conta o final.",
+  "nao_aborda": "O primeiro dia aqui é o de crianças numa aldeia do Chade que constroem a escola com as próprias mãos; as fontes não falam de medo, de separação dos pais nem de creche.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Companhia das Letras (Brinque-Book)",
+        "url": "https://www.companhiadasletras.com.br/9788574124018-escola-de-chuva/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/857412401X"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "id": "TK7ZzgEACAAJ",
+        "isbn13": "9788574124018",
+        "titulo_bateu": true,
+        "em": "2026-09-30"
+      },
+      {
+        "fonte": "open_library",
+        "id": "/works/OL34957729W",
+        "isbn13": "9788574124018",
+        "titulo_bateu": true,
+        "em": "2026-09-30"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-09-30",
+  "capa": {
+    "arquivo": "9788574124018.jpg",
+    "fonte": "companhiadasletras.com.br",
+    "url": "https://ciadasletras.vtexassets.com/arquivos/ids/220294/capa-escala-9788574124018.jpg?v=639246703688370000",
+    "obtida_em": "2026-09-30",
+    "sha1": "087327dc552ef82f072a1103583ed790594e01c8",
+    "largura": 600,
+    "altura": 600
+  }
+}
