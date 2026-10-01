@@ -89,7 +89,7 @@ Vanity press **nunca** entra em "se for comprar um só".
 
 ### Anti-slop
 Toda afirmação da rúbrica aponta para uma evidência com URL e trecho. Sem fonte, campo `nao_coberto`.
-O agente nunca finge ter lido o livro. Teto de **2 páginas novas por dia**.
+O agente nunca finge ter lido o livro. Teto de **10 páginas novas por dia** (era 2; Bruno, 01/10/2026).
 
 ### Ética
 Linguagem **descritiva, nunca prescritiva**. Permitido: "trata de X pelo ponto de vista de Y".

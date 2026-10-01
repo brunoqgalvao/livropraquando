@@ -59,13 +59,13 @@ incompleto vale mais que um catálogo completo e inventado.
    **Ele autorizou em 23/09** (está em `runtime/decisoes-2026-09-23.md`): quer
    um lote de situações novas de alta demanda — desfralde, medo do escuro,
    creche, morte de bichinho, mudança de casa, dentista/médico, birra, adoção.
-   Autorização de tema não é autorização de pressa: o teto de **2 páginas novas
-   por dia** do SPEC continua valendo, e ele é o que separa catálogo de
+   Autorização de tema não é autorização de pressa: o teto de **10 páginas novas
+   por dia** do SPEC (subiu de 2 pra 10 em 01/10, ver `runtime/decisoes-2026-10-01.md`) continua valendo, e ele é o que separa catálogo de
    entulho. Situação nova só entra no ar **com os livros dentro** — página de
    situação vazia é exatamente a página fina que o SPEC proíbe em tema
    bloqueado, e não fica melhor em tema livre. Enquanto o teto for 2, cada
-   situação nova custa dois ou três dias de rodada; isso é o combinado, não um
-   problema a resolver sozinho.
+   situação nova custava dois ou três dias de rodada; isso era o combinado, não um
+   problema a resolver sozinho. Com teto 10, uma situação nova cabe numa rodada.
 
    Tema bloqueado continua bloqueado, e a lista não mudou.
 5. **Editar `agent/rodar.sh` durante a rodada.** É o script que está te executando;
