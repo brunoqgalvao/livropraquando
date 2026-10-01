@@ -1,0 +1,92 @@
+{
+  "isbn13": "9788508172016",
+  "titulo": "Medo do escuro",
+  "autor": "Antonio Carlos Pacheco",
+  "ilustrador": "Omar Grassetti",
+  "editora": "Ática",
+  "ano": 2016,
+  "paginas": 32,
+  "situacoes": [
+    "medo-do-escuro"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "descrição do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/850817201X",
+      "trecho": "Medo do Escuro conta a história de uma pequena estrela que tem medo da escuridão e prefere se esconder nas nuvens com a luz acesa. Com a ajuda da Lua, que a ensina que o escuro foge do brilho das estrelas, a estrelinha descobre sua coragem",
+      "acessado_em": "2026-10-01"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/850817201X",
+      "trecho": "Editora ‏ : ‎ Ática Data da publicação ‏ : ‎ 1 janeiro 2016 Edição ‏ : ‎ 17ª Idioma ‏ : ‎ Português Número de páginas ‏ : ‎ 32 páginas ISBN-10 ‏ : ‎ 850817201X ISBN-13 ‏ : ‎ 978-8508172016",
+      "acessado_em": "2026-10-01"
+    }
+  ],
+  "nao_coberto": "A única sinopse que achamos é a da Amazon; não achamos página do livro no site da Ática. Ela não diz quem narra, se o texto é rimado nem como a estrela volta ao céu escuro. A ficha diz 17ª edição, de 2016, sem o ano da primeira. A Ática não indica faixa etária nas fontes que abrimos. Não encontramos resenha assinada.",
+  "nao_aborda": "A história é de uma estrela que tem medo do escuro, não de uma criança: não há quarto, cama nem hora de dormir na sinopse.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/850817201X"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-10-01"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-10-01"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/850817201X",
+        "isbn13": "9788508172016",
+        "titulo_bateu": true,
+        "trecho": "Medo do escuro | Amazon.com.br",
+        "em": "2026-10-01"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-10-01",
+  "capa": {
+    "arquivo": "9788508172016.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/41HKqSxP7aL._SL1200_.jpg",
+    "obtida_em": "2026-10-01",
+    "sha1": "19ecdc48e9094efdae2461bd41928aa9cbe6709f",
+    "largura": 500,
+    "altura": 432
+  }
+}

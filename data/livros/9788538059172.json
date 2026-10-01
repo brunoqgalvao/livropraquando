@@ -1,0 +1,104 @@
+{
+  "isbn13": "9788538059172",
+  "titulo": "Piratas não têm medo do escuro!",
+  "autor": "Maudie Powell-Tuck",
+  "ilustrador": "Alison Edgson",
+  "editora": "Ciranda Cultural",
+  "ano": 2014,
+  "paginas": 32,
+  "situacoes": [
+    "medo-do-escuro"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "4+",
+      "base": 1
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site da Ciranda Cultural",
+      "url": "https://www.cirandacultural.com.br/produto/livro-piratas-nao-tem-medo-do-escuro-73216",
+      "trecho": "Fred vai dormir a noite toda em sua incrível barraca de pirata. – Nenhuma fada boba pode entrar! – o ursinho grita quando sua irmãzinha sapeca tenta se juntar a ele. Mas, quando a lanterna de Fred se apaga e ele ouve um barulho, barulho, barulho no escuro, ele não se sente tão corajoso como antes...",
+      "acessado_em": "2026-10-01"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha no site da Ciranda Cultural",
+      "url": "https://www.cirandacultural.com.br/produto/livro-piratas-nao-tem-medo-do-escuro-73216",
+      "trecho": "Editora: Ciranda Cultural Edição: 1, 2014 Autor: Maudie Powell-Tuck Ilustrador: Alison Edgson Idioma: Português Páginas: 32 Dimensões: L 24.00 x A 26.00 x E 0.30 ISBN: 9788538059172 Coleção: Histórias emocionantes Linha Editorial: Ciranda Cultural - Ficção infantil Faixa Etária: + 4 anos",
+      "acessado_em": "2026-10-01"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/8538059173",
+      "trecho": "Editora ‏ : ‎ Ciranda Cultural Data da publicação ‏ : ‎ 1 janeiro 2014 Edição ‏ : ‎ 1ª Idioma ‏ : ‎ Português Número de páginas ‏ : ‎ 32 páginas ISBN-10 ‏ : ‎ 8538059173 ISBN-13 ‏ : ‎ 978-8538059172",
+      "acessado_em": "2026-10-01"
+    }
+  ],
+  "nao_coberto": "A sinopse para no momento em que a lanterna se apaga e Fred ouve o barulho: não diz o que era o barulho, se a irmã volta à história nem como a noite termina. Também não diz quem narra nem se o texto é rimado. A ficha não traz título original nem tradutor, então a página não afirma que é tradução.",
+  "nao_aborda": "A sinopse trata o medo do escuro numa noite de acampamento dentro de casa, com um irmão mais velho que se acha corajoso; não fala da cama do próprio quarto nem de pedir pra deixar a luz acesa.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Ciranda Cultural",
+        "url": "https://www.cirandacultural.com.br/produto/livro-piratas-nao-tem-medo-do-escuro-73216"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8538059173"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-10-01"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-10-01"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/8538059173",
+        "isbn13": "9788538059172",
+        "titulo_bateu": true,
+        "trecho": "Piratas não têm medo do escuro! | Amazon.com.br",
+        "em": "2026-10-01"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-10-01",
+  "capa": {
+    "arquivo": "9788538059172.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/51NTw58l0nL._SL1200_.jpg",
+    "obtida_em": "2026-10-01",
+    "sha1": "d849e46580bcccc74499e987e10a509f8cb71207",
+    "largura": 462,
+    "altura": 500
+  }
+}
