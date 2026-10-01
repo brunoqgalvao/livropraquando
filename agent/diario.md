@@ -68,6 +68,8 @@ incompleto vale mais que um catálogo completo e inventado.
    problema a resolver sozinho. Com teto 10, uma situação nova cabe numa rodada.
 
    Tema bloqueado continua bloqueado, e a lista não mudou.
+
+   **01/10:** leia `agent/hipoteses-seo.md` (hipóteses SEO/AEO do Bruno, com a checklist da semana) e `runtime/decisoes-2026-10-01.md` (diretório, resumo por IA das fontes, reviews de leitores citadas). Toque a checklist junto com o volume novo.
 5. **Editar `agent/rodar.sh` durante a rodada.** É o script que está te executando;
    o bash lê por offset de byte e passa a executar pedaço de palavra. Se precisar
    mudar o runner, escreva a mudança no relatório e deixe para o humano aplicar.
