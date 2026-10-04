@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { faixaSchema, descricaoLivro, descricaoCurta } from './schema.mjs';
+import { faixaSchema, descricaoLivro, descricaoCurta, trilha } from './schema.mjs';
 
 let ok = 0, falhou = 0;
 const t = (nome, fn) => { try { fn(); ok++; } catch (e) { falhou++; console.log(`FALHOU: ${nome}\n  ${e.message}`); } };
@@ -102,6 +102,21 @@ t('sem recusa, a frase de idade ausente continua saindo', () =>
 t('idade presente ganha da recusa', () =>
   assert.ok(/Idade indicada pela editora: 3 a 5\./.test(
     descricaoLivro({ titulo: 'X', idade: '3 a 5', idadeContestada: true }))));
+
+// --- trilha (BreadcrumbList) ------------------------------------------------
+t('trilha começa no início e numera em ordem', () => {
+  const j = trilha('https://x.br', [{ nome: 'Medo do escuro', url: '/s/medo-do-escuro' }, { nome: 'Orion', url: '/l/1' }]);
+  assert.equal(j['@type'], 'BreadcrumbList');
+  assert.deepEqual(j.itemListElement.map(i => [i.position, i.name, i.item]),
+    [[1, 'Início', 'https://x.br/'], [2, 'Medo do escuro', 'https://x.br/s/medo-do-escuro'], [3, 'Orion', 'https://x.br/l/1']]);
+});
+
+t('degrau sem nome ou sem url fica de fora', () => {
+  const j = trilha('https://x.br', [{ nome: '', url: '/s/a' }, { nome: 'Livro', url: '/l/1' }]);
+  assert.deepEqual(j.itemListElement.map(i => i.name), ['Início', 'Livro']);
+});
+
+t('só o início não vira trilha', () => assert.equal(trilha('https://x.br', []), undefined));
 
 console.log(`${ok} passaram, ${falhou} falharam`);
 if (falhou) process.exit(1);

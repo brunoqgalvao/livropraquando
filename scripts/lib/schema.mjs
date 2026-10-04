@@ -75,3 +75,18 @@ export function descricaoCurta(texto, limite = LIMITE_DESC) {
   }
   return saida.trim() || undefined;   // nem a primeira frase coube: melhor nada
 }
+
+// Trilha pro Google (BreadcrumbList). Espelha o "olho" que a página já mostra
+// acima do título: Início › situação › livro. Item sem nome ou sem URL não
+// entra — trilha com degrau vazio o Google recusa inteira.
+export function trilha(site, degraus = []) {
+  const itens = [{ nome: 'Início', url: '/' }, ...degraus].filter(d => d && d.nome && d.url);
+  if (itens.length < 2) return undefined;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: itens.map((d, i) => ({
+      '@type': 'ListItem', position: i + 1, name: d.nome, item: `${site}${d.url}`,
+    })),
+  };
+}

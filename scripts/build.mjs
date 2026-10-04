@@ -1,7 +1,7 @@
 import { rotuloIdadeAusente } from './lib/ficha.mjs';
 import { P, ROOT, lerTodos, gravar, dataBr } from './lib.mjs';
 import { dimensao, mostrarInteira } from './lib/imagem.mjs';
-import { faixaSchema, descricaoLivro, descricaoCurta } from './lib/schema.mjs';
+import { faixaSchema, descricaoLivro, descricaoCurta, trilha } from './lib/schema.mjs';
 import { join } from 'node:path';
 import { rmSync, existsSync, cpSync, readFileSync, readdirSync } from 'node:fs';
 import { createHash } from 'node:crypto';
@@ -21,7 +21,7 @@ const arte = (nome, alt, { eager = false, sizes = '(min-width:860px) 480px, 100v
 const LOGO = '<svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1f4e5a"/><path d="M16 10.5c-2.6-1.8-5.6-2.2-9-1.6v13c3.4-.6 6.4-.2 9 1.6 2.6-1.8 5.6-2.2 9-1.6v-13c-3.4-.6-6.4-.2-9 1.6z" fill="#fbf6ec"/><path d="M16 10.5v13" stroke="#ab4124" stroke-width="1.6"/><circle cx="23.5" cy="7.5" r="2.5" fill="#d9a441"/></svg>';
 const MARCA = `<a class="marca" href="/">${LOGO}<span>${esc(NOME)}</span></a>`;
 
-const pagina = ({ titulo, desc, corpo, canon, imagem = 'capa', dados }) => `<!doctype html>
+const pagina = ({ titulo, desc, corpo, canon, imagem = 'capa', dados, migalhas }) => `<!doctype html>
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
@@ -45,7 +45,7 @@ ${existsSync(join(ASSETS, 'img', `${imagem}-og.jpg`)) ? `<meta property="og:imag
 <link rel="preload" href="/assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/figtree.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css?v=${VERSAO}">
-${dados ? `<script type="application/ld+json">${ld(dados)}</script>\n` : ''}</head>
+${[dados, migalhas].filter(Boolean).map(d => `<script type="application/ld+json">${ld(d)}</script>\n`).join('')}</head>
 <body>
 <header><div class="env">${MARCA}<nav><a href="/#situacoes">Situações</a></nav></div></header>
 <main class="env">
@@ -339,6 +339,7 @@ ${cols.map(c => `        <td class="c">${COLS[c].cel(l)}</td>`).join('\n')}
     titulo: `${s.titulo} — livro infantil por idade`,
     desc: descricaoCurta(descricao),
     canon: `${SITE}/s/${s.slug}`,
+    migalhas: trilha(SITE, [{ nome: s.titulo, url: `/s/${s.slug}` }]),
     dados: {
       '@context': 'https://schema.org',
       '@type': 'CollectionPage',
@@ -401,6 +402,10 @@ for (const l of livros) {
     desc: descricaoLivro({ titulo: l.titulo, editora: l.editora, ano: l.ano, idade: val(r, 'idade_editora'), paginas: l.paginas, nomeia: val(r, 'nomeia_evento'), idadeContestada: (l.idade_recusada || []).length > 0 }),
     canon: `${SITE}/l/${l.isbn13}`,
     dados: dadosDoLivro(l),
+    migalhas: trilha(SITE, [
+      ...(l.situacoes || []).map(sl => situacoes.find(x => x.slug === sl)).filter(Boolean).slice(0, 1).map(s => ({ nome: s.titulo, url: `/s/${s.slug}` })),
+      { nome: l.titulo, url: `/l/${l.isbn13}` },
+    ]),
     imagem: (l.situacoes || []).find(temArte) || 'capa',
     corpo: `<div class="estreito" style="padding-top:20px">
 <p class="olho">${(l.situacoes || []).map(sl => situacoes.find(x => x.slug === sl)).filter(Boolean).map(s => `<a href="/s/${esc(s.slug)}">${esc(s.titulo)}</a>`).join(' · ') || 'Livro'}</p>

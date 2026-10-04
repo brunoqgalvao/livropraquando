@@ -87,6 +87,11 @@ for (const f of paginas) {
     let j;
     try { j = JSON.parse(m[1]); } catch (e) { err(nome, `JSON-LD não parseia: ${e.message}`); continue; }
     if (!j['@context']) err(nome, 'JSON-LD sem @context');
+    if (j['@type'] === 'BreadcrumbList') {
+      for (const it of j.itemListElement || [])
+        if (!paraArquivo(String(it.item).replace(/^https?:\/\/[^/]+/, ''))) err(nome, `trilha aponta pra ${it.item}, que não tem página`);
+      continue;
+    }
     if (!nome.startsWith('l/')) continue;
     if (j['@type'] !== 'Book') err(nome, `JSON-LD de livro com @type=${j['@type']}`);
     const isbn = nome.replace(/^l\/|\.html$/g, '');
