@@ -1,0 +1,97 @@
+{
+  "isbn13": "9786555395426",
+  "titulo": "Tchauzinho, Fralda!",
+  "subtitulo": "Crescendo com Nico",
+  "autor": "Altea Villa",
+  "ilustrador": "Jessica Antonini",
+  "tradutor": "Jana Bianchi",
+  "editora": "Melhoramentos",
+  "ano": 2024,
+  "origem": "traducao",
+  "paginas": 12,
+  "situacoes": [
+    "desfralde"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "0 a 3",
+      "base": 1
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse na ficha da Amazon (o site da Melhoramentos estava fora do ar em 05/10)",
+      "url": "https://www.amazon.com.br/dp/6555395427",
+      "trecho": "É hora de dar tchau para a fralda, mas Nico está preocupado: ele não quer se sentar no penico! Então, ele descobre como é importante vencer o próprio medo. Crescendo com Nico - Tchauzinho, Fralda! é um livro divertido com abas para puxar que tornam a leitura mais dinâmica e lúdica!",
+      "acessado_em": "2026-10-05"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/6555395427",
+      "trecho": "Editora : Melhoramentos […] Data da publicação : 20 abril 2024 […] Número de páginas : 12 páginas […] ISBN-13 : 978-6555395426 […] Idade de leitura : 0 - 3 anos",
+      "acessado_em": "2026-10-05"
+    }
+  ],
+  "nao_coberto": "A única sinopse que achei é a da Amazon; a página do livro no site da Melhoramentos não abriu (erro 500). Ela diz que Nico tem medo de sentar no penico e que o descobre como vencer esse medo, mas não conta como. Não diz quem narra nem se o texto é rimado, e não fala de material para o adulto. Nenhuma fonte lida dá o título nem o ano da edição original.",
+  "nao_aborda": "A sinopse fica no medo de sentar no penico; não fala de escape, de noite sem fralda nem de vaso sanitário.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6555395427"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-10-05"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-10-05"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/6555395427",
+        "isbn13": "9786555395426",
+        "titulo_bateu": true,
+        "trecho": "Tchauzinho, Fralda!: crescendo com nico | Amazon.com.br",
+        "em": "2026-10-05"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-10-05",
+  "capa": {
+    "arquivo": "9786555395426.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/81aWVuQPSGL._SL1200_.jpg",
+    "obtida_em": "2026-10-05",
+    "sha1": "cf9011c7035f94d4ee3b65f1cd98c8d8c345ae55",
+    "largura": 600,
+    "altura": 597
+  },
+  "nota": "Livro provado pela ficha da Amazon, que imprime o ISBN 978-6555395426; Google Books e Open Library não têm o registro."
+}

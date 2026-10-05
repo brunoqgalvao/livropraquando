@@ -1,0 +1,114 @@
+{
+  "isbn13": "9788589987387",
+  "titulo": "Cocô, Xixi e Pum!",
+  "subtitulo": "Adeus, fralda!",
+  "autor": "Maíra Lot Micales",
+  "ilustrador": "Thiago Egg",
+  "editora": "Caminho Suave",
+  "ano": 2019,
+  "origem": "nacional",
+  "paginas": 32,
+  "situacoes": [
+    "desfralde"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "sim",
+      "base": 1
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site da Edipro (o endereço da Caminho Suave redireciona pra lá)",
+      "url": "https://edipro.com.br/livro/coco-xixi-e-pum/",
+      "trecho": "Quando o Cocô, o Xixi e o Pum se encontraram, fizeram uma bagunça e tanto! É que eles descobriram que tinham o mesmo sonho: não queriam mais morar nas fraldas nem ficar manchando colchões por aí.",
+      "acessado_em": "2026-10-05"
+    },
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site da Edipro",
+      "url": "https://edipro.com.br/livro/coco-xixi-e-pum/",
+      "trecho": "O livro é um 2 em 1! Além da divertida história, contém um guia do desfralde para pais e cuidadores, assinado por um dos maiores nomes da pediatria brasileira, a Dra. Gilda Porta, presidente do Departamento Científico de Hepatologia da Sociedade Brasileira de Pediatria (SBP). O guia traz dicas e informações preciosas para ajudar no desfralde diurno e noturno, além de auxiliar nos escapes, quando a criança já não usa mais fralda.",
+      "acessado_em": "2026-10-05"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha técnica no site da Edipro",
+      "url": "https://edipro.com.br/livro/coco-xixi-e-pum/",
+      "trecho": "ISBN: 978-85-89987-38-7 […] Formato: Livro brochura (paperback) […] Data do lançamento: 01/08/2019 […] Colaboradores: Ilustrador: ThiagoEgg ; Posfácio: Dr.ª Gilda Porta […] Número de páginas: 32",
+      "acessado_em": "2026-10-05"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/8589987388",
+      "trecho": "Editora : Caminho Suave […] Edição : Edição com guia de desfralde da pediatra Dra. Gilda Porta",
+      "acessado_em": "2026-10-05"
+    }
+  ],
+  "nao_coberto": "A sinopse apresenta os três personagens e o sonho deles de sair das fraldas, mas não conta a história nem como termina, e não diz quem narra nem se o texto é rimado. A editora não indica faixa etária; a da Amazon é \"sugerida pelo cliente\" e não entra. O guia para pais é descrito pela editora; não abrimos o guia.",
+  "nao_aborda": "A história, pela sinopse, fica no desejo de largar a fralda; escape e noite sem fralda aparecem no guia para os adultos, não na história.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Edipro",
+        "url": "https://edipro.com.br/livro/coco-xixi-e-pum/"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8589987388"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-10-05"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-10-05"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/8589987388",
+        "isbn13": "9788589987387",
+        "titulo_bateu": true,
+        "trecho": "Cocô, Xixi e Pum!: Adeus, fralda! - Livro infantil de auxílio no desfralde: Adeus, fralda! | Amazon.com.br",
+        "em": "2026-10-05"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-10-05",
+  "capa": {
+    "arquivo": "9788589987387.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/61i8NGzRAfL._SL1200_.jpg",
+    "obtida_em": "2026-10-05",
+    "sha1": "1a98773f18cbea45cfb7a714b9eb16fcee701d02",
+    "largura": 600,
+    "altura": 600
+  },
+  "nota": "Livro provado pela ficha da Amazon, que imprime o ISBN 978-8589987387; Google Books e Open Library não têm o registro. A sinopse da editora também diz que o livro vai \"incentivá-lo a tomar coragem para abandonar as fraldas\"; essa é a promessa da editora, e esta página não a repete como fato."
+}

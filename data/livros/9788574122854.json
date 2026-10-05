@@ -1,0 +1,105 @@
+{
+  "isbn13": "9788574122854",
+  "titulo": "O que tem dentro da sua fralda?",
+  "autor": "Guido van Genechten",
+  "ilustrador": "Guido van Genechten",
+  "tradutor": "Vânia M. A. de Lange",
+  "editora": "Brinque-Book",
+  "ano": 2010,
+  "origem": "traducao",
+  "paginas": 28,
+  "situacoes": [
+    "desfralde"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 2
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site do Grupo Companhia das Letras (selo Brinque-Book)",
+      "url": "https://www.companhiadasletras.com.br/9788574122854-o-que-tem-dentro-da-sua-fralda-/p",
+      "trecho": "Ratinho é muito curioso. Ele gosta de descobrir como tudo é por dentro. Nada escapa de Ratinho, nem mesmo as fraldas de seus amigos. Coelho, Cabrita, Cachorrinho, Bezerro, Potrinho e Porquinho, todos mostram suas fraldas. Então, claro, eles também querem ver a fralda de Ratinho. Uma grande surpresa os espera.",
+      "acessado_em": "2026-10-05"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha técnica no site do Grupo Companhia das Letras",
+      "url": "https://www.companhiadasletras.com.br/9788574122854-o-que-tem-dentro-da-sua-fralda-/p",
+      "trecho": "Selo […] Brinque-Book […] Lançamento […] 27/09/2010 […] ISBN […] 978-85-7412-285-4 […] Acabamento […] Capa dura […] Páginas […] 28 […] Formato […] 27x26 cm […] Tradução […] Vânia M. A. de Lange",
+      "acessado_em": "2026-10-05"
+    },
+    {
+      "tipo": "resenha_assinada",
+      "autor": "A Taba",
+      "veiculo": "resenha especializada da A Taba, na página do livro na Amazon",
+      "url": "https://www.amazon.com.br/dp/8574122858",
+      "trecho": "Este, em especial, tem várias abas, todas para revelar o que tem dentro das fraldas dos animais. Ratinho é muito curioso e quer saber o que tem dentro de tudo, até mesmo nas fraldas dos amigos. Sempre que abrem uma encontram cocô, menos a do Ratinho que faz no peniquinho. É um bom livro para ser lido a crianças que estão no processo de desfralde.",
+      "acessado_em": "2026-10-05"
+    }
+  ],
+  "nao_coberto": "A sinopse da editora não conta qual é a surpresa nem fala em penico; quem diz que o Ratinho \"faz no peniquinho\" é a resenha da A Taba, e é dela que vem a ligação com o desfralde. Nenhuma fonte diz quem narra nem se o texto é rimado. A editora não indica faixa etária; a da Amazon é \"sugerida pelo cliente\" e não entra. Nenhuma fonte lida dá o título nem o ano da edição original.",
+  "nao_aborda": "Pelas fontes, o livro mostra o que há dentro das fraldas e o penico do Ratinho; não fala de escape, de medo do vaso sanitário nem de noite sem fralda.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Companhia das Letras (Brinque-Book)",
+        "url": "https://www.companhiadasletras.com.br/9788574122854-o-que-tem-dentro-da-sua-fralda-/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8574122858"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-10-05"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-10-05"
+      },
+      {
+        "fonte": "google_books",
+        "via": "titulo",
+        "id": "U2qbZwEACAAJ",
+        "isbn13": "9788574122854",
+        "titulo_bateu": true,
+        "em": "2026-10-05"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-10-05",
+  "capa": {
+    "arquivo": "9788574122854.jpg",
+    "fonte": "companhiadasletras.com.br",
+    "url": "https://ciadasletras.vtexassets.com/arquivos/ids/220679/capa-9788574122854.jpg?v=639253419116000000",
+    "obtida_em": "2026-10-05",
+    "sha1": "144edb27a248f26de28319ffab1272a376da2805",
+    "largura": 600,
+    "altura": 600
+  }
+}
