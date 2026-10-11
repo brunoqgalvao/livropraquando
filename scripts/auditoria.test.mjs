@@ -2,7 +2,7 @@
 // panfleto com claim terapêutico. Um detector que não pega nada e um catálogo
 // limpo produzem exatamente a mesma saída — então ele precisa provar que morde.
 import assert from 'node:assert/strict';
-import { PRESCRITIVO, citada } from './auditoria.mjs';
+import { PRESCRITIVO, citada, conferida } from './auditoria.mjs';
 
 let ok = 0, falhou = 0;
 const t = (nome, fn) => { try { fn(); ok++; } catch (e) { falhou++; console.log(`FALHOU: ${nome}\n  ${e.message}`); } };
@@ -99,6 +99,20 @@ t('diz a palavra onde a citação descola da página', () =>
   ).motivo, /descola em .*brincadeiras/));
 
 t('trecho vazio reprova', () => assert.equal(citada('', 'qualquer coisa').ok, false));
+
+// Ficha da Panda fica na aba "Ficha Técnica": innerText não vê, textContent vê.
+t('ficha em aba fechada confere pelo texto oculto, e diz isso', () => {
+  const r = conferida('Ano da edição 2017 […] ISBN 978-85-7888-627-1', { texto: 'Sinopse Certo dia, o bebê percebe', oculto: 'Sinopse Certo dia Ano da edição2017AutorISBN 978-85-7888-627-1Formato' });
+  assert.equal(r.ok, true);
+  assert.match(r.motivo, /oculta/);
+});
+t('visível que confere não passa pelo oculto', () =>
+  assert.equal(conferida('Certo dia, o bebê percebe que os bichos', { texto: 'Certo dia, o bebê percebe que os bichos', oculto: 'x' }).motivo, 'literal'));
+t('reprovada nos dois continua reprovada, com o diagnóstico do visível', () => {
+  const r = conferida('As brincadeiras fora do ritmo, as atenções', { texto: 'As brincandeiras fora do ritmo, as atenções', oculto: 'nada aqui' });
+  assert.equal(r.ok, false);
+  assert.match(r.motivo, /descola/);
+});
 
 console.log(`${ok} passaram, ${falhou} falharam`);
 process.exit(falhou ? 1 : 0);

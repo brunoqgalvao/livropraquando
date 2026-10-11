@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { readdirSync, readFileSync } from 'node:fs';
 import { join, basename } from 'node:path';
-import { devePular, mesclaEstoque, mesclaDiario, idadeRecusada } from './rodada.mjs';
+import { devePular, mesclaEstoque, mesclaDiario, idadeRecusada, idadeProtegida, slotDaIdade } from './rodada.mjs';
 
 let ok = 0, falhou = 0;
 const t = (nome, fn) => { try { fn(); ok++; } catch (e) { falhou++; console.log(`FALHOU: ${nome}\n  ${e.message}`); } };
@@ -108,6 +108,39 @@ t('nenhum teste mora depois do process.exit', () => {
     assert.ok(!/^t\(/m.test(depois), `${basename(f)}: tem t(...) depois do process.exit — esses testes não rodam`);
   }
 });
+
+
+const PIRATAS = {
+  rubrica: { idade_editora: { valor: '4+', base: 1 } },
+  evidencias: [
+    { tipo: 'sinopse_editora', url: 'https://www.cirandacultural.com.br/produto/piratas', trecho: 'Fred acampa' },
+    { tipo: 'ficha_tecnica', url: 'https://www.cirandacultural.com.br/produto/piratas', trecho: 'Faixa Etária: + 4 anos' },
+    { tipo: 'ficha_tecnica', url: 'https://www.amazon.com.br/dp/8538059173', trecho: 'Editora : Ciranda Cultural ISBN-13 : 978-8538059172' },
+  ],
+};
+t('Amazon não troca idade que veio do site da editora', () =>
+  assert.deepEqual(idadeProtegida(PIRATAS, { host: 'amazon.com.br', idade: { valor: '4 a 8' } }), { host: 'cirandacultural.com.br', valor: '4+' }));
+t('a própria editora pode corrigir a idade dela', () =>
+  assert.equal(idadeProtegida(PIRATAS, { host: 'cirandacultural.com.br', idade: { valor: '5+' } }), null));
+t('idade que veio da Amazon a Amazon atualiza', () =>
+  assert.equal(idadeProtegida({ ...PIRATAS, rubrica: { idade_editora: { valor: '4+', base: 2 } } }, { host: 'amazon.com.br' }), null));
+t('livro sem idade aceita a da loja', () =>
+  assert.equal(idadeProtegida({ rubrica: { idade_editora: { valor: 'nao_coberto' } }, evidencias: [] }, { host: 'amazon.com.br' }), null));
+t('ficha da Amazon que sustenta editora e ISBN não é sobrescrita pela idade', () => {
+  const nova = { tipo: 'ficha_tecnica', url: 'https://www.amazon.com.br/dp/8538059173', trecho: 'Idade de leitura : 4 - 8 anos' };
+  const r = slotDaIdade(PIRATAS.evidencias, nova, 1);
+  assert.equal(r.base, 3);
+  assert.equal(r.evidencias[2].trecho, PIRATAS.evidencias[2].trecho);
+  assert.equal(PIRATAS.evidencias.length, 3);
+});
+t('ficha que era a base da idade antiga é trocada no lugar', () => {
+  const nova = { tipo: 'ficha_tecnica', url: 'https://www.cirandacultural.com.br/produto/piratas', trecho: 'Faixa Etária: + 5 anos' };
+  const r = slotDaIdade(PIRATAS.evidencias, nova, 1);
+  assert.equal(r.base, 1);
+  assert.equal(r.evidencias.length, 3);
+});
+t('trecho já citado reaproveita a evidência', () =>
+  assert.equal(slotDaIdade(PIRATAS.evidencias, { url: 'https://www.cirandacultural.com.br/produto/piratas', trecho: 'faixa etária + 4 anos' }, 1).base, 1));
 
 console.log(`${ok} passaram, ${falhou} falharam`);
 process.exit(falhou ? 1 : 0);

@@ -13,7 +13,7 @@
   "rubrica": {
     "idade_editora": {
       "valor": "4+",
-      "base": 3
+      "base": 1
     },
     "nomeia_evento": {
       "valor": "direto",

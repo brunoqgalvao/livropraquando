@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-10-05",
+  "atualizado_em": "2026-10-07",
   "livros": {
     "9786550791421": {
       "preco": 28,
@@ -14,7 +14,7 @@
         "onde": "Apple Books",
         "url": "https://books.apple.com/br/book/tina-agora-tem-um-irm%C3%A3o/id6442967071",
         "base": "dado estruturado (schema.org)",
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9786555300628": {
@@ -30,14 +30,14 @@
         "onde": "Estante Virtual",
         "url": "https://www.estantevirtual.com.br/livro/conta-comigo-um-novo-irmao-sera-que-e-bom-06Z-1719-000-BK",
         "base": "dado estruturado (schema.org)",
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       },
       "estoque": {
         "a_venda": true,
         "onde": [
           "estantevirtual.com.br: em estoque"
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9786556121475": {
@@ -54,7 +54,7 @@
         "url": "https://www.amazon.com.br/dp/6556121045",
         "base": "preço do buy box",
         "edicao": "9786556121048",
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       },
       "estoque": {
         "a_venda": true,
@@ -62,7 +62,7 @@
           "grupoeditorialglobal.com.br: não deu leitura (nenhum sinal de estoque na página)",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9786556540726": {
@@ -75,7 +75,7 @@
         "onde": "Companhia das Letras",
         "url": "https://www.companhiadasletras.com.br/livro/9786556540726/bibo-na-escola",
         "base": "dado estruturado (schema.org)",
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9786559312016": {
@@ -90,7 +90,7 @@
           "editorapeiropolis.com.br: Adicionar ao carrinho",
           "amazon.com.br: Estimativa de envio de 2 a 3 dias"
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       },
       "loja": {
         "preco": 84,
@@ -99,7 +99,7 @@
         "onde": "Editora Peirópolis",
         "url": "https://www.editorapeiropolis.com.br/produto/eu-so-so-eu/",
         "base": "dado estruturado (schema.org)",
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9786559803019": {
@@ -119,14 +119,14 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6560070026",
         "base": "preço do buy box",
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       },
       "estoque": {
         "a_venda": true,
         "onde": [
           "amazon.com.br: Estimativa de envio de 2 a 3 dias"
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9786560250420": {
@@ -136,9 +136,9 @@
         "a_venda": true,
         "onde": [
           "altabooks.com.br: Em estoque",
-          "amazon.com.br: Somente 2 em estoque."
+          "amazon.com.br: Somente 3 em estoque."
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       },
       "loja": {
         "preco": 27.9,
@@ -147,7 +147,7 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6560250423",
         "base": "preço do buy box",
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9786583924575": {
@@ -164,7 +164,7 @@
         "url": "https://www.amazon.com.br/dp/6583924560",
         "base": "preço do buy box",
         "edicao": "9786583924568",
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       },
       "estoque": {
         "a_venda": true,
@@ -172,28 +172,28 @@
           "amazon.com.br: Em estoque",
           "editoratexugo.com.br: não deu leitura (página voltou vazia)"
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9786586881363": {
       "venda": "NOT_FOR_SALE",
       "em": "2026-09-18",
       "loja": {
-        "preco": 62.49,
+        "preco": 66.72,
         "moeda": "BRL",
         "formato": "impresso",
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6586881366",
         "base": "preço do buy box",
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       },
       "estoque": {
         "a_venda": true,
         "onde": [
           "aletria.com.br: não deu leitura (nenhum sinal de estoque na página)",
-          "amazon.com.br: Somente 7 em estoque."
+          "amazon.com.br: Em estoque"
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9788526259416": {
@@ -205,7 +205,7 @@
           "coletivoleitor.com.br: Comprar Agora",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       },
       "loja": {
         "preco": 60.43,
@@ -214,7 +214,7 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8526259415",
         "base": "preço do buy box",
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9788538068617": {
@@ -224,9 +224,9 @@
         "a_venda": false,
         "onde": [
           "cirandacultural.com.br: Produto Indisponível",
-          "amazon.com.br: Não disponível. Não temos previsão de quando este produto estará disponível…"
+          "amazon.com.br: não deu leitura (disponibilidade ilegível: Ver todas as opções de compra Adicionar à Lista)"
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9788562500824": {
@@ -241,16 +241,16 @@
           "rocco.com.br: Em estoque",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       },
       "loja": {
-        "preco": 59.9,
+        "preco": 39.9,
         "moeda": "BRL",
         "formato": "impresso",
         "onde": "Editora Rocco",
         "url": "https://rocco.com.br/produto/o-primeiro-dia-de-chu-na-escola/",
         "base": "dado estruturado (schema.org)",
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9788574068039": {
@@ -262,7 +262,7 @@
           "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       },
       "loja": {
         "preco": 40,
@@ -271,7 +271,7 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8574068039",
         "base": "preço do buy box",
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9786556171081": {
@@ -280,7 +280,7 @@
         "onde": [
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       },
       "loja": {
         "preco": 11.32,
@@ -289,25 +289,25 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6556171085",
         "base": "preço do buy box",
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9786555351958": {
       "loja": {
-        "preco": 39.7,
+        "preco": 41.8,
         "moeda": "BRL",
         "formato": "impresso",
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6555351950",
         "base": "preço do buy box",
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       },
       "estoque": {
         "a_venda": true,
         "onde": [
-          "amazon.com.br: Em estoque"
+          "amazon.com.br: R$ 41,80 com 33 por cento de desconto -33% R$41 , 80 De: R$ 62,90 De: R$62,90…"
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9788506041840": {
@@ -316,7 +316,7 @@
         "onde": [
           "amazon.com.br: Somente 1 em estoque."
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9786553843769": {
@@ -324,9 +324,9 @@
         "a_venda": true,
         "onde": [
           "cirandacultural.com.br: botão de compra na tela: \"Comprar | Ok\"",
-          "amazon.com.br: Somente 10 em estoque."
+          "amazon.com.br: Somente 1 em estoque."
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       },
       "loja": {
         "preco": 39.9,
@@ -335,7 +335,7 @@
         "onde": "Ciranda Cultural",
         "url": "https://www.cirandacultural.com.br/produto/livro-tempo-de-escola-74911",
         "base": "dado estruturado (schema.org)",
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9788516048259": {
@@ -346,14 +346,14 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/851604825X",
         "base": "preço do buy box",
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       },
       "estoque": {
         "a_venda": true,
         "onde": [
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9788574126234": {
@@ -363,16 +363,16 @@
           "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       },
       "loja": {
-        "preco": 29.5,
+        "preco": 29.94,
         "moeda": "BRL",
         "formato": "impresso",
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8574126233",
         "base": "preço do buy box",
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9788530500269": {
@@ -392,7 +392,7 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6556540099",
         "base": "preço do buy box",
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       },
       "estoque": {
         "a_venda": true,
@@ -400,16 +400,16 @@
           "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9788525057631": {
       "estoque": {
         "a_venda": true,
         "onde": [
-          "amazon.com.br: Somente 10 em estoque."
+          "amazon.com.br: Somente 8 em estoque."
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       },
       "loja": {
         "preco": 58.8,
@@ -418,7 +418,7 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8525057630",
         "base": "preço do buy box",
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9788574069197": {
@@ -428,7 +428,7 @@
           "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       },
       "loja": {
         "preco": 36.29,
@@ -437,7 +437,7 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8574069191",
         "base": "preço do buy box",
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9788578886271": {
@@ -447,7 +447,7 @@
           "pandabooks.com.br: não deu leitura (nenhum sinal de estoque na página)",
           "amazon.com.br: Somente 5 em estoque."
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       },
       "loja": {
         "preco": 47.18,
@@ -456,7 +456,7 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8578886275",
         "base": "preço do buy box",
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9786556540351": {
@@ -466,16 +466,16 @@
           "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       },
       "loja": {
-        "preco": 56.75,
+        "preco": 50.2,
         "moeda": "BRL",
         "formato": "impresso",
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6556540358",
         "base": "preço do buy box",
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9788574065229": {
@@ -486,7 +486,7 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8574065226",
         "base": "preço do buy box",
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       },
       "estoque": {
         "a_venda": true,
@@ -494,7 +494,7 @@
           "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9788574065328": {
@@ -504,7 +504,7 @@
           "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       },
       "loja": {
         "preco": 41.82,
@@ -513,7 +513,7 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8574065323",
         "base": "preço do buy box",
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9788574124018": {
@@ -524,7 +524,7 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/857412401X",
         "base": "preço do buy box",
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       },
       "estoque": {
         "a_venda": true,
@@ -532,7 +532,7 @@
           "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9788508172016": {
@@ -541,7 +541,7 @@
         "onde": [
           "amazon.com.br: Somente 4 em estoque."
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       },
       "loja": {
         "preco": 80.99,
@@ -550,35 +550,35 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/850817201X",
         "base": "preço do buy box",
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9788538059172": {
       "estoque": {
         "a_venda": true,
         "onde": [
-          "cirandacultural.com.br: botão de compra na tela: \"Comprar | Ok\"",
+          "cirandacultural.com.br: não deu leitura (nenhum sinal de estoque na página)",
           "amazon.com.br: R$ 19,32 R$19 , 32 Entrega GRÁTIS Segunda-feira, 19 de Outubro para membros…"
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       },
       "loja": {
-        "preco": 39.9,
+        "preco": 19.32,
         "moeda": "BRL",
         "formato": "impresso",
-        "onde": "Ciranda Cultural",
-        "url": "https://www.cirandacultural.com.br/produto/livro-piratas-nao-tem-medo-do-escuro-73216",
-        "base": "dado estruturado (schema.org)",
-        "em": "2026-10-05"
+        "onde": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8538059173",
+        "base": "preço do buy box",
+        "em": "2026-10-07"
       }
     },
     "9786555395426": {
       "estoque": {
         "a_venda": true,
         "onde": [
-          "amazon.com.br: Somente 9 em estoque."
+          "amazon.com.br: Somente 7 em estoque."
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       },
       "loja": {
         "preco": 33.16,
@@ -587,7 +587,7 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6555395427",
         "base": "preço do buy box",
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9788574122854": {
@@ -597,7 +597,7 @@
           "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       },
       "loja": {
         "preco": 42,
@@ -606,7 +606,7 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8574122858",
         "base": "preço do buy box",
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       }
     },
     "9788589987387": {
@@ -616,7 +616,7 @@
           "edipro.com.br: ADICIONAR AO CARRINHO",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-10-05"
+        "em": "2026-10-07"
       },
       "loja": {
         "preco": 54.9,
@@ -625,7 +625,83 @@
         "onde": "Edipro",
         "url": "https://edipro.com.br/livro/coco-xixi-e-pum/",
         "base": "dado estruturado (schema.org)",
-        "em": "2026-10-05"
+        "em": "2026-10-07"
+      }
+    },
+    "9786555009538": {
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "cirandacultural.com.br: botão de compra na tela: \"Comprar | Ok\"",
+          "amazon.com.br: Em estoque"
+        ],
+        "em": "2026-10-07"
+      },
+      "loja": {
+        "preco": 39.9,
+        "moeda": "BRL",
+        "formato": "impresso",
+        "onde": "Ciranda Cultural",
+        "url": "https://www.cirandacultural.com.br/produto/livro-mortinha-da-silvia-70427",
+        "base": "dado estruturado (schema.org)",
+        "em": "2026-10-07"
+      }
+    },
+    "9786559801817": {
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "harpercollins.com.br: não deu leitura (página voltou vazia)",
+          "amazon.com.br: Somente 7 em estoque."
+        ],
+        "em": "2026-10-07"
+      },
+      "loja": {
+        "preco": 44.67,
+        "moeda": "BRL",
+        "formato": "impresso",
+        "onde": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6559801810",
+        "base": "preço do buy box",
+        "em": "2026-10-07"
+      }
+    },
+    "9788534922845": {
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "loja.paulus.com.br: não deu leitura (nenhum sinal de estoque na página)",
+          "amazon.com.br: Somente 4 em estoque."
+        ],
+        "em": "2026-10-07"
+      },
+      "loja": {
+        "preco": 26.2,
+        "moeda": "BRL",
+        "formato": "impresso",
+        "onde": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8534922845",
+        "base": "preço do buy box",
+        "em": "2026-10-07"
+      }
+    },
+    "9788595010925": {
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "sinopsyseditora.com.br: Em Estoque",
+          "amazon.com.br: Somente 1 em estoque."
+        ],
+        "em": "2026-10-07"
+      },
+      "loja": {
+        "preco": 50.35,
+        "moeda": "BRL",
+        "formato": "impresso",
+        "onde": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8595010927",
+        "base": "preço do buy box",
+        "em": "2026-10-07"
       }
     }
   }

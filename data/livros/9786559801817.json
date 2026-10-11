@@ -1,0 +1,121 @@
+{
+  "isbn13": "9786559801817",
+  "titulo": "Uma oferenda para Perro",
+  "subtitulo": "Celebre o amor neste livro infantil ilustrado sobre o Día de los Muertos!",
+  "autor": "Judith Valdés B.",
+  "ilustrador": "Carlos Vélez Aguilera",
+  "tradutor": "Giu Alonso",
+  "editora": "HarperKids",
+  "ano": 2025,
+  "origem": "traducao",
+  "paginas": 32,
+  "situacoes": [
+    "morte-do-bichinho"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "5+",
+      "base": 4
+    },
+    "nomeia_evento": {
+      "valor": "nao_coberto"
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site da HarperCollins Brasil",
+      "url": "https://harpercollins.com.br/products/uma-oferenda-para-perro-celebre-o-amor-neste-livro-infantil-ilustrado-sobre-o-dia-de-los-muertos-judith-valdes-b",
+      "trecho": "Neste livro ilustrado conhecemos a história de Benito e seu cãozinho Perro. Eles faziam tudo juntos e se divertiam muito. Até que, um dia, Perro fica doente e não volta mais do veterinário... Benito fica devastado e sente muita falta de seu fiel companheiro. Com o Día de Los Muertos se aproximando, o menino não sente vontade de fazer nada para o evento, mas, aos poucos, com a ajuda de seus pais, entende o real significado da data.",
+      "acessado_em": "2026-10-06"
+    },
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site da HarperCollins Brasil",
+      "url": "https://harpercollins.com.br/products/uma-oferenda-para-perro-celebre-o-amor-neste-livro-infantil-ilustrado-sobre-o-dia-de-los-muertos-judith-valdes-b",
+      "trecho": "Com autoria de Judith Valdés B. e ilustrações de Carlos Vélez Aguilera, Uma oferenda para Perro",
+      "acessado_em": "2026-10-06"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/6559801810",
+      "trecho": "Idade de leitura : 5 anos e acima",
+      "acessado_em": "2026-10-06"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/6559801810",
+      "trecho": "Judith Valdés B. (Autor), Giu Alonso (Tradutor)",
+      "acessado_em": "2026-10-06"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha no site da HarperCollins Brasil",
+      "url": "https://harpercollins.com.br/products/uma-oferenda-para-perro-celebre-o-amor-neste-livro-infantil-ilustrado-sobre-o-dia-de-los-muertos-judith-valdes-b",
+      "trecho": "ISBN: 9786559801817 ISBN 10: 6559801810 Editora: HarperKids Disponível em: Abril 1, 2025 Dimensões: 20x26cm Números de páginas: 32 pages […] Classificação: a partir de 5 +",
+      "acessado_em": "2026-10-11"
+    }
+  ],
+  "nao_coberto": "A sinopse diz que Perro \"fica doente e não volta mais do veterinário\" e que Benito sente falta dele, mas não usa a palavra morte; não dá pra saber se o livro usa. Também não diz quem narra, se o texto é rimado nem o que Benito faz no Día de los Muertos. A ficha não traz título nem ano originais.",
+  "nao_aborda": "A perda do cachorro vem junto com o Día de los Muertos, festa mexicana de lembrança dos mortos; a sinopse não diz se há leitura religiosa da data.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "HarperCollins Brasil",
+        "url": "https://harpercollins.com.br/products/uma-oferenda-para-perro-celebre-o-amor-neste-livro-infantil-ilustrado-sobre-o-dia-de-los-muertos-judith-valdes-b"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6559801810"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-10-06"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-10-06"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/6559801810",
+        "isbn13": "9786559801817",
+        "titulo_bateu": true,
+        "trecho": "Uma oferenda para Perro – Celebre o amor neste livro infantil ilustrado sobre o Día de los Muertos! | Amazon.com.br",
+        "em": "2026-10-06"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-10-06",
+  "capa": {
+    "arquivo": "9786559801817.jpg",
+    "fonte": "harpercollins.com.br",
+    "url": "https://cdn.shopify.com/s/files/1/0529/5125/3158/files/9786559801817_600x.jpg?v=1781722685",
+    "obtida_em": "2026-10-06",
+    "sha1": "8b833e326d70b3599948fe0dcfd228574b3fef33",
+    "largura": 600,
+    "altura": 787
+  },
+  "nota": "Livro provado pela ficha da Amazon, que imprime o ISBN 978-6559801817; Google Books e Open Library não têm o registro. A ficha da editora traz ISBN, editora, data, páginas e idade; o tradutor (Giu Alonso) vem da ficha da Amazon."
+}

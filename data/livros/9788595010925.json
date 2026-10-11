@@ -1,0 +1,113 @@
+{
+  "isbn13": "9788595010925",
+  "titulo": "Meu animalzinho morreu",
+  "subtitulo": "ajudando crianças a lidar com a perda do seu bicho de estimação",
+  "autor": "Heitor Pontes Hirata",
+  "editora": "Sinopsys",
+  "ano": 2018,
+  "origem": "nacional",
+  "paginas": 32,
+  "situacoes": [
+    "morte-do-bichinho"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "4+",
+      "base": 1
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site da Sinopsys",
+      "url": "https://sinopsyseditora.com.br/livros/meu-animalzinho-morreu-ajudando-criancas-a-lidar-com-a-perda-do-seu-bicho-de-estimacao-1217",
+      "trecho": "Quando temos um animalzinho de estimação, queremos que ele viva e fique conosco para sempre. No entanto, sabemos que a vida dele será menor do que a nossa. Isso nos leva a ter que lidar com a forte dor do luto relacionada à perda do nosso amiguinho. Neste livro, o autor ajuda o leitor a organizar os pensamentos e sentimentos relacionados à morte, mostrando que é natural passar por um processo de luto como ocorre com outros tipos de perda.",
+      "acessado_em": "2026-10-06"
+    },
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "público-alvo no site da Sinopsys",
+      "url": "https://sinopsyseditora.com.br/livros/meu-animalzinho-morreu-ajudando-criancas-a-lidar-com-a-perda-do-seu-bicho-de-estimacao-1217",
+      "trecho": "A obra é indicada para crianças a partir de 4 anos.",
+      "acessado_em": "2026-10-06"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "dados técnicos no site da Sinopsys",
+      "url": "https://sinopsyseditora.com.br/livros/meu-animalzinho-morreu-ajudando-criancas-a-lidar-com-a-perda-do-seu-bicho-de-estimacao-1217",
+      "trecho": "Heitor Pontes Hirata, Psicólogo com formação em Terapia Cognitivo-Comportamental. […] ISBN: 9788595010925 Formato: 23 x 16 cm | 32 páginas | Peso: 112 g Acabamento: Capa grampeada Ano: 2018",
+      "acessado_em": "2026-10-06"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/8595010927",
+      "trecho": "Editora : SINOPSYS EDITORA Data da publicação : 31 julho 2018 Edição : 1ª Idioma : Português Número de páginas : 32 páginas ISBN-10 : 8595010927 ISBN-13 : 978-8595010925",
+      "acessado_em": "2026-10-06"
+    }
+  ],
+  "nao_coberto": "A sinopse fala do luto pelo bicho em geral e não conta história: não diz se há personagem, que animal morreu nem como o livro termina. Não diz quem narra nem quem ilustra. O autor é psicólogo, mas a editora não diz se há texto separado para os pais.",
+  "nao_aborda": "A sinopse fala de morte e luto do bicho de estimação; não fala de enterro, de veterinário nem de adotar outro animal.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Sinopsys",
+        "url": "https://sinopsyseditora.com.br/livros/meu-animalzinho-morreu-ajudando-criancas-a-lidar-com-a-perda-do-seu-bicho-de-estimacao-1217"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8595010927"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-10-06"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-10-06"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/8595010927",
+        "isbn13": "9788595010925",
+        "titulo_bateu": true,
+        "trecho": "Meu animalzinho morreu: ajudando crianças a lidar com a perda do seu bicho de estimação | Amazon.com.br",
+        "em": "2026-10-06"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-10-06",
+  "capa": {
+    "arquivo": "9788595010925.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/514zOgoWtDL._SL1200_.jpg",
+    "obtida_em": "2026-10-06",
+    "sha1": "a54ee27312ac1d334d95d529d854daacf638e1b0",
+    "largura": 600,
+    "altura": 600
+  },
+  "nota": "Livro provado pela ficha da Amazon, que imprime o ISBN 978-8595010925; Google Books e Open Library não têm o registro. O subtítulo (\"ajudando crianças a lidar com a perda\") é o título que a editora deu ao livro; esta página não promete esse efeito."
+}

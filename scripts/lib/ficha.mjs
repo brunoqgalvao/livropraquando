@@ -86,6 +86,14 @@ const TEM = [/em estoque/i, /adicionar ao carrinho/i, /comprar agora/i, /compre 
 // do botão sem olhar se ele aparece diria "à venda" para as duas.
 const BOTAO_TEM = [/adicionar ao carrinho/i, /\bcomprar\b/i, /\bcompre\b/i];
 
+// O buy box da Amazon traz o endereço de entrega da sessão do navegador
+// ("Enviar para <nome> - <cidade> <CEP>"), e a nota ilegível vai pra página
+// pública. Em 06/10 o nome, a cidade e o CEP do Bruno chegaram à evidência.
+export const semEndereco = s => String(s || '')
+  .replace(/(?:enviar|entregar|entrega)\s+(?:para|em)\b.*?\d{5}-?\d{3}[\u200b-\u200d\ufeff]?/gi, '')
+  .replace(/\b\d{5}-?\d{3}\b/g, '')
+  .replace(/\s+/g, ' ').trim();
+
 // `ok: null` = não deu pra ver. É diferente de "não tem", e a diferença é o
 // projeto inteiro: a coluna antiga dizia "sim" porque o HTTP devolveu 200.
 // A nota da loja pode virar evidência numa página pública (é o que a nota de
@@ -111,7 +119,8 @@ export function estoqueDaPagina({ host, texto, titulo, amazon, botoes }) {
     if (!s) return { ok: null, nota: 'Amazon não mostrou bloco de disponibilidade' };
     if (FORA.some(re => re.test(s))) return { ok: false, nota: corta(s) };
     if (TEM.some(re => re.test(s))) return { ok: true, nota: corta(s) };
-    return { ok: null, nota: `disponibilidade ilegível: ${s.slice(0, 60)}` };
+    const limpo = semEndereco(s);
+    return { ok: null, nota: limpo ? `disponibilidade ilegível: ${limpo.slice(0, 60)}` : 'disponibilidade ilegível' };
   }
   if (/403|forbidden|acesso negado|access denied/i.test(titulo || '')) return { ok: null, nota: 'loja barrou o navegador' };
   const t = semMarcas(texto);

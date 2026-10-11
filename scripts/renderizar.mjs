@@ -11,7 +11,7 @@
 // recusado aqui — entra como `idade_leitores`, que a página rotula como tal.
 import { P, lerTodos, gravar, canonicalLivro, hoje } from './lib.mjs';
 import { renderizar } from './navegador.mjs';
-import { devePular, mesclaEstoque, mesclaDiario, idadeRecusada } from './lib/rodada.mjs';
+import { devePular, mesclaEstoque, mesclaDiario, idadeRecusada, idadeProtegida, slotDaIdade } from './lib/rodada.mjs';
 import { vereditoEstoque } from './lib/estoque.mjs';
 import { idadeDaEditora, idadeDaAmazon, estoqueDaPagina, isbnDaPagina, precoDaLoja, paginasDaFicha, ilustradorDaFicha } from './lib/ficha.mjs';
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'node:fs';
@@ -243,6 +243,11 @@ for (const l of livros) {
     aviso(`ignorei "${escolhida.idade.valor}" de ${escolhida.host}: recusada em ${rec.em} — ${rec.motivo}`);
     continue;
   }
+  const prot = idadeProtegida(l, escolhida);
+  if (prot) {
+    aviso(`mantive "${prot.valor}" de ${prot.host}: ${escolhida.host} diz "${escolhida.idade.valor}", e loja não troca idade da editora`);
+    continue;
+  }
   if (escolhida.isbn_pagina && escolhida.isbn_pagina !== l.isbn13) {
     aviso(`a página de ${escolhida.host} é do ISBN ${escolhida.isbn_pagina}, não do ${l.isbn13} (outra tiragem); idade registrada com essa ressalva`);
   }
@@ -257,15 +262,9 @@ for (const l of livros) {
     acessado_em: hoje(),
   };
   // Se uma evidência que já existe cita a mesma frase na mesma URL, aponta pra
-  // ela. Duplicar o trecho engordaria o diff sem acrescentar prova — e o diff
-  // do git é a medida de slop deste projeto.
-  const chave = (x) => String(x).toLowerCase().replace(/[^a-z0-9áàâãéêíóôõúç ]/gi, '').replace(/\s+/g, ' ').trim();
-  const cita = evidencias.findIndex(e => e.url === nova.url && chave(e.trecho).includes(chave(nova.trecho)));
-  const mesma = evidencias.findIndex(e => e.url === nova.url && e.tipo === 'ficha_tecnica');
-  const base = cita >= 0 ? cita
-    : mesma >= 0 ? (evidencias[mesma] = nova, mesma)
-    : (evidencias.push(nova) - 1);
-  limpo.evidencias = evidencias;
+  // ela. Duplicar o trecho engordaria o diff sem acrescentar prova.
+  const { evidencias: ev, base } = slotDaIdade(evidencias, nova, l.rubrica?.idade_editora?.base);
+  limpo.evidencias = ev;
   limpo.rubrica = { ...l.rubrica, idade_editora: { valor: escolhida.idade.valor, base } };
   if (gravar(arquivo, canonicalLivro(limpo))) { escritos++; console.log(`  → idade ${escolhida.idade.valor} gravada`); }
 }

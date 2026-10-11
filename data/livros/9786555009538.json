@@ -1,0 +1,106 @@
+{
+  "isbn13": "9786555009538",
+  "titulo": "Mortinha da Silvia",
+  "autor": "Marcos Martinz",
+  "ilustrador": "Isabella Pedrão",
+  "editora": "Ciranda Cultural",
+  "ano": 2021,
+  "origem": "nacional",
+  "paginas": 32,
+  "situacoes": [
+    "morte-do-bichinho"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "6+",
+      "base": 1
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site da Ciranda Cultural",
+      "url": "https://www.cirandacultural.com.br/produto/livro-mortinha-da-silvia-70427",
+      "trecho": "Todas as bruxas têm um animalzinho como parceiro de feitiços. Silvia tem uma gatinha, que é tão especial que se chama Vida. Um dia, porém, Vida dorme e não acorda mais, e a menina não entende o que aconteceu. Entre cartas mágicas e doces malucos, Silvia conta com a ajuda da Dona Morte e da amorosa Vovó Velória para resgatar a sua gatinha.",
+      "acessado_em": "2026-10-06"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha no site da Ciranda Cultural",
+      "url": "https://www.cirandacultural.com.br/produto/livro-mortinha-da-silvia-70427",
+      "trecho": "Editora: Ciranda Cultural Edição: 1, 2021 Autor: Marcos Martinz Ilustrador: Isabella Pedrão Idioma: Português Páginas: 32 […] ISBN: 9786555009538 Coleção: Clube do susto […] Faixa Etária: + 6 anos Assuntos (tags): Morte, Bruxa, Gato, Luto",
+      "acessado_em": "2026-10-06"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/6555009535",
+      "trecho": "Editora : Ciranda Cultural Data da publicação : 31 outubro 2021 Edição : 1ª Idioma : Português Número de páginas : 32 páginas ISBN-10 : 6555009535 ISBN-13 : 978-6555009538",
+      "acessado_em": "2026-10-06"
+    }
+  ],
+  "nao_coberto": "A sinopse diz que Silvia tenta \"resgatar\" a gatinha com a ajuda da Dona Morte e da avó, mas não conta se consegue nem como a história termina. Não diz quem narra nem se o texto é rimado. A coleção da editora se chama \"Clube do susto\" e o livro é marcado com Halloween; a sinopse não diz se há cena de medo.",
+  "nao_aborda": "A morte da gatinha vem num mundo de bruxas e feitiços, com a Morte como personagem; a sinopse não fala de veterinário, de enterro nem de outro bicho na casa.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Ciranda Cultural",
+        "url": "https://www.cirandacultural.com.br/produto/livro-mortinha-da-silvia-70427"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6555009535"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-10-06"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-10-06"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/6555009535",
+        "isbn13": "9786555009538",
+        "titulo_bateu": true,
+        "trecho": "Mortinha da Silvia | Amazon.com.br",
+        "em": "2026-10-06"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-10-06",
+  "capa": {
+    "arquivo": "9786555009538.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/6173B+bP3mL._SL1200_.jpg",
+    "obtida_em": "2026-10-06",
+    "sha1": "4e1b0d52a68543ea8f865879cdcff199dc692275",
+    "largura": 555,
+    "altura": 600
+  },
+  "nota": "Livro provado pela ficha da Amazon, que imprime o ISBN 978-6555009538; Google Books e Open Library não têm o registro. A sinopse da editora termina dizendo que o livro mostra \"a necessidade de lidar com o luto\"; é a frase da editora, e esta página não a repete como fato."
+}

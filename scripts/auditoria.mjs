@@ -113,6 +113,17 @@ export function citada(trecho, texto) {
   return { ok: false, motivo: `${ate}/${ws.length} palavras batem; ${onde}` };
 }
 
+// innerText só lê o que está na tela, e ficha técnica mora em aba fechada (Panda,
+// Companhia) ou num byline que a Amazon recolhe em parte das visitas. A citação
+// está no HTML que a loja serviu; o que muda é se a aba estava aberta. Cai pro
+// textContent só quando o visível reprova, e a saída diz que veio de lá.
+export function conferida(trecho, pagina) {
+  const r = citada(trecho, pagina.texto);
+  if (r.ok || !pagina.oculto) return r;
+  const o = citada(trecho, pagina.oculto);
+  return o.ok ? { ok: true, motivo: `${o.motivo}, em parte oculta da página` } : r;
+}
+
 // O teste importa este módulo pra usar PRESCRITIVO e citada. Importar não pode
 // disparar uma rodada que abre 19 páginas na rede.
 if (process.argv[1]?.endsWith('auditoria.mjs')) await rodar();
@@ -139,7 +150,7 @@ for (const s of prosaSuspeita) console.log(`  ! ${s.arquivo} · ${s.campo}: "${s
 if (SO) process.exit(prosaSuspeita.length ? 1 : 0);
 
 // --- citações ------------------------------------------------------------
-const EXTRATOR = `(() => ({ texto: document.body ? document.body.innerText : '', titulo: document.title }))()`;
+const EXTRATOR = `(() => ({ texto: document.body ? document.body.innerText : '', oculto: document.body ? document.body.textContent : '', titulo: document.title }))()`;
 
 const porUrl = new Map();
 for (const l of [...lerTodos(P.livros), ...lerTodos(P.situacoes)]) {
@@ -155,13 +166,15 @@ for (const [url, evs] of porUrl) {
   let pagina;
   try {
     pagina = await renderizar(url, EXTRATOR);
+    // A Companhia ("Novo Site") só mostra sinopse e ficha inteiras depois de ~8 s.
+    if (evs.some(ev => !conferida(ev.trecho, pagina).ok)) pagina = await renderizar(url, EXTRATOR, { assentar: 10000 });
   } catch (e) {
     inacessivel += evs.length;
     console.log(`  ? ${url}\n      não abriu: ${e.message} — citação não verificada (não é o mesmo que errada)`);
     continue;
   }
   for (const ev of evs) {
-    const r = citada(ev.trecho, pagina.texto);
+    const r = conferida(ev.trecho, pagina);
     if (r.ok) { confere++; console.log(`  ✓ ${ev.de} · ${r.motivo} · ${url.slice(0, 70)}`); }
     else { falhou++; console.log(`  ✗ ${ev.de} (${ev.titulo}) · ${r.motivo}\n      url: ${url}\n      cita: "${String(ev.trecho).slice(0, 160)}"`); }
   }

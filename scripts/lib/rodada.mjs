@@ -74,3 +74,33 @@ export function idadeRecusada(recusas, leitura) {
     mesmaFaixa(r.valor, leitura.idade.valor)
     && (!r.fonte || r.fonte === leitura.host)) || null;
 }
+
+// Idade que veio do site da editora não é trocada pela de loja só porque o
+// site da editora não abriu hoje. Em 01/10 e de novo em 07/10 a Ciranda falhou
+// e o render trocou "4+" (Ciranda) por "4 a 8" (Amazon). Loja corrige loja, e
+// a própria fonte se corrige; loja não rebaixa editora.
+const hostDe = u => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return ''; } };
+
+export function idadeProtegida(livro, leitura) {
+  const idade = livro?.rubrica?.idade_editora;
+  if (!idade?.valor || idade.valor === 'nao_coberto' || !leitura?.host) return null;
+  const host = hostDe(livro.evidencias?.[idade.base]?.url);
+  if (!host || /amazon\./.test(host) || host === leitura.host.replace(/^www\./, '')) return null;
+  if (!/amazon\./.test(leitura.host)) return null;
+  return { host, valor: idade.valor };
+}
+
+// Onde a evidência nova da idade entra. Só sobrescreve a ficha da mesma URL se
+// ela era a base da idade antiga; senão ela sustenta outro campo (editora, ano,
+// ISBN) e trocá-la deixaria esse campo apontando pra um trecho que não o diz.
+export function slotDaIdade(evidencias, nova, baseAtual) {
+  const chave = x => String(x).toLowerCase().replace(/[^a-z0-9áàâãéêíóôõúç ]/gi, '').replace(/\s+/g, ' ').trim();
+  const cita = evidencias.findIndex(e => e.url === nova.url && chave(e.trecho).includes(chave(nova.trecho)));
+  if (cita >= 0) return { evidencias, base: cita };
+  const mesma = evidencias.findIndex(e => e.url === nova.url && e.tipo === 'ficha_tecnica');
+  if (mesma >= 0 && mesma === baseAtual) {
+    const ev = [...evidencias]; ev[mesma] = nova;
+    return { evidencias: ev, base: mesma };
+  }
+  return { evidencias: [...evidencias, nova], base: evidencias.length };
+}

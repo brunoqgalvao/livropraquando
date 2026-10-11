@@ -1,6 +1,6 @@
 // Casos tirados de páginas reais (colhidas em 18/09/2026). Se um deles quebrar,
 // alguma loja mudou o layout e a extração virou chute.
-import { idadeDaEditora, idadeDaAmazon, faixaDoTexto, estoqueDaPagina, valorBr, precoDaLoja, paginasDaFicha, ilustradorDaFicha, rotuloIdadeAusente } from './ficha.mjs';
+import { semEndereco, idadeDaEditora, idadeDaAmazon, faixaDoTexto, estoqueDaPagina, valorBr, precoDaLoja, paginasDaFicha, ilustradorDaFicha, rotuloIdadeAusente } from './ficha.mjs';
 import assert from 'node:assert/strict';
 
 let ok = 0, falhou = 0;
@@ -265,6 +265,16 @@ t('Amazon: aviso solto no buy box, com o endereço de entrega colado, e esgotado
 t('Amazon: buy box de página à venda continua lendo à venda', () =>
   assert.equal(estoqueDaPagina({ host: 'amazon.com.br', amazon: { estoque:
     'R$ 29,94 Entrega GRÁTIS quinta-feira, 1 de outubro Em estoque Quantidade: 1 Adicionar ao carrinho Comprar agora' } }).ok, true));
+
+t('nota ilegível da Amazon não leva o endereço de entrega', () => {
+  const r = estoqueDaPagina({ host: 'amazon.com.br', amazon: { estoque: 'Enviar para Fulano - São Sebastião 11624218\u200c Ver todas as opções de compra' } });
+  assert.equal(r.ok, null);
+  assert.doesNotMatch(r.nota, /Fulano|Sebasti|11624218/);
+  assert.match(r.nota, /Ver todas as opções/);
+});
+t('CEP solto também sai', () => assert.equal(semEndereco('Enviar para 11624-218 Ver opções'), 'Ver opções'));
+t('só endereço vira nota sem trecho', () =>
+  assert.equal(estoqueDaPagina({ host: 'amazon.com.br', amazon: { estoque: 'Enviar para Fulano - Cidade 01234567' } }).nota, 'disponibilidade ilegível'));
 
 console.log(`${ok} passaram, ${falhou} falharam`);
 process.exit(falhou ? 1 : 0);

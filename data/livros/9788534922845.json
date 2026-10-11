@@ -1,0 +1,113 @@
+{
+  "isbn13": "9788534922845",
+  "titulo": "Quando seu animal de estimação morre",
+  "subtitulo": "Manual de ajuda para crianças",
+  "autor": "Victoria Ryan",
+  "ilustrador": "R. W. Alley",
+  "editora": "Paulus",
+  "ano": 2004,
+  "paginas": 32,
+  "situacoes": [
+    "morte-do-bichinho"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "9 a 12",
+      "base": 2
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "descrição no site da Paulus",
+      "url": "https://loja.paulus.com.br/quando-seu-animal-de-estimacao-morre-manual-de-ajuda-para-criancas/p",
+      "trecho": "Uma criança nunca esquece um animal de estimação que amou, assim como o dia em que ele morreu. A tristeza que acompanha esse momento é um luto sincero.",
+      "acessado_em": "2026-10-06"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "detalhes do produto no site da Paulus",
+      "url": "https://loja.paulus.com.br/quando-seu-animal-de-estimacao-morre-manual-de-ajuda-para-criancas/p",
+      "trecho": "Assunto Significação da morte Autor Victoria Ryan Coleção Terapia Infantil Catálogo Literatura Infantil Acabamento Grampeado Idioma Português Edição 1ª Número de páginas 32 Ano de lançamento 2004",
+      "acessado_em": "2026-10-06"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/8534922845",
+      "trecho": "Idade de leitura : 9 - 12 anos",
+      "acessado_em": "2026-10-06"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/8534922845",
+      "trecho": "Editora : Paulus Editora Data da publicação : 1 dezembro 2004 Edição : 1ª Idioma : Português Número de páginas : 32 páginas ISBN-10 : 8534922845 ISBN-13 : 978-8534922845",
+      "acessado_em": "2026-10-06"
+    }
+  ],
+  "nao_coberto": "A descrição da editora não conta história nem personagem: pelo subtítulo é um manual, não uma narrativa, mas a página não mostra como o texto é organizado. Não diz se fala de Deus ou de céu, embora seja da Paulus, editora católica, numa coleção chamada \"Terapia Infantil\". Não traz título original nem tradutor, então esta página não afirma que é tradução.",
+  "nao_aborda": "Pela descrição, o livro fala com a criança sobre a tristeza da perda em geral; não diz que bicho morreu, nem como.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Paulus",
+        "url": "https://loja.paulus.com.br/quando-seu-animal-de-estimacao-morre-manual-de-ajuda-para-criancas/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8534922845"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-10-06"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-10-06"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/8534922845",
+        "isbn13": "9788534922845",
+        "titulo_bateu": true,
+        "trecho": "Quando seu animal de estimação morre: Manual de ajuda para crianças | Amazon.com.br",
+        "em": "2026-10-06"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-10-06",
+  "capa": {
+    "arquivo": "9788534922845.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/61u7InNAHaL._SL1200_.jpg",
+    "obtida_em": "2026-10-06",
+    "sha1": "41e17fda4d1722514382834e9327f342cad89eba",
+    "largura": 600,
+    "altura": 600
+  },
+  "nota": "Livro provado pela ficha da Amazon, que imprime o ISBN 978-8534922845; Google Books e Open Library não têm o registro. O resto da descrição da editora promete efeito (\"vai ajudá-la a viver essa situação de pesar de forma positiva\"); citamos só a parte que descreve o livro."
+}

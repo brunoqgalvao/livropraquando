@@ -1,0 +1,31 @@
+{
+  "slug": "morte-do-bichinho",
+  "titulo": "Livro pra quando morre o bichinho de estimação",
+  "pergunta": "Qual livro ler com a criança quando o cachorro, o gato ou outro bichinho da casa morre?",
+  "descricao": "{N_livros} livros com edição brasileira sobre a morte do bicho de estimação. A tabela traz o que a fonte da editora sustenta: idade indicada, tamanho, preço e se está à venda. Parte deles conta uma história (a gatinha de uma bruxa, o cachorro de um menino no Día de los Muertos); a outra parte, pela descrição da editora, fala com a criança sobre a perda e não descreve enredo. Nem toda sinopse usa a palavra morte: a de \"Uma oferenda para Perro\" diz que ele não volta do veterinário, e a página dele diz isso. Idade indicada pela editora: {n_idade} de {n_livros}; onde falta, aparece \"n/i\" em vez de um chute nosso.",
+  "faixas": [
+    {
+      "isbn13": "9786559801817",
+      "base": 0,
+      "faixa": "a partir de 5 anos"
+    }
+  ],
+  "bloqueada": false,
+  "curadoria": "agente",
+  "verificado_em": "2026-10-06",
+  "colunas": [
+    "idade_editora",
+    "paginas",
+    "previa",
+    "preco",
+    "disponibilidade"
+  ],
+  "consultas": [
+    "animal de estimação",
+    "bichinho",
+    "cachorrinho",
+    "gatinho",
+    "saudade"
+  ],
+  "ilustracao": "Uma criança sentada no chão da sala, abraçando os joelhos, olhando uma coleira vazia e um potinho de ração ao lado da porta; um livro ilustrado aberto no tapete; luz de fim de tarde pela janela; clima quieto e doméstico, sem lágrimas exageradas."
+}
