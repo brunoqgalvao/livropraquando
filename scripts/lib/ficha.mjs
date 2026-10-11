@@ -91,6 +91,7 @@ const BOTAO_TEM = [/adicionar ao carrinho/i, /\bcomprar\b/i, /\bcompre\b/i];
 // pública. Em 06/10 o nome, a cidade e o CEP do Bruno chegaram à evidência.
 export const semEndereco = s => String(s || '')
   .replace(/(?:enviar|entregar|entrega)\s+(?:para|em)\b.*?\d{5}-?\d{3}[\u200b-\u200d\ufeff]?/gi, '')
+  .replace(/entregando\s+(?:para|em)\b.*?atualizar local/gi, '')
   .replace(/\b\d{5}-?\d{3}\b/g, '')
   .replace(/\s+/g, ' ').trim();
 

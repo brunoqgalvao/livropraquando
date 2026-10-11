@@ -272,6 +272,8 @@ t('nota ilegível da Amazon não leva o endereço de entrega', () => {
   assert.doesNotMatch(r.nota, /Fulano|Sebasti|11624218/);
   assert.match(r.nota, /Ver todas as opções/);
 });
+t('"Entregando em <bairro>" também sai', () =>
+  assert.equal(semEndereco('Entregando em Bela Vista, . Atualizar local Ver todas as opções'), 'Ver todas as opções'));
 t('CEP solto também sai', () => assert.equal(semEndereco('Enviar para 11624-218 Ver opções'), 'Ver opções'));
 t('só endereço vira nota sem trecho', () =>
   assert.equal(estoqueDaPagina({ host: 'amazon.com.br', amazon: { estoque: 'Enviar para Fulano - Cidade 01234567' } }).nota, 'disponibilidade ilegível'));
