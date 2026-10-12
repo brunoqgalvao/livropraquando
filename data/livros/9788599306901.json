@@ -1,0 +1,108 @@
+{
+  "isbn13": "9788599306901",
+  "titulo": "Coragem, coruja!",
+  "autor": "Sami e Bill",
+  "ilustrador": "Sami e Bill",
+  "editora": "Editora Elementar",
+  "ano": 2014,
+  "origem": "nacional",
+  "paginas": 36,
+  "situacoes": [
+    "medo-do-escuro"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "5 a 8",
+      "base": 3
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "descrição do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/8599306901",
+      "trecho": "Em uma noite escura em que só a luz da lua iluminava a floresta, a pequena coruja tremia de medo do que poderia surgir daquela escuridão e desabafava com sua amiga",
+      "acessado_em": "2026-10-12"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/8599306901",
+      "trecho": "Editora ‏ : ‎ Editora Elementar Data da publicação ‏ : ‎ 22 janeiro 2014 Edição ‏ : ‎ 1ª Idioma ‏ : ‎ Português Número de páginas ‏ : ‎ 36 páginas ISBN-10 ‏ : ‎ 8599306901 ISBN-13 ‏ : ‎ 978-8599306901",
+      "acessado_em": "2026-10-12"
+    },
+    {
+      "tipo": "material_editora",
+      "veiculo": "\"Sobre o autor\" na Amazon",
+      "url": "https://www.amazon.com.br/dp/8599306901",
+      "trecho": "SOMOS DOIS ILUSTRADORES DE PENÁPOLIS, NO INTERIOR PAULISTA, E TRABALHAMOS EM PARCERIA",
+      "acessado_em": "2026-10-12"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/8599306901",
+      "trecho": "Idade de leitura : 5 - 8 anos",
+      "acessado_em": "2026-10-12"
+    }
+  ],
+  "nao_coberto": "A única sinopse que achamos é a da Amazon; o site da Editora Elementar não tem página do livro que dê pra abrir. Ela conta o começo (a lua mostra que as \"mãos\" eram galhos de uma laranjeira) e diz que as aventuras \"não param por aí\", mas não descreve o resto da noite nem o final. Não diz quem narra nem se o texto é rimado. A ficha credita os autores só como \"Sami\" e \"Bill\", sem sobrenome. A faixa 5 a 8 é a da ficha da Amazon; o título do anúncio na mesma loja diz \"Leitor iniciante 6 e 7 anos\", e não achamos indicação no site da editora. A capa que a loja mostra diz \"2ª edição\" e a ficha diz 1ª, de 2014: não sabemos qual das duas é a vendida hoje. Não encontramos resenha assinada.",
+  "nao_aborda": "A personagem é uma coruja na floresta, não uma criança: a sinopse não tem quarto, cama nem hora de dormir.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8599306901"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-10-12"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-10-12"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/8599306901",
+        "isbn13": "9788599306901",
+        "titulo_bateu": true,
+        "trecho": "Coragem, coruja! | Livro infantil sobre medo, sono, imaginação e animais noturnos | Leitor iniciante 6 e 7 anos | Amazon",
+        "em": "2026-10-12"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-10-12",
+  "capa": {
+    "arquivo": "9788599306901.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/81A0JJLyTiL._SL1200_.jpg",
+    "obtida_em": "2026-10-12",
+    "sha1": "c870ca7470652a908b8600daa6d0a8a1503c45ff",
+    "largura": 600,
+    "altura": 600
+  }
+}
