@@ -17,7 +17,8 @@ export const P = {
 const ORDEM_LIVRO = [
   'isbn13', 'titulo', 'subtitulo', 'autor', 'ilustrador', 'tradutor',
   'editora', 'ano', 'ano_original', 'origem', 'paginas', 'idade_editora',
-  'situacoes', 'rubrica', 'evidencias', 'nao_coberto', 'nao_aborda',
+  'situacoes', 'rubrica', 'evidencias', 'resumo_ia', 'reviews',
+  'nao_coberto', 'nao_aborda',
   'disponibilidade', 'curadoria', 'verificado_em',
 ];
 const ORDEM_SIT = [

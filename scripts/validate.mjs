@@ -150,6 +150,24 @@ for (const l of livros) {
     if (!c.loja || !/^https:\/\//.test(c.url || '')) err(f, `compra inválida: ${JSON.stringify(c)}`);
   }
 
+  // 5c. slots da página do livro: resumo por IA aponta pras evidências que resume;
+  // resenha é citação atribuída com link, nunca nota
+  if (l.resumo_ia !== undefined) {
+    const ri = l.resumo_ia;
+    if (!ri?.texto) err(f, 'resumo_ia sem "texto"');
+    if (!/^\d{4}-\d{2}-\d{2}/.test(ri?.gerado_em || '')) err(f, 'resumo_ia sem "gerado_em" (AAAA-MM-DD)');
+    if (!ri?.modelo) err(f, 'resumo_ia sem "modelo"');
+    const fs = ri?.fontes || [];
+    if (!fs.length) err(f, 'resumo_ia sem "fontes" (índices de evidencias)');
+    for (const i of fs) if (!Number.isInteger(i) || i < 0 || i >= evs.length) err(f, `resumo_ia.fontes: evidência ${i} não existe`);
+    if (ri?.texto) lintPrescritivo(l.arquivo, 'resumo_ia.texto', ri.texto);
+  }
+  (l.reviews || []).forEach((x, i) => {
+    for (const c of ['texto', 'autor', 'plataforma', 'url']) if (!x?.[c]) err(f, `reviews[${i}] falta "${c}"`);
+    if (x?.url && !/^https:\/\//.test(x.url)) err(f, `reviews[${i}] url precisa ser https`);
+    if (x?.nota !== undefined || x?.estrelas !== undefined) err(f, `reviews[${i}] não leva nota/estrelas: é citação, não avaliação`);
+  });
+
   // 6. linguagem prescritiva no texto do agente (não nas citações)
   lintPrescritivo(l.arquivo, 'nao_coberto', l.nao_coberto);
   lintPrescritivo(l.arquivo, 'nao_aborda', l.nao_aborda);

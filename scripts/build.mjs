@@ -18,8 +18,11 @@ const temArte = (nome) => existsSync(join(ASSETS, 'img', `${nome}.webp`));
 const arte = (nome, alt, { eager = false, sizes = '(min-width:860px) 480px, 100vw' } = {}) => temArte(nome)
   ? `<img src="/assets/img/${nome}.webp"${temArte(`${nome}-640`) ? ` srcset="/assets/img/${nome}-640.webp 640w, /assets/img/${nome}.webp 1200w" sizes="${sizes}"` : ''} width="1200" height="800" alt="${esc(alt)}"${eager ? ' fetchpriority="high"' : ' loading="lazy" decoding="async"'}>`
   : '';
-const LOGO = '<svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1f4e5a"/><path d="M16 10.5c-2.6-1.8-5.6-2.2-9-1.6v13c3.4-.6 6.4-.2 9 1.6 2.6-1.8 5.6-2.2 9-1.6v-13c-3.4-.6-6.4-.2-9 1.6z" fill="#fbf6ec"/><path d="M16 10.5v13" stroke="#ab4124" stroke-width="1.6"/><circle cx="23.5" cy="7.5" r="2.5" fill="#d9a441"/></svg>';
-const MARCA = `<a class="marca" href="/">${LOGO}<span>${esc(NOME)}</span></a>`;
+const LOGO = readFileSync(join(ASSETS, 'favicon.svg'), 'utf8').trim().replace('<svg ', '<svg aria-hidden="true" focusable="false" ');
+const SELO = LOGO.replace(/<rect[^>]*\/>/, '');
+const nomeMarca = (() => { const p = NOME.split(' '); const u = p.pop(); return `${esc(p.join(' '))} <em>${esc(u)}…</em>`; })();
+const MARCA = `<a class="marca" href="/">${LOGO}<span class="nome">${nomeMarca}</span></a>`;
+const semArte = `<span class="sem-arte" aria-hidden="true">${SELO}</span>`;
 
 const pagina = ({ titulo, desc, corpo, canon, imagem = 'capa', dados, migalhas }) => `<!doctype html>
 <html lang="pt-BR">
@@ -39,22 +42,24 @@ ${existsSync(join(ASSETS, 'img', `${imagem}-og.jpg`)) ? `<meta property="og:imag
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-` : ''}<meta name="theme-color" content="#fbf6ec" media="(prefers-color-scheme:light)">
-<meta name="theme-color" content="#10191d" media="(prefers-color-scheme:dark)">
+` : ''}<meta name="theme-color" content="#fbf5ea" media="(prefers-color-scheme:light)">
+<meta name="theme-color" content="#0f1c21" media="(prefers-color-scheme:dark)">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/figtree.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css?v=${VERSAO}">
 ${[dados, migalhas].filter(Boolean).map(d => `<script type="application/ld+json">${ld(d)}</script>\n`).join('')}</head>
 <body>
-<header><div class="env">${MARCA}<nav><a href="/#situacoes">Situações</a></nav></div></header>
-<main class="env">
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header><div class="env">${MARCA}<nav aria-label="Principal"><a href="/#situacoes">Situações</a></nav></div></header>
+<main class="env" id="conteudo">
 ${corpo}
 </main>
 <footer><div class="env">
   ${MARCA}
+  <ul class="rodape-sit">${situacoes.filter(s => (porSit.get(s.slug) || []).length).map(s => `<li><a href="/s/${esc(s.slug)}">${esc(s.titulo.replace(/^Livro pra quando /, ''))}</a></li>`).join('')}</ul>
   <p>Cada afirmação sobre um livro aqui vem de uma fonte que dá pra abrir e conferir — ${FONTES_EM_USO}. O que a fonte não diz, a página diz que não sabe.</p>
-  <p>Este site descreve livros. Não dá orientação psicológica nem recomendação clínica.</p>
+  <p class="rodape-fim">Este site descreve livros. Não dá orientação psicológica nem recomendação clínica.</p>
 </div></footer>
 </body>
 </html>
@@ -62,16 +67,16 @@ ${corpo}
 
 const FORMA = { prosa: 'prosa', rimado: 'rimado', palavras_chave: 'palavras-chave', tete_beche: 'tête-bêche' };
 const COLS = {
-  idade_editora:  { cab: 'Idade<br>indicada', cel: l => vv(l, 'idade_editora') === 'nao_coberto' ? '<span class="nao">n/i</span>' : esc(vv(l, 'idade_editora')) },
-  paginas:        { cab: 'Págs.',             cel: l => l.paginas ? String(l.paginas) : '<span class="nao">n/i</span>' },
-  forma:          { cab: 'Forma<br>do texto', cel: l => FORMA[vv(l, 'forma')] || '<span class="nao">–</span>' },
-  narrador:       { cab: 'Narrador<br>é criança', cel: l => bin(vv(l, 'narrador'), 'crianca') },
-  nomeia_evento:  { cab: 'Nomeia<br>o evento', cel: l => bin(vv(l, 'nomeia_evento'), 'direto') },
-  enquadramento:  { cab: 'Enquadr.<br>religioso', cel: l => vv(l, 'enquadramento') === 'religioso' ? SIM : NAO },
-  material_adulto:{ cab: 'Material<br>pro adulto', cel: l => bin(vv(l, 'material_adulto'), 'sim') },
-  disponibilidade:{ cab: 'À venda',           cel: l => vendaCel(l) },
-  preco:          { cab: 'Preço',             cel: l => precoBr(l) ? `<span title="${esc(precoRotulo(l))}">${precoBr(l)}</span>${precoDe(l).formato === 'e-book' ? '<span class="selo"> e-book</span>' : ''}` : '<span class="nao">–</span>' },
-  previa:         { cab: 'Dá pra<br>folhear',  cel: l => l.previa?.folheavel ? `<a class="folhear-link" href="https://books.google.com.br/books?id=${esc(l.previa.volume)}&printsec=frontcover" rel="noopener" target="_blank">ver ↗</a>` : NAO },
+  idade_editora:  { cab: 'Idade<br>indicada', curto: 'Idade', cel: l => vv(l, 'idade_editora') === 'nao_coberto' ? '<span class="nao">n/i</span>' : esc(vv(l, 'idade_editora')) },
+  paginas:        { cab: 'Págs.', curto: 'Págs.',             cel: l => l.paginas ? String(l.paginas) : '<span class="nao">n/i</span>' },
+  forma:          { cab: 'Forma<br>do texto', curto: 'Forma', cel: l => FORMA[vv(l, 'forma')] || '<span class="nao">–</span>' },
+  narrador:       { cab: 'Narrador<br>é criança', curto: 'Narra criança', cel: l => bin(vv(l, 'narrador'), 'crianca') },
+  nomeia_evento:  { cab: 'Nomeia<br>o evento', curto: 'Nomeia', cel: l => bin(vv(l, 'nomeia_evento'), 'direto') },
+  enquadramento:  { cab: 'Enquadr.<br>religioso', curto: 'Religioso', cel: l => vv(l, 'enquadramento') === 'religioso' ? SIM : NAO },
+  material_adulto:{ cab: 'Material<br>pro adulto', curto: 'P/ adulto', cel: l => bin(vv(l, 'material_adulto'), 'sim') },
+  disponibilidade:{ cab: 'À venda', curto: 'À venda',           cel: l => vendaCel(l) },
+  preco:          { cab: 'Preço', curto: 'Preço',             cel: l => precoBr(l) ? `<span title="${esc(precoRotulo(l))}">${precoBr(l)}</span>${precoDe(l).formato === 'e-book' ? '<span class="selo"> e-book</span>' : ''}` : '<span class="nao">–</span>' },
+  previa:         { cab: 'Dá pra<br>folhear', curto: 'Folhear',  cel: l => l.previa?.folheavel ? `<a class="folhear-link" href="https://books.google.com.br/books?id=${esc(l.previa.volume)}&printsec=frontcover" rel="noopener" target="_blank">ver ↗</a>` : NAO },
 };
 const SIM = '<span class="sim">sim</span>', NAO = '<span class="nao">–</span>';
 
@@ -300,13 +305,14 @@ escreve('index.html', pagina({
   <div>
     <p class="olho">Livro infantil por situação</p>
     <h1>Tem um livro pra <em>essa conversa.</em></h1>
-    <p class="sub">Escolha o momento que a sua casa está vivendo. A página diz qual livro, pra que idade, e de onde veio cada afirmação — com a fonte aberta do lado.</p>
+    <p class="sub">Escolha o momento que a sua casa está vivendo.<span class="so-largo"> A página diz qual livro, pra que idade, e de onde veio cada afirmação — com a fonte aberta do lado.</span></p>
+    <ul class="atalhos" aria-label="Atalhos para as situações">${comLivro.map(s => `<li><a href="/s/${esc(s.slug)}">${esc(s.titulo.replace(/^Livro pra quando /, ''))}</a></li>`).join('')}</ul>
   </div>
-  <figure class="arte">${arte('capa', 'Ilustração: um adulto e uma criança lendo juntos numa poltrona, à noite', { eager: true })}</figure>
+  <figure class="arte arte-home">${arte('capa', 'Ilustração: um adulto e uma criança lendo juntos numa poltrona, à noite', { eager: true })}</figure>
 </section>
 <h2 id="situacoes">Escolha a situação</h2>
 <ul class="grade">
-${comLivro.map(s => `  <li class="cartao">${arte(s.slug, '', { sizes: '(min-width:700px) 330px, 100vw' })}<div class="c"><a href="/s/${esc(s.slug)}">${esc(s.titulo)}</a><p><span class="n">${(porSit.get(s.slug) || []).length} livros</span> · ${esc(s.pergunta)}</p></div></li>`).join('\n')}
+${comLivro.map(s => `  <li class="cartao">${arte(s.slug, '', { sizes: '(min-width:700px) 330px, 100vw' }) || semArte}<div class="c"><a href="/s/${esc(s.slug)}">${esc(s.titulo)}</a><p><span class="n">${(porSit.get(s.slug) || []).length} livros</span> · ${esc(s.pergunta)}</p></div></li>`).join('\n')}
 </ul>
 <h2>Como cada página é feita</h2>
 <ol class="passos">
@@ -321,9 +327,9 @@ for (const s of situacoes) {
   const arr = porSit.get(s.slug) || [];
   if (!arr.length) continue;
   const cols = s.colunas?.length ? s.colunas : ['idade_editora', 'paginas', 'forma', 'narrador', 'disponibilidade'];
-  const linhas = arr.map(l => `      <tr>
-        <td class="tit"><a href="/l/${esc(l.isbn13)}">${capa(l, 'mini')}<span><b>${esc(l.titulo)}</b><br><span class="selo">${esc(l.autor)}</span></span></a></td>
-${cols.map(c => `        <td class="c">${COLS[c].cel(l)}</td>`).join('\n')}
+  const linhas = arr.map(l => `      <tr role="row">
+        <td class="tit" role="cell"><a href="/l/${esc(l.isbn13)}">${capa(l, 'mini')}<span><b>${esc(l.titulo)}</b><br><span class="selo">${esc(l.autor)}</span></span></a></td>
+${cols.map(c => `        <td class="c" role="cell" data-label="${esc(COLS[c].curto || COLS[c].cab.replace(/<br>/g, ' '))}">${COLS[c].cel(l)}</td>`).join('\n')}
       </tr>`).join('\n');
   const picks = (s.faixas || []).map(f => {
     const l = livros.find(x => x.isbn13 === f.isbn13);
@@ -360,21 +366,22 @@ ${cols.map(c => `        <td class="c">${COLS[c].cel(l)}</td>`).join('\n')}
     <p class="olho"><a href="/#situacoes">Situações</a></p>
     <h1>${esc(s.titulo)}</h1>
     <p class="sub">${esc(descricao)}</p>
+    <ul class="fatos"><li class="badge">${arr.length} livros</li><li class="badge${contagens(arr).n_idade ? ' idade' : ' nd'}">idade da editora em ${contagens(arr).n_idade} de ${arr.length}</li></ul>
   </div>
   ${temArte(s.slug) ? `<figure class="arte">${arte(s.slug, `Ilustração: ${s.titulo.toLowerCase()}`, { eager: true, sizes: '(min-width:860px) 420px, 100vw' })}</figure>` : ''}
 </section>
 <div class="estreito">
 ${picks}
 </div>
-<h2>Os ${arr.length} livros, lado a lado</h2>
+<h2 class="matriz-tit" id="matriz-tit">Os ${arr.length} livros, lado a lado</h2>
 <p class="arrasta">Arraste a tabela pro lado pra ver todas as colunas →</p>
-<div class="rolo"><table>
-  <thead><tr><th>Livro</th>${cols.map(c => `<th class="c">${COLS[c].cab}</th>`).join('')}</tr></thead>
-  <tbody>
+<div class="rolo"><table role="table" aria-labelledby="matriz-tit">
+  <thead role="rowgroup"><tr role="row"><th role="columnheader" scope="col">Livro</th>${cols.map(c => `<th class="c" role="columnheader" scope="col">${COLS[c].cab}</th>`).join('')}</tr></thead>
+  <tbody role="rowgroup">
 ${linhas}
   </tbody>
 </table></div>
-${s.lacuna ? `<h2>O que falta nesta página</h2>\n<p class="aviso">${esc(preenche(s.lacuna, contagens(arr)))}</p>` : ''}
+${s.lacuna ? `<h2>O que falta nesta página</h2>\n<p class="aviso" data-rotulo="lacuna">${esc(preenche(s.lacuna, contagens(arr)))}</p>` : ''}
 <p class="selo legenda">Coluna vazia quer dizer que a fonte não cobre aquilo — não que a resposta seja não.</p>`,
   }), maiorData((s.evidencias || []).map(e => e.acessado_em), arr.map(dataDoLivro)));
 }
@@ -389,6 +396,37 @@ function provaDeLoja(l) {
   if (!res.length || res.some(r => r.fonte !== 'ficha_loja')) return '';
   const r = res[0];
   return `<br><span class="selo">edição conferida na ficha de ${esc(r.host || 'loja')} em ${dataBr(r.em)}; nenhum catálogo externo registra este ISBN</span>`;
+}
+
+// Dois blocos que ainda não têm dado. O resumo fica DEPOIS das evidências e
+// aponta pra elas pelo número: ele não pode parecer mais forte que as fontes
+// que resume. Resenha de leitor é citação atribuída, nunca nota, e não entra
+// no JSON-LD (ver dadosDoLivro).
+function resumoIa(l, evs) {
+  const r = l.resumo_ia;
+  if (!r?.texto) return '';
+  const fontes = (r.fontes || []).filter(i => evs[i]);
+  return `<section class="resumo-ia" aria-labelledby="resumo-ia"><h2 id="resumo-ia">Resumo por IA das fontes</h2>
+<p class="rotulo-ia"><span class="badge">gerado por IA</span>${r.gerado_em ? `<span class="badge">${dataBr(r.gerado_em)}</span>` : ''}${r.modelo ? `<span class="badge">${esc(r.modelo)}</span>` : ''}</p>
+<p>${esc(r.texto)}</p>
+<p class="selo">Resume só as fontes ${fontes.length ? fontes.map(i => `<a href="#ev${i}">${i + 1}</a>`).join(', ') : 'acima'}. Se algo aqui não estiver nelas, vale a fonte.</p></section>`;
+}
+function resenhas(l) {
+  const rs = (l.reviews || []).filter(x => x?.texto && x?.url);
+  if (!rs.length) return '';
+  return `<h2>Resenhas de leitores</h2>
+<ul class="reviews">${rs.map(x => `<li class="review"><blockquote><p>“${esc(x.texto)}”</p></blockquote><p class="de">— <b>${esc(x.autor || 'leitor')}</b>, <a href="${esc(x.url)}" rel="noopener nofollow">${esc(x.plataforma || 'fonte')} ↗</a>${x.data ? ` · ${dataBr(x.data)}` : ''}</p></li>`).join('')}</ul>
+<p class="selo">Opinião de quem leu, citada como foi publicada. Não é avaliação deste site.</p>`;
+}
+
+// Botão de compra no topo: no celular "Onde encontrar" fica a uma tela e meia
+// abaixo. Aponta pra loja onde o preço foi lido; se não há preço, pra primeira.
+function atalhoCompra(l) {
+  const lojas = l.disponibilidade?.compra || [];
+  if (!lojas.length || l.disponibilidade?.estado === 'esgotado') return '';
+  const onde = (precoDe(l)?.onde || '').toLowerCase();
+  const c = lojas.find(x => onde && (x.loja.toLowerCase().includes(onde) || onde.includes(x.loja.toLowerCase()))) || lojas[0];
+  return `<p class="comprar"><a class="comprar-btn" href="${esc(c.url)}" rel="noopener">Ver na ${esc(c.loja)} ↗</a>${lojas.length > 1 ? `<a class="comprar-mais" href="#onde-encontrar">mais ${lojas.length - 1} ${lojas.length > 2 ? 'lojas' : 'loja'} ↓</a>` : ''}</p>`;
 }
 
 // ---- livro
@@ -411,28 +449,34 @@ for (const l of livros) {
 <p class="olho">${(l.situacoes || []).map(sl => situacoes.find(x => x.slug === sl)).filter(Boolean).map(s => `<a href="/s/${esc(s.slug)}">${esc(s.titulo)}</a>`).join(' · ') || 'Livro'}</p>
 <div class="topo-livro">${capa(l, 'grande', { jaVisivel: true })}<div><h1>${esc(l.titulo)}</h1>
 <p class="sub">${esc(l.autor)}${creditoIlustracao(l)} · ${esc(l.editora)}${l.ano ? `, ${l.ano}` : ''}</p>
+<ul class="fatos">${val(r, 'idade_editora') && val(r, 'idade_editora') !== 'nao_coberto' ? `<li class="badge idade">${esc(val(r, 'idade_editora'))}</li>` : '<li class="badge nd">idade: a editora não indica</li>'}${l.paginas ? `<li class="badge">${l.paginas} páginas</li>` : ''}${FORMA[val(r, 'forma')] ? `<li class="badge">${FORMA[val(r, 'forma')]}</li>` : ''}</ul>
 ${precoBr(l) ? `<p class="preco">${precoBr(l)} <span class="selo">${esc(precoRotulo(l))}</span></p>` : ''}
+${atalhoCompra(l)}
 ${l.previa?.folheavel ? `<p><a class="folhear" href="https://books.google.com.br/books?id=${esc(l.previa.volume)}&printsec=frontcover" rel="noopener" target="_blank">Folhear as primeiras páginas ↗</a></p>
 <p class="selo">Amostra no Google Livros, liberada pela editora. Abre em outra aba; nem todo o livro está disponível.</p>` : ''}</div></div>
 <ul class="ficha">
-  <li><b>Idade indicada</b> <span>${val(r, 'idade_editora') === 'nao_coberto' ? esc(rotuloIdadeAusente(l)) : `${esc(val(r, 'idade_editora'))} <span class="selo">(pela editora)</span>${fonteDe(r, 'idade_editora', evs)}`}</span></li>
-  ${Object.entries(rot).filter(([k]) => k !== 'idade_editora').map(([k, label]) => `<li><b>${label}</b> <span>${esc(legivel[val(r, k)] ?? '—')}${fonteDe(r, k, evs)}</span></li>`).join('\n  ')}
+  <li><b>Idade indicada</b> <span>${val(r, 'idade_editora') === 'nao_coberto' ? `<span class="nd">${esc(rotuloIdadeAusente(l))}</span>` : `${esc(val(r, 'idade_editora'))} <span class="selo">(pela editora)</span>${fonteDe(r, 'idade_editora', evs)}`}</span></li>
+  ${Object.entries(rot).filter(([k]) => k !== 'idade_editora').map(([k, label]) => `<li><b>${label}</b> <span>${val(r, k) === 'nao_coberto' ? `<span class="nd">${legivel.nao_coberto}</span>` : esc(legivel[val(r, k)] ?? '—')}${fonteDe(r, k, evs)}</span></li>`).join('\n  ')}
   ${l.origem ? `<li><b>Origem</b> <span>${esc(l.origem === 'traducao' ? `tradução${l.ano_original ? `, original de ${l.ano_original}` : ''}` : 'nacional')}</span></li>` : ''}
   ${l.paginas ? `<li><b>Páginas</b> <span>${l.paginas}</span></li>` : ''}
   <li><b>ISBN</b> <span>${esc(l.isbn13)}${provaDeLoja(l)}${(l.outras_edicoes || []).map(o => `<br><span class="selo">edição ${esc(o.formato || 'alternativa')}: ${o.url ? `<a href="${esc(o.url)}" rel="noopener">${esc(o.isbn13)}</a>` : esc(o.isbn13)}</span>`).join('')}</span></li>
   <li><b>Conferido em</b> <span>${dataBr(l.verificado_em)}</span></li>
 </ul>
-${(l.disponibilidade?.compra || []).length ? `<h2>Onde encontrar</h2>
+${(l.disponibilidade?.compra || []).length ? `<h2 id="onde-encontrar">Onde encontrar</h2>
 ${esgotadoNota(l)}<ul class="lojas">${l.disponibilidade.compra.map(c => `<li><a href="${esc(c.url)}" rel="noopener">${esc(c.loja)} ↗</a>${c.edicao ? ` <span class="selo">${esc(c.edicao)}</span>` : ''}</li>`).join('')}</ul>
 <p class="selo">Links diretos, sem comissão.${venda(l) ? ` Em ${dataBr(venda(l).em)} um navegador abriu essas páginas e leu: ${esc((venda(l).onde || []).join('; ').replace(/[.;\s]+$/, ''))}.` : ' Na última passagem nenhuma loja respondeu de forma legível, então não dá pra afirmar que está à venda hoje.'} Preço e estoque mudam.</p>` : ''}
 <h2>De onde vem cada afirmação</h2>
-${evs.map((e, i) => `<div class="ev" id="ev${i}"><div class="meta">${esc((e.veiculo || e.tipo).replace(/_/g, ' '))}${e.autor ? ` · ${esc(e.autor)}` : ''} · acessado ${dataBr(e.acessado_em)}</div><q>${esc(e.trecho)}</q><a class="abrir" href="${esc(e.url)}" rel="noopener">abrir a fonte ↗</a></div>`).join('\n')}
+<div class="evs">
+${evs.map((e, i) => `<div class="ev" id="ev${i}"><div class="meta"><span class="n">fonte ${i + 1}</span><span class="tipo">${esc((e.veiculo || e.tipo).replace(/_/g, ' '))}</span>${e.autor ? `<span>· ${esc(e.autor)}</span>` : ''}<span>· acessado ${dataBr(e.acessado_em)}</span></div><q>${esc(e.trecho)}</q><a class="abrir" href="${esc(e.url)}" rel="noopener">abrir a fonte ↗</a></div>`).join('\n')}
+</div>
+${resumoIa(l, evs)}
+${resenhas(l)}
 ${l.nota ? `<p class="nota">${esc(l.nota)}</p>` : ''}
 ${l.editora_paga ? `<p class="nota">${esc(l.editora)} publica mediante pagamento do autor: o livro não passou pela seleção de uma editora comercial. Está aqui porque a situação tem poucos títulos, e não entra em "se for comprar um só".</p>` : ''}
 <h2>O que a evidência não cobre</h2>
-<p class="aviso">${esc(l.nao_coberto)}</p>
-${l.nao_aborda ? `<h2>O que este livro não aborda</h2>\n<p class="aviso">${esc(l.nao_aborda)}</p>` : ''}
-${(l.situacoes || []).length ? `<h2>Aparece em</h2>\n<ul class="grade">${(l.situacoes || []).map(sl => { const s = situacoes.find(x => x.slug === sl); return s ? `<li class="cartao mini">${arte(s.slug, '', { sizes: '112px' })}<div class="c"><a href="/s/${esc(s.slug)}">${esc(s.titulo)}</a></div></li>` : ''; }).join('')}</ul>` : ''}
+<p class="aviso" data-rotulo="a fonte não diz">${esc(l.nao_coberto)}</p>
+${l.nao_aborda ? `<h2>O que este livro não aborda</h2>\n<p class="aviso" data-rotulo="fora do livro">${esc(l.nao_aborda)}</p>` : ''}
+${(l.situacoes || []).length ? `<h2>Aparece em</h2>\n<ul class="grade">${(l.situacoes || []).map(sl => { const s = situacoes.find(x => x.slug === sl); return s ? `<li class="cartao mini">${arte(s.slug, '', { sizes: '112px' }) || semArte}<div class="c"><a href="/s/${esc(s.slug)}">${esc(s.titulo)}</a></div></li>` : ''; }).join('')}</ul>` : ''}
 </div>`,
   }), dataDoLivro(l));
 }
