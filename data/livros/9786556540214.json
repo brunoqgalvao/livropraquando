@@ -1,0 +1,113 @@
+{
+  "isbn13": "9786556540214",
+  "titulo": "Minúscula",
+  "autor": "Fran Matsumoto",
+  "ilustrador": "Fran Matsumoto",
+  "editora": "Brinque-Book",
+  "ano": 2022,
+  "origem": "nacional",
+  "paginas": 56,
+  "situacoes": [
+    "vai-nascer-um-irmao"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "4+",
+      "base": 1
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site do Grupo Companhia das Letras (selo Brinque-Book)",
+      "url": "https://www.companhiadasletras.com.br/9786556540214-minuscula/p",
+      "trecho": "A menina esperava a chegada da irmã, imaginando todas as brincadeiras e aventuras que iriam viver e inventar juntas. O encontro das duas, porém, foi bem diferente do que ela havia sonhado. Como era possível uma pessoa ser tão pequena, tão minúscula?! Microscópica daquele jeito, a bebê não conseguia segurar um lápis e muito menos brincar de esconde-esconde ou de inventar histórias. A menina até tentou trocá-la, mas não teve jeito, teve de enfrentar a situação.",
+      "acessado_em": "2026-10-13"
+    },
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site do Grupo Companhia das Letras (selo Brinque-Book)",
+      "url": "https://www.companhiadasletras.com.br/9786556540214-minuscula/p",
+      "trecho": "Indicado para leitores a partir de 4 anos.",
+      "acessado_em": "2026-10-13"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha técnica no site do Grupo Companhia das Letras",
+      "url": "https://www.companhiadasletras.com.br/9786556540214-minuscula/p",
+      "trecho": "Selo […] Brinque-Book […] Lançamento […] 21/11/2022 […] ISBN […] 978-65-5654-021-4 […] Páginas […] 56 […] Ilustração […] Fran Matsumoto",
+      "acessado_em": "2026-10-13"
+    },
+    {
+      "tipo": "material_editora",
+      "veiculo": "\"Sobre o autor\" na Amazon",
+      "url": "https://www.amazon.com.br/dp/6556540218",
+      "trecho": "FRAN MATSUMOTO nasceu no Vale do Paraíba, interior de São Paulo. Sempre desenhou, mas começou a estudar ilustração depois de se formar em Biologia.",
+      "acessado_em": "2026-10-13"
+    }
+  ],
+  "nao_coberto": "A sinopse não diz quem narra, se o texto é rimado nem como termina: diz só que a menina \"teve de enfrentar a situação\". Ela começa no encontro com a irmã já nascida; a espera aparece numa frase (\"esperava a chegada da irmã\"), sem gravidez nem barriga.",
+  "nao_aborda": "A sinopse fica no encontro com a irmã recém-nascida e na frustração da menina com o tamanho dela; não fala da gravidez nem da divisão da atenção dos pais.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Companhia das Letras (Brinque-Book)",
+        "url": "https://www.companhiadasletras.com.br/9786556540214-minuscula/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6556540218"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-10-13"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-10-13"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/6556540218",
+        "isbn13": "9786556540214",
+        "titulo_bateu": true,
+        "trecho": "Minúscula | Amazon.com.br",
+        "em": "2026-10-13"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-10-13",
+  "capa": {
+    "arquivo": "9786556540214.jpg",
+    "fonte": "companhiadasletras.com.br",
+    "url": "https://ciadasletras.vtexassets.com/arquivos/ids/220279/capa-escala-9786556540214.jpg?v=639246703623900000",
+    "obtida_em": "2026-10-13",
+    "sha1": "4b43714419e109c8c6a3b8be9718a52a12e81be5",
+    "largura": 600,
+    "altura": 600
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Amazon, que imprime o ISBN-13. Em 13/10 a loja da editora mostrava \"Avise-me\" (sem estoque) e a Amazon vendia."
+}

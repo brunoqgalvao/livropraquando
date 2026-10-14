@@ -1,0 +1,97 @@
+{
+  "isbn13": "9788574125725",
+  "titulo": "A árvore de bebês",
+  "autor": "Sophie Blackall",
+  "ilustrador": "Sophie Blackall",
+  "tradutor": "Gilda de Aquino",
+  "editora": "Brinque-Book",
+  "ano": 2018,
+  "origem": "traducao",
+  "paginas": 36,
+  "situacoes": [
+    "vai-nascer-um-irmao"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "3 a 5",
+      "base": 2
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site do Grupo Companhia das Letras (selo Brinque-Book)",
+      "url": "https://www.companhiadasletras.com.br/9788574125725-a-arvore-de-bebes/p",
+      "trecho": "Mas aconteceu algo diferente naquela manhã: “Precisamos contar uma novidade: um novo bebê está para chegar”, disseram mamãe e papai ao pequeno protagonista de \"A árvore de bebês\". Mas de onde vêm os bebês? Onde é que vamos pegar esse tal bebê? Para resolver essa dúvida, o irmão mais velho pergunta à amiga, à professora, ao carteiro e ao vovô – e todos têm boas respostas! No fim, ele junta os pontos e tem uma conversa sincera com os pais.",
+      "acessado_em": "2026-10-14"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha técnica no site do Grupo Companhia das Letras",
+      "url": "https://www.companhiadasletras.com.br/9788574125725-a-arvore-de-bebes/p",
+      "trecho": "Lançamento […] 11/05/2018 […] ISBN […] 978-85-7412-572-5 […] Páginas […] 36",
+      "acessado_em": "2026-10-14"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/8574125725",
+      "trecho": "Idade de leitura ‏ : ‎ 3 - 5 anos",
+      "acessado_em": "2026-10-14"
+    }
+  ],
+  "nao_coberto": "A sinopse não diz quem narra nem se o texto é rimado. Diz que no fim o menino \"tem uma conversa sincera com os pais\", mas não conta o que eles respondem sobre de onde vêm os bebês. A faixa de 3 a 5 anos vem da ficha da Amazon; a página da editora não mostra idade. Nenhuma fonte lida dá o título nem o ano da edição original.",
+  "nao_aborda": "A sinopse fica na espera do bebê e nas perguntas do irmão mais velho; não fala do bebê já em casa nem de ciúme.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8574125725"
+      },
+      {
+        "loja": "Companhia das Letras (Brinque-Book)",
+        "url": "https://www.companhiadasletras.com.br/9788574125725-a-arvore-de-bebes/p"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/8574125725",
+        "isbn13": "9788574125725",
+        "titulo_bateu": true,
+        "trecho": "A árvore de bebês | Amazon.com.br",
+        "em": "2026-10-14"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-10-14",
+  "capa": {
+    "arquivo": "9788574125725.jpg",
+    "fonte": "companhiadasletras.com.br",
+    "url": "https://ciadasletras.vtexassets.com/arquivos/ids/219152/capa-recolor2-9788574125725.jpg?v=639238603545530000",
+    "obtida_em": "2026-10-14",
+    "sha1": "ebec5d89b15ea3c5b82d36a3b512a6ba8e8eb26e",
+    "largura": 600,
+    "altura": 600
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Amazon, que imprime o ISBN-13. Em 14/10 a loja da editora marcava o livro como esgotado e a Amazon vendia (5 em estoque)."
+}

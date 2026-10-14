@@ -19,6 +19,12 @@
 // miolo). Comparação é exata, sobre os dígitos.
 const digitos = (s) => String(s || '').replace(/\D/g, '');
 
+// A Amazon põe o nome dela no <title>: "Minúscula | Amazon.com.br". Título de
+// uma palavra só casa exato, então o sufixo da loja barrava livro de ficha
+// impecável (Minúscula, Brinque-Book, 13/10). Sai só o sufixo; o resto da
+// comparação não muda.
+export const semLoja = (t) => String(t || '').replace(/\s*[|:]\s*Amazon\.com\.br\b.*$/i, '').trim();
+
 export function provaDaFicha({ isbn13, titulo, leitura, tituloBate, brasileira }) {
   const em = { fonte: 'ficha_loja', host: leitura?.host, url: leitura?.url };
   if (!brasileira(isbn13)) return { ...em, prova: false, motivo: 'o ISBN não é de edição brasileira' };
@@ -39,7 +45,7 @@ export function provaDaFicha({ isbn13, titulo, leitura, tituloBate, brasileira }
   if (lido !== digitos(isbn13)) {
     return { ...em, prova: false, motivo: `a página imprime outro ISBN (${lido})`, isbn_pagina: lido };
   }
-  if (!tituloBate(leitura.titulo_pagina, titulo)) {
+  if (!tituloBate(semLoja(leitura.titulo_pagina), titulo)) {
     return { ...em, prova: false, motivo: `o título da página não bate: "${String(leitura.titulo_pagina || '').slice(0, 60)}"` };
   }
   return { ...em, prova: true, isbn13: digitos(isbn13), trecho: String(leitura.titulo_pagina || '').slice(0, 120) };

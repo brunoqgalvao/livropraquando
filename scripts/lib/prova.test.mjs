@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { provaDaFicha } from './prova.mjs';
+import { provaDaFicha, semLoja } from './prova.mjs';
 import { tituloBate, edicaoBrasileira, casaEdicao } from '../resolve.mjs';
 
 let ok = 0, falhou = 0;
@@ -74,6 +74,24 @@ t('edição portuguesa não prova nem com ficha perfeita', () => {
   const r = prova(pagina({ isbn_pagina: '9789720047762' }), '9789720047762', 'A Irmã do Gildo');
   assert.equal(r.prova, false);
   assert.match(r.motivo, /edição brasileira/);
+});
+
+// Título de uma palavra só casa exato; o sufixo da Amazon no <title> não pode
+// contar como palavra a mais (Minúscula, 13/10).
+t('título de uma palavra prova com o sufixo da Amazon no <title>', () => {
+  const r = prova(pagina({ titulo_pagina: 'Minúscula | Amazon.com.br', isbn_pagina: '978-6556540214' }), '9786556540214', 'Minúscula');
+  assert.equal(r.prova, true);
+});
+
+t('sem o sufixo, título de uma palavra diferente continua barrado', () => {
+  const r = prova(pagina({ titulo_pagina: 'Minúsculo | Amazon.com.br', isbn_pagina: '978-6556540214' }), '9786556540214', 'Minúscula');
+  assert.equal(r.prova, false);
+});
+
+t('semLoja tira só o sufixo da loja', () => {
+  assert.equal(semLoja('Minúscula | Amazon.com.br'), 'Minúscula');
+  assert.equal(semLoja('A Irmã do Gildo : Rando, Silvana: Amazon.com.br: Livros'), 'A Irmã do Gildo : Rando, Silvana');
+  assert.equal(semLoja('Zeca conhece Nina'), 'Zeca conhece Nina');
 });
 
 // --- casaEdicao: o que conta como "este registro é o meu livro" -----------

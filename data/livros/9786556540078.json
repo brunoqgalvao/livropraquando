@@ -1,0 +1,108 @@
+{
+  "isbn13": "9786556540078",
+  "titulo": "Zeca conhece Nina",
+  "autor": "Robert Starling",
+  "ilustrador": "Robert Starling",
+  "tradutor": "Gilda de Aquino",
+  "editora": "Brinque-Book",
+  "ano": 2021,
+  "origem": "traducao",
+  "paginas": 32,
+  "situacoes": [
+    "vai-nascer-um-irmao"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "6 a 8",
+      "base": 2
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site do Grupo Companhia das Letras (selo Brinque-Book)",
+      "url": "https://www.companhiadasletras.com.br/9786556540078-zeca-conhece-nina/p",
+      "trecho": "Nesta história, Zeca está feliz e tranquilo com seus pais, curtindo passeios e aventuras. Até que um ovo chega em sua casa. O que será que tem dentro dele? Então, Zeca conhece Nina, sua irmã mais nova. Primeiro, ele se sente furioso porque ninguém mais tem tempo para ele. Cadê os passeios agora? Depois, ele fica com ciúmes, com raiva e triste. Mas não conta os sentimentos a ninguém.",
+      "acessado_em": "2026-10-13"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha técnica no site do Grupo Companhia das Letras",
+      "url": "https://www.companhiadasletras.com.br/9786556540078-zeca-conhece-nina/p",
+      "trecho": "Título Original […] Fergal meets Fern […] Selo […] Brinque-Book […] Lançamento […] 31/05/2021 […] ISBN […] 978-65-5654-007-8 […] Páginas […] 32 […] Tradução […] Gilda de Aquino […] Ilustração […] Robert Starling",
+      "acessado_em": "2026-10-13"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/6556540072",
+      "trecho": "Idade de leitura : 6 - 8 anos",
+      "acessado_em": "2026-10-13"
+    }
+  ],
+  "nao_coberto": "A sinopse não diz quem narra nem se o texto é rimado, e para numa pergunta (\"Será que Zeca vai conseguir expressar também o imenso amor que já sente pela irmã?\"), sem contar como termina. Zeca é um dragão e a irmã chega num ovo: a sinopse não fala de gravidez nem de barriga. A faixa de 6 a 8 anos vem da ficha da Amazon; a página da editora não mostra idade. Nenhuma fonte lida dá o ano da edição original.",
+  "nao_aborda": "A sinopse começa com a irmã já em casa; não cobre o tempo de espera antes do nascimento.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Companhia das Letras (Brinque-Book)",
+        "url": "https://www.companhiadasletras.com.br/9786556540078-zeca-conhece-nina/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6556540072"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-10-13"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-10-13"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/6556540072",
+        "isbn13": "9786556540078",
+        "titulo_bateu": true,
+        "trecho": "Zeca conhece Nina | Amazon.com.br",
+        "em": "2026-10-13"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-10-13",
+  "capa": {
+    "arquivo": "9786556540078.jpg",
+    "fonte": "companhiadasletras.com.br",
+    "url": "https://ciadasletras.vtexassets.com/arquivos/ids/220285/capa-escala-9786556540078.jpg?v=639246703649000000",
+    "obtida_em": "2026-10-13",
+    "sha1": "11ca7a9eda29d0248337693b579659975e73c1fc",
+    "largura": 600,
+    "altura": 600
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Amazon, que imprime o ISBN-13. A ficha da editora também imprime o ISBN, com hífens.",
+  "titulo_original": "Fergal meets Fern"
+}

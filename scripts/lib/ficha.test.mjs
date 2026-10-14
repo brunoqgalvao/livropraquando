@@ -278,5 +278,16 @@ t('CEP solto também sai', () => assert.equal(semEndereco('Enviar para 11624-218
 t('só endereço vira nota sem trecho', () =>
   assert.equal(estoqueDaPagina({ host: 'amazon.com.br', amazon: { estoque: 'Enviar para Fulano - Cidade 01234567' } }).nota, 'disponibilidade ilegível'));
 
+// O Play da VM (IP dos EUA) diz "não está disponível no seu país" pra e-book à
+// venda no Brasil. Isso é bloqueio de região, não esgotado (O gatinho Pete, 13/10).
+const PLAY = 'O gatinho Pete e o primeiro dia de aula. Este item não está disponível no seu país. ' + 'O Gatinho Pete está pronto para o seu primeiro dia de aula! '.repeat(6);
+t('Play bloqueado por região não é esgotado', () => {
+  const r = estoqueDaPagina({ host: 'play.google.com', texto: PLAY });
+  assert.equal(r.ok, null);
+  assert.match(r.nota, /região/);
+});
+t('"não está disponível" sem país continua sendo esgotado', () =>
+  assert.equal(estoqueDaPagina({ host: 'loja.com.br', texto: PLAY.replace(' no seu país', '') }).ok, false));
+
 console.log(`${ok} passaram, ${falhou} falharam`);
 process.exit(falhou ? 1 : 0);

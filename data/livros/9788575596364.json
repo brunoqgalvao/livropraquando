@@ -1,0 +1,92 @@
+{
+  "isbn13": "9788575596364",
+  "titulo": "Neném outra vez!",
+  "autor": "Maria Rita Kehl",
+  "ilustrador": "Laerte Coutinho",
+  "editora": "Boitatá",
+  "ano": 2018,
+  "origem": "nacional",
+  "paginas": 36,
+  "situacoes": [
+    "vai-nascer-um-irmao"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "8 a 11",
+      "base": 2
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "descrição do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/8575596365",
+      "trecho": "Rodrigo tem 8 anos e acabou de ganhar um irmãozinho. Enciumado com todas as atenções voltadas para o novo bebê, ele recebe uma visita inesperada ao brincar de bola sozinho no quintal: uma borboleta que diz ser uma fada e promete realizar desejos. Sem pensar duas vezes, na expectativa de resgatar a atenção dos pais, Rodrigo pede para voltar a ser bebê.",
+      "acessado_em": "2026-10-14"
+    },
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "descrição do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/8575596365",
+      "trecho": "aborda o ciúme entre irmãos como pretexto para falar sobre questões mais profundas com as crianças, como o poder da vontade, o amor próprio e aceitação de mudanças na vida. O livro é ilustrado pela cartunista Laerte Coutinho.",
+      "acessado_em": "2026-10-14"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/8575596365",
+      "trecho": "Editora ‏ : ‎ Boitatá Data da publicação ‏ : ‎ 19 julho 2018 Edição ‏ : ‎ 1ª Idioma ‏ : ‎ Português Número de páginas ‏ : ‎ 36 páginas ISBN-10 ‏ : ‎ 8575596365 ISBN-13 ‏ : ‎ 978-8575596364 […] Idade de leitura ‏ : ‎ 8 - 11 anos",
+      "acessado_em": "2026-10-14"
+    }
+  ],
+  "nao_coberto": "A sinopse não diz quem narra nem como termina: para no pedido de Rodrigo e num aviso (\"cuidado com o que você deseja\"). Não achei página do livro no site da Boitatá, então a sinopse citada é a da Amazon. A faixa de 8 a 11 anos vem da ficha da Amazon; o protagonista, segundo a sinopse, tem 8 anos.",
+  "nao_aborda": "A sinopse começa com o irmão já nascido; não cobre a gravidez nem a espera.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8575596365"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/8575596365",
+        "isbn13": "9788575596364",
+        "titulo_bateu": true,
+        "trecho": "Neném Outra Vez! | Amazon.com.br",
+        "em": "2026-10-14"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-10-14",
+  "capa": {
+    "arquivo": "9788575596364.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/51dUxvgMMOL._SL1200_.jpg",
+    "obtida_em": "2026-10-14",
+    "sha1": "ff6c27df79bf523fb1e11b6671a60107c3f7e2fa",
+    "largura": 432,
+    "altura": 500
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Amazon, que imprime o ISBN-13. Em 14/10 a Amazon tinha 3 exemplares."
+}

@@ -1,0 +1,104 @@
+{
+  "isbn13": "9788578886776",
+  "titulo": "O livro do adeus",
+  "autor": "Todd Parr",
+  "ilustrador": "Todd Parr",
+  "editora": "Panda Books",
+  "ano": 2017,
+  "paginas": 32,
+  "situacoes": [
+    "morte-do-bichinho"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site da Panda Books",
+      "url": "https://www.pandabooks.com.br/infantil/sentimentos/o-livro-do-adeus",
+      "trecho": "Compreender a morte como um processo natural e aceitá-la de forma serena é uma tarefa difícil até para gente grande. Imagina para a criança que, de uma hora para outra, se vê obrigada a dizer adeus a um bichinho de estimação ou a um membro da família? A fim de descomplicar essa delicada situação, o renomado autor e ilustrador norte-americano Todd Parr criou O livro do adeus. Com seus coloridos desenhos, a obra traz uma comovente e esperançosa história sobre dizer adeus a alguém que a gente ama.",
+      "acessado_em": "2026-10-14"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha técnica no site da Panda Books",
+      "url": "https://www.pandabooks.com.br/infantil/sentimentos/o-livro-do-adeus",
+      "trecho": "Ano da edição 2017 […] Ilustrador Parr, Todd […] ISBN 978-85-7888-677-6 […] Número de Páginas: 32",
+      "acessado_em": "2026-10-14"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/8578886771",
+      "trecho": "Editora ‏ : ‎ Panda Books Data da publicação ‏ : ‎ 1 novembro 2017 Edição ‏ : ‎ 1ª Idioma ‏ : ‎ Português Número de páginas ‏ : ‎ 32 páginas ISBN-10 ‏ : ‎ 8578886771 ISBN-13 ‏ : ‎ 978-8578886776",
+      "acessado_em": "2026-10-14"
+    }
+  ],
+  "nao_coberto": "A sinopse não conta a história: diz que ela é sobre \"dizer adeus a alguém que a gente ama\" e cita tanto o bichinho de estimação quanto um membro da família, sem dizer quem morre no livro, quem narra nem como termina. Nenhuma fonte lida indica idade pela editora; a da Amazon é \"sugerida pelo cliente\" e não entra. A editora chama o autor de norte-americano, mas a ficha não traz tradutor nem título original, então a página não afirma tradução nem ano da edição original.",
+  "nao_aborda": "Pela sinopse, o livro fala de despedida de modo geral, sem se restringir à morte de bicho de estimação.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Panda Books",
+        "url": "https://www.pandabooks.com.br/infantil/sentimentos/o-livro-do-adeus"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8578886771"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-10-14"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-10-14"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/8578886771",
+        "isbn13": "9788578886776",
+        "titulo_bateu": true,
+        "trecho": "O livro do adeus | Amazon.com.br",
+        "em": "2026-10-14"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-10-14",
+  "capa": {
+    "arquivo": "9788578886776.png",
+    "fonte": "pandabooks.com.br",
+    "url": "https://images.tcdn.com.br/img/img_prod/783226/o_livro_do_adeus_605_1_20200630204841.png",
+    "obtida_em": "2026-10-14",
+    "sha1": "24ecf9d6f84e3f3bc5a4682be1c2db48b80f47bb",
+    "largura": 499,
+    "altura": 500
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Amazon, que imprime o ISBN-13. A ficha da Panda Books imprime o mesmo ISBN, com hífens. Em 14/10 a Panda marcava \"Disponibilidade: Imediata\" e a Amazon, \"Em estoque\"."
+}

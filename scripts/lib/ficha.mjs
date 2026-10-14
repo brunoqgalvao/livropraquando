@@ -74,6 +74,7 @@ const FORA = [/produto\s+indispon[íi]vel/i, /atualmente\s+indispon[íi]vel/i, /
               // longa o bastante pra não confundir com "Imagem não disponível",
               // que é placeholder de foto em página de livro à venda.
               /n[ãa]o temos previs[ãa]o de quando este produto estar[áa] dispon[íi]vel/i];
+const REGIAO = /n[ãa]o est[áa] dispon[íi]vel (?:no seu pa[íi]s|na sua regi[ãa]o)|not available in your (?:country|region)/i;
 // "Estimativa de envio de 2 a 3 dias" só aparece em item comprável: quando a
 // Amazon não tem, ela escreve "Temporariamente fora de estoque" ou
 // "Atualmente indisponível", que já estão em FORA e são checados antes.
@@ -126,6 +127,12 @@ export function estoqueDaPagina({ host, texto, titulo, amazon, botoes }) {
   if (/403|forbidden|acesso negado|access denied/i.test(titulo || '')) return { ok: null, nota: 'loja barrou o navegador' };
   const t = semMarcas(texto);
   if (t.length < 250) return { ok: null, nota: 'página voltou vazia' };
+  // A VM sai por IP dos EUA, e o Google Play responde "Este item não está
+  // disponível no seu país" pra e-book que a loja brasileira vende. O FORA
+  // casava "não está disponível" e três dias disso esgotaram "O gatinho Pete"
+  // em 13/10, com o e-book a R$ 37,90 no Play do Brasil. Região é bloqueio,
+  // não prateleira vazia.
+  if (REGIAO.test(t)) return { ok: null, nota: 'loja bloqueou pela região do navegador' };
   // Negativo ganha do positivo: a Ciranda mostra seletor de quantidade E
   // "Produto Indisponível" na mesma tela.
   for (const re of FORA) { const m = t.match(re); if (m) return { ok: false, nota: m[0] }; }
