@@ -14,7 +14,7 @@
   "rubrica": {
     "idade_editora": {
       "valor": "0+",
-      "base": 3
+      "base": 1
     },
     "nomeia_evento": {
       "valor": "direto",

@@ -1,0 +1,113 @@
+{
+  "isbn13": "9788534925983",
+  "titulo": "Um novo bebê está chegando!",
+  "subtitulo": "Um guia para o irmão e a irmã mais velhos",
+  "autor": "Emily Menendez-Aponte",
+  "ilustrador": "R. W. Alley",
+  "editora": "Paulus",
+  "ano": 2006,
+  "paginas": 32,
+  "situacoes": [
+    "vai-nascer-um-irmao"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "3 a 5",
+      "base": 2
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "descrição no site da Paulus",
+      "url": "https://loja.paulus.com.br/um-novo-bebe-esta-chegando-um-guia-para-o-irmao-e-a-irma-mais-velhos/p",
+      "trecho": "A chegada de um novo bebê é uma ocasião de alegria, euforia e esperança. Entretanto essa novidade, para uma criança pequena, pode causar confusão, preocupação e angústia. […] convidando-a para participar da espera e dos cuidados para com o novo bebê. Auxiliada pelos amáveis elfos, a autora Emily Menendez-Aponte",
+      "acessado_em": "2026-10-15"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "detalhes do produto no site da Paulus",
+      "url": "https://loja.paulus.com.br/um-novo-bebe-esta-chegando-um-guia-para-o-irmao-e-a-irma-mais-velhos/p",
+      "trecho": "Assunto Acolhida Autor Emily Menendez-Aponte Coleção Terapia Infantil Catálogo Infantil Acabamento Grampeado Idioma Português Edição 4ª Número de páginas 32 Ano de lançamento 2006",
+      "acessado_em": "2026-10-15"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/8534925984",
+      "trecho": "Editora : Paulus Editora Data da publicação : 1 dezembro 2006 Edição : 4ª Idioma : Português, Português Número de páginas : 32 páginas ISBN-10 : 8534925984 ISBN-13 : 978-8534925983 Peso do produto : 223 g Idade de leitura : 3 - 5 anos",
+      "acessado_em": "2026-10-15"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/8534925984",
+      "trecho": "por Emily Menendez-Aponte (Autor), R. W. Alley (Ilustrador)",
+      "acessado_em": "2026-10-15"
+    }
+  ],
+  "nao_coberto": "A descrição da editora fala do livro, não conta uma história: pelo subtítulo é um guia, e ela não diz se há personagem criança, quem narra nem como o texto é organizado — só que há elfos. Não diz em que momento ele começa (na gravidez ou já com o bebê em casa), embora fale em participar da espera. Não diz se fala de Deus, embora seja da Paulus, editora católica, numa coleção chamada \"Terapia Infantil\". Não traz título original nem tradutor, então esta página não afirma que é tradução.",
+  "nao_aborda": "Pela descrição, o livro trata da chegada do bebê e dos cuidados com ele; não fala de ciúme, de parto nem de bebê prematuro.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Paulus",
+        "url": "https://loja.paulus.com.br/um-novo-bebe-esta-chegando-um-guia-para-o-irmao-e-a-irma-mais-velhos/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8534925984"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-10-15"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-10-15"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/8534925984",
+        "isbn13": "9788534925983",
+        "titulo_bateu": true,
+        "trecho": "Um novo bebê está chegando!: Um guia para o irmão e a irmã mais velhos | Amazon.com.br",
+        "em": "2026-10-15"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-10-15",
+  "capa": {
+    "arquivo": "9788534925983.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/612b5Y15fQL._SL1200_.jpg",
+    "obtida_em": "2026-10-15",
+    "sha1": "35940289bb32c3953fbc535176ea8f24ef9f3ac1",
+    "largura": 500,
+    "altura": 500
+  },
+  "nota": "Livro provado pela ficha da Amazon, que imprime o ISBN 978-8534925983; Google Books e Open Library não têm o registro. O resto da descrição da editora é dirigido aos pais e promete efeito; citamos só a parte que descreve o livro. A idade é a da ficha da Amazon; a página da Paulus não indica faixa."
+}

@@ -1,0 +1,108 @@
+{
+  "isbn13": "9786556541518",
+  "titulo": "Vamos para a escola?",
+  "autor": "Guido van Genechten",
+  "ilustrador": "Guido van Genechten",
+  "tradutor": "Camila Werner",
+  "editora": "Brinque-Book",
+  "ano": 2026,
+  "origem": "traducao",
+  "paginas": 32,
+  "situacoes": [
+    "primeiro-dia-de-aula"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "0+",
+      "base": 1
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site do Grupo Companhia das Letras (selo Brinque-Book)",
+      "url": "https://www.companhiadasletras.com.br/9786556541518-vamos-para-a-escola-/p",
+      "trecho": "O ratinho curioso que adora saber tudo sobre tudo acaba de encontrar um lugar cheio de possibilidades: a escola! Animado com a novidade e pronto com a mochila nas costas, ele sai para um dia de aprendizados. Durante o caminho, ele convida os amigos que encontra para conhecer esse espaço e mostra o que acontece por lá: brincadeiras, pintura, músicas e muito mais. […] para apresentar o ambiente escolar de forma criativa, ajudando a despertar a curiosidade das crianças que se aproximam do primeiro dia de aula.",
+      "acessado_em": "2026-10-15"
+    },
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site do Grupo Companhia das Letras (selo Brinque-Book)",
+      "url": "https://www.companhiadasletras.com.br/9786556541518-vamos-para-a-escola-/p",
+      "trecho": "Com ilustrações divertidas, abas para levantar e uma narrativa interativa, o premiado autor belga Guido van Genechten cria mais uma história protagonizada pelo Ratinho […] Indicado para leitores a partir de 0 anos.",
+      "acessado_em": "2026-10-15"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha técnica no site do Grupo Companhia das Letras",
+      "url": "https://www.companhiadasletras.com.br/9786556541518-vamos-para-a-escola-/p",
+      "trecho": "Título Original […] Kom Je Mee Naar School? […] Selo […] Brinque-Book […] Lançamento […] 13/10/2026 […] ISBN […] 978-65-5654-151-8 […] Acabamento […] Capa dura […] Páginas […] 32 […] Tradução […] Camila Werner […] Ilustração […] Guido Van Genechten",
+      "acessado_em": "2026-10-15"
+    }
+  ],
+  "nao_coberto": "A sinopse não diz quem narra, não diz se aparece alguma criança (os personagens são o ratinho e os amigos bichos) e não descreve como o dia termina. Ela fala da escola como lugar de brincadeira, pintura e música; não diz se o ratinho se separa de alguém da família nem se sente medo. Nenhuma fonte lida dá o ano da edição original.",
+  "nao_aborda": "A sinopse apresenta a escola como novidade boa; não fala de creche, de choro na porta nem de despedida dos pais.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Companhia das Letras (Brinque-Book)",
+        "url": "https://www.companhiadasletras.com.br/9786556541518-vamos-para-a-escola-/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6556541516"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-10-15"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-10-15"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/6556541516",
+        "isbn13": "9786556541518",
+        "titulo_bateu": true,
+        "trecho": "Vamos para a escola? | Amazon.com.br",
+        "em": "2026-10-15"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-10-15",
+  "capa": {
+    "arquivo": "9786556541518.jpg",
+    "fonte": "companhiadasletras.com.br",
+    "url": "https://ciadasletras.vtexassets.com/arquivos/ids/220381/capa-escala-9786556541518.jpg?v=639246704125900000",
+    "obtida_em": "2026-10-15",
+    "sha1": "92c9a99f1324b991a6bad8fdb3d69e6c9ca9d2ee",
+    "largura": 600,
+    "altura": 600
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Amazon, que imprime o ISBN-13. A ficha da editora também imprime o ISBN, com hífens. Lançado em 13/10/2026.",
+  "titulo_original": "Kom Je Mee Naar School?"
+}
