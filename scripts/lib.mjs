@@ -62,7 +62,7 @@ export function isbn13Valido(s) {
 }
 
 // Editora paga pelo autor. SPEC, "Régua editorial": fora da curadoria por padrão.
-export const EDITORA_PAGA = /dial[ée]tica|clube de autores|appris|autografia|scortecci|uiclap|viseu|kelps|paco editorial|bara[úu]na/i;
+export const EDITORA_PAGA = /dial[ée]tica|clube de autores|appris|autografia|scortecci|uiclap|viseu|kelps|paco editorial|bara[úu]na|ases da literatura|\basinha\b/i;
 
 // O site é em português e quem lê a data está no Brasil. `toISOString` é UTC:
 // depois das 21h de Brasília ele já carimba o dia seguinte, e a página passa a

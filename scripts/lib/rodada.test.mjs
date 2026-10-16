@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readdirSync, readFileSync } from 'node:fs';
 import { join, basename } from 'node:path';
+import { EDITORA_PAGA } from '../lib.mjs';
 import { devePular, mesclaEstoque, mesclaDiario, idadeRecusada, idadeProtegida, slotDaIdade } from './rodada.mjs';
 
 let ok = 0, falhou = 0;
@@ -141,6 +142,15 @@ t('ficha que era a base da idade antiga é trocada no lugar', () => {
 });
 t('trecho já citado reaproveita a evidência', () =>
   assert.equal(slotDaIdade(PIRATAS.evidencias, { url: 'https://www.cirandacultural.com.br/produto/piratas', trecho: 'faixa etária + 4 anos' }, 1).base, 1));
+
+// Régua editorial: a Ases da Literatura cobra parte dos custos do autor "em
+// alguns casos", e a Asinha é o selo infantil dela (decisão de 16/10).
+t('Ases da Literatura e Asinha contam como editora paga', () => {
+  assert.equal(EDITORA_PAGA.test('Ases da Literatura'), true);
+  assert.equal(EDITORA_PAGA.test('Asinha'), true);
+  assert.equal(EDITORA_PAGA.test('Brinque-Book'), false);
+  assert.equal(EDITORA_PAGA.test('Gaudí Editorial'), false);
+});
 
 console.log(`${ok} passaram, ${falhou} falharam`);
 process.exit(falhou ? 1 : 0);
