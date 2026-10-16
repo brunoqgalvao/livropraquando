@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { provaDaFicha, semLoja } from './prova.mjs';
+import { provaDaFicha, semLoja, tituloAmazon } from './prova.mjs';
 import { tituloBate, edicaoBrasileira, casaEdicao } from '../resolve.mjs';
 
 let ok = 0, falhou = 0;
@@ -92,6 +92,27 @@ t('semLoja tira só o sufixo da loja', () => {
   assert.equal(semLoja('Minúscula | Amazon.com.br'), 'Minúscula');
   assert.equal(semLoja('A Irmã do Gildo : Rando, Silvana: Amazon.com.br: Livros'), 'A Irmã do Gildo : Rando, Silvana');
   assert.equal(semLoja('Zeca conhece Nina'), 'Zeca conhece Nina');
+});
+
+// A Amazon às vezes põe os autores e o ISBN no <title> (Apertado, 16/10).
+t('título de uma palavra prova com autores e ISBN no <title> da Amazon', () => {
+  const r = prova(pagina({ host: 'www.amazon.com.br', titulo_pagina: 'Apertado : Genechten, Guido van, Werner, Camila: 9788574125534: Amazon.com.br: Livros', isbn_pagina: '978-8574125534' }), '9788574125534', 'Apertado');
+  assert.equal(r.prova, true);
+});
+
+t('com autores no <title>, título de uma palavra diferente continua barrado', () => {
+  const r = prova(pagina({ host: 'www.amazon.com.br', titulo_pagina: 'Apertadinho : Genechten, Guido van: Amazon.com.br: Livros', isbn_pagina: '978-8574125534' }), '9788574125534', 'Apertado');
+  assert.equal(r.prova, false);
+});
+
+t('fora da Amazon, o " : " não corta o título', () => {
+  const r = prova(pagina({ host: 'www.loja.com.br', titulo_pagina: 'Apertado : Genechten, Guido van', isbn_pagina: '978-8574125534' }), '9788574125534', 'Apertado');
+  assert.equal(r.prova, false);
+});
+
+t('tituloAmazon fica com o campo antes do primeiro " : "', () => {
+  assert.equal(tituloAmazon('Apertado : Genechten, Guido van, Werner, Camila: 9788574125534: Amazon.com.br: Livros'), 'Apertado');
+  assert.equal(tituloAmazon('Minúscula | Amazon.com.br'), 'Minúscula');
 });
 
 // --- casaEdicao: o que conta como "este registro é o meu livro" -----------

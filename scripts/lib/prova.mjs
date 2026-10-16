@@ -25,6 +25,12 @@ const digitos = (s) => String(s || '').replace(/\D/g, '');
 // comparação não muda.
 export const semLoja = (t) => String(t || '').replace(/\s*[|:]\s*Amazon\.com\.br\b.*$/i, '').trim();
 
+// A Amazon também serve o <title> como "Título : Autores : ISBN : Amazon.com.br",
+// e aí os autores viram palavras a mais e o título de uma palavra não casa
+// (Apertado, Brinque-Book, 16/10). Só na Amazon, o campo antes do primeiro
+// " : " conta como título; o ISBN exato continua decidindo antes.
+export const tituloAmazon = (t) => semLoja(t).split(' : ')[0].trim();
+
 export function provaDaFicha({ isbn13, titulo, leitura, tituloBate, brasileira }) {
   const em = { fonte: 'ficha_loja', host: leitura?.host, url: leitura?.url };
   if (!brasileira(isbn13)) return { ...em, prova: false, motivo: 'o ISBN não é de edição brasileira' };
@@ -45,7 +51,9 @@ export function provaDaFicha({ isbn13, titulo, leitura, tituloBate, brasileira }
   if (lido !== digitos(isbn13)) {
     return { ...em, prova: false, motivo: `a página imprime outro ISBN (${lido})`, isbn_pagina: lido };
   }
-  if (!tituloBate(semLoja(leitura.titulo_pagina), titulo)) {
+  const amazon = /amazon\.com\.br$/i.test(leitura.host || '');
+  if (!tituloBate(semLoja(leitura.titulo_pagina), titulo) &&
+      !(amazon && tituloBate(tituloAmazon(leitura.titulo_pagina), titulo))) {
     return { ...em, prova: false, motivo: `o título da página não bate: "${String(leitura.titulo_pagina || '').slice(0, 60)}"` };
   }
   return { ...em, prova: true, isbn13: digitos(isbn13), trecho: String(leitura.titulo_pagina || '').slice(0, 120) };

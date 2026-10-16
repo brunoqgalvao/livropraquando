@@ -1,0 +1,93 @@
+{
+  "isbn13": "9788581841441",
+  "titulo": "Eu uso penico",
+  "autor": "Maria van Lieshout",
+  "editora": "Gaudí Editorial",
+  "ano": 2019,
+  "paginas": 24,
+  "situacoes": [
+    "desfralde"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "crianca",
+      "base": 0
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "descrição do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/8581841449",
+      "trecho": "O livro começa com um menino lembrando de sua vida de bebê: Quando eu era bebê, eu bebia muito leite. E eu fazia xixi e cocô... o tempo todo. A descrição da vida do bebê com suas fraldas e o que tem dentro dela é feita de uma maneira engraçada e muito positiva. […] Quando o menino mostra ao leitor como ele usa o banheiro, o resultado fala por si com um retumbante plop. Escrita em primeira pessoa",
+      "acessado_em": "2026-10-16"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/8581841449",
+      "trecho": "Editora ‏ : ‎ Gaudí Editorial Data da publicação ‏ : ‎ 10 fevereiro 2019 Edição ‏ : ‎ 1ª Idioma ‏ : ‎ Português Número de páginas ‏ : ‎ 24 páginas ISBN-10 ‏ : ‎ 8581841449 ISBN-13 ‏ : ‎ 978-8581841441",
+      "acessado_em": "2026-10-16"
+    }
+  ],
+  "nao_coberto": "A única sinopse que achamos é a da Amazon; não achamos página do livro no site da Gaudí. Ela diz que um menino narra em primeira pessoa e mostra como usa o banheiro, mas não diz se o texto é rimado nem se ele usa penico ou vaso sanitário no fim. Nenhuma fonte indica faixa etária. A ficha não traz tradutor nem título original, então a página não afirma tradução nem ano da edição original. Não encontramos resenha assinada.",
+  "nao_aborda": "Pela sinopse, o livro fala da fralda do bebê e do menino que já usa o banheiro; não fala de escape, de medo do vaso nem de noite sem fralda.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8581841449"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-10-16"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-10-16"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/8581841449",
+        "isbn13": "9788581841441",
+        "titulo_bateu": true,
+        "trecho": "Eu uso penico | Amazon.com.br",
+        "em": "2026-10-16"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-10-16",
+  "capa": {
+    "arquivo": "9788581841441.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/51iTvHuVxEL._SL1200_.jpg",
+    "obtida_em": "2026-10-16",
+    "sha1": "d10bbfc139479b001d129d9a50faaa642f92c53e",
+    "largura": 496,
+    "altura": 500
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Amazon, que imprime o ISBN-13. Em 16/10 a Amazon era a única loja que achamos, com \"Somente 1 em estoque\"."
+}

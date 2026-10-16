@@ -1,0 +1,106 @@
+{
+  "isbn13": "9788574125534",
+  "titulo": "Apertado",
+  "autor": "Guido van Genechten",
+  "ilustrador": "Guido van Genechten",
+  "tradutor": "Camila Werner",
+  "editora": "Brinque-Book",
+  "ano": 2017,
+  "origem": "traducao",
+  "paginas": 32,
+  "situacoes": [
+    "desfralde"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site do Grupo Companhia das Letras (selo Brinque-Book)",
+      "url": "https://www.companhiadasletras.com.br/9788574125534-apertado/p",
+      "trecho": "Todos os penicos da casa estão ocupados... e agora? O cachorro está muito apertado. Mas sua irmã está usando o penico dele! Porque o rato está sentado no penico dela... O cachorro corre para todos os penicos da casa, mas estão todos ocupados. Mas ele continua apertado... o que fazer? Será necessária uma dose de coragem e autoconfiança para resolver esse problema tão urgente!",
+      "acessado_em": "2026-10-16"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha técnica no site do Grupo Companhia das Letras",
+      "url": "https://www.companhiadasletras.com.br/9788574125534-apertado/p",
+      "trecho": "Selo […] Brinque-Book […] Lançamento […] 17/03/2017 […] ISBN […] 978-85-7412-553-4 […] Acabamento […] Livro brochura […] Páginas […] 32 […] Formato […] 26x25 cm […] Tradução […] Camila Werner",
+      "acessado_em": "2026-10-16"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/8574125539",
+      "trecho": "Editora ‏ : ‎ Brinque-Book Data da publicação ‏ : ‎ 17 março 2017 Edição ‏ : ‎ 1ª Idioma ‏ : ‎ Português Número de páginas ‏ : ‎ 32 páginas ISBN-10 ‏ : ‎ 8574125539 ISBN-13 ‏ : ‎ 978-8574125534",
+      "acessado_em": "2026-10-16"
+    }
+  ],
+  "nao_coberto": "A sinopse não conta como o cachorro resolve o aperto, nem quem narra, nem se o texto é rimado. A Brinque-Book não indica faixa etária; a da Amazon é \"sugerida pelo cliente\" e não entra. A ficha da editora dá a tradutora, mas não o título nem o ano da edição original.",
+  "nao_aborda": "Pela sinopse, a história é de bichos disputando penicos ocupados; não fala de fralda, de escape nem de vaso sanitário.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Companhia das Letras (Brinque-Book)",
+        "url": "https://www.companhiadasletras.com.br/9788574125534-apertado/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8574125539"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-10-16"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-10-16"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/8574125539",
+        "isbn13": "9788574125534",
+        "titulo_bateu": true,
+        "trecho": "Apertado : Genechten, Guido van, Werner, Camila, Genechten, Guido van: Amazon.com.br: Livros",
+        "em": "2026-10-16"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-10-16",
+  "capa": {
+    "arquivo": "9788574125534.jpg",
+    "fonte": "companhiadasletras.com.br",
+    "url": "https://ciadasletras.vtexassets.com/arquivos/ids/220371/capa-escala-9788574125534.jpg?v=639246704065470000",
+    "obtida_em": "2026-10-16",
+    "sha1": "4f485bb14051467ac63b79cdda3eabb5eef55d0a",
+    "largura": 600,
+    "altura": 600
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Amazon, que imprime o ISBN-13. A ficha da Companhia das Letras imprime o mesmo ISBN, com hífens. Em 16/10 a Amazon marcava \"Em estoque\"."
+}
