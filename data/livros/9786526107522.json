@@ -1,0 +1,112 @@
+{
+  "isbn13": "9786526107522",
+  "titulo": "Turma da Mônica - Quando Maria Cebolinha chegou",
+  "autor": "Ciranda Cultural",
+  "ilustrador": "Mauricio de Sousa",
+  "editora": "Ciranda Cultural",
+  "ano": 2023,
+  "paginas": 16,
+  "situacoes": [
+    "vai-nascer-um-irmao"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "4+",
+      "base": 1
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site da Ciranda Cultural",
+      "url": "https://www.cirandacultural.com.br/produto/livro-grampeado-turma-da-monica-quando-maria-cebolinha-chegou-74606",
+      "trecho": "A família Cebola acaba de aumentar! Como será que o Cebolinha vai reagir ao ser promovido a irmão mais velho? Venha descobrir, enquanto lê a história da chegada de Maria Cebolinha.",
+      "acessado_em": "2026-10-21"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha no site da Ciranda Cultural",
+      "url": "https://www.cirandacultural.com.br/produto/livro-grampeado-turma-da-monica-quando-maria-cebolinha-chegou-74606",
+      "trecho": "Editora: Ciranda Cultural Edição: 1, 2023 Autor: Ciranda Cultural Ilustrador: Mauricio de Sousa Idioma: Português Páginas: 16 Dimensões: L 21.00 x A 27.50 x E 0.11 ISBN: 9786526107522 Coleção: Não se aplica Linha Editorial: Ciranda Cultural - Licenças Faixa Etária: + 4 anos Assuntos (tags): Turma da Mônica, Família, Irmãos, Nascimento",
+      "acessado_em": "2026-10-21"
+    },
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "texto \"Da editora\" na ficha da Amazon",
+      "url": "https://www.amazon.com.br/dp/6526107524",
+      "trecho": "Na história, os pais chamam Cebolinha certa noite para contar uma novidade: em breve ele será promovido a irmão mais velho. E tem mais: o novo bebê que está por vir será uma menina! Cebolinha, então, começa a se lembrar de suas interações e brincadeiras com as meninas Mônica, Magali e Denise, além de acompanhar todas as mudanças que os pais começaram a fazer na casa para receber a irmã.",
+      "acessado_em": "2026-10-21"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/6526107524",
+      "trecho": "Editora ‏ : ‎ Ciranda Cultural Data da publicação ‏ : ‎ 15 setembro 2023 Edição ‏ : ‎ 1ª Idioma ‏ : ‎ Português Número de páginas ‏ : ‎ 16 páginas ISBN-10 ‏ : ‎ 6526107524 ISBN-13 ‏ : ‎ 978-6526107522",
+      "acessado_em": "2026-10-21"
+    }
+  ],
+  "nao_coberto": "As duas sinopses param nos preparativos da casa: não dizem como o Cebolinha reage quando a irmã nasce, nem quem narra. A ficha da Ciranda credita a própria editora como autora e Mauricio de Sousa como ilustrador; o nome de quem escreveu o texto não aparece em nenhuma das fontes. É um livreto grampeado de 16 páginas da linha de licenças da Ciranda.",
+  "nao_aborda": "Pela sinopse, a história é a da espera de uma irmã, da notícia dada pelos pais ao preparo da casa; as fontes não falam da rotina depois que o bebê chega.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Ciranda Cultural",
+        "url": "https://www.cirandacultural.com.br/produto/livro-grampeado-turma-da-monica-quando-maria-cebolinha-chegou-74606"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6526107524"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-10-21"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-10-21"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/6526107524",
+        "isbn13": "9786526107522",
+        "titulo_bateu": true,
+        "trecho": "Turma da Mônica - Quando Maria Cebolinha chegou | Amazon.com.br",
+        "em": "2026-10-21"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-10-21",
+  "capa": {
+    "arquivo": "9786526107522.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/51VVoPMZGiL._SL1200_.jpg",
+    "obtida_em": "2026-10-21",
+    "sha1": "8f9749d4449d2c6b3004e9e7438429d5797f4856",
+    "largura": 382,
+    "altura": 500
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Amazon, que imprime o ISBN-13. A ficha da Ciranda Cultural imprime o mesmo ISBN. Em 21/10 a Amazon marcava \"Em estoque\"."
+}

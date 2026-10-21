@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { faixaSchema, descricaoLivro, descricaoCurta, trilha } from './schema.mjs';
+import { faixaSchema, descricaoLivro, descricaoCurta, trilha, autorSchema } from './schema.mjs';
 
 let ok = 0, falhou = 0;
 const t = (nome, fn) => { try { fn(); ok++; } catch (e) { falhou++; console.log(`FALHOU: ${nome}\n  ${e.message}`); } };
@@ -117,6 +117,12 @@ t('degrau sem nome ou sem url fica de fora', () => {
 });
 
 t('só o início não vira trilha', () => assert.equal(trilha('https://x.br', []), undefined));
+
+t('editora no campo de autor vira Organization, não Person', () => {
+  assert.deepEqual(autorSchema('Ciranda Cultural', 'Ciranda Cultural'), { '@type': 'Organization', name: 'Ciranda Cultural' });
+  assert.deepEqual(autorSchema('Guido van Genechten', 'Brinque-Book'), { '@type': 'Person', name: 'Guido van Genechten' });
+  assert.equal(autorSchema('', 'Ciranda Cultural'), undefined);
+});
 
 console.log(`${ok} passaram, ${falhou} falharam`);
 if (falhou) process.exit(1);

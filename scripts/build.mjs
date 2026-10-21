@@ -1,7 +1,7 @@
 import { rotuloIdadeAusente } from './lib/ficha.mjs';
 import { P, ROOT, lerTodos, gravar, dataBr } from './lib.mjs';
 import { dimensao, mostrarInteira } from './lib/imagem.mjs';
-import { faixaSchema, descricaoLivro, descricaoCurta, trilha } from './lib/schema.mjs';
+import { faixaSchema, descricaoLivro, descricaoCurta, trilha, autorSchema } from './lib/schema.mjs';
 import { join } from 'node:path';
 import { rmSync, existsSync, cpSync, readFileSync, readdirSync } from 'node:fs';
 import { createHash } from 'node:crypto';
@@ -240,7 +240,7 @@ function dadosDoLivro(l) {
     url: `${SITE}/l/${l.isbn13}`,
     isbn: l.isbn13,
     inLanguage: 'pt-BR',
-    author: l.autor ? { '@type': 'Person', name: l.autor } : undefined,
+    author: autorSchema(l.autor, l.editora),
     illustrator: l.ilustrador ? { '@type': 'Person', name: l.ilustrador } : undefined,
     publisher: l.editora ? { '@type': 'Organization', name: l.editora } : undefined,
     datePublished: l.ano ? String(l.ano) : undefined,
