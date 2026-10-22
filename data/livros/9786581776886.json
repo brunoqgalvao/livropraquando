@@ -1,0 +1,107 @@
+{
+  "isbn13": "9786581776886",
+  "titulo": "Nem sonhando!",
+  "autor": "Beatrice Alemagna",
+  "tradutor": "Joyce Almeida",
+  "editora": "Companhia das Letrinhas",
+  "ano": 2024,
+  "origem": "traducao",
+  "paginas": 48,
+  "situacoes": [
+    "primeiro-dia-de-aula"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "4+",
+      "base": 1
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site do Grupo Companhia das Letras (selo Companhia das Letrinhas)",
+      "url": "https://www.companhiadasletras.com.br/9786581776886-nem-sonhando-/p",
+      "trecho": "[…] as angústias e as alegrias das crianças na hora de voltar às aulas. […] Não importa que todo mundo está indo para a escola: Catarina não quer ir. […] E ao declarar sua opinião, a morceguinha grita tão alto que seus pais encolhem. Agora que eles cabem sob suas asas, Catarina pode levá-los escondidos para a escola! Mas essa ideia, a princípio tão genial, pode gerar muito mais confusão do que ela imagina… […] apesar de não querer se separar dos pais para ir para a escola, a protagonista desta história adora aprender e viver novas experiências — assim como seus pais!",
+      "acessado_em": "2026-10-22"
+    },
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site do Grupo Companhia das Letras (selo Companhia das Letrinhas)",
+      "url": "https://www.companhiadasletras.com.br/9786581776886-nem-sonhando-/p",
+      "trecho": "Indicado para leitores a partir dos 4 anos.",
+      "acessado_em": "2026-10-22"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha técnica no site do Grupo Companhia das Letras",
+      "url": "https://www.companhiadasletras.com.br/9786581776886-nem-sonhando-/p",
+      "trecho": "Título Original […] Never, Not Ever […] Selo […] Companhia das Letrinhas […] Lançamento […] 23/01/2024 […] ISBN […] 978-65-81776-88-6 […] Acabamento […] Livro brochura […] Páginas […] 48 […] Tradução […] Joyce Almeida",
+      "acessado_em": "2026-10-22"
+    }
+  ],
+  "nao_coberto": "A sinopse não diz quem narra nem como termina: para em \"pode gerar muito mais confusão do que ela imagina…\". Ela fala em \"voltar às aulas\", não em primeiro dia, e não diz se a escola de Catarina é nova para ela. A página da editora tem um link \"Para professores\" que não abri; por isso o material pro adulto fica sem resposta. Nenhuma fonte lida dá o ano da edição original.",
+  "nao_aborda": "A sinopse trata da recusa em ir para a escola e da vontade de não se separar dos pais; não fala de creche, de bebê pequeno nem de professora ou colegas.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Companhia das Letras (Companhia das Letrinhas)",
+        "url": "https://www.companhiadasletras.com.br/9786581776886-nem-sonhando-/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6581776882"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-10-22"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-10-22"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/6581776882",
+        "isbn13": "9786581776886",
+        "titulo_bateu": true,
+        "trecho": "Nem sonhando! | Amazon.com.br",
+        "em": "2026-10-22"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-10-22",
+  "capa": {
+    "arquivo": "9786581776886.jpg",
+    "fonte": "companhiadasletras.com.br",
+    "url": "https://ciadasletras.vtexassets.com/arquivos/ids/184917/cdl-9786581776886.jpg?v=639232091241170000",
+    "obtida_em": "2026-10-22",
+    "sha1": "08d043135c84672e91d9d5b25b5238a89de9ab8b",
+    "largura": 600,
+    "altura": 600
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Amazon, que imprime o ISBN-13. A ficha da editora também imprime o ISBN, com hífens. Em 22/10 a loja da editora vendia (R$ 69,90).",
+  "titulo_original": "Never, Not Ever"
+}
