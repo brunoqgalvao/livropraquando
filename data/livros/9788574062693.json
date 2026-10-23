@@ -1,0 +1,100 @@
+{
+  "isbn13": "9788574062693",
+  "titulo": "Cocô no trono",
+  "autor": "Benoit Charlat",
+  "ilustrador": "Benoit Charlat",
+  "editora": "Companhia das Letrinhas",
+  "ano": 2006,
+  "origem": "traducao",
+  "paginas": 16,
+  "situacoes": [
+    "desfralde"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "0+",
+      "base": 1
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site do Grupo Companhia das Letras (selo Companhia das Letrinhas)",
+      "url": "https://www.companhiadasletras.com.br/9788574062693-coco-no-trono/p",
+      "trecho": "Um livro ideal para aqueles que estão tentando trocar a fralda pelo trono. […] Estampado em formato grande, em páginas reforçadas e bem coloridas, um pintinho acha engraçado quando vê os outros bichos que já aprenderam a sentar no trono - e que fazem cada um sua \"espécie\" de cocô. Mas, ao final, ele também apresenta sua performance (aprende a usar a privada sozinho), e para completar ainda toca a descarga com a ajuda do leitor, que puxa uma aba interativa.",
+      "acessado_em": "2026-10-23"
+    },
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site do Grupo Companhia das Letras (selo Companhia das Letrinhas)",
+      "url": "https://www.companhiadasletras.com.br/9788574062693-coco-no-trono/p",
+      "trecho": "Este livro é indicado para crianças a partir de 7 meses.",
+      "acessado_em": "2026-10-23"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha técnica no site do Grupo Companhia das Letras",
+      "url": "https://www.companhiadasletras.com.br/9788574062693-coco-no-trono/p",
+      "trecho": "Título Original […] Cacanimaux […] Selo […] Companhia das Letrinhas […] Lançamento […] 11/12/2006 […] ISBN […] 978-85-7406-269-3 […] Acabamento […] Capa dura […] Páginas […] 16 […] Formato […] 20x20 cm […] Ilustração […] Benoit Charlat",
+      "acessado_em": "2026-10-23"
+    }
+  ],
+  "nao_coberto": "A sinopse não diz quem narra nem se o texto é rimado. Os personagens são bichos — o pintinho e os outros —, e ela não diz se aparece alguma criança. Fala em privada (\"o trono\"), não em penico. A ficha não credita tradutor, embora traga título original em francês (Cacanimaux). Nenhuma fonte lida dá o ano da edição original.",
+  "nao_aborda": "A sinopse fica no uso da privada pelo lado da graça — cada bicho com sua \"espécie\" de cocô e a descarga de aba —; não fala de escape, de medo do vaso sanitário nem de noite sem fralda.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Companhia das Letras",
+        "url": "https://www.companhiadasletras.com.br/9788574062693-coco-no-trono/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8574062693"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-10-23"
+      },
+      {
+        "fonte": "open_library",
+        "id": "/works/OL35372260W",
+        "isbn13": "9788574062693",
+        "titulo_bateu": true,
+        "em": "2026-10-23"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-10-23",
+  "capa": {
+    "arquivo": "9788574062693.jpg",
+    "fonte": "companhiadasletras.com.br",
+    "url": "https://ciadasletras.vtexassets.com/arquivos/ids/212939/cdl-9788574062693.jpg?v=639216175428400000",
+    "obtida_em": "2026-10-23",
+    "sha1": "3ebd1c3152c4f48a4b7577169ba88f046498d18b",
+    "largura": 600,
+    "altura": 600
+  },
+  "nota": "A editora escreve \"a partir de 7 meses\"; a coluna de idade mostra 0+ porque conta em anos. A ficha da editora dá lançamento em 11/12/2006; a Open Library registra o mesmo ISBN com ano 2013, que pode ser reimpressão.",
+  "titulo_original": "Cacanimaux"
+}
