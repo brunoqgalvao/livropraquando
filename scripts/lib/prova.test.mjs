@@ -140,5 +140,14 @@ t('edição portuguesa não casa nem com ISBN igual', () =>
   assert.equal(casaEdicao({ isbn13: '9789720047762', titulo: 'A irmã do Gildo' },
     { isbn: '9789720047762', titulo: 'A irmã do Gildo' }), false));
 
+// 21/10: a Open Library tinha outro livro sob o ISBN de "O xixi da Lulu".
+t('com ISBN e título, registro de outro livro sob o mesmo ISBN não passa', () =>
+  assert.equal(casaEdicao({ isbn13: '9788574066080', titulo: 'Imobilismo em movimento' },
+    { isbn: '9788574066080', titulo: 'O xixi da Lulu' }), false));
+
+t('com ISBN e título, sufixo de catálogo no título não atrapalha', () =>
+  assert.equal(casaEdicao({ isbn13: '9788574062693', titulo: 'Cocô No Trono (Em Portuguese do Brasil)' },
+    { isbn: '9788574062693', titulo: 'Cocô no trono' }), true));
+
 console.log(`${ok} passaram, ${falhou} falharam`);
 process.exit(falhou ? 1 : 0);

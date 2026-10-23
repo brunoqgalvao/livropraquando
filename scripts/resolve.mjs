@@ -43,13 +43,15 @@ export function tituloBate(a, b) {
 export const edicaoBrasileira = (isbn13) =>
   /^(97885|97865)/.test(String(isbn13 || '').replace(/[^0-9]/g, ''));
 
-// O que conta como "este registro é o meu livro". Com ISBN na mão a igualdade
-// do ISBN manda e o título não vota: catálogo escreve "QUANDO MEU IRMAOZINHO
-// NASCEU" sem acento e a comparação de título só criaria chance de errar.
-// Sem ISBN (descoberta por título) sobra o título.
+// O que conta como "este registro é o meu livro". Com ISBN na mão o ISBN tem
+// que ser igual E, se veio título, o título também vota: em 21/10 a Open
+// Library devolveu "Imobilismo em movimento" com o ISBN de "O xixi da Lulu" e
+// o resolve imprimiu `provado: true`. Caixa e acento não atrapalham — `norm`
+// tira os dois. Sem ISBN (descoberta por título) sobra o título.
 export function casaEdicao(item, { isbn, titulo }) {
   if (!item || !edicaoBrasileira(item.isbn13)) return false;
-  return isbn ? item.isbn13 === isbn : tituloBate(item.titulo, titulo);
+  if (!isbn) return tituloBate(item.titulo, titulo);
+  return item.isbn13 === isbn && (!titulo || tituloBate(item.titulo, titulo));
 }
 
 export async function googleBooks({ isbn, titulo, autor }) {

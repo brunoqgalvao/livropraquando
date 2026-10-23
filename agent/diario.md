@@ -190,9 +190,12 @@ incompleto vale mais que um catálogo completo e inventado.
 5. `node scripts/descobrir.mjs <slug>` numa situação que já existe, rodando as
    situações em rodízio. Os candidatos caem em `runtime/candidatos-<slug>.json`.
    **Fora do rodízio automático:** `vai-nascer-um-irmao` (desde 12/10, só traz
-   guia de gravidez; garimpo à mão) e `medo-do-escuro` (desde 16/10; garimpo à
+   guia de gravidez; garimpo à mão), `medo-do-escuro` (desde 16/10; garimpo à
    mão no máximo 1x por semana, e a automática volta quando aparecer candidato
-   aproveitável). Ver `runtime/decisoes-2026-10-12.md` e `-10-16.md`.
+   aproveitável) e `morte-do-bichinho` (desde 23/10, depois de 4 automáticas
+   vazias; garimpo à mão no máximo 1x por semana, e a automática só volta se o
+   garimpo achar 2 ou mais candidatos novos). Ver `runtime/decisoes-2026-10-12.md`,
+   `-10-16.md` e `-10-23.md`.
 6. Escolha **no máximo 2**. O teto não é sugestão. Ele existe porque encher o
    catálogo é a forma mais fácil de parecer produtivo sem ser útil.
    Descarte sem dó: a descoberta traz romance adulto e livro de teologia junto.
