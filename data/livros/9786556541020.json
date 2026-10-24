@@ -1,0 +1,108 @@
+{
+  "isbn13": "9786556541020",
+  "titulo": "Guia animal para se dar bem na escola",
+  "autor": "Laura Bunting, Philip Bunting",
+  "ilustrador": "Laura Bunting, Philip Bunting",
+  "tradutor": "Lígia Azevedo",
+  "editora": "Brinque-Book",
+  "ano": 2025,
+  "origem": "traducao",
+  "paginas": 36,
+  "situacoes": [
+    "primeiro-dia-de-aula"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "4+",
+      "base": 1
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site do Grupo Companhia das Letras (selo Brinque-Book)",
+      "url": "https://www.companhiadasletras.com.br/9786556541020-guia-animal-para-se-dar-bem-na-escola/p",
+      "trecho": "A escola é um hábitat diferente, cheio de novas descobertas e, às vezes, pode parecer até uma selva! Você está pronto para arrasar nesse novo ambiente? Neste guia, aprendemos de um jeito fácil e divertido como enfrentar o friozinho na barriga do primeiro dia de aula, conhecer professores, ser um aluno nota 10, fazer novos amigos e até matar a saudade de casa.",
+      "acessado_em": "2026-10-24"
+    },
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site do Grupo Companhia das Letras (selo Brinque-Book)",
+      "url": "https://www.companhiadasletras.com.br/9786556541020-guia-animal-para-se-dar-bem-na-escola/p",
+      "trecho": "Com a ajuda de alguns personagens já queridos do universo dos Bunting, os autores criam o manual perfeito para essa jornada, sem nunca perder o bom humor. […] Indicado para leitores a partir de 4 anos.",
+      "acessado_em": "2026-10-24"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha técnica no site do Grupo Companhia das Letras",
+      "url": "https://www.companhiadasletras.com.br/9786556541020-guia-animal-para-se-dar-bem-na-escola/p",
+      "trecho": "Título Original […] The wild guide to starting school […] Selo […] Brinque-Book […] Lançamento […] 14/01/2025 […] ISBN […] 978-65-5654-102-0 […] Acabamento […] Livro brochura […] Páginas […] 36 […] Tradução […] Lígia Azevedo […] Ilustração […] Philip Bunting e Laura Bunting",
+      "acessado_em": "2026-10-24"
+    }
+  ],
+  "nao_coberto": "A sinopse descreve um guia em tom de humor, com dicas, e não uma história com começo e fim: não diz quem narra, não diz se aparece alguma criança (fala em \"animalzinho\" e em personagens do universo dos Bunting) nem como o livro termina. Ela cita saudade de casa, mas não diz se há cena de despedida dos pais. Nenhuma fonte lida dá o ano da edição original.",
+  "nao_aborda": "A sinopse fala da escola em geral (primeiro dia, professores, amigos, notas); não fala de creche nem de choro na porta.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Companhia das Letras (Brinque-Book)",
+        "url": "https://www.companhiadasletras.com.br/9786556541020-guia-animal-para-se-dar-bem-na-escola/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6556541028"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-10-24"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-10-24"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/6556541028",
+        "isbn13": "9786556541020",
+        "titulo_bateu": true,
+        "trecho": "Guia animal para se dar bem na escola | Amazon.com.br",
+        "em": "2026-10-24"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-10-24",
+  "capa": {
+    "arquivo": "9786556541020.jpg",
+    "fonte": "companhiadasletras.com.br",
+    "url": "https://ciadasletras.vtexassets.com/arquivos/ids/220327/capa-escala-9786556541020.jpg?v=639246703849670000",
+    "obtida_em": "2026-10-24",
+    "sha1": "1890c31fb22845856efb66e9d85f0746b92dc4cd",
+    "largura": 600,
+    "altura": 600
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Amazon, que imprime o ISBN-13. A ficha da editora também imprime o ISBN, com hífens, e as duas batem em editora, data (14/01/2025), páginas (36) e tradutora. A Amazon mostra \"4 - 8 anos\" como idade de leitura; a coluna fica com o \"a partir de 4 anos\" da editora.",
+  "titulo_original": "The wild guide to starting school"
+}
