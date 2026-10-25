@@ -1,0 +1,99 @@
+{
+  "isbn13": "9788574125183",
+  "titulo": "Um presente incrível!",
+  "autor": "Guido van Genechten",
+  "ilustrador": "Guido van Genechten",
+  "tradutor": "Camila Werner",
+  "editora": "Brinque-Book",
+  "ano": 2015,
+  "origem": "traducao",
+  "paginas": 28,
+  "situacoes": [
+    "desfralde"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site do Grupo Companhia das Letras (selo Brinque-Book)",
+      "url": "https://www.companhiadasletras.com.br/9788574125183-um-presente-incrivel-/p",
+      "trecho": "O pequeno elefante recebe um presente muito especial, mas não sabe bem o que fazer com o objeto. Seus pais logo explicam: trata-se de um “penico-para-xixi-e-cocô”. Mas o elefantinho não entende logo de cara o que aquilo significa. Com criatividade e uma boa dose de imaginação, ele experimenta usar o penico de diversas maneiras. Será que ele conseguirá desvendar o mistério por trás daquele objeto?",
+      "acessado_em": "2026-10-25"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha técnica no site do Grupo Companhia das Letras",
+      "url": "https://www.companhiadasletras.com.br/9788574125183-um-presente-incrivel-/p",
+      "trecho": "Selo […] Brinque-Book […] Lançamento […] 17/07/2015 […] ISBN […] 978-85-7412-518-3 […] Acabamento […] Livro brochura […] Páginas […] 28 […] Formato […] 26x25 cm […] Peso […] 190 g […] Tradução […] Camila Werner […] Ilustração […] Guido van Genechten",
+      "acessado_em": "2026-10-25"
+    }
+  ],
+  "nao_coberto": "A sinopse não diz quem narra e para numa pergunta (\"será que ele conseguirá desvendar o mistério\"): não descreve o final nem se o elefantinho chega a usar o penico do jeito certo. Não fala em fralda. A editora não indica faixa etária na página do livro, e nenhuma fonte lida dá o título nem o ano da edição original.",
+  "nao_aborda": "A sinopse fica na descoberta do penico — o elefantinho tentando entender para que serve o presente —; não fala de tirar a fralda, de escape nem de noite sem fralda.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Companhia das Letras (Brinque-Book)",
+        "url": "https://www.companhiadasletras.com.br/9788574125183-um-presente-incrivel-/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8574125180"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-10-25"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-10-25"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/8574125180",
+        "isbn13": "9788574125183",
+        "titulo_bateu": true,
+        "trecho": "Um presente incrível! | Amazon.com.br",
+        "em": "2026-10-25"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-10-25",
+  "capa": {
+    "arquivo": "9788574125183.jpg",
+    "fonte": "companhiadasletras.com.br",
+    "url": "https://ciadasletras.vtexassets.com/arquivos/ids/220366/capa-escala-9788574125183.jpg?v=639246704030900000",
+    "obtida_em": "2026-10-25",
+    "sha1": "860c90a86e9f2b32d6c19e0c31ad631bd02a4e50",
+    "largura": 600,
+    "altura": 600
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Amazon, que imprime o ISBN-13. A ficha da editora e a da Amazon batem em editora, data (17/07/2015) e páginas (28). A Amazon mostra só a \"Idade sugerida pelo cliente\", que é enquete de comprador e não entra na coluna."
+}
