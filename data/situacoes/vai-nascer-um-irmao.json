@@ -2,7 +2,7 @@
   "slug": "vai-nascer-um-irmao",
   "titulo": "Livro pra quando vai nascer um irmão",
   "pergunta": "Qual livro ler com o filho mais velho?",
-  "descricao": "{N_livros} livros com edição brasileira sobre a chegada de um irmão. A tabela traz o que a fonte da editora sustenta: tamanho, forma do texto, e quem narra. {N_idade} das {n_livros} editoras indicam faixa etária; as outras {n_sem_idade} não indicam em lugar nenhum, e isso aparece como \"n/i\" em vez de um chute nosso.",
+  "descricao": "{N_livros} livros com edição brasileira sobre a chegada de um irmão. A tabela traz o que a fonte da editora sustenta: tamanho, forma do texto, e quem narra. {N_idade} das {n_livros} editoras indicam faixa etária; nas outras {n_sem_idade} a editora não indica ou as fontes não batem, e isso aparece como \"n/i\" em vez de um chute nosso.",
   "faixas": [
     {
       "isbn13": "9788574126234",
@@ -11,7 +11,7 @@
   ],
   "bloqueada": false,
   "curadoria": "humano",
-  "verificado_em": "2026-09-24",
+  "verificado_em": "2026-10-27",
   "colunas": [
     "idade_editora",
     "paginas",

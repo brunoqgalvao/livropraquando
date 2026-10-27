@@ -1,0 +1,107 @@
+{
+  "isbn13": "9786555071696",
+  "titulo": "S.O.S. Pais: Primeiro dia na escolinha",
+  "autor": "Chiara Piroddi",
+  "ilustrador": "Federica Nuccio, Roberta Vottero",
+  "tradutor": "Ruth Marschalek Nascimento",
+  "editora": "Happy Books",
+  "ano": 2023,
+  "origem": "traducao",
+  "paginas": 20,
+  "situacoes": [
+    "primeiro-dia-de-aula"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "sim",
+      "base": 0
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "descrição do livro na Amazon (o mesmo texto da Happy Books)",
+      "url": "https://www.amazon.com.br/dp/6555071699",
+      "trecho": "Diego, o personagem central do livro, propõe cinco soluções divertidas e criativas para as crianças. O livro também é indicado aos pais, que podem usar as qualificadas sugestões da Dra. Chiara Piroddi, psicóloga com especialização em terapia evolutiva cognitiva. A doutora oferece cinco sugestões simples e claramente explicadas para os pais ajudarem os filhos a se prepararem para o primeiro dia na pré-escola.",
+      "acessado_em": "2026-10-27"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/6555071699",
+      "trecho": "Editora : Happy Books […] Data da publicação : 1 abril 2023 […] Edição : 1ª […] Número de páginas : 20 páginas […] ISBN-13 : 978-6555071696",
+      "acessado_em": "2026-10-27"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "créditos em Amazon",
+      "url": "https://www.amazon.com.br/dp/6555071699",
+      "trecho": "por Chiara Piroddi (Autor), RUTH MARSCHALEK NASCIMENTO (Tradutor)",
+      "acessado_em": "2026-10-27"
+    }
+  ],
+  "nao_coberto": "A descrição fala de cinco \"soluções\" propostas por Diego e de cinco sugestões para os pais, mas não diz quem narra, se há uma história com começo e fim nem como o livro termina; a capa mostra um menino. Não traz o título original nem o ano da edição italiana. Não abrimos o livro. Ela fala em pré-escola; não diz se aparece despedida dos pais na porta nem choro.",
+  "nao_aborda": "Pela descrição, o livro é sobre o primeiro dia na pré-escola; não fala de mudança de escola nem do ensino fundamental.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6555071699"
+      },
+      {
+        "loja": "Martins Fontes Paulista",
+        "url": "https://www.martinsfontespaulista.com.br/s-o-s--pais--primeiro-dia-na-escolinha-1041744/p"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-10-27"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-10-27"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/6555071699",
+        "isbn13": "9786555071696",
+        "titulo_bateu": true,
+        "trecho": "S.O.S. Pais: Primeiro dia na Escolinha | Amazon.com.br",
+        "em": "2026-10-27"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-10-27",
+  "capa": {
+    "arquivo": "9786555071696.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/51Hmxua0w3L._SL1200_.jpg",
+    "obtida_em": "2026-10-27",
+    "sha1": "d3294c3dc619c4e3291a175a44aae1b1433cb27c",
+    "largura": 500,
+    "altura": 500
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Amazon, que imprime o ISBN-13. A ficha da Martins Fontes bate em editora, ano (1ª edição, 2023), páginas e tradutora. A Amazon e a Martins Fontes escrevem o nome da ilustradora como \"Feredica\"; a capa imprime \"Federica Nuccio e Roberta Vottero\", e é essa a grafia desta página. Sem idade: a Amazon mostra \"0 - 3 anos\" e os dados da Happy Books dizem \"a partir de 24 meses\", mas a página da editora, com o livro indisponível, não mostra essa ficha. A descrição da editora abre com uma pergunta dirigida aos pais, que fica de fora; citamos a parte que descreve o livro."
+}

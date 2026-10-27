@@ -2,7 +2,7 @@
   "slug": "primeiro-dia-de-aula",
   "titulo": "Livro pra quando chega o primeiro dia de aula",
   "pergunta": "Qual livro ler antes de começar na escola ou na creche?",
-  "descricao": "{N_livros} livros com edição brasileira sobre começar na escola. A tabela traz o que a fonte da editora sustenta: idade indicada, tamanho, se a sinopse fala mesmo em primeiro dia, e se a editora oferece material pro adulto. Nenhuma das {n_livros} sinopses fala de creche, e só a de Nem sonhando! fala de não querer se separar dos pais para ir para a escola — isso está dito em cada página, não escondido.",
+  "descricao": "{N_livros} livros com edição brasileira sobre começar na escola. A tabela traz o que a fonte da editora sustenta: idade indicada, tamanho, se a sinopse fala mesmo em primeiro dia, e se a editora oferece material pro adulto. Nenhuma das {n_livros} sinopses fala de creche, só a de S.O.S. Pais: Primeiro dia na escolinha fala em pré-escola, e só a de Nem sonhando! fala de não querer se separar dos pais para ir para a escola — isso está dito em cada página, não escondido.",
   "faixas": [
     {
       "isbn13": "9788526259416",
@@ -12,7 +12,7 @@
   ],
   "bloqueada": false,
   "curadoria": "agente",
-  "verificado_em": "2026-09-30",
+  "verificado_em": "2026-10-27",
   "colunas": [
     "idade_editora",
     "paginas",
