@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-10-25",
+  "atualizado_em": "2026-10-27",
   "livros": {
     "9786550791421": {
       "preco": 28,
@@ -994,6 +994,26 @@
         "base": "preço do buy box",
         "em": "2026-10-25"
       }
-    }
+    },
+    "9786555071672": {
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "amazon.com.br: Somente 2 em estoque.",
+          "martinsfontespaulista.com.br: não deu leitura (The operation was aborted due to timeout)"
+        ],
+        "em": "2026-10-27"
+      },
+      "loja": {
+        "preco": 19.27,
+        "moeda": "BRL",
+        "formato": "impresso",
+        "onde": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6555071672",
+        "base": "preço do buy box",
+        "em": "2026-10-27"
+      }
+    },
+    "9786555071696": {}
   }
 }

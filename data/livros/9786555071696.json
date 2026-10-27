@@ -103,5 +103,13 @@
     "largura": 500,
     "altura": 500
   },
-  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Amazon, que imprime o ISBN-13. A ficha da Martins Fontes bate em editora, ano (1ª edição, 2023), páginas e tradutora. A Amazon e a Martins Fontes escrevem o nome da ilustradora como \"Feredica\"; a capa imprime \"Federica Nuccio e Roberta Vottero\", e é essa a grafia desta página. Sem idade: a Amazon mostra \"0 - 3 anos\" e os dados da Happy Books dizem \"a partir de 24 meses\", mas a página da editora, com o livro indisponível, não mostra essa ficha. A descrição da editora abre com uma pergunta dirigida aos pais, que fica de fora; citamos a parte que descreve o livro."
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Amazon, que imprime o ISBN-13. A ficha da Martins Fontes bate em editora, ano (1ª edição, 2023), páginas e tradutora. A Amazon e a Martins Fontes escrevem o nome da ilustradora como \"Feredica\"; a capa imprime \"Federica Nuccio e Roberta Vottero\", e é essa a grafia desta página. Sem idade: a Amazon mostra \"0 - 3 anos\" e os dados da Happy Books dizem \"a partir de 24 meses\", mas a página da editora, com o livro indisponível, não mostra essa ficha. A descrição da editora abre com uma pergunta dirigida aos pais, que fica de fora; citamos a parte que descreve o livro.",
+  "idade_recusada": [
+    {
+      "valor": "0 a 3",
+      "fonte": "amazon.com.br",
+      "motivo": "a ficha da Amazon diz \"0 - 3 anos\" e os dados da Happy Books dizem \"a partir de 24 meses\"; as duas não batem no começo da faixa, e a página da editora (livro indisponível) não mostra a ficha para citar",
+      "em": "2026-10-27"
+    }
+  ]
 }
