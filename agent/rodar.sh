@@ -16,7 +16,7 @@
     echo "=== $(date -Is) ==="
     claude -p "Leia e execute agent/diario.md. Voce esta no diretorio ~/livropraquando na VM. O relatorio final vai por SendMessage pra sessao do assistente cujo nome comeca com brunodeqgalvao- (confira com ListAgents; o sufixo muda a cada reboot da VM) e fica em runtime/report-\$(date +%F).md. Nao mande nada pro self-chat do WhatsApp do Bruno." \
       --permission-mode bypassPermissions --model opus 2>&1
-  } | tee -a "$LOG" "$SAIDA"
+  } | tee -a "$LOG" "$SAIDA" || true
   # Login expirado sai com 0 e só deixava rastro no log: de 18 a 21/10 e em
   # 23/10 (11:39Z) a rodada morreu na autenticação sem ninguém saber.
   if grep -qE 'Failed to authenticate|OAuth access token has expired' "$SAIDA"; then
