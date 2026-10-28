@@ -1,0 +1,110 @@
+{
+  "isbn13": "9788526284920",
+  "titulo": "Quem tem medo de escuro?",
+  "autor": "Fanny Joly, Jean-Noël Rochut",
+  "editora": "Scipione",
+  "ano": 2019,
+  "paginas": 32,
+  "situacoes": [
+    "medo-do-escuro"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "6 a 8",
+      "base": 3
+    },
+    "nomeia_evento": {
+      "valor": "nao_coberto"
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "descrição do produto na Amazon (o mesmo texto da Martins Fontes)",
+      "url": "https://www.amazon.com.br/dp/8526284924",
+      "trecho": "Com um beijo de boa-noite, os pais se despedem da menina. As luzes se apagam e a escuridão toma conta do quarto. Ela não consegue dormir. Aperta o interruptor e... nada! O que pode acontecer em uma casa mergulhada na escuridão?",
+      "acessado_em": "2026-10-28"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/8526284924",
+      "trecho": "Editora : Scipione […] Data da publicação : 16 dezembro 2019 […] Edição : 6ª […] Número de páginas : 32 páginas […] ISBN-13 : 978-8526284920",
+      "acessado_em": "2026-10-28"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "créditos em Amazon",
+      "url": "https://www.amazon.com.br/dp/8526284924",
+      "trecho": "por Fanny Joly (Autor), Jean-Noel Rochut (Autor)",
+      "acessado_em": "2026-10-28"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/8526284924",
+      "trecho": "Idade de leitura : 6 - 8 anos",
+      "acessado_em": "2026-10-28"
+    }
+  ],
+  "nao_coberto": "A sinopse conta o começo (a luz apaga e a menina não consegue dormir) e termina numa pergunta: não diz o que acontece na casa escura nem como a história termina. Ela não usa a palavra medo; o medo está no título. Não diz quem narra. As fontes creditam Fanny Joly e Jean-Noel Rochut como autores, sem separar texto e ilustração, e não dizem se é tradução, nem o título e o ano originais. A ficha diz 6ª edição, de 2019, sem o ano da primeira. Não achamos página do livro no site da Scipione nem resenha assinada.",
+  "nao_aborda": "Pela sinopse, o escuro é o de uma casa sem luz à noite; não fala de pesadelo nem de monstro, e não traz material para o adulto.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8526284924"
+      },
+      {
+        "loja": "Martins Fontes Paulista",
+        "url": "https://www.martinsfontespaulista.com.br/quem-tem-medo-de-escuro--680170/p"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-10-28"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-10-28"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/8526284924",
+        "isbn13": "9788526284920",
+        "titulo_bateu": true,
+        "trecho": "Quem tem medo de escuro? : Joly, Fanny, Rochut, Jean-Noel: Amazon.com.br: Livros",
+        "em": "2026-10-28"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-10-28",
+  "capa": {
+    "arquivo": "9788526284920.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/41L5qtJ+pGL._SL1200_.jpg",
+    "obtida_em": "2026-10-28",
+    "sha1": "a10d16beeb5d137a2483f32358062d16d11cedab",
+    "largura": 366,
+    "altura": 500
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Amazon, que imprime o ISBN-13. As lojas escrevem \"Jean-Noel\"; a capa imprime \"Jean-Noël Rochut\", e é essa a grafia desta página. A Martins Fontes bate em editora e páginas (32); a ficha dela diz 1ª edição, e a da Amazon, 6ª. A Amazon mostra junto outros títulos de Fanny Joly que começam igual (\"Quem tem medo de fantasma?\", \"de dentista?\", \"de bruxa?\"). Em 28/10/2026 o preço era R$ 111 nas duas lojas, e a Amazon tinha 1 exemplar novo."
+}

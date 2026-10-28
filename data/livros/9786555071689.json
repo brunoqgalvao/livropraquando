@@ -1,0 +1,111 @@
+{
+  "isbn13": "9786555071689",
+  "titulo": "S.O.S. Pais: Você tem medo do escuro?",
+  "autor": "Chiara Piroddi",
+  "ilustrador": "Federica Nuccio, Roberta Vottero",
+  "tradutor": "Ruth Marschalek Nascimento",
+  "editora": "Happy Books",
+  "ano": 2023,
+  "origem": "traducao",
+  "paginas": 20,
+  "situacoes": [
+    "medo-do-escuro"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "sim",
+      "base": 0
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "descrição do livro na Amazon",
+      "url": "https://www.amazon.com.br/dp/6555071680",
+      "trecho": "Diego, o personagem central do livro, propõe cinco soluções divertidas e criativas que toda criança pode implementar facilmente. O livro também é indicado aos pais, que podem usar as qualificadas sugestões da Dra. Chiara Piroddi, psicóloga com especialização em terapia evolutiva cognitiva. A doutora oferece cinco sugestões simples e claramente explicadas para os pais ajudarem seus filhos a superarem o medo do escuro.",
+      "acessado_em": "2026-10-28"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/6555071680",
+      "trecho": "Editora : Happy Books […] Data da publicação : 1 abril 2023 […] Edição : 1ª […] Número de páginas : 20 páginas […] ISBN-13 : 978-6555071689",
+      "acessado_em": "2026-10-28"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "créditos em Amazon",
+      "url": "https://www.amazon.com.br/dp/6555071680",
+      "trecho": "por Chiara Piroddi (Autor), RUTH MARSCHALEK NASCIMENTO (Tradutor)",
+      "acessado_em": "2026-10-28"
+    }
+  ],
+  "nao_coberto": "A descrição fala de cinco \"soluções\" propostas por Diego e de cinco sugestões para os pais, mas não diz quem narra, se há uma história com começo e fim nem como o livro termina. Não traz o título original nem o ano da edição italiana. Não abrimos o livro. Não encontramos resenha assinada.",
+  "nao_aborda": "Pela descrição, o livro fala do medo do escuro; não fala de pesadelo, de dormir sozinho no quarto nem de outros medos.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6555071680"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-10-28"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-10-28"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/6555071680",
+        "isbn13": "9786555071689",
+        "titulo_bateu": true,
+        "trecho": "S.O.S. Pais: Você tem medo do escuro? : Piroddi, Chiara, NASCIMENTO, RUTH MARSCHALEK, Nuccio Feredica & Vottero, Roberta",
+        "em": "2026-10-28"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-10-28",
+  "capa": {
+    "arquivo": "9786555071689.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/51D3o7w5yQL._SL1200_.jpg",
+    "obtida_em": "2026-10-28",
+    "sha1": "8ff7f2caf0889fd2deac302b31c3521e337beb97",
+    "largura": 500,
+    "altura": 500
+  },
+  "idade_recusada": [
+    {
+      "valor": "0 a 3",
+      "fonte": "amazon.com.br",
+      "motivo": "a ficha da Amazon diz \"0 - 3 anos\"; nos dois livros irmãos da série os dados da Happy Books dizem \"a partir de 24 meses\", e não há página da editora com a ficha deste título para conferir",
+      "em": "2026-10-28"
+    }
+  ],
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Amazon, que imprime o ISBN-13. É da mesma série S.O.S. Pais dos dois livros da Happy Books já no catálogo, com a mesma autora, ilustradoras e tradutora. A Amazon escreve o nome da ilustradora como \"Feredica\"; a capa imprime \"Federica Nuccio e Roberta Vottero\", e é essa a grafia desta página. Sem idade: a Amazon mostra \"0 - 3 anos\", que nos dois livros irmãos não bateu com os dados da editora (\"a partir de 24 meses\"). A descrição abre com uma pergunta dirigida aos pais, que fica de fora; citamos a parte que descreve o livro. Na Amazon havia 1 exemplar em 28/10/2026."
+}
