@@ -188,9 +188,11 @@ export function precoEstruturado({ jsonld, micro }) {
   return null;
 }
 
+const LOJA_DE_EBOOK = /(^|\.)(books\.apple\.com|play\.google\.com|ubook\.com)$/;
+
 export function precoDaLoja({ host, texto, jsonld, micro, amazon }) {
   const est = precoEstruturado({ jsonld, micro });
-  if (est) return est;
+  if (est) return LOJA_DE_EBOOK.test(host) ? { ...est, formato: 'e-book' } : est;
 
   // Bloco de preço do buy box: é o que a Amazon cobra por esta edição, separado
   // do Kindle, do marketplace e do parcelamento, que moram em outros blocos.

@@ -289,5 +289,12 @@ t('Play bloqueado por região não é esgotado', () => {
 t('"não está disponível" sem país continua sendo esgotado', () =>
   assert.equal(estoqueDaPagina({ host: 'loja.com.br', texto: PLAY.replace(' no seu país', '') }).ok, false));
 
+// Apple Books, Play e Ubook só vendem e-book. Com a Amazon fora do ar, o render
+// caía no preço do Apple Books e a página dizia "impresso" (Tina, 01/11).
+t('preço do Apple Books é e-book', () =>
+  assert.equal(precoDaLoja({ host: 'books.apple.com', jsonld: [{ '@type': 'Book', offers: { price: '27.90', priceCurrency: 'BRL' } }] })?.formato, 'e-book'));
+t('preço de loja de livro físico continua sem formato e-book', () =>
+  assert.notEqual(precoDaLoja({ host: 'cirandacultural.com.br', jsonld: [{ '@type': 'Product', offers: { price: '39.90', priceCurrency: 'BRL' } }] })?.formato, 'e-book'));
+
 console.log(`${ok} passaram, ${falhou} falharam`);
 process.exit(falhou ? 1 : 0);
