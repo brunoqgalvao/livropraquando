@@ -144,8 +144,10 @@ export function estoqueDaPagina({ host, texto, titulo, amazon, botoes }) {
 
 export function isbnDaPagina({ host, texto, amazon }) {
   const alvo = /amazon\./.test(host) ? (amazon?.ficha || []).join(' ') : texto;
-  const m = semMarcas(alvo).match(/ISBN-?13\s*:?\s*([\d-]{13,20})/i);
-  return m ? m[1].replace(/\D/g, '') : null;
+  const t = semMarcas(alvo);
+  const m = t.match(/ISBN-?13\s*:?\s*([\d-]{13,20})/i) || t.match(/\bISBN\s*:?\s*(97[89][\d-]{10,17})/i);
+  const d = m ? m[1].replace(/\D/g, '') : '';
+  return d.length === 13 ? d : null;
 }
 
 // --- preço --------------------------------------------------------------

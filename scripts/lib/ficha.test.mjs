@@ -1,6 +1,6 @@
 // Casos tirados de páginas reais (colhidas em 18/09/2026). Se um deles quebrar,
 // alguma loja mudou o layout e a extração virou chute.
-import { semEndereco, idadeDaEditora, idadeDaAmazon, faixaDoTexto, estoqueDaPagina, valorBr, precoDaLoja, paginasDaFicha, ilustradorDaFicha, rotuloIdadeAusente } from './ficha.mjs';
+import { semEndereco, idadeDaEditora, idadeDaAmazon, faixaDoTexto, estoqueDaPagina, valorBr, precoDaLoja, paginasDaFicha, ilustradorDaFicha, rotuloIdadeAusente, isbnDaPagina } from './ficha.mjs';
 import assert from 'node:assert/strict';
 
 let ok = 0, falhou = 0;
@@ -295,6 +295,14 @@ t('preço do Apple Books é e-book', () =>
   assert.equal(precoDaLoja({ host: 'books.apple.com', jsonld: [{ '@type': 'Book', offers: { price: '27.90', priceCurrency: 'BRL' } }] })?.formato, 'e-book'));
 t('preço de loja de livro físico continua sem formato e-book', () =>
   assert.notEqual(precoDaLoja({ host: 'cirandacultural.com.br', jsonld: [{ '@type': 'Product', offers: { price: '39.90', priceCurrency: 'BRL' } }] })?.formato, 'e-book'));
+
+// Planeta e Companhia imprimem "ISBN 978-85-…", sem o "13" (Kiki, 02/11).
+t('ficha da Planeta: "ISBN 978-85-422-4283-6"', () =>
+  assert.equal(isbnDaPagina({ host: 'planetadelivros.com.br', texto: 'Editorial tatu-bola ISBN 978-85-422-4283-6 Páginas 32' }), '9788542242836'));
+t('ISBN-10 sem "13" não vira ISBN-13', () =>
+  assert.equal(isbnDaPagina({ host: 'x.com.br', texto: 'ISBN 85-7406-226-1 Páginas 32' }), null));
+t('Amazon continua lendo só a ficha', () =>
+  assert.equal(isbnDaPagina({ host: 'amazon.com.br', texto: 'ISBN 978-85-422-4283-6', amazon: { ficha: [] } }), null));
 
 console.log(`${ok} passaram, ${falhou} falharam`);
 process.exit(falhou ? 1 : 0);

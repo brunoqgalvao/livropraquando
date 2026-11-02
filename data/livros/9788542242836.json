@@ -1,0 +1,107 @@
+{
+  "isbn13": "9788542242836",
+  "titulo": "Kiki tem um penico",
+  "autor": "Esther van den Berg",
+  "editora": "tatu-bola (Planeta)",
+  "ano": 2026,
+  "origem": "traducao",
+  "paginas": 32,
+  "situacoes": [
+    "desfralde"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "2+",
+      "base": 0
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site da Planeta de Livros (selo tatu-bola)",
+      "url": "https://www.planetadelivros.com.br/livro-kiki-tem-um-penico/463195",
+      "trecho": "Todos os amigos da Kiki vão mostrar um truque legal. Mas, espere: antes precisam usar o penico. A Kiki ainda usa fralda, é muito mais fácil, não? Qual será o truque que ela vai fazer? Uma história sobre o desfralde e as conquistas dos pequenos no cotidiano, para crianças a partir de 2 anos.",
+      "acessado_em": "2026-11-02"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha técnica no site da Planeta de Livros",
+      "url": "https://www.planetadelivros.com.br/livro-kiki-tem-um-penico/463195",
+      "trecho": "Publicação 14 setembro 2026 Apresentação Brochura com orelhas Formato 22 x 22 cm Editorial tatu-bola ISBN 978-85-422-4283-6 Páginas 32",
+      "acessado_em": "2026-11-02"
+    }
+  ],
+  "nao_coberto": "A sinopse para numa pergunta (\"qual será o truque que ela vai fazer?\"): não descreve o final nem diz se a Kiki chega a usar o penico. Não diz quem narra nem o que a Kiki é (criança ou bicho). A página da editora não credita tradutor nem dá título e ano da edição original; só o copyright da Clavis Publishing.",
+  "nao_aborda": "A sinopse fica no penico e na fralda de dia, no meio de um circo de amigos; não fala de escape, de noite sem fralda nem de privada.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Planeta de Livros (tatu-bola)",
+        "url": "https://www.planetadelivros.com.br/livro-kiki-tem-um-penico/463195"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8542242831"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-11-02"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-11-02"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "planetadelivros.com.br",
+        "url": "https://www.planetadelivros.com.br/livro-kiki-tem-um-penico/463195",
+        "isbn13": "9788542242836",
+        "titulo_bateu": true,
+        "trecho": "Kiki tem um penico - Esther van den Berg | PlanetadeLivros",
+        "em": "2026-11-02"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/8542242831",
+        "isbn13": "9788542242836",
+        "titulo_bateu": true,
+        "trecho": "Kiki tem um Penico | Amazon.com.br",
+        "em": "2026-11-02"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-11-02",
+  "capa": {
+    "arquivo": "9788542242836.webp",
+    "fonte": "planetadelivros.com.br",
+    "url": "https://pdlibrosbra.cdnstatics2.com/usuaris/libros/thumbs/16499b2c-4625-49bf-8460-8d3ac52b47bc/d_360_620/kiki-tem-um-penico_9788542242836_3d_202608281646.webp",
+    "obtida_em": "2026-11-02",
+    "sha1": "f83ff79004f4112ae1638ca90e7bbb8c89cb9cf5",
+    "largura": 360,
+    "altura": 374
+  },
+  "nota": "O Google Books não tem este ISBN; ele cataloga o mesmo título com outro ISBN (9788542243024, publicado em 28/09/2026), que a ficha da editora não lista. A existência da edição brochura está provada pelas fichas da Planeta e da Amazon, que imprimem o ISBN. A idade (a partir de 2 anos) é a da sinopse da editora."
+}
