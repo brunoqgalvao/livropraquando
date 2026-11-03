@@ -1,0 +1,121 @@
+{
+  "isbn13": "9786583646088",
+  "titulo": "Medo da escola nova",
+  "autor": "Priscila Maria Pereira Boy",
+  "editora": "Primeiros Saberes (InterSaberes)",
+  "ano": 2025,
+  "origem": "nacional",
+  "paginas": 32,
+  "situacoes": [
+    "primeiro-dia-de-aula"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "5 a 6",
+      "base": 1
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "descrição do livro no site da InterSaberes (selo Primeiros Saberes)",
+      "url": "https://www.intersaberes.com/produto/medo-da-escola-nova/",
+      "trecho": "O primeiro dia de escola é o terror de muitas crianças! Mas e se uma nova amizade ajudar Beto a passar por isso? Será que ele vai tomar coragem para encarar essa nova experiência? Descubra em “Medo da escola nova”!",
+      "acessado_em": "2026-11-03"
+    },
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "página do livro no site da InterSaberes (selo Primeiros Saberes)",
+      "url": "https://www.intersaberes.com/produto/medo-da-escola-nova/",
+      "trecho": "Temas: Emoções; insegurança; adaptação escolar; vínculos. […] Faixa etária: 5 e 6 anos.",
+      "acessado_em": "2026-11-03"
+    },
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "texto da contracapa na descrição do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/6583646080",
+      "trecho": "Na mochila, além dos cadernos, cabem saudades da antiga escola, lembranças dos amigos e um monte de perguntas sobre o que vem pela frente. Porém, uma conversa inesperada no ônibus, um boné vermelho e uma amizade que começa devagar podem mudar tudo.",
+      "acessado_em": "2026-11-03"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "detalhes do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/6583646080",
+      "trecho": "Editora ‏ : ‎ Primeiros Saberes Data da publicação ‏ : ‎ 10 setembro 2025 Edição ‏ : ‎ 1ª Idioma ‏ : ‎ Português Número de páginas ‏ : ‎ 32 páginas ISBN-10 ‏ : ‎ 6583646080 ISBN-13 ‏ : ‎ 978-6583646088",
+      "acessado_em": "2026-11-03"
+    }
+  ],
+  "nao_coberto": "As duas sinopses param em pergunta (\"Será que ele vai tomar coragem…?\", \"Será que o medo da escola nova vai passar logo?\"): não descrevem o final. Não dizem quem narra nem a idade de Beto. A capa imprime \"Ilustrações Ideario Lab/Reinaldo Rosa\", mas nenhuma ficha lida credita ilustrador. A página da editora fala em BNCC e o selo tem um guia de atividades, mas não abri material específico deste livro; por isso o material pro adulto fica sem resposta.",
+  "nao_aborda": "É sobre trocar de escola: a contracapa fala em \"saudades da antiga escola\" e da turma anterior. Não fala de primeira vez na escola, de creche nem de separação dos pais.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Martins Fontes Paulista",
+        "url": "https://www.martinsfontespaulista.com.br/medo-da-escola-nova-1156994/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6583646080"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-11-03"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-11-03"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "martinsfontespaulista.com.br",
+        "url": "https://www.martinsfontespaulista.com.br/medo-da-escola-nova-1156994/p",
+        "isbn13": "9786583646088",
+        "titulo_bateu": true,
+        "trecho": "MEDO DA ESCOLA NOVA - BOY, PRISCILA MARIA PEREIRA | Livraria Martins Fontes",
+        "em": "2026-11-03"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/6583646080",
+        "isbn13": "9786583646088",
+        "titulo_bateu": true,
+        "trecho": "Medo da Escola Nova | Amazon.com.br",
+        "em": "2026-11-03"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-11-03",
+  "capa": {
+    "arquivo": "9786583646088.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/81mWBQ55F3L._SL1200_.jpg",
+    "obtida_em": "2026-11-03",
+    "sha1": "50eef51c85dc1d2ea70cc0336fe86e0cd7aee836",
+    "largura": 600,
+    "altura": 600
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pelas fichas da Martins Fontes e da Amazon, que imprimem o ISBN-13. A página da editora não mostra ISBN. A idade (5 e 6 anos) é a da editora e aparece igual na contracapa. Primeiros Saberes é o selo infantil da InterSaberes, lançado em 2025. Em 03/11 a Amazon tinha em estoque."
+}
