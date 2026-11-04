@@ -1,0 +1,99 @@
+{
+  "isbn13": "9786559885268",
+  "titulo": "A corujinha que tinha medo do escuro",
+  "autor": "Maria A. Martin",
+  "ilustrador": "Bibi Mizu",
+  "editora": "Mundo Cristão",
+  "ano": 2026,
+  "origem": "nacional",
+  "paginas": 40,
+  "situacoes": [
+    "medo-do-escuro"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "religioso",
+      "base": 0
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "descrição do livro no site da Mundo Cristão",
+      "url": "https://www.mundocristao.com.br/produto/a-corujinha/",
+      "trecho": "Na Floresta do Sol Amarelo vive Lili, uma corujinha que tem medo da noite. Desde que caiu de uma árvore e machucou uma asa, ela tenta evitar o escuro a todo custo — até acreditar que existe um lugar onde o Sol nunca se apaga. Acompanhada de Ratito, seu fiel amigo, ela parte em uma aventura repleta de descobertas e encontros […] A corujinha que tinha medo do escuro é uma fábula sobre medo, fé e coragem",
+      "acessado_em": "2026-11-04"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "informações adicionais na página do livro no site da Mundo Cristão",
+      "url": "https://www.mundocristao.com.br/produto/a-corujinha/",
+      "trecho": "ISBN 978-65-5988-526-8 Número de páginas 40 Ano 2026",
+      "acessado_em": "2026-11-04"
+    },
+    {
+      "tipo": "material_editora",
+      "veiculo": "post \"5 livros cristãos para crianças\" no blog da Mundo Cristão",
+      "url": "https://www.mundocristao.com.br/blog/livros-cristaos-para-criancas/",
+      "trecho": "Uma sugestão é relacionar a história com o Salmo 56.3: “Quando eu tiver medo, confiarei em ti”.",
+      "acessado_em": "2026-11-04"
+    }
+  ],
+  "nao_coberto": "A sinopse diz o que Lili \"aprenderá\", mas não descreve a cena final nem se ela volta a ficar no escuro. Não diz quem narra. Nenhuma fonte lida indica faixa etária. A capa e as fichas da Martins Fontes e do Google Books creditam \"Maria A. Martin\"; a página da editora credita \"Maria S. Araújo\". A sinopse fala em \"fé\", mas não diz se o texto cita Deus ou a Bíblia; o salmo vem de um post do blog da editora, não do livro.",
+  "nao_aborda": "O medo de Lili começa com uma queda e uma asa machucada, segundo a sinopse; a história é de uma coruja, não de uma criança na hora de dormir no quarto.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Mundo Cristão",
+        "url": "https://www.mundocristao.com.br/produto/a-corujinha/"
+      },
+      {
+        "loja": "Martins Fontes Paulista",
+        "url": "https://www.martinsfontespaulista.com.br/a-corujinha-que-tinha-medo-do-escuro-—-da-coautora-da-serie-corajosas-1188765/p"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "id": "dIvq0QEACAAJ",
+        "isbn13": "9786559885268",
+        "titulo_bateu": true,
+        "em": "2026-11-04"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-11-04"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-11-04",
+  "capa": {
+    "arquivo": "9786559885268.jpg",
+    "fonte": "martinsfontespaulista.com.br",
+    "url": "https://martinsfontespaulista.vteximg.com.br/arquivos/ids/1764839-292-292/1188765.jpg?v=639014989411570000",
+    "obtida_em": "2026-11-04",
+    "sha1": "760510488ea574e01b0c2d2cd210f777aca2bac2",
+    "largura": 292,
+    "altura": 292
+  },
+  "nota": "Mundo Cristão é editora cristã, e a própria sinopse chama o livro de \"fábula sobre medo, fé e coragem\"; o blog da editora o lista entre \"livros cristãos para crianças\". Ilustrações de Bibi Mizu, como imprimem a capa e a ficha da Martins Fontes. Formato 23x23 cm, brochura. Em 04/11 a Martins Fontes marcava pronta entrega."
+}

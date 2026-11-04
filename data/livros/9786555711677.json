@@ -1,0 +1,94 @@
+{
+  "isbn13": "9786555711677",
+  "titulo": "Antônio e o medo do escuro",
+  "autor": "Fernanda Barroso de Carvalho",
+  "editora": "Sinopsys",
+  "ano": 2024,
+  "origem": "nacional",
+  "paginas": 32,
+  "situacoes": [
+    "medo-do-escuro"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "sim",
+      "base": 0
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse na página do livro na Martins Fontes Paulista",
+      "url": "https://www.martinsfontespaulista.com.br/antonio-e-o-medo-do-escuro-1117962/p",
+      "trecho": "Este livro conta a história de Antônio, um menino que consegue vencer o medo do escuro com a ajuda de seus avós. Contém ferramentas lúdicas interativas para que responsáveis e terapeutas possam ajudar crianças a lidarem de forma adaptativa e saudável com a questão. Este livro dispõe de formulários digitais.",
+      "acessado_em": "2026-11-04"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "especificações na página do livro na Martins Fontes Paulista",
+      "url": "https://www.martinsfontespaulista.com.br/antonio-e-o-medo-do-escuro-1117962/p",
+      "trecho": "Número de páginas 32 Número da edição 1ª EDIÇÃO - 2024",
+      "acessado_em": "2026-11-04"
+    }
+  ],
+  "nao_coberto": "Não achei a página do livro no site da Sinopsys; a sinopse citada é a da Martins Fontes. Ela diz que Antônio vence o medo com a ajuda dos avós, mas não conta como. Não diz quem narra, não indica faixa etária e não credita ilustrador. Não descreve as \"ferramentas lúdicas\" nem os \"formulários digitais\" além do nome.",
+  "nao_aborda": "Pela sinopse, quem ajuda Antônio são os avós; ela não fala de pais, de quarto nem de hora de dormir. A Sinopsys é editora de psicologia, e parte do livro é material para o adulto (\"responsáveis e terapeutas\"), não história.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Martins Fontes Paulista",
+        "url": "https://www.martinsfontespaulista.com.br/antonio-e-o-medo-do-escuro-1117962/p"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-11-04"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-11-04"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "martinsfontespaulista.com.br",
+        "url": "https://www.martinsfontespaulista.com.br/antonio-e-o-medo-do-escuro-1117962/p",
+        "isbn13": "9786555711677",
+        "titulo_bateu": true,
+        "trecho": "ANTÔNIO E O MEDO DO ESCURO - CARVALHO, FERNANDA BARROSO DE | Livraria Martins Fontes",
+        "em": "2026-11-04"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-11-04",
+  "capa": {
+    "arquivo": "9786555711677.jpg",
+    "fonte": "martinsfontespaulista.com.br",
+    "url": "https://martinsfontespaulista.vteximg.com.br/arquivos/ids/1664166-292-292/1117962.jpg?v=638651175245870000",
+    "obtida_em": "2026-11-04",
+    "sha1": "28bb4419f7865329170fd297809205378738b545",
+    "largura": 292,
+    "altura": 292
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Martins Fontes, que imprime o ISBN-13. Formato paisagem, 23x16 cm, brochura. Em 04/11 a Martins Fontes marcava pronta entrega."
+}
