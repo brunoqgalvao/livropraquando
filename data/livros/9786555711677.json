@@ -41,10 +41,10 @@
     },
     {
       "tipo": "ficha_tecnica",
-      "veiculo": "especificações na página do livro na Martins Fontes Paulista",
-      "url": "https://www.martinsfontespaulista.com.br/antonio-e-o-medo-do-escuro-1117962/p",
-      "trecho": "Número de páginas 32 Número da edição 1ª EDIÇÃO - 2024",
-      "acessado_em": "2026-11-04"
+      "veiculo": "detalhes do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/6555711671",
+      "trecho": "Editora ‏ : ‎ SINOPSYS EDITORA Data da publicação ‏ : ‎ 10 março 2024 Edição ‏ : ‎ 1ª Idioma ‏ : ‎ Português Número de páginas ‏ : ‎ 32 páginas ISBN-10 ‏ : ‎ 6555711671 ISBN-13 ‏ : ‎ 978-6555711677",
+      "acessado_em": "2026-11-08"
     }
   ],
   "nao_coberto": "Não achei a página do livro no site da Sinopsys; a sinopse citada é a da Martins Fontes. Ela diz que Antônio vence o medo com a ajuda dos avós, mas não conta como. Não diz quem narra, não indica faixa etária e não credita ilustrador. Não descreve as \"ferramentas lúdicas\" nem os \"formulários digitais\" além do nome.",
