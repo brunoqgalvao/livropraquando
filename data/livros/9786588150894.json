@@ -1,0 +1,107 @@
+{
+  "isbn13": "9786588150894",
+  "titulo": "Quem fez xixi na minha cama?",
+  "autor": "Alain Serge Dzotap",
+  "ilustrador": "Clémence Pénicaud",
+  "tradutor": "Erika Nogueira Vieira",
+  "editora": "Globinho",
+  "ano": 2023,
+  "origem": "traducao",
+  "paginas": 32,
+  "situacoes": [
+    "desfralde"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "4+",
+      "base": 1
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "descrição do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/658815089X",
+      "trecho": "Depois de acordar com os lençóis molhados, a criança se assusta e não entende o que aconteceu! De um jeito lúdico e muito criativo, o pai e a avó vão ajudar a resolver este mistério e mostrar que não há problema algum nisso.",
+      "acessado_em": "2026-11-08"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "detalhes do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/658815089X",
+      "trecho": "Editora ‏ : ‎ Globinho Data da publicação ‏ : ‎ 2 maio 2023 Edição ‏ : ‎ 1ª Idioma ‏ : ‎ Português Número de páginas ‏ : ‎ 32 páginas ISBN-10 ‏ : ‎ 658815089X ISBN-13 ‏ : ‎ 978-6588150894 Peso do produto ‏ : ‎ 150 g Idade de leitura ‏ : ‎ 4 anos e acima",
+      "acessado_em": "2026-11-08"
+    },
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "descrição do livro na Livraria Martins Fontes",
+      "url": "https://www.martinsfontespaulista.com.br/quem-fez-xixi-na-minha-cama--1040853/p",
+      "trecho": "é uma obra inspiradora, com ilustrações em hidrocor, que vai ajudar pais, avós e crianças a ultrapassarem, de uma forma natural e delicada, o desafio das primeiras noites sem fraldas.",
+      "acessado_em": "2026-11-08"
+    }
+  ],
+  "nao_coberto": "A sinopse não diz quem narra nem a idade ou o nome da criança, e não descreve como o \"mistério\" se resolve: diz só que o pai e a avó ajudam. Não diz se há texto ou dicas para os adultos. As fichas lidas creditam a tradutora, mas não dão título nem ano da edição original.",
+  "nao_aborda": "Pela sinopse, é sobre o xixi na cama nas primeiras noites sem fralda; não fala de penico, privada nem do desfralde de dia.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Martins Fontes Paulista",
+        "url": "https://www.martinsfontespaulista.com.br/quem-fez-xixi-na-minha-cama--1040853/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/658815089X"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-11-08"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-11-08"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "martinsfontespaulista.com.br",
+        "url": "https://www.martinsfontespaulista.com.br/quem-fez-xixi-na-minha-cama--1040853/p",
+        "isbn13": "9786588150894",
+        "titulo_bateu": true,
+        "trecho": "QUEM FEZ XIXI NA MINHA CAMA? - SERGE DZOTAP, ALAIN | Livraria Martins Fontes",
+        "em": "2026-11-08"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-11-08",
+  "capa": {
+    "arquivo": "9786588150894.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/81o0n13DZfL._SL1200_.jpg",
+    "obtida_em": "2026-11-08",
+    "sha1": "2befd3b37a139f6188a3c179b297ec18d99d722c",
+    "largura": 460,
+    "altura": 600
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Martins Fontes, que imprime o ISBN, e a da Amazon imprime o mesmo ISBN-13. A idade (4 anos e acima) é o campo \"Idade de leitura\" dos detalhes do produto na Amazon, não a enquete de cliente. Globinho é o selo infantil da Globo Livros. Tradução de Erika Nogueira Vieira, segundo a Martins Fontes."
+}
