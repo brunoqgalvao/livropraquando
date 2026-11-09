@@ -1,0 +1,122 @@
+{
+  "isbn13": "9786598011581",
+  "titulo": "Chico Chiclete",
+  "autor": "María Ramos",
+  "tradutor": "Nina Rizzi",
+  "editora": "Baião",
+  "ano": 2023,
+  "origem": "traducao",
+  "paginas": 32,
+  "situacoes": [
+    "primeiro-dia-de-aula"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "3 a 8",
+      "base": 2
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "descrição do livro na Livraria Martins Fontes",
+      "url": "https://www.martinsfontespaulista.com.br/chico-chiclete-1068191/p",
+      "trecho": "Chico está com um pouco de medo. Hoje é o primeiro dia de aula na escola nova… O que vão pensar dele? Será que vão achar que ele é grudento? Ou vão querer que fique coladinho? Tudo que Chico não quer é se sentir sozinho.",
+      "acessado_em": "2026-11-09"
+    },
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "descrição do livro na Livraria Martins Fontes",
+      "url": "https://www.martinsfontespaulista.com.br/chico-chiclete-1068191/p",
+      "trecho": "Estão encarando uma nova rotina, tateando os próprios sentimentos e buscando fazer amigos (e também adoram chiclete!).",
+      "acessado_em": "2026-11-09"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "detalhes do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/6598011582",
+      "trecho": "Editora ‏ : ‎ Baião Data da publicação ‏ : ‎ 9 outubro 2023 Edição ‏ : ‎ 1ª Idioma ‏ : ‎ Português Número de páginas ‏ : ‎ 32 páginas ISBN-10 ‏ : ‎ 6598011582 ISBN-13 ‏ : ‎ 978-6598011581 Peso do produto ‏ : ‎ 180 g Idade de leitura ‏ : ‎ 3 - 8 anos",
+      "acessado_em": "2026-11-09"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "autoria na página do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/6598011582",
+      "trecho": "por María Ramos (Autor), Nina Rizzi (Tradutor)",
+      "acessado_em": "2026-11-09"
+    }
+  ],
+  "nao_coberto": "A sinopse para em perguntas (\"O que vão pensar dele?\"): não descreve o que acontece no primeiro dia nem como termina. Não diz quem narra nem a idade de Chico. As fichas creditam a tradutora, mas não dão o título nem o ano da edição espanhola, e não creditam ilustrador à parte (a capa imprime só \"María Ramos\"). Não há indicação de texto ou material para o adulto.",
+  "nao_aborda": "Pela sinopse, Chico vai para uma escola nova; a sinopse não diz se é a primeira escola dele nem fala de creche ou de despedida dos pais na porta.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Martins Fontes Paulista",
+        "url": "https://www.martinsfontespaulista.com.br/chico-chiclete-1068191/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6598011582"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-11-09"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-11-09"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "martinsfontespaulista.com.br",
+        "url": "https://www.martinsfontespaulista.com.br/chico-chiclete-1068191/p",
+        "isbn13": "9786598011581",
+        "titulo_bateu": true,
+        "trecho": "CHICO CHICLETE - RAMOS, MARÍA | Livraria Martins Fontes",
+        "em": "2026-11-09"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/6598011582",
+        "isbn13": "9786598011581",
+        "titulo_bateu": true,
+        "trecho": "ISBN-13 ‏ : ‎ 978-6598011581",
+        "em": "2026-11-09"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-11-09",
+  "capa": {
+    "arquivo": "9786598011581.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/31D8EWiZMNL._SL1200_.jpg",
+    "obtida_em": "2026-11-09",
+    "sha1": "7c56948871bafb8ae04f578b06254d3f97851169",
+    "largura": 363,
+    "altura": 500
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Martins Fontes, que imprime o ISBN-13, e a da Amazon traz o mesmo. A idade (3 a 8 anos) é o campo \"Idade de leitura\" da ficha da Amazon, não a enquete de clientes. A Baião publica tradução de livro ilustrado estrangeiro com direitos comprados (esta, de María Ramos, com tradução de Nina Rizzi). Em 09/11 a Amazon tinha em estoque."
+}
