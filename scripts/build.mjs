@@ -449,7 +449,7 @@ for (const l of livros) {
 <p class="olho">${(l.situacoes || []).map(sl => situacoes.find(x => x.slug === sl)).filter(Boolean).map(s => `<a href="/s/${esc(s.slug)}">${esc(s.titulo)}</a>`).join(' · ') || 'Livro'}</p>
 <div class="topo-livro">${capa(l, 'grande', { jaVisivel: true })}<div><h1>${esc(l.titulo)}</h1>
 <p class="sub">${esc(l.autor)}${creditoIlustracao(l)} · ${esc(l.editora)}${l.ano ? `, ${l.ano}` : ''}</p>
-<ul class="fatos">${val(r, 'idade_editora') && val(r, 'idade_editora') !== 'nao_coberto' ? `<li class="badge idade">${esc(val(r, 'idade_editora'))}</li>` : '<li class="badge nd">idade: a editora não indica</li>'}${l.paginas ? `<li class="badge">${l.paginas} páginas</li>` : ''}${FORMA[val(r, 'forma')] ? `<li class="badge">${FORMA[val(r, 'forma')]}</li>` : ''}</ul>
+<ul class="fatos">${val(r, 'idade_editora') && val(r, 'idade_editora') !== 'nao_coberto' ? `<li class="badge idade">${esc(val(r, 'idade_editora'))}</li>` : `<li class="badge nd">idade: ${esc(rotuloIdadeAusente(l))}</li>`}${l.paginas ? `<li class="badge">${l.paginas} páginas</li>` : ''}${FORMA[val(r, 'forma')] ? `<li class="badge">${FORMA[val(r, 'forma')]}</li>` : ''}</ul>
 ${precoBr(l) ? `<p class="preco">${precoBr(l)} <span class="selo">${esc(precoRotulo(l))}</span></p>` : ''}
 ${atalhoCompra(l)}
 ${l.previa?.folheavel ? `<p><a class="folhear" href="https://books.google.com.br/books?id=${esc(l.previa.volume)}&printsec=frontcover" rel="noopener" target="_blank">Folhear as primeiras páginas ↗</a></p>

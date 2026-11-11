@@ -1,0 +1,97 @@
+{
+  "isbn13": "9786555005332",
+  "titulo": "Os pesadelos de Manu",
+  "autor": "Donaldo Buchweitz",
+  "ilustrador": "Bill Borges",
+  "editora": "Ciranda Cultural",
+  "ano": 2021,
+  "paginas": 32,
+  "situacoes": [
+    "medo-do-escuro"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "4+",
+      "base": 1
+    },
+    "nomeia_evento": {
+      "valor": "nao_coberto"
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site da Ciranda Cultural",
+      "url": "https://www.cirandacultural.com.br/produto/livro-os-pesadelos-de-manu-70826",
+      "trecho": "Manu tem pesadelos, pensa em coisas que só existem na imaginação, e isso a deixa com medo. Um dia ela resolve brincar com os personagens do pesadelo. E tudo vira uma grande brincadeira!",
+      "acessado_em": "2026-11-11"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha no site da Ciranda Cultural",
+      "url": "https://www.cirandacultural.com.br/produto/livro-os-pesadelos-de-manu-70826",
+      "trecho": "Editora: Ciranda Cultural Edição: 1, 202 Autor: Donaldo Buchweitz Ilustrador: Bill Borges Idioma: Português Páginas: 32 Dimensões: L 26.50 x A 23.00 x E 0.40 ISBN: 9786555005332 Coleção: Não se aplica Linha Editorial: Ciranda na Escola - Literatura infantojuvenil Faixa Etária: + 4 anos Assuntos (tags): Hora de dormir, Sonho, Medo, Comunicação, Família",
+      "acessado_em": "2026-11-11"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "detalhes do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/6555005335",
+      "trecho": "Editora ‏ : ‎ Ciranda Cultural Data da publicação ‏ : ‎ 29 janeiro 2021 Edição ‏ : ‎ 1ª Idioma ‏ : ‎ Português Número de páginas ‏ : ‎ 32 páginas ISBN-10 ‏ : ‎ 6555005335 ISBN-13 ‏ : ‎ 978-6555005332",
+      "acessado_em": "2026-11-11"
+    }
+  ],
+  "nao_coberto": "A sinopse fala em pesadelos e em coisas da imaginação, mas não usa a palavra escuro nem diz se Manu tem medo de apagar a luz. Diz que ela resolve brincar com os personagens do pesadelo e que tudo vira brincadeira, sem descrever como isso acontece nem a cena final. Não diz quem narra, a idade de Manu nem se o texto é rimado. Não há indicação de material para o adulto.",
+  "nao_aborda": "Pela sinopse, o medo de Manu vem dos pesadelos, não do quarto escuro nem de barulho à noite; não fala de luz acesa nem de dormir na cama dos pais.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Ciranda Cultural",
+        "url": "https://www.cirandacultural.com.br/produto/livro-os-pesadelos-de-manu-70826"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6555005335"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "id": "NrSnzgEACAAJ",
+        "isbn13": "9786555005332",
+        "titulo_bateu": true,
+        "em": "2026-11-11"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-11-11"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-11-11",
+  "capa": {
+    "arquivo": "9786555005332.jpg",
+    "fonte": "cirandacultural.com.br",
+    "url": "https://cirandacultural.fbitsstatic.net/img/p/livro-os-pesadelos-de-manu-70826/257342.jpg?w=520&h=520&v=no-change&qs=ignore",
+    "obtida_em": "2026-11-11",
+    "sha1": "c589a195ee7da52639c1ea92e38336f2c0cd17c4",
+    "largura": 520,
+    "altura": 520
+  },
+  "nota": "A ficha da Ciranda corta o ano da edição (\"1, 202\"); o ano 2021 vem da Amazon (29 de janeiro de 2021) e da Martins Fontes (\"1ª EDIÇÃO - 2021\"). O registro do Google Books que prova o ISBN diz \"Buobooks\" e 34 páginas; a editora, a Amazon e a Martins Fontes dizem Ciranda Cultural e 32 páginas, e é isso que a página mostra. A idade (+4) é a faixa da ficha da editora; a Amazon indica 4 a 8 no campo \"Idade de leitura\". A frase final da sinopse, sobre a hora de dormir ficar mais tranquila, não foi citada porque descreve efeito. Em 11/11 a Amazon tinha em estoque."
+}

@@ -1,0 +1,106 @@
+{
+  "isbn13": "9788538047568",
+  "titulo": "Há um monstro embaixo da minha cama",
+  "autor": "Clemency Pearce",
+  "ilustrador": "Laura Hughes",
+  "editora": "Ciranda Cultural",
+  "ano": 2013,
+  "paginas": 32,
+  "situacoes": [
+    "medo-do-escuro"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "nao_coberto"
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "crianca",
+      "base": 0
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "rimado",
+      "base": 1
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site da Ciranda Cultural",
+      "url": "https://www.cirandacultural.com.br/produto/livro-ha-um-monstro-embaixo-da-minha-cama-73171",
+      "trecho": "À noite, quando já estou deitado e de pijama, escuto um barulho, barulho assustador, há um monstro embaixo da minha cama! O que será que vive embaixo da cama? Talvez seja um monstro assustador. Ou será uma fera irritante? Poderia ser também um novo a migo!",
+      "acessado_em": "2026-11-11"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha no site da Ciranda Cultural",
+      "url": "https://www.cirandacultural.com.br/produto/livro-ha-um-monstro-embaixo-da-minha-cama-73171",
+      "trecho": "Editora: Ciranda Cultural Edição: 1, 2013 Autor: Clemency Pearce Ilustrador: Laura Hughes Idioma: Português Páginas: 32 Dimensões: L 24.60 x A 28.00 x E 0.40 ISBN: 9788538047568 Coleção: Histórias emocionantes Linha Editorial: Ciranda na Escola - Literatura infantojuvenil Faixa Etária: + 16 anos Assuntos (tags): Amizade, Respeito, Literatura infantil, Rimas, Pluralidade Cultural, Saúde, Psicologia",
+      "acessado_em": "2026-11-11"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "detalhes do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/8538047566",
+      "trecho": "Editora ‏ : ‎ Ciranda Cultural Data da publicação ‏ : ‎ 1 janeiro 2013 Edição ‏ : ‎ 1ª Idioma ‏ : ‎ Português Número de páginas ‏ : ‎ 32 páginas ISBN-10 ‏ : ‎ 8538047566 ISBN-13 ‏ : ‎ 978-8538047568 Peso do produto ‏ : ‎ 220 g Idade de leitura ‏ : ‎ 4 - 8 anos",
+      "acessado_em": "2026-11-11"
+    }
+  ],
+  "nao_coberto": "A sinopse é a fala do menino deitado ouvindo um barulho e termina em perguntas (monstro assustador, fera irritante ou novo amigo?): não diz o que há embaixo da cama nem como a noite termina. Não usa as palavras medo nem escuro. As fontes não dão faixa etária confiável: a ficha da editora diz \"+ 16 anos\", o que não combina com um livro ilustrado de 32 páginas, e a Amazon diz 4 a 8; por isso a coluna de idade fica vazia. A ficha não traz título original nem tradutor, então a página não afirma que é tradução. Não há indicação de material para o adulto.",
+  "nao_aborda": "Pela sinopse, o susto é um barulho e a ideia de um monstro embaixo da cama; não fala de pedir pra deixar a luz acesa, de pesadelo nem de dormir com os pais.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Ciranda Cultural",
+        "url": "https://www.cirandacultural.com.br/produto/livro-ha-um-monstro-embaixo-da-minha-cama-73171"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8538047566"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-11-11"
+      },
+      {
+        "fonte": "open_library",
+        "id": "/works/OL31321282W",
+        "isbn13": "9788538047568",
+        "titulo_bateu": true,
+        "em": "2026-11-11"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-11-11",
+  "capa": {
+    "arquivo": "9788538047568.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/51H4npkZZPL._SL1200_.jpg",
+    "obtida_em": "2026-11-11",
+    "sha1": "4c13ceac9f5a210636089f55de5f3dafdc1c0984",
+    "largura": 600,
+    "altura": 600
+  },
+  "nota": "A sinopse é narrada em primeira pessoa por um menino (\"estou deitado\"); a ficha da Ciranda lista \"Rimas\" entre os assuntos. A sinopse da editora imprime \"novo a migo\", separado, e a citação copia assim. Em 11/11 a Ciranda marcava \"Produto Indisponível\" e a Amazon tinha 3 exemplares, vendidos por um parceiro (LER Distribuidora) e enviados pela Amazon.",
+  "idade_recusada": [
+    {
+      "valor": "16+",
+      "fonte": "cirandacultural.com.br",
+      "motivo": "a ficha da editora diz \"+ 16 anos\" para um livro ilustrado de 32 páginas, e a Amazon diz 4 a 8 anos; com as duas fontes discordando assim, a coluna fica vazia",
+      "em": "2026-11-11"
+    }
+  ]
+}
