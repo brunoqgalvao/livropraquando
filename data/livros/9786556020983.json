@@ -1,0 +1,134 @@
+{
+  "isbn13": "9786556020983",
+  "titulo": "Lulu vai para a escola",
+  "autor": "Anna McQuinn",
+  "ilustrador": "Rosalind Beardshaw",
+  "tradutor": "Nina Rizzi",
+  "editora": "Pallas",
+  "ano": 2023,
+  "origem": "traducao",
+  "paginas": 28,
+  "situacoes": [
+    "primeiro-dia-de-aula"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site da Pallas Editora",
+      "url": "https://pallaseditora.com.br/produto/lulu-vai-para-a-escola/",
+      "trecho": "Amanhã é o primeiro dia de aula de Lulu na escola! E ela precisa arrumar sua nova mochila para deixar tudo pronto. Todos precisam acordar bem cedinho para o grande dia. Na escola ela vai aprender muitas coisas, conhecer novos amigos e novas brincadeiras. Você também quer conhecer a escola de Lulu? Este livro é para as crianças que vão experimentar o primeiro dia de aula, uma nova porta que se abre, mas que pode causa medo e insegurança.",
+      "acessado_em": "2026-11-12"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "características no site da Pallas Editora",
+      "url": "https://pallaseditora.com.br/produto/lulu-vai-para-a-escola/",
+      "trecho": "ISBN: 9786556020983 Gênero: Literatura Infantil. Código interno: 002488 Tags: Família, Literatura para infâncias, Primeira infância",
+      "acessado_em": "2026-11-12"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha na Livraria Martins Fontes",
+      "url": "https://www.martinsfontespaulista.com.br/lulu-vai-para-a-escola-1058785/p",
+      "trecho": "Autor: MCQUINN, ANNA Ilustrador: BEARDSHAW, ROSALIND Tradutor: RIZZI, NINA Editora: PALLAS",
+      "acessado_em": "2026-11-12"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "detalhes do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/6556020982",
+      "trecho": "Editora ‏ : ‎ Pallas Data da publicação ‏ : ‎ 28 agosto 2023 Edição ‏ : ‎ edição Idioma ‏ : ‎ Português Número de páginas ‏ : ‎ 28 páginas ISBN-10 ‏ : ‎ 6556020982 ISBN-13 ‏ : ‎ 978-6556020983",
+      "acessado_em": "2026-11-12"
+    }
+  ],
+  "nao_coberto": "A sinopse fala da véspera (arrumar a mochila, acordar cedo) e do que Lulu vai fazer na escola, mas não descreve o dia em si nem como ele termina. Não diz quem narra, quantos anos Lulu tem nem se ela sente medo; a frase sobre medo e insegurança é da editora falando das crianças leitoras, não da personagem. A Pallas não indica faixa etária, e a única indicação que achamos (Amazon, \"12 anos e acima\") não combina com o livro, por isso a coluna de idade fica vazia. As fontes não trazem o título original nem o ano da edição estrangeira. Não há indicação de material para o adulto.",
+  "nao_aborda": "Pela sinopse, é a expectativa de começar na escola. Não fala de creche, de despedida dos pais na porta nem de troca de escola.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Pallas Editora",
+        "url": "https://pallaseditora.com.br/produto/lulu-vai-para-a-escola/"
+      },
+      {
+        "loja": "Martins Fontes Paulista",
+        "url": "https://www.martinsfontespaulista.com.br/lulu-vai-para-a-escola-1058785/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6556020982"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-11-12"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-11-12"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "martinsfontespaulista.com.br",
+        "url": "https://www.martinsfontespaulista.com.br/lulu-vai-para-a-escola-1058785/p",
+        "isbn13": "9786556020983",
+        "titulo_bateu": true,
+        "trecho": "LULU VAI PARA A ESCOLA - MCQUINN, ANNA | Livraria Martins Fontes",
+        "em": "2026-11-12"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/6556020982",
+        "isbn13": "9786556020983",
+        "titulo_bateu": true,
+        "trecho": "Lulu vai para a escola | Amazon.com.br",
+        "em": "2026-11-12"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-11-12",
+  "capa": {
+    "arquivo": "9786556020983.jpg",
+    "fonte": "pallaseditora.com.br",
+    "url": "https://pallaseditora.com.br/wp-content/uploads/2024/09/9786556020983.jpg",
+    "obtida_em": "2026-11-12",
+    "sha1": "44df33b6642f46b887b35b7eeeb487a7129063ff",
+    "largura": 480,
+    "altura": 600
+  },
+  "idade_recusada": [
+    {
+      "valor": "12+",
+      "fonte": "amazon.com.br",
+      "motivo": "a ficha da Amazon diz \"12 anos e acima\" para um livro ilustrado de 28 páginas cuja sinopse é o primeiro dia de aula de uma criança pequena; a Pallas não indica idade, então a coluna fica vazia",
+      "em": "2026-11-12"
+    }
+  ],
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Martins Fontes, que imprime o ISBN-13, e a da Amazon traz o mesmo. O ano (2023) e as 28 páginas vêm da Amazon (28 de agosto de 2023) e da Martins Fontes (\"1ª EDIÇÃO - 2023\"). A última frase da sinopse da editora, sobre o momento virar uma grande descoberta, não foi citada porque descreve efeito. A citação copia \"pode causa medo\" como a editora escreve. Em 12/11 a Pallas, a Martins Fontes e a Amazon (1 exemplar) tinham à venda."
+}

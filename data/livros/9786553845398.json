@@ -1,0 +1,119 @@
+{
+  "isbn13": "9786553845398",
+  "titulo": "Tarugo vai à escola",
+  "autor": "Donaldo Buchweitz, Ieda Nilza da Silva",
+  "ilustrador": "Simone Ziasch, Vicente Mendonça",
+  "editora": "Ciranda na Escola (Ciranda Cultural)",
+  "ano": 2024,
+  "origem": "nacional",
+  "paginas": 32,
+  "situacoes": [
+    "primeiro-dia-de-aula"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "4+",
+      "base": 1
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site da Ciranda Cultural",
+      "url": "https://www.cirandacultural.com.br/produto/livro-tarugo-vai-a-escola-75211",
+      "trecho": "Tarugo era um urso pequeno, esperto e muito curioso. Ele adorava explorar e aprender sobre tudo. Quando chegou o dia de ir para a escola, um novo mundo se abriu diante dele. As novas amizades, o acolhimento da sua professora e a alegria que ele sentiu foram tão grandes que Tarugo nunca mais se esqueceria daquele dia. Ele guardaria aquela lembrança para sempre no seu coração",
+      "acessado_em": "2026-11-12"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha no site da Ciranda Cultural",
+      "url": "https://www.cirandacultural.com.br/produto/livro-tarugo-vai-a-escola-75211",
+      "trecho": "Editora: Ciranda na Escola Edição: 1, 2024 Autor: Donaldo Buchweitz, Ieda Nilza da Silva Ilustrador: Simone Ziasch, Vicente Mendonça Idioma: Português Páginas: 32 Dimensões: L 24.00 x A 24.00 x E 0.33 ISBN: 9786553845398 Coleção: Não se aplica Linha Editorial: Ciranda na Escola - Literatura infantojuvenil Faixa Etária: + 4 anos",
+      "acessado_em": "2026-11-12"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "detalhes do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/6553845395",
+      "trecho": "Editora ‏ : ‎ Ciranda na Escola Data da publicação ‏ : ‎ 2 outubro 2024 Edição ‏ : ‎ 1ª Idioma ‏ : ‎ Português Número de páginas ‏ : ‎ 32 páginas ISBN-10 ‏ : ‎ 6553845395 ISBN-13 ‏ : ‎ 978-6553845398",
+      "acessado_em": "2026-11-12"
+    }
+  ],
+  "nao_coberto": "A sinopse diz que o dia de ir para a escola foi marcante para Tarugo, com amizades novas e o acolhimento da professora, mas não usa as palavras primeiro dia nem fala de medo, choro ou despedida; não descreve nenhuma cena específica. Não diz quem narra nem se o texto é rimado. Não há indicação de material para o adulto.",
+  "nao_aborda": "Pela sinopse, o dia na escola é só alegria e novidade; não fala de não querer ir, de creche nem de se separar dos pais.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Ciranda Cultural",
+        "url": "https://www.cirandacultural.com.br/produto/livro-tarugo-vai-a-escola-75211"
+      },
+      {
+        "loja": "Martins Fontes Paulista",
+        "url": "https://www.martinsfontespaulista.com.br/tarugo-vai-a-escola-1112283/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6553845395"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-11-12"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-11-12"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "cirandacultural.com.br",
+        "url": "https://www.cirandacultural.com.br/produto/livro-tarugo-vai-a-escola-75211",
+        "isbn13": "9786553845398",
+        "titulo_bateu": true,
+        "trecho": "Livro Tarugo vai à escola - Ciranda Cultural",
+        "em": "2026-11-12"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/6553845395",
+        "isbn13": "9786553845398",
+        "titulo_bateu": true,
+        "trecho": "Tarugo vai à escola | Amazon.com.br",
+        "em": "2026-11-12"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-11-12",
+  "capa": {
+    "arquivo": "9786553845398.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/51eJFw8PjiL._SL1200_.jpg",
+    "obtida_em": "2026-11-12",
+    "sha1": "35efb9ae7249688e0de70fccd307f7570a3bd65c",
+    "largura": 500,
+    "altura": 500
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Ciranda Cultural, que imprime o ISBN, e a da Amazon traz o mesmo. A idade (+4) é a faixa da ficha da editora; a Amazon indica 4 a 5 anos no campo \"Idade de leitura\". A Amazon credita só Donaldo Buchweitz; a ficha da editora credita também Ieda Nilza da Silva, e a página segue a editora. Em 12/11 a Ciranda e a Martins Fontes tinham à venda, e a Amazon tinha 3 exemplares, vendidos por um parceiro."
+}
