@@ -1,0 +1,122 @@
+{
+  "isbn13": "9786555308334",
+  "titulo": "Amigos do Troninho",
+  "autor": "Anita Schmidt",
+  "ilustrador": "Wednesday Jones",
+  "tradutor": "Lívia Pupo Sibinel",
+  "editora": "Girassol",
+  "ano": 2025,
+  "origem": "traducao",
+  "paginas": 10,
+  "situacoes": [
+    "desfralde"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "1+",
+      "base": 3
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 2
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "sim",
+      "base": 1
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse na Livraria Martins Fontes",
+      "url": "https://www.martinsfontespaulista.com.br/amigos-do-troninho---livro-infantil-para-aprender-a-usar-o-penico---dicas-para-pais-e-responsaveis-1139201/p",
+      "trecho": "Até mesmo os super-heróis usam o troninho! Que tal acompanhar Eva e Max nesta aventura enquanto eles salvam a cidade e embarcam em uma de suas missões mais importantes?",
+      "acessado_em": "2026-11-13"
+    },
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse na Livraria Martins Fontes",
+      "url": "https://www.martinsfontespaulista.com.br/amigos-do-troninho---livro-infantil-para-aprender-a-usar-o-penico---dicas-para-pais-e-responsaveis-1139201/p",
+      "trecho": "Além disso, ao final, há instruções que auxiliam os responsáveis",
+      "acessado_em": "2026-11-13"
+    },
+    {
+      "tipo": "material_editora",
+      "veiculo": "bloco \"Da editora\" na página da Amazon",
+      "url": "https://www.amazon.com.br/dp/6555308338",
+      "trecho": "Com uma história encantadora e dois personagens adoráveis, Eva e Max, o livro mostra de maneira lúdica e envolvente como usar o penico pode ser uma grande aventura.",
+      "acessado_em": "2026-11-13"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "detalhes do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/6555308338",
+      "trecho": "Editora ‏ : ‎ Girassol Data da publicação ‏ : ‎ 1 maio 2025 Edição ‏ : ‎ 1ª Idioma ‏ : ‎ Português Número de páginas ‏ : ‎ 10 páginas ISBN-10 ‏ : ‎ 6555308338 ISBN-13 ‏ : ‎ 978-6555308334 Peso do produto ‏ : ‎ 340 g Idade de leitura ‏ : ‎ 1 ano e acima",
+      "acessado_em": "2026-11-13"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha técnica na Livraria Martins Fontes",
+      "url": "https://www.martinsfontespaulista.com.br/amigos-do-troninho---livro-infantil-para-aprender-a-usar-o-penico---dicas-para-pais-e-responsaveis-1139201/p",
+      "trecho": "Número da edição 1ª EDIÇÃO - 2025 Autor SCHMIDT, ANITA Tradutor SIBINEL, LÍVIA PUPO",
+      "acessado_em": "2026-11-13"
+    }
+  ],
+  "nao_coberto": "A sinopse conta que Eva e Max são super-heróis que salvam a cidade e que usar o penico é uma das missões deles, mas não descreve nenhuma cena, não diz se eles largam a fralda nem como termina. Não diz quem narra nem se o texto é rimado. Diz que há instruções para os responsáveis no final, mas não o que elas dizem. As fichas creditam tradutora, mas não dão o título nem o ano da edição original.",
+  "nao_aborda": "Pela sinopse, a história é de aventura de super-herói com o penico; não fala da noite, de escapes nem de medo da privada.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Martins Fontes Paulista",
+        "url": "https://www.martinsfontespaulista.com.br/amigos-do-troninho---livro-infantil-para-aprender-a-usar-o-penico---dicas-para-pais-e-responsaveis-1139201/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6555308338"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-11-13"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-11-13"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "martinsfontespaulista.com.br",
+        "url": "https://www.martinsfontespaulista.com.br/amigos-do-troninho---livro-infantil-para-aprender-a-usar-o-penico---dicas-para-pais-e-responsaveis-1139201/p",
+        "isbn13": "9786555308334",
+        "titulo_bateu": true,
+        "trecho": "AMIGOS DO TRONINHO - LIVRO INFANTIL PARA APRENDER A USAR O PENICO + DICAS PARA PAIS E RESPONSÁVEIS - SCHMIDT, ANITA | Li",
+        "em": "2026-11-13"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-11-13",
+  "capa": {
+    "arquivo": "9786555308334.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/61PHr1ndr5L._SL1200_.jpg",
+    "obtida_em": "2026-11-13",
+    "sha1": "44b8179f258c80cb7d71d0c7a6d05ac3a8652e18",
+    "largura": 600,
+    "altura": 600
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Martins Fontes e pela da Amazon, que imprimem o ISBN. A idade (1+) é o campo \"Idade de leitura\" da ficha da Amazon (\"1 ano e acima\"), não a enquete de cliente. O nome completo na loja é \"Amigos do Troninho - Livro infantil para aprender a usar o penico + dicas para pais e responsáveis\". Em 13/11 a Martins Fontes tinha à venda (pronta entrega) e a Amazon tinha 3 exemplares."
+}
