@@ -240,7 +240,7 @@ function dadosDoLivro(l) {
     url: `${SITE}/l/${l.isbn13}`,
     isbn: l.isbn13,
     inLanguage: 'pt-BR',
-    author: autorSchema(l.autor, l.editora),
+    author: autorSchema(l.autor, l.editora, l.autor_organizacao),
     illustrator: l.ilustrador ? { '@type': 'Person', name: l.ilustrador } : undefined,
     publisher: l.editora ? { '@type': 'Organization', name: l.editora } : undefined,
     datePublished: l.ano ? String(l.ano) : undefined,

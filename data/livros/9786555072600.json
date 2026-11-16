@@ -1,0 +1,99 @@
+{
+  "isbn13": "9786555072600",
+  "titulo": "O penico do pinguim",
+  "autor": "Igloo Books",
+  "ilustrador": "Gareth Conway",
+  "editora": "Happy Books",
+  "ano": 2023,
+  "paginas": 8,
+  "situacoes": [
+    "desfralde"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "3 a 5",
+      "base": 1
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "descrição do livro na Livraria Martins Fontes",
+      "url": "https://www.martinsfontespaulista.com.br/penico-do-pinguim--o-1049531/p",
+      "trecho": "Comemore com o Pinguim enquanto ele nos mostra como usar o penico. Aperte o botão e prepare-se para uma divertida e barulhenta hora da história.",
+      "acessado_em": "2026-11-15"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "detalhes do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/6555072601",
+      "trecho": "Editora ‏ : ‎ Happy Books Data da publicação ‏ : ‎ 1 julho 2023 Edição ‏ : ‎ 1ª Idioma ‏ : ‎ Português Número de páginas ‏ : ‎ 8 páginas ISBN-10 ‏ : ‎ 6555072601 ISBN-13 ‏ : ‎ 978-6555072600 Peso do produto ‏ : ‎ 340 g Idade de leitura ‏ : ‎ 3 - 5 anos",
+      "acessado_em": "2026-11-15"
+    }
+  ],
+  "nao_coberto": "A sinopse tem duas frases: o Pinguim mostra como usar o penico e há um botão que faz barulho. Não descreve nenhuma cena, não diz se o Pinguim larga a fralda nem como termina, e não diz quem narra nem se o texto é rimado. As fichas creditam a autoria à Igloo Books, uma empresa, sem nome de autor nem de tradutor; o ilustrador vem da ficha da Martins Fontes (\"Ilustrador: CONWAY, GARETH\") e da capa (\"Ilustração: Gareth Conway\"). Nenhuma fonte dá título nem ano de edição original.",
+  "nao_aborda": "Pela sinopse, é um livro curto de botão sonoro sobre usar o penico; não fala da noite, de escapes, de medo da privada nem traz texto para o adulto.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Martins Fontes Paulista",
+        "url": "https://www.martinsfontespaulista.com.br/penico-do-pinguim--o-1049531/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6555072601"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-11-15"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-11-15"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/6555072601",
+        "isbn13": "9786555072600",
+        "titulo_bateu": true,
+        "trecho": "Penico do Pinguim, O | Amazon.com.br",
+        "em": "2026-11-15"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-11-15",
+  "autor_organizacao": true,
+  "capa": {
+    "arquivo": "9786555072600.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/61HUeDQYZsL._SL1200_.jpg",
+    "obtida_em": "2026-11-15",
+    "sha1": "5204886f6d54492609a1512cf9c881aebafb1a3c",
+    "largura": 600,
+    "altura": 600
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Amazon, que imprime o ISBN. As duas lojas creditam a autoria à Igloo Books, que é uma empresa, e a página repete esse crédito. A idade (3 a 5) é o campo \"Idade de leitura\" da ficha da Amazon (\"3 - 5 anos\"), não a enquete de cliente. As lojas grafam o título \"Penico do Pinguim, O\". É capa dura, com botão de som. Em 15/11 a Martins Fontes tinha à venda (pronta entrega) e a Amazon tinha 2 exemplares."
+}

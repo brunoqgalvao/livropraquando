@@ -94,8 +94,8 @@ export function trilha(site, degraus = []) {
 // Livro de licença sai às vezes com a própria editora no campo de autor ("Autor:
 // Ciranda Cultural"). A página copia a ficha; o JSON-LD não pode chamar a
 // editora de Person.
-export function autorSchema(autor, editora) {
+export function autorSchema(autor, editora, organizacao = false) {
   if (!autor) return undefined;
   const norm = (s) => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
-  return { '@type': norm(autor) === norm(editora) ? 'Organization' : 'Person', name: autor };
+  return { '@type': organizacao === true || norm(autor) === norm(editora) ? 'Organization' : 'Person', name: autor };
 }

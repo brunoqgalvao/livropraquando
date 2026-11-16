@@ -124,5 +124,11 @@ t('editora no campo de autor vira Organization, não Person', () => {
   assert.equal(autorSchema('', 'Ciranda Cultural'), undefined);
 });
 
+t('autor marcado como organização vira Organization mesmo sendo outra que a editora', () => {
+  assert.deepEqual(autorSchema('Igloo Books', 'Happy Books', true), { '@type': 'Organization', name: 'Igloo Books' });
+  assert.deepEqual(autorSchema('Igloo Books', 'Happy Books'), { '@type': 'Person', name: 'Igloo Books' });
+  assert.deepEqual(autorSchema('Igloo Books', 'Happy Books', 'sim'), { '@type': 'Person', name: 'Igloo Books' });
+});
+
 console.log(`${ok} passaram, ${falhou} falharam`);
 if (falhou) process.exit(1);

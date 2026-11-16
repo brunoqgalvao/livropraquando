@@ -101,6 +101,7 @@ for (const l of livros) {
   for (const c of ['titulo', 'autor', 'editora', 'situacoes', 'curadoria', 'verificado_em']) {
     if (l[c] === undefined || l[c] === '' || (Array.isArray(l[c]) && !l[c].length)) err(f, `falta campo "${c}"`);
   }
+  if (l.autor_organizacao !== undefined && typeof l.autor_organizacao !== 'boolean') err(f, `autor_organizacao deve ser true/false: "${l.autor_organizacao}"`);
   if (!['humano', 'agente'].includes(l.curadoria)) err(f, `curadoria inválida: "${l.curadoria}"`);
   if (typeof l.nao_coberto !== 'string' || !l.nao_coberto.trim()) {
     err(f, 'falta "nao_coberto" — toda página precisa dizer o que a evidência não cobre');
