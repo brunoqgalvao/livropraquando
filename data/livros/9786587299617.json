@@ -1,0 +1,115 @@
+{
+  "isbn13": "9786587299617",
+  "titulo": "A mochila do bebê",
+  "autor": "Inara Moraes",
+  "ilustrador": "Rodrigo Fischer",
+  "editora": "Projeto",
+  "ano": 2025,
+  "origem": "nacional",
+  "paginas": 32,
+  "situacoes": [
+    "primeiro-dia-de-aula"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "0 a 3",
+      "base": 1
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "descrição do livro na Livraria Martins Fontes",
+      "url": "https://www.martinsfontespaulista.com.br/a-mochila-do-bebe-1142895/p",
+      "trecho": "O que um bebê leva para a escola além de fraldas, mamadeira e chupeta? Neste livro, Inara Moraes nos convida a enxergar esse cotidiano com os olhos de quem está vivendo tudo pela primeira vez. Com uma narrativa poética, o livro revela que, dentro da mochila, também vão o cheiro de casa, os medos, as descobertas e as pontes entre dois mundos: o familiar e o escolar. São as primeiras idas e vindas de uma vida que começa a se abrir para o social, para o outro, para a aventura de estar fora do ninho.",
+      "acessado_em": "2026-11-17"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "detalhes do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/658729961X",
+      "trecho": "Editora ‏ : ‎ Editora Projeto Data da publicação ‏ : ‎ 25 abril 2025 Edição ‏ : ‎ 1ª Idioma ‏ : ‎ Português Número de páginas ‏ : ‎ 32 páginas ISBN-10 ‏ : ‎ 658729961X ISBN-13 ‏ : ‎ 978-6587299617 Peso do produto ‏ : ‎ 160 g Idade de leitura ‏ : ‎ 0 - 3 anos",
+      "acessado_em": "2026-11-17"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha na Livraria Martins Fontes",
+      "url": "https://www.martinsfontespaulista.com.br/a-mochila-do-bebe-1142895/p",
+      "trecho": "Autor: MORAES, INARA Ilustrador: FISCHER, RODRIGO Editora: PROJETO",
+      "acessado_em": "2026-11-17"
+    }
+  ],
+  "nao_coberto": "A sinopse fala do que um bebê leva na mochila para a escola (fraldas, mamadeira, chupeta, o cheiro de casa, os medos) e das primeiras idas e vindas entre casa e escola, mas não descreve nenhuma cena, não diz se há choro ou despedida na porta nem como o livro termina. Diz que a narrativa é poética, mas não diz quem narra nem se o texto é rimado. A sinopse diz \"escola\", não \"creche\" nem \"primeiro dia\", embora fale de um bebê. A idade (0 a 3) vem do campo \"Idade de leitura\" da Amazon; não achamos indicação no site da Editora Projeto, que não abriu para nós. Não há indicação de material para o adulto.",
+  "nao_aborda": "Pela sinopse, é a ida do bebê para a escola vista pelo que vai na mochila; não fala de criança maior começando o ensino fundamental nem de troca de escola.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Martins Fontes Paulista",
+        "url": "https://www.martinsfontespaulista.com.br/a-mochila-do-bebe-1142895/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/658729961X"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-11-17"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-11-17"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "martinsfontespaulista.com.br",
+        "url": "https://www.martinsfontespaulista.com.br/a-mochila-do-bebe-1142895/p",
+        "isbn13": "9786587299617",
+        "titulo_bateu": true,
+        "trecho": "A MOCHILA DO BEBÊ - MORAES, INARA | Livraria Martins Fontes",
+        "em": "2026-11-17"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "amazon.com.br",
+        "url": "https://www.amazon.com.br/dp/658729961X",
+        "isbn13": "9786587299617",
+        "titulo_bateu": true,
+        "trecho": "A Mochila do Bebê | Amazon.com.br",
+        "em": "2026-11-17"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-11-17",
+  "capa": {
+    "arquivo": "9786587299617.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/513FRDD733L._SL1200_.jpg",
+    "obtida_em": "2026-11-17",
+    "sha1": "aace136e769e167b0ee7007787be9293bcaaecce",
+    "largura": 447,
+    "altura": 600
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Martins Fontes, que imprime o ISBN-13, e a da Amazon traz o mesmo. O ano (2025) e as 32 páginas vêm da Amazon (25 de abril de 2025) e da Martins Fontes (\"1ª EDIÇÃO - 2025\"). A última frase da sinopse, sobre o livro emocionar e divertir, não foi citada porque descreve efeito. Em 17/11 a Martins Fontes tinha pronta entrega e a Amazon, em estoque."
+}
