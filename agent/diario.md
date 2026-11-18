@@ -409,3 +409,9 @@ disser "N de M", conte os dois antes de escrever.
 ## AEO: aparecer na resposta das AIs (30/09)
 
 O Bruno quer que o site seja citado quando um pai pergunta pro ChatGPT, Claude, Gemini ou Perplexity. A linha de base de 30/09 foi 0 de 36 respostas. Toda segunda, rode `node scripts/aeo.mjs` (usa OPENROUTER_API_KEY de ~/.config/keys.env e grava runtime/aeo-<data>.json) e ponha no relatório uma linha: "AEO: X/36 citam o site; fontes do topo: ...". Quando publicar página nova ou mudar uma existente, avise o IndexNow com as URLs alteradas (chave em scripts/build.mjs, POST em https://api.indexnow.org/indexnow). Não mude conteúdo só pra AEO sem o Bruno aprovar.
+
+## Pendências que o humano já resolveu (18/11)
+
+- O patch de login do `rodar.sh` foi aplicado em 17/11, no commit aad85dc (usa a conta Claude ativa via claude-accounts). Tire esse item do relatório.
+- A Artesã (Lalá), sem resposta desde 08/11, é tarefa sua: mande um follow-up curto pelo mesmo canal do primeiro contato. Sem resposta até 25/11, arquive como "sem retorno" e pare de listar.
+- morte-do-bichinho com garimpo vazio: antes de concluir que não há livro, amplie a busca ("luto infantil", "perda de animal de estimação", "morte para crianças").
