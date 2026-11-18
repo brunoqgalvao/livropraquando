@@ -1,0 +1,104 @@
+{
+  "isbn13": "9788535627084",
+  "titulo": "Coisas horríveis no escuro do quarto",
+  "autor": "Elisa Salomon",
+  "editora": "Paulinas",
+  "ano": 2011,
+  "paginas": 24,
+  "situacoes": [
+    "medo-do-escuro"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse na Livraria Martins Fontes",
+      "url": "https://www.martinsfontespaulista.com.br/coisas-horriveis-no-escuro-do-quarto-654590/p",
+      "trecho": "Coisas horríveis no escuro do quarto trata sobre o medo na infância, um tema fascinante e desafiador, porque, geralmente, os adultos se esquecem do seu tempo de criança e tendem a ignorar o medo dos pequenos. Nesse texto, a autora \"leva a sério\" esse sentimento e conduz a narrativa para um desfecho apaziguador, ainda que não conclusivo.Indicado para os anos iniciais do Ensino Fundamental 3º ano e 4º ano",
+      "acessado_em": "2026-11-18"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "detalhes do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/8535627081",
+      "trecho": "Editora ‏ : ‎ Paulinas Editora Data da publicação ‏ : ‎ 28 março 2011 Edição ‏ : ‎ 1ª Idioma ‏ : ‎ Português Número de páginas ‏ : ‎ 24 páginas ISBN-10 ‏ : ‎ 8535627081 ISBN-13 ‏ : ‎ 978-8535627084",
+      "acessado_em": "2026-11-18"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha na Livraria Martins Fontes",
+      "url": "https://www.martinsfontespaulista.com.br/coisas-horriveis-no-escuro-do-quarto-654590/p",
+      "trecho": "EDITORA PAULINAS ISBN 9788535627084 PÁGINAS 24 IDIOMA PORTUGUÊS PESO 100G ACABAMENTO BROCHURA",
+      "acessado_em": "2026-11-18"
+    }
+  ],
+  "nao_coberto": "A sinopse diz que o livro trata do medo na infância e que o desfecho é apaziguador, \"ainda que não conclusivo\", mas não conta a história: não diz quem tem medo, o que aparece no escuro do quarto nem como a cena final acontece. Não diz quem narra nem se o texto é rimado. Nenhuma ficha credita ilustrador; a capa traz um crédito de ilustrações que não se lê na imagem que temos. A editora é católica, mas a sinopse não fala em fé nem em oração, então o enquadramento fica em aberto. Não há indicação de material para o adulto.",
+  "nao_aborda": "Pela sinopse, o assunto é o medo em geral, puxado pelo escuro do quarto; ela não fala de pesadelo, de luz acesa nem de dormir na cama dos pais.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8535627081"
+      },
+      {
+        "loja": "Martins Fontes",
+        "url": "https://www.martinsfontespaulista.com.br/coisas-horriveis-no-escuro-do-quarto-654590/p"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-11-18"
+      },
+      {
+        "fonte": "open_library",
+        "id": "/works/OL16110144W",
+        "isbn13": "9788535627084",
+        "titulo_bateu": true,
+        "em": "2026-11-18"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-11-18",
+  "capa": {
+    "arquivo": "9788535627084.jpg",
+    "fonte": "martinsfontespaulista.com.br",
+    "url": "https://martinsfontespaulista.vteximg.com.br/arquivos/ids/735049-292-292/654590_detalhes.jpg?v=637262808567500000",
+    "obtida_em": "2026-11-18",
+    "sha1": "317a95f36279297fdd5d10f61272afef66d6ffac",
+    "largura": 292,
+    "altura": 292
+  },
+  "idade_recusada": [
+    {
+      "valor": "3 a 5",
+      "fonte": "amazon.com.br",
+      "motivo": "a ficha da Amazon diz \"3 - 5 anos\" e a sinopse da editora, na mesma página, indica o livro para o 3º e o 4º ano do Ensino Fundamental; as duas não batem",
+      "em": "2026-11-18"
+    }
+  ],
+  "nota": "Provado pela Open Library, com título, autora (Elisa Salomon), Paulinas e 2011 batendo. Ano e páginas vêm da Amazon (28 de março de 2011, 1ª edição, 24 páginas); a Martins Fontes também diz 24 páginas, brochura. Sem idade: a Amazon mostra \"3 - 5 anos\" no campo \"Idade de leitura\", e a sinopse da editora indica o livro para o 3º e o 4º ano do Ensino Fundamental; como as duas não batem, a coluna fica vazia. Em 18/11/2026 a Amazon tinha 1 exemplar e outras 8 ofertas; na Martins Fontes estava sob encomenda."
+}
