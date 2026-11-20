@@ -1,0 +1,134 @@
+{
+  "isbn13": "9786557230886",
+  "titulo": "Henrique diz adeus",
+  "subtitulo": "Quando você estiver triste",
+  "autor": "Edward T. Welch",
+  "ilustrador": "Joe Hox",
+  "tradutor": "Meire Santos",
+  "editora": "Fiel",
+  "ano": 2021,
+  "origem": "traducao",
+  "paginas": 32,
+  "situacoes": [
+    "morte-do-bichinho"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "nao_coberto"
+    },
+    "enquadramento": {
+      "valor": "religioso",
+      "base": 0
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "sim",
+      "base": 0
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site da Editora Fiel",
+      "url": "https://www.editorafiel.com.br/henrique-diz-adeus-edward-t-welch",
+      "trecho": "Henrique, o ouriço, ama sua joaninha de estimação. Ela faz companhia a ele e diverte os familiares e amigos com seus truques de voo. Mas, um dia, ele terá que se despedir de sua joaninha. Henrique e toda a sua família estão tristes, mas, ao longo da história, aprendem a ir até Jesus com sua tristeza para receber consolo. Ao final do livro, os pais também receberão instrução para aplicação das verdades bíblicas ensinadas ao longo da história.",
+      "acessado_em": "2026-11-20"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "detalhes do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/6557230883",
+      "trecho": "Editora ‏ : ‎ Editora Fiel Data da publicação ‏ : ‎ 22 novembro 2021 Edição ‏ : ‎ 1ª Idioma ‏ : ‎ Português Número de páginas ‏ : ‎ 32 páginas ISBN-10 ‏ : ‎ 6557230883 ISBN-13 ‏ : ‎ 978-6557230886",
+      "acessado_em": "2026-11-20"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha na Livraria Martins Fontes",
+      "url": "https://www.martinsfontespaulista.com.br/henrique-diz-adeus-971742/p",
+      "trecho": "Autor: WELCH, EDWARD T. Ilustrador: HOX, JOE Tradutor: SANTOS, MEIRE Editora: FIEL",
+      "acessado_em": "2026-11-20"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "características no site da Editora Fiel",
+      "url": "https://www.editorafiel.com.br/henrique-diz-adeus-edward-t-welch",
+      "trecho": "Título original: Henry says good-bye: when you are sad",
+      "acessado_em": "2026-11-20"
+    },
+    {
+      "tipo": "resenha_assinada",
+      "autor": "Sperob (blog spoiledmilks)",
+      "veiculo": "resenha da edição americana no blog spoiledmilks, em inglês",
+      "url": "https://spoiledmilks.com/2019/12/02/review-henry-good-bye-welch/",
+      "trecho": "Henry Hedgehog has a new pet—Lila Ladybug. Lila wows everybody at school as she flies and flips around pulling of tricks and stunts in her airshow. She’s the perfect pet. But one days she seems weak and tired, and when Henry comes home from school Lila has passed. He is devastated.",
+      "acessado_em": "2026-11-20"
+    },
+    {
+      "tipo": "material_editora",
+      "veiculo": "página da edição original no site da New Growth Press, em inglês",
+      "url": "https://newgrowthpress.com/children-books/picture-books/henry-says-good-bye-when-you-are-sad/",
+      "trecho": "Edited by Edward T. Welch, Henry Says Good-Bye offers concrete, grace-based help for dealing with loss and is part of the Good News for Little Hearts series",
+      "acessado_em": "2026-11-20"
+    }
+  ],
+  "nao_coberto": "A sinopse da Fiel diz que Henrique \"terá que se despedir\" da joaninha, sem dizer que ela morre; quem conta que ela morreu é a resenha da edição americana (\"Lila has passed\"), e não sabemos com que palavras a tradução nomeia a morte. Nenhuma fonte lida diz quem narra nem se o texto é rimado. Nem a Fiel nem a Amazon indicam faixa etária para esta edição. A Fiel e a Amazon creditam Edward T. Welch como autor, mas a capa brasileira o chama de \"Organizador\", a editora americana diz que ele editou o livro, e a resenha credita o texto a Jocelyn Flenders; esta página não sabe quem escreveu o texto.",
+  "nao_aborda": "Pelas fontes, o bicho é uma joaninha de um ouriço, não cachorro nem gato, e a família vai a Jesus com a tristeza; o livro não é para quem procura um enquadramento sem religião, e as fontes não falam de enterro nem de bicho novo.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Editora Fiel",
+        "url": "https://www.editorafiel.com.br/henrique-diz-adeus-edward-t-welch"
+      },
+      {
+        "loja": "Martins Fontes Paulista",
+        "url": "https://www.martinsfontespaulista.com.br/henrique-diz-adeus-971742/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6557230883"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-11-20"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-11-20"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "martinsfontespaulista.com.br",
+        "url": "https://www.martinsfontespaulista.com.br/henrique-diz-adeus-971742/p",
+        "isbn13": "9786557230886",
+        "titulo_bateu": true,
+        "trecho": "HENRIQUE DIZ ADEUS - WELCH, EDWARD T. | Livraria Martins Fontes",
+        "em": "2026-11-20"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-11-20",
+  "capa": {
+    "arquivo": "9786557230886.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/81d7vdYBDIL._SL1200_.jpg",
+    "obtida_em": "2026-11-20",
+    "sha1": "5b309751acb0a04f9db7f660aca86e23b69aa58a",
+    "largura": 600,
+    "altura": 600
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Martins Fontes, que imprime o ISBN-13. A ficha da Amazon e as características da Fiel trazem o mesmo ISBN, 32 páginas e a edição de 2021. A Fiel é editora cristã, e a própria sinopse diz que a família aprende \"a ir até Jesus com sua tristeza\". É tradução de \"Henry says good-bye: when you are sad\", da série americana Good News for Little Hearts (New Growth Press; a resenha data a edição americana de 7 de outubro de 2019). Em 20/11 a Fiel, a Martins Fontes e a Amazon tinham à venda."
+}

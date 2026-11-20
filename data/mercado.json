@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-11-19",
+  "atualizado_em": "2026-11-20",
   "livros": {
     "9786550791421": {
       "preco": 28,
@@ -15,15 +15,15 @@
         "url": "https://www.amazon.com.br/dp/655079093X",
         "base": "preço do buy box",
         "edicao": "9786550790936",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "estoque": {
         "a_venda": true,
         "onde": [
           "amazon.com.br: Somente 5 em estoque.",
-          "books.apple.com: não deu leitura (The operation was aborted due to timeout)"
+          "books.apple.com: não deu leitura (nenhum sinal de estoque na página)"
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9786555300628": {
@@ -40,14 +40,14 @@
         "url": "https://www.estantevirtual.com.br/livro/conta-comigo-um-novo-irmao-sera-que-e-bom-06Z-1719-000-BK",
         "base": "dado estruturado (schema.org)",
         "edicao": "9786555300147",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "estoque": {
         "a_venda": true,
         "onde": [
           "estantevirtual.com.br: em estoque"
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9786556121475": {
@@ -64,7 +64,7 @@
         "url": "https://www.amazon.com.br/dp/6556121045",
         "base": "preço do buy box",
         "edicao": "9786556121048",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "estoque": {
         "a_venda": true,
@@ -72,7 +72,7 @@
           "grupoeditorialglobal.com.br: não deu leitura (nenhum sinal de estoque na página)",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9786556540726": {
@@ -85,7 +85,7 @@
         "onde": "Companhia das Letras",
         "url": "https://www.companhiadasletras.com.br/livro/9786556540726/bibo-na-escola",
         "base": "dado estruturado (schema.org)",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9786559312016": {
@@ -102,7 +102,7 @@
         "url": "https://www.editorapeiropolis.com.br/produto/eu-so-so-eu/",
         "base": "dado estruturado (schema.org)",
         "edicao": "9788575963364",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "estoque": {
         "a_venda": true,
@@ -110,7 +110,7 @@
           "editorapeiropolis.com.br: Adicionar ao carrinho",
           "amazon.com.br: Somente 3 em estoque (mais a caminho)."
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9786559803019": {
@@ -130,14 +130,14 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6560070026",
         "base": "preço do buy box",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "estoque": {
         "a_venda": true,
         "onde": [
           "amazon.com.br: Estimativa de envio de 2 a 3 dias"
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9786560250420": {
@@ -150,7 +150,7 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6560250423",
         "base": "preço do buy box",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "estoque": {
         "a_venda": true,
@@ -158,7 +158,7 @@
           "altabooks.com.br: Em estoque",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9786583924575": {
@@ -175,15 +175,15 @@
         "url": "https://www.amazon.com.br/dp/6583924560",
         "base": "preço do buy box",
         "edicao": "9786583924568",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "estoque": {
         "a_venda": true,
         "onde": [
           "amazon.com.br: Em estoque",
-          "editoratexugo.com.br: não deu leitura (The operation was aborted due to timeout)"
+          "editoratexugo.com.br: não deu leitura (nenhum sinal de estoque na página)"
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9786586881363": {
@@ -196,33 +196,49 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6586881366",
         "base": "preço do buy box",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "estoque": {
         "a_venda": true,
         "onde": [
-          "aletria.com.br: não deu leitura (The operation was aborted due to timeout)",
+          "aletria.com.br: não deu leitura (página voltou vazia)",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9788526259416": {
       "venda": "NOT_FOR_SALE",
       "em": "2026-09-18",
       "loja": {
-        "preco": 60.3,
+        "preco": 59.7,
         "moeda": "BRL",
         "formato": "impresso",
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8526259415",
         "base": "preço do buy box",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "coletivoleitor.com.br: Comprar Agora",
+          "amazon.com.br: Em estoque"
+        ],
+        "em": "2026-11-20"
       }
     },
     "9788538068617": {
       "venda": "NOT_FOR_SALE",
-      "em": "2026-09-18"
+      "em": "2026-09-18",
+      "estoque": {
+        "a_venda": false,
+        "onde": [
+          "cirandacultural.com.br: Produto Indisponível",
+          "amazon.com.br: não deu leitura (disponibilidade ilegível: Produto sob encomenda Encomende agora e avisaremos por e-mai)"
+        ],
+        "em": "2026-11-20"
+      }
     },
     "9788562500824": {
       "preco": 29.9,
@@ -238,20 +254,36 @@
         "url": "https://rocco.com.br/produto/o-primeiro-dia-de-chu-na-escola/",
         "base": "dado estruturado (schema.org)",
         "edicao": "9786589642213",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "rocco.com.br: Em estoque",
+          "amazon.com.br: Em estoque"
+        ],
+        "em": "2026-11-20"
       }
     },
     "9788574068039": {
       "venda": "NOT_FOR_SALE",
       "em": "2026-09-18",
       "loja": {
-        "preco": 48.93,
+        "preco": 40,
         "moeda": "BRL",
         "formato": "impresso",
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8574068039",
         "base": "preço do buy box",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
+          "amazon.com.br: Em estoque"
+        ],
+        "em": "2026-11-20"
       }
     },
     "9786556171081": {
@@ -262,14 +294,14 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6556171085",
         "base": "preço do buy box",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "estoque": {
         "a_venda": true,
         "onde": [
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9786555351958": {
@@ -280,14 +312,14 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6555351950",
         "base": "preço do buy box",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "estoque": {
         "a_venda": true,
         "onde": [
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9788506041840": {
@@ -298,7 +330,14 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8506041848",
         "base": "preço do buy box",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "amazon.com.br: Somente 1 em estoque."
+        ],
+        "em": "2026-11-20"
       }
     },
     "9786553843769": {
@@ -310,25 +349,33 @@
         "url": "https://www.cirandacultural.com.br/produto/livro-tempo-de-escola-74911",
         "base": "dado estruturado (schema.org)",
         "edicao": "9786553843578",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "cirandacultural.com.br: botão de compra na tela: \"Comprar | Ok\"",
+          "amazon.com.br: Em estoque"
+        ],
+        "em": "2026-11-20"
       }
     },
     "9788516048259": {
       "loja": {
-        "preco": 22.9,
+        "preco": 21.75,
         "moeda": "BRL",
         "formato": "impresso",
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/851604825X",
         "base": "preço do buy box",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "estoque": {
         "a_venda": true,
         "onde": [
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9788574126234": {
@@ -339,7 +386,15 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8574126233",
         "base": "preço do buy box",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
+          "amazon.com.br: Em estoque"
+        ],
+        "em": "2026-11-20"
       }
     },
     "9788530500269": {
@@ -359,7 +414,7 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6556540099",
         "base": "preço do buy box",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "estoque": {
         "a_venda": true,
@@ -367,7 +422,7 @@
           "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9788525057631": {
@@ -378,7 +433,14 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8525057630",
         "base": "preço do buy box",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "amazon.com.br: Em estoque"
+        ],
+        "em": "2026-11-20"
       }
     },
     "9788574069197": {
@@ -389,7 +451,15 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8574069191",
         "base": "preço do buy box",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
+          "amazon.com.br: Em estoque"
+        ],
+        "em": "2026-11-20"
       }
     },
     "9788578886271": {
@@ -400,7 +470,15 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8578886275",
         "base": "preço do buy box",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "pandabooks.com.br: não deu leitura (nenhum sinal de estoque na página)",
+          "amazon.com.br: Em estoque"
+        ],
+        "em": "2026-11-20"
       }
     },
     "9786556540351": {
@@ -411,7 +489,7 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6556540358",
         "base": "preço do buy box",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "estoque": {
         "a_venda": true,
@@ -419,7 +497,7 @@
           "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9788574065229": {
@@ -430,7 +508,15 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8574065226",
         "base": "preço do buy box",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
+          "amazon.com.br: Em estoque"
+        ],
+        "em": "2026-11-20"
       }
     },
     "9788574065328": {
@@ -441,18 +527,34 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8574065323",
         "base": "preço do buy box",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
+          "amazon.com.br: Em estoque"
+        ],
+        "em": "2026-11-20"
       }
     },
     "9788574124018": {
       "loja": {
-        "preco": 55.93,
+        "preco": 39.85,
         "moeda": "BRL",
         "formato": "impresso",
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/857412401X",
         "base": "preço do buy box",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
+          "amazon.com.br: Em estoque"
+        ],
+        "em": "2026-11-20"
       }
     },
     "9788508172016": {
@@ -463,7 +565,14 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/850817201X",
         "base": "preço do buy box",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "amazon.com.br: Somente 7 em estoque."
+        ],
+        "em": "2026-11-20"
       }
     },
     "9788538059172": {
@@ -474,18 +583,33 @@
         "onde": "Ciranda Cultural",
         "url": "https://www.cirandacultural.com.br/produto/livro-piratas-nao-tem-medo-do-escuro-73216",
         "base": "dado estruturado (schema.org)",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "cirandacultural.com.br: botão de compra na tela: \"Comprar | Ok\"",
+          "amazon.com.br: Somente 6 em estoque."
+        ],
+        "em": "2026-11-20"
       }
     },
     "9786555395426": {
       "loja": {
-        "preco": 38.52,
+        "preco": 35.41,
         "moeda": "BRL",
         "formato": "impresso",
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6555395427",
         "base": "preço do buy box",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "amazon.com.br: Somente 7 em estoque."
+        ],
+        "em": "2026-11-20"
       }
     },
     "9788574122854": {
@@ -496,7 +620,15 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8574122858",
         "base": "preço do buy box",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
+          "amazon.com.br: Em estoque"
+        ],
+        "em": "2026-11-20"
       }
     },
     "9788589987387": {
@@ -507,7 +639,15 @@
         "onde": "Edipro",
         "url": "https://edipro.com.br/livro/coco-xixi-e-pum/",
         "base": "dado estruturado (schema.org)",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "edipro.com.br: ADICIONAR AO CARRINHO",
+          "amazon.com.br: Em estoque"
+        ],
+        "em": "2026-11-20"
       }
     },
     "9786555009538": {
@@ -517,7 +657,7 @@
           "cirandacultural.com.br: botão de compra na tela: \"Comprar | Ok\"",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "loja": {
         "preco": 39.9,
@@ -526,7 +666,7 @@
         "onde": "Ciranda Cultural",
         "url": "https://www.cirandacultural.com.br/produto/livro-mortinha-da-silvia-70427",
         "base": "dado estruturado (schema.org)",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9786559801817": {
@@ -537,7 +677,7 @@
         "onde": "HarperCollins Brasil",
         "url": "https://harpercollins.com.br/products/uma-oferenda-para-perro-celebre-o-amor-neste-livro-infantil-ilustrado-sobre-o-dia-de-los-muertos-judith-valdes-b",
         "base": "dado estruturado (schema.org)",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "estoque": {
         "a_venda": true,
@@ -545,7 +685,7 @@
           "harpercollins.com.br: Adicionar ao carrinho",
           "amazon.com.br: Somente 6 em estoque."
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9788534922845": {
@@ -556,18 +696,34 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8534922845",
         "base": "preço do buy box",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "loja.paulus.com.br: não deu leitura (nenhum sinal de estoque na página)",
+          "amazon.com.br: Em estoque"
+        ],
+        "em": "2026-11-20"
       }
     },
     "9788595010925": {
       "loja": {
-        "preco": 50.35,
+        "preco": 37.76,
         "moeda": "BRL",
         "formato": "impresso",
-        "onde": "Amazon",
-        "url": "https://www.amazon.com.br/dp/8595010927",
-        "base": "preço do buy box",
-        "em": "2026-11-18"
+        "onde": "Sinopsys",
+        "url": "https://sinopsyseditora.com.br/livros/meu-animalzinho-morreu-ajudando-criancas-a-lidar-com-a-perda-do-seu-bicho-de-estimacao-1217",
+        "base": "dado estruturado (schema.org)",
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "sinopsyseditora.com.br: Em Estoque",
+          "amazon.com.br: Somente 4 em estoque."
+        ],
+        "em": "2026-11-20"
       }
     },
     "9788599306901": {
@@ -578,7 +734,14 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8599306901",
         "base": "preço do buy box",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "amazon.com.br: Em estoque"
+        ],
+        "em": "2026-11-20"
       }
     },
     "9786556540078": {
@@ -589,7 +752,15 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6556540072",
         "base": "preço do buy box",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
+          "amazon.com.br: Em estoque"
+        ],
+        "em": "2026-11-20"
       }
     },
     "9786556540214": {
@@ -600,7 +771,7 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6556540218",
         "base": "preço do buy box",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "estoque": {
         "a_venda": true,
@@ -608,18 +779,26 @@
           "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9788574125725": {
       "loja": {
-        "preco": 56.52,
+        "preco": 40.08,
         "moeda": "BRL",
         "formato": "impresso",
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8574125725",
         "base": "preço do buy box",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "amazon.com.br: Somente 3 em estoque.",
+          "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)"
+        ],
+        "em": "2026-11-20"
       }
     },
     "9788575596364": {
@@ -630,7 +809,14 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8575596365",
         "base": "preço do buy box",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "amazon.com.br: Somente 1 em estoque (mais a caminho)."
+        ],
+        "em": "2026-11-20"
       }
     },
     "9788578886776": {
@@ -641,18 +827,26 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8578886771",
         "base": "preço do buy box",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "pandabooks.com.br: não deu leitura (nenhum sinal de estoque na página)",
+          "amazon.com.br: Em estoque"
+        ],
+        "em": "2026-11-20"
       }
     },
     "9786556541518": {
       "loja": {
-        "preco": 75.14,
+        "preco": 60.3,
         "moeda": "BRL",
         "formato": "impresso",
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6556541516",
         "base": "preço do buy box",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "estoque": {
         "a_venda": true,
@@ -660,7 +854,7 @@
           "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9788534925983": {
@@ -668,21 +862,37 @@
         "preco": 41,
         "moeda": "BRL",
         "formato": "impresso",
-        "onde": "Paulus",
-        "url": "https://loja.paulus.com.br/um-novo-bebe-esta-chegando-um-guia-para-o-irmao-e-a-irma-mais-velhos/p",
-        "base": "dado estruturado (schema.org)",
-        "em": "2026-11-19"
+        "onde": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8534925984",
+        "base": "preço do buy box",
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "loja.paulus.com.br: não deu leitura (nenhum sinal de estoque na página)",
+          "amazon.com.br: Em estoque"
+        ],
+        "em": "2026-11-20"
       }
     },
     "9788574125534": {
       "loja": {
-        "preco": 41.86,
+        "preco": 37.7,
         "moeda": "BRL",
         "formato": "impresso",
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8574125539",
         "base": "preço do buy box",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
+          "amazon.com.br: Em estoque"
+        ],
+        "em": "2026-11-20"
       }
     },
     "9788581841441": {
@@ -693,7 +903,14 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8581841449",
         "base": "preço do buy box",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "amazon.com.br: Somente 1 em estoque."
+        ],
+        "em": "2026-11-20"
       }
     },
     "9786526107522": {
@@ -704,7 +921,7 @@
         "onde": "Ciranda Cultural",
         "url": "https://www.cirandacultural.com.br/produto/livro-grampeado-turma-da-monica-quando-maria-cebolinha-chegou-74606",
         "base": "dado estruturado (schema.org)",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "estoque": {
         "a_venda": true,
@@ -712,7 +929,7 @@
           "cirandacultural.com.br: botão de compra na tela: \"Comprar | Ok\"",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9786581776886": {
@@ -723,7 +940,7 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6581776882",
         "base": "preço do buy box",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "estoque": {
         "a_venda": true,
@@ -731,18 +948,26 @@
           "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9788574062693": {
       "loja": {
-        "preco": 56.71,
+        "preco": 56.99,
         "moeda": "BRL",
         "formato": "impresso",
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8574062693",
         "base": "preço do buy box",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
+          "amazon.com.br: Em estoque"
+        ],
+        "em": "2026-11-20"
       }
     },
     "9786556541020": {
@@ -753,7 +978,7 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6556541028",
         "base": "preço do buy box",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "estoque": {
         "a_venda": true,
@@ -761,7 +986,7 @@
           "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9788574125183": {
@@ -772,7 +997,15 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8574125180",
         "base": "preço do buy box",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "companhiadasletras.com.br: não deu leitura (nenhum sinal de estoque na página)",
+          "amazon.com.br: Em estoque"
+        ],
+        "em": "2026-11-20"
       }
     },
     "9786555071672": {
@@ -783,7 +1016,7 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6555071672",
         "base": "preço do buy box",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "estoque": {
         "a_venda": true,
@@ -791,7 +1024,7 @@
           "amazon.com.br: Somente 2 em estoque.",
           "martinsfontespaulista.com.br: não deu leitura (nenhum sinal de estoque na página)"
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9786555071696": {
@@ -802,7 +1035,7 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6555071699",
         "base": "preço do buy box",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "estoque": {
         "a_venda": true,
@@ -810,25 +1043,25 @@
           "amazon.com.br: Somente 7 em estoque.",
           "martinsfontespaulista.com.br: não deu leitura (nenhum sinal de estoque na página)"
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9786555071689": {
       "loja": {
-        "preco": 26.18,
+        "preco": 27.55,
         "moeda": "BRL",
         "formato": "impresso",
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6555071680",
         "base": "preço do buy box",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "estoque": {
         "a_venda": true,
         "onde": [
-          "amazon.com.br: Somente 1 em estoque."
+          "amazon.com.br: Somente 3 em estoque."
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9788526284920": {
@@ -836,21 +1069,37 @@
         "preco": 111,
         "moeda": "BRL",
         "formato": "impresso",
-        "onde": "Martins Fontes Paulista",
-        "url": "https://www.martinsfontespaulista.com.br/quem-tem-medo-de-escuro--680170/p",
-        "base": "microdado (schema.org)",
-        "em": "2026-11-19"
+        "onde": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8526284924",
+        "base": "preço do buy box",
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "amazon.com.br: Somente 1 em estoque (mais a caminho).",
+          "martinsfontespaulista.com.br: não deu leitura (nenhum sinal de estoque na página)"
+        ],
+        "em": "2026-11-20"
       }
     },
     "9788542242836": {
       "loja": {
-        "preco": 37.9,
+        "preco": 41.53,
         "moeda": "BRL",
         "formato": "impresso",
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8542242831",
         "base": "preço do buy box",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "planetadelivros.com.br: não deu leitura (nenhum sinal de estoque na página)",
+          "amazon.com.br: Em estoque"
+        ],
+        "em": "2026-11-20"
       }
     },
     "9786583646088": {
@@ -860,7 +1109,7 @@
           "martinsfontespaulista.com.br: não deu leitura (nenhum sinal de estoque na página)",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "loja": {
         "preco": 33.28,
@@ -869,7 +1118,7 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6583646080",
         "base": "preço do buy box",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9786559885268": {
@@ -880,7 +1129,7 @@
         "onde": "Martins Fontes Paulista",
         "url": "https://www.martinsfontespaulista.com.br/a-corujinha-que-tinha-medo-do-escuro-—-da-coautora-da-serie-corajosas-1188765/p",
         "base": "dado estruturado (schema.org)",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
       }
     },
     "9786555711677": {
@@ -890,8 +1139,8 @@
         "formato": "impresso",
         "onde": "Martins Fontes Paulista",
         "url": "https://www.martinsfontespaulista.com.br/antonio-e-o-medo-do-escuro-1117962/p",
-        "base": "microdado (schema.org)",
-        "em": "2026-11-19"
+        "base": "dado estruturado (schema.org)",
+        "em": "2026-11-20"
       }
     },
     "9786588150894": {
@@ -902,17 +1151,25 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/658815089X",
         "base": "preço do buy box",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "martinsfontespaulista.com.br: não deu leitura (nenhum sinal de estoque na página)",
+          "amazon.com.br: Somente 3 em estoque (mais a caminho)."
+        ],
+        "em": "2026-11-20"
       }
     },
     "9786526122631": {
       "estoque": {
         "a_venda": true,
         "onde": [
-          "martinsfontespaulista.com.br: não deu leitura (The operation was aborted due to timeout)",
+          "martinsfontespaulista.com.br: não deu leitura (nenhum sinal de estoque na página)",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "loja": {
         "preco": 26.44,
@@ -921,7 +1178,7 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6526122639",
         "base": "preço do buy box",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9786598011581": {
@@ -931,7 +1188,7 @@
           "martinsfontespaulista.com.br: não deu leitura (nenhum sinal de estoque na página)",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "loja": {
         "preco": 39.41,
@@ -940,7 +1197,7 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6598011582",
         "base": "preço do buy box",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9786555005332": {
@@ -950,7 +1207,7 @@
           "cirandacultural.com.br: botão de compra na tela: \"Comprar | Ok\"",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "loja": {
         "preco": 39.9,
@@ -959,7 +1216,7 @@
         "onde": "Ciranda Cultural",
         "url": "https://www.cirandacultural.com.br/produto/livro-os-pesadelos-de-manu-70826",
         "base": "dado estruturado (schema.org)",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9788538047568": {
@@ -971,17 +1228,34 @@
         "url": "https://www.amazon.com.br/dp/8538047566",
         "base": "preço do buy box",
         "em": "2026-11-11"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "cirandacultural.com.br: Produto Indisponível",
+          "amazon.com.br: Somente 8 em estoque."
+        ],
+        "em": "2026-11-20"
       }
     },
     "9786556020983": {
       "loja": {
-        "preco": 39,
+        "preco": 27.3,
         "moeda": "BRL",
         "formato": "impresso",
-        "onde": "Martins Fontes Paulista",
-        "url": "https://www.martinsfontespaulista.com.br/lulu-vai-para-a-escola-1058785/p",
-        "base": "microdado (schema.org)",
-        "em": "2026-11-19"
+        "onde": "Pallas Editora",
+        "url": "https://pallaseditora.com.br/produto/lulu-vai-para-a-escola/",
+        "base": "dado estruturado (schema.org)",
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "pallaseditora.com.br: Adicionar ao carrinho",
+          "martinsfontespaulista.com.br: não deu leitura (nenhum sinal de estoque na página)",
+          "amazon.com.br: Em estoque"
+        ],
+        "em": "2026-11-20"
       }
     },
     "9786553845398": {
@@ -992,7 +1266,7 @@
           "martinsfontespaulista.com.br: não deu leitura (nenhum sinal de estoque na página)",
           "amazon.com.br: Somente 3 em estoque."
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "loja": {
         "preco": 39.9,
@@ -1001,18 +1275,26 @@
         "onde": "Ciranda Cultural",
         "url": "https://www.cirandacultural.com.br/produto/livro-tarugo-vai-a-escola-75211",
         "base": "dado estruturado (schema.org)",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9786555308334": {
       "loja": {
-        "preco": 69.9,
+        "preco": 55.43,
         "moeda": "BRL",
         "formato": "impresso",
-        "onde": "Martins Fontes Paulista",
-        "url": "https://www.martinsfontespaulista.com.br/amigos-do-troninho---livro-infantil-para-aprender-a-usar-o-penico---dicas-para-pais-e-responsaveis-1139201/p",
-        "base": "microdado (schema.org)",
-        "em": "2026-11-19"
+        "onde": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6555308338",
+        "base": "preço do buy box",
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "martinsfontespaulista.com.br: não deu leitura (nenhum sinal de estoque na página)",
+          "amazon.com.br: Somente 3 em estoque (mais a caminho)."
+        ],
+        "em": "2026-11-20"
       }
     },
     "9786555072600": {
@@ -1022,7 +1304,7 @@
           "martinsfontespaulista.com.br: não deu leitura (nenhum sinal de estoque na página)",
           "amazon.com.br: Somente 2 em estoque."
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "loja": {
         "preco": 42.16,
@@ -1031,17 +1313,17 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/6555072601",
         "base": "preço do buy box",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9786587299617": {
       "estoque": {
         "a_venda": true,
         "onde": [
-          "martinsfontespaulista.com.br: não deu leitura (The operation was aborted due to timeout)",
+          "martinsfontespaulista.com.br: não deu leitura (nenhum sinal de estoque na página)",
           "amazon.com.br: Em estoque"
         ],
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       },
       "loja": {
         "preco": 40.37,
@@ -1050,7 +1332,7 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/658729961X",
         "base": "preço do buy box",
-        "em": "2026-11-19"
+        "em": "2026-11-20"
       }
     },
     "9788535627084": {
@@ -1061,9 +1343,55 @@
         "onde": "Amazon",
         "url": "https://www.amazon.com.br/dp/8535627081",
         "base": "preço do buy box",
-        "em": "2026-11-18"
+        "em": "2026-11-20"
+      },
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "amazon.com.br: Somente 1 em estoque (mais a caminho).",
+          "martinsfontespaulista.com.br: não deu leitura (nenhum sinal de estoque na página)"
+        ],
+        "em": "2026-11-20"
       }
     },
-    "9788566470222": {}
+    "9788566470222": {
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "martinsfontespaulista.com.br: não deu leitura (nenhum sinal de estoque na página)",
+          "amazon.com.br: Somente 1 em estoque."
+        ],
+        "em": "2026-11-20"
+      },
+      "loja": {
+        "preco": 84.9,
+        "moeda": "BRL",
+        "formato": "impresso",
+        "onde": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8566470222",
+        "base": "preço do buy box",
+        "em": "2026-11-20"
+      }
+    },
+    "9786557230886": {
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "editorafiel.com.br: não deu leitura (nenhum sinal de estoque na página)",
+          "martinsfontespaulista.com.br: não deu leitura (nenhum sinal de estoque na página)",
+          "amazon.com.br: Somente 3 em estoque."
+        ],
+        "em": "2026-11-20"
+      },
+      "loja": {
+        "preco": 26,
+        "moeda": "BRL",
+        "formato": "impresso",
+        "onde": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6557230883",
+        "base": "preço do buy box",
+        "em": "2026-11-20"
+      }
+    }
   }
 }
