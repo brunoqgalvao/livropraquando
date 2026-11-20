@@ -1,0 +1,106 @@
+{
+  "isbn13": "9786586140552",
+  "titulo": "Lalá não usa fraldas",
+  "subtitulo": "Como ser bem sucedido na retirada de fraldas",
+  "autor": "Fernanda Ribeiro Paiva Mascarenhas",
+  "ilustrador": "André Santos",
+  "editora": "Artesã Editora",
+  "ano": 2021,
+  "origem": "nacional",
+  "paginas": 28,
+  "situacoes": [
+    "desfralde"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse na Livraria Martins Fontes",
+      "url": "https://www.martinsfontespaulista.com.br/lala-nao-usa-fraldas-966166/p",
+      "trecho": "Lalá é uma menina que irá vivenciar o processo de retirada da fralda. Com o apoio da família, ela irá passar por momentos de escolhas, por frustrações, até chegar ao sucesso do desfralde.",
+      "acessado_em": "2026-11-20"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "detalhes do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/6586140552",
+      "trecho": "Editora ‏ : ‎ ARTESÃ EDITORA Data da publicação ‏ : ‎ 1 outubro 2021 Edição ‏ : ‎ 1ª Idioma ‏ : ‎ Português Número de páginas ‏ : ‎ 28 páginas ISBN-10 ‏ : ‎ 6586140552 ISBN-13 ‏ : ‎ 978-6586140552",
+      "acessado_em": "2026-11-20"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha na Livraria Martins Fontes",
+      "url": "https://www.martinsfontespaulista.com.br/lala-nao-usa-fraldas-966166/p",
+      "trecho": "Autor: MASCARENHAS, FERNANDA RIBEIRO PAIVA Ilustrador: SANTOS, ANDRE Editora: ARTESA EDITORA",
+      "acessado_em": "2026-11-20"
+    }
+  ],
+  "nao_coberto": "A sinopse diz que Lalá passa \"por momentos de escolhas, por frustrações, até chegar ao sucesso do desfralde\", mas não conta que escolhas são nem se ela usa penico ou vaso. Não diz quem narra nem se o texto é rimado. Nenhuma fonte lida indica faixa etária. A sinopse se dirige aos pais e professores, mas não diz se o livro traz páginas de orientação para o adulto.",
+  "nao_aborda": "Pela sinopse, é o desfralde de uma menina com apoio da família; ela não fala de escape, de noite sem fralda nem de irmão.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Martins Fontes Paulista",
+        "url": "https://www.martinsfontespaulista.com.br/lala-nao-usa-fraldas-966166/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6586140552"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-11-20"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-11-20"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "martinsfontespaulista.com.br",
+        "url": "https://www.martinsfontespaulista.com.br/lala-nao-usa-fraldas-966166/p",
+        "isbn13": "9786586140552",
+        "titulo_bateu": true,
+        "trecho": "LALÁ NÃO USA FRALDAS - MASCARENHAS, FERNANDA RIBEIRO PAIVA | Livraria Martins Fontes",
+        "em": "2026-11-20"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-11-20",
+  "capa": {
+    "arquivo": "9786586140552.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/61CmBOCounL._SL1200_.jpg",
+    "obtida_em": "2026-11-20",
+    "sha1": "6bb745ee66827bdeea46a67dd7c6cd1a37f0084c",
+    "largura": 595,
+    "altura": 600
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Martins Fontes, que imprime o ISBN-13, e a da Amazon traz o mesmo. A Artesã Editora (Belo Horizonte) publica sobretudo psicologia; o catálogo dela na Martins Fontes tem cerca de 300 títulos de mais de 200 autores, e o site recebe originais para análise editorial, sem venda de pacote de publicação. Por isso conta como editora comercial. Origem nacional porque nenhuma ficha credita tradutor. A sinopse abre e fecha com frases sobre o efeito do livro no leitor; ficaram fora da citação. Em 20/11 a Martins Fontes marcava pronta entrega e a Amazon tinha em estoque."
+}

@@ -194,8 +194,11 @@ incompleto vale mais que um catálogo completo e inventado.
    mão no máximo 1x por semana, e a automática volta quando aparecer candidato
    aproveitável) e `morte-do-bichinho` (desde 23/10, depois de 4 automáticas
    vazias; garimpo à mão no máximo 1x por semana, e a automática só volta se o
-   garimpo achar 2 ou mais candidatos novos). Ver `runtime/decisoes-2026-10-12.md`,
-   `-10-16.md` e `-10-23.md`.
+   garimpo achar 2 ou mais candidatos novos) e `desfralde` (desde 20/11, depois de 2
+   automáticas vazias seguidas; garimpo à mão 1x por semana, e a automática só
+   volta quando o garimpo achar 2 candidatos novos em duas rodadas seguidas).
+   Com isso, `primeiro-dia-de-aula` é a única no rodízio automático. Ver
+   `runtime/decisoes-2026-10-12.md`, `-10-16.md`, `-10-23.md` e `-11-20.md`.
 6. Escolha **no máximo 2**. O teto não é sugestão. Ele existe porque encher o
    catálogo é a forma mais fácil de parecer produtivo sem ser útil.
    Descarte sem dó: a descoberta traz romance adulto e livro de teologia junto.
@@ -413,5 +416,5 @@ O Bruno quer que o site seja citado quando um pai pergunta pro ChatGPT, Claude, 
 ## Pendências que o humano já resolveu (18/11)
 
 - O patch de login do `rodar.sh` foi aplicado em 17/11, no commit aad85dc (usa a conta Claude ativa via claude-accounts). Tire esse item do relatório.
-- A Artesã (Lalá), sem resposta desde 08/11, é tarefa sua: mande um follow-up curto pelo mesmo canal do primeiro contato. Sem resposta até 25/11, arquive como "sem retorno" e pare de listar.
+- A Artesã (Lalá): resolvido em 20/11. Verificada como editora comercial (catálogo próprio, análise editorial, CNPJ desde 2000) e o livro entrou. Tire do relatório.
 - morte-do-bichinho com garimpo vazio: antes de concluir que não há livro, amplie a busca ("luto infantil", "perda de animal de estimação", "morte para crianças").

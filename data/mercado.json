@@ -1392,6 +1392,25 @@
         "base": "preço do buy box",
         "em": "2026-11-20"
       }
+    },
+    "9786586140552": {
+      "estoque": {
+        "a_venda": true,
+        "onde": [
+          "martinsfontespaulista.com.br: não deu leitura (nenhum sinal de estoque na página)",
+          "amazon.com.br: Somente 2 em estoque."
+        ],
+        "em": "2026-11-20"
+      },
+      "loja": {
+        "preco": 40,
+        "moeda": "BRL",
+        "formato": "impresso",
+        "onde": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6586140552",
+        "base": "preço do buy box",
+        "em": "2026-11-20"
+      }
     }
   }
 }
