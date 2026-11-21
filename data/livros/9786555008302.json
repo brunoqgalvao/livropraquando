@@ -1,0 +1,119 @@
+{
+  "isbn13": "9786555008302",
+  "titulo": "Tchau, fraldas!",
+  "autor": "Ciranda Cultural",
+  "ilustrador": "Angelika Scudamore",
+  "editora": "Ciranda Cultural",
+  "ano": 2021,
+  "paginas": 10,
+  "situacoes": [
+    "desfralde"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "0 a 3",
+      "base": 1
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "sim",
+      "base": 0
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site da Ciranda Cultural",
+      "url": "https://www.cirandacultural.com.br/produto/livro-cartonado-tchau-fraldas-70598",
+      "trecho": "Este livro traz, de forma lúdica e visual, uma história para os pequenos, além de dicas para os adultos auxiliarem a criança a dar tchau às fraldas com leveza e diversão.",
+      "acessado_em": "2026-11-21"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha no site da Ciranda Cultural",
+      "url": "https://www.cirandacultural.com.br/produto/livro-cartonado-tchau-fraldas-70598",
+      "trecho": "Editora: Ciranda Cultural Edição: 1, 2021 Autor: Ciranda Cultural Ilustrador: Angelika Scudamore Idioma: Português Páginas: 10 Dimensões: L 17.00 x A 19.00 x E 0.60 ISBN: 9786555008302 Coleção: Lendo por aí Linha Editorial: Ciranda Cultural - Não ficção Faixa Etária: 0-3 anos",
+      "acessado_em": "2026-11-21"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "detalhes do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/655500830X",
+      "trecho": "Editora ‏ : ‎ Ciranda Cultural Data da publicação ‏ : ‎ 15 março 2022 Edição ‏ : ‎ Lendo por aí - Tchau, fraldas! Idioma ‏ : ‎ Português Número de páginas ‏ : ‎ 10 páginas ISBN-10 ‏ : ‎ 655500830X ISBN-13 ‏ : ‎ 978-6555008302",
+      "acessado_em": "2026-11-21"
+    }
+  ],
+  "nao_coberto": "A sinopse diz que há uma história para a criança e dicas para o adulto, mas não conta a história: não diz quem é o personagem, se ele troca a fralda pelo penico ou pelo vaso, quem narra, se o texto é rimado nem como termina. Também não diz o que as dicas para o adulto recomendam. A ficha credita a própria editora como autora, e nenhuma fonte diz se o texto é original da Ciranda ou tradução.",
+  "nao_aborda": "Pela sinopse, é a despedida da fralda contada para bebês, com dicas para o adulto; ela não fala de escape, de noite sem fralda nem de medo do vaso.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Ciranda Cultural",
+        "url": "https://www.cirandacultural.com.br/produto/livro-cartonado-tchau-fraldas-70598"
+      },
+      {
+        "loja": "Martins Fontes Paulista",
+        "url": "https://www.martinsfontespaulista.com.br/tchau--fraldas--975252/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/655500830X"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-11-21"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-11-21"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "cirandacultural.com.br",
+        "url": "https://www.cirandacultural.com.br/produto/livro-cartonado-tchau-fraldas-70598",
+        "isbn13": "9786555008302",
+        "titulo_bateu": true,
+        "trecho": "Livro Cartonado Tchau, fraldas! - Ciranda Cultural",
+        "em": "2026-11-21"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "martinsfontespaulista.com.br",
+        "url": "https://www.martinsfontespaulista.com.br/tchau--fraldas--975252/p",
+        "isbn13": "9786555008302",
+        "titulo_bateu": true,
+        "trecho": "TCHAU, FRALDAS! - CIRANDA CULTURAL | Livraria Martins Fontes",
+        "em": "2026-11-21"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-11-21",
+  "capa": {
+    "arquivo": "9786555008302.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/51D-tnrSkjL._SL1200_.jpg",
+    "obtida_em": "2026-11-21",
+    "sha1": "84ee35272444bcd81642acd539c4e1b3bbc67050",
+    "largura": 447,
+    "altura": 500
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pelas fichas da Ciranda Cultural e da Martins Fontes, que imprimem o ISBN, e a da Amazon traz o mesmo. A idade (0 a 3) é a faixa da ficha da editora; a Amazon só tem a idade sugerida por clientes, que não entra. As fontes discordam do ano: a ficha da editora diz edição 1 de 2021, a Martins Fontes diz 1ª edição de 2022 e a Amazon registra 15 de março de 2022; a página segue a editora. É o cartonado de 10 páginas da coleção Lendo por aí; a Ciranda tem outro \"Tchau, fraldas!\", grampeado, de 16 páginas e 2020 (ISBN 9786555002515), indisponível no site dela, e nenhuma fonte diz se o texto é o mesmo. Em 21/11 a Ciranda, a Martins Fontes e a Amazon tinham à venda."
+}
