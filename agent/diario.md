@@ -116,6 +116,13 @@ incompleto vale mais que um catálogo completo e inventado.
    foi tomada; não refaça.** Se aparecer outro livro com indicação dupla, a
    regra agora é essa.
 
+   **Idade incoerente com o formato (22/11, decisão do Bruno):** idade só vale
+   da editora/autor ou de fonte coerente com o formato do livro. Se a Amazon
+   dá uma faixa que não combina com o livro (ex.: "9 - 12 anos" num ilustrado
+   de 32 p. sobre a chegada de um irmão), recuse em `idade_recusada` e deixe
+   n/i. Ressalva na nota não conserta número que engana. Ver
+   `runtime/decisoes-2026-11-22.md`.
+
    O nono sem idade é caso diferente dos outros e tem trava própria: "Quero ser
    meu irmãozinho!" TEM indicação na ficha da Amazon ("0 - 3 anos") e ela foi
    **recusada** em 22/09, porque a sinopse da editora na mesma página fala de um

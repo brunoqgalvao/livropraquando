@@ -11,8 +11,7 @@
   ],
   "rubrica": {
     "idade_editora": {
-      "valor": "9 a 12",
-      "base": 3
+      "valor": "nao_coberto"
     },
     "nomeia_evento": {
       "valor": "direto",
@@ -100,5 +99,13 @@
     "largura": 500,
     "altura": 395
   },
-  "nota": "Provado no Google Books, que registra o ISBN com o título e Kes Gray como autor. A ficha da Panda Books e a da Amazon trazem o mesmo ISBN, 2007 e 32 páginas. A idade (9 a 12) é a da ficha da Amazon; nem a Panda nem a Martins Fontes indicam faixa etária, e é uma faixa alta para um livro ilustrado de 32 páginas. Em 22/11 a Panda Books e a Amazon tinham à venda; a Martins Fontes mostrava o livro esgotado."
+  "idade_recusada": [
+    {
+      "valor": "9 a 12",
+      "fonte": "amazon.com.br",
+      "motivo": "a ficha da Amazon diz \"9 - 12 anos\" para um livro ilustrado de 32 páginas sobre a chegada de um irmão, que é formato de criança pequena; a Panda Books não indica faixa. Recusada por decisão do Bruno em 22/11: Amazon em conflito com o formato fica n/i",
+      "em": "2026-11-22"
+    }
+  ],
+  "nota": "Provado no Google Books, que registra o ISBN com o título e Kes Gray como autor. A ficha da Panda Books e a da Amazon trazem o mesmo ISBN, 2007 e 32 páginas. Nem a Panda nem a Martins Fontes indicam faixa etária. A ficha da Amazon diz 9 a 12 anos, o que não combina com um livro ilustrado de 32 páginas sobre a chegada de um irmão, e por isso a página não usa essa faixa. Em 22/11 a Panda Books e a Amazon tinham à venda; a Martins Fontes mostrava o livro esgotado."
 }
