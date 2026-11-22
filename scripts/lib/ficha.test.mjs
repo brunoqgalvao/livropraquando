@@ -304,5 +304,12 @@ t('ISBN-10 sem "13" não vira ISBN-13', () =>
 t('Amazon continua lendo só a ficha', () =>
   assert.equal(isbnDaPagina({ host: 'amazon.com.br', texto: 'ISBN 978-85-422-4283-6', amazon: { ficha: [] } }), null));
 
+// Panda, 22/11: "Esgotado!" era de outro livro, no "Leia também".
+const PANDA = 'Vou ganhar um irmãozinho Autor: Kes Gray e Sarah Nayler Disponibilidade: Imediata R$ 65,90 Quantidade: Comprar ' + 'A chegada de um novo bebê na família muda a vida de todos. '.repeat(5) + 'Leia também Tem gente nova no pedaço Esgotado! Comprar A árvore da família R$65,90 Comprar';
+t('"Esgotado!" na vitrine "Leia também" não esgota o livro da página', () =>
+  assert.notEqual(estoqueDaPagina({ host: 'pandabooks.com.br', titulo: 'Vou ganhar um irmãozinho', texto: PANDA }).ok, false));
+t('"Esgotado" antes da vitrine continua esgotando', () =>
+  assert.equal(estoqueDaPagina({ host: 'pandabooks.com.br', titulo: 'x', texto: 'Produto esgotado ' + PANDA }).ok, false));
+
 console.log(`${ok} passaram, ${falhou} falharam`);
 process.exit(falhou ? 1 : 0);

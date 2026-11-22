@@ -1,0 +1,104 @@
+{
+  "isbn13": "9788588948495",
+  "titulo": "Vou ganhar um irmãozinho",
+  "autor": "Kes Gray",
+  "ilustrador": "Sarah Nayler",
+  "editora": "Panda Books",
+  "ano": 2007,
+  "paginas": 32,
+  "situacoes": [
+    "vai-nascer-um-irmao"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "9 a 12",
+      "base": 3
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site da Panda Books",
+      "url": "https://www.pandabooks.com.br/infantil/comportamento/vou-ganhar-um-irmaozinho",
+      "trecho": "Por isso, Kes Gray resolveu explicar como funciona a gravidez e como o novo irmãozinho se forma dentro da barriga da mamãe, passo a passo. Enquanto acompanha todo o desenvolvimento do bebê nos meses de gestação, a criança vai criando laços afetivos com o novo membro da família e também entende as transformações na rotina dos pais.",
+      "acessado_em": "2026-11-22"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha técnica no site da Panda Books",
+      "url": "https://www.pandabooks.com.br/infantil/comportamento/vou-ganhar-um-irmaozinho",
+      "trecho": "Ano da edição 2007 […] Ilustrador Nayler, Sarah […] ISBN 978-85-88948-49-5 […] Número de Páginas: 32",
+      "acessado_em": "2026-11-22"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "detalhes do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/8588948494",
+      "trecho": "Editora ‏ : ‎ Panda Books Data da publicação ‏ : ‎ 29 novembro 2007 Edição ‏ : ‎ 1ª Idioma ‏ : ‎ Português Número de páginas ‏ : ‎ 32 páginas ISBN-10 ‏ : ‎ 8588948494 ISBN-13 ‏ : ‎ 978-8588948495",
+      "acessado_em": "2026-11-22"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha em Amazon",
+      "url": "https://www.amazon.com.br/dp/8588948494",
+      "trecho": "Idade de leitura : 9 - 12 anos",
+      "acessado_em": "2026-11-22"
+    }
+  ],
+  "nao_coberto": "A sinopse da Panda diz que o livro acompanha a gravidez passo a passo, ao longo dos meses de gestação, e fala das mudanças na rotina dos pais, mas não diz quem narra, se a criança da história é menino ou menina, se o livro chega ao nascimento nem como termina. A ficha da Panda não indica faixa etária, deixa o campo de tradutor em branco e não traz título original; esta página não sabe se o texto é tradução nem de que ano é a primeira edição.",
+  "nao_aborda": "Pela sinopse, o livro explica a gestação para a criança mais velha; ela não fala de ciúme nem da vida com o bebê depois que ele nasce.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Panda Books",
+        "url": "https://www.pandabooks.com.br/infantil/comportamento/vou-ganhar-um-irmaozinho"
+      },
+      {
+        "loja": "Martins Fontes Paulista",
+        "url": "https://www.martinsfontespaulista.com.br/vou-ganhar-um-irmaozinho-256413/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8588948494"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "id": "_MiV0gEACAAJ",
+        "isbn13": "9788588948495",
+        "titulo_bateu": true,
+        "em": "2026-11-22"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-11-22",
+  "capa": {
+    "arquivo": "9788588948495.png",
+    "fonte": "pandabooks.com.br",
+    "url": "https://images.tcdn.com.br/img/img_prod/783226/vou_ganhar_um_irmaozinho_451_1_20200630231818.png",
+    "obtida_em": "2026-11-22",
+    "sha1": "9aaa2162ff496904c120a5a33eb61b6a28c9099c",
+    "largura": 500,
+    "altura": 395
+  },
+  "nota": "Provado no Google Books, que registra o ISBN com o título e Kes Gray como autor. A ficha da Panda Books e a da Amazon trazem o mesmo ISBN, 2007 e 32 páginas. A idade (9 a 12) é a da ficha da Amazon; nem a Panda nem a Martins Fontes indicam faixa etária, e é uma faixa alta para um livro ilustrado de 32 páginas. Em 22/11 a Panda Books e a Amazon tinham à venda; a Martins Fontes mostrava o livro esgotado."
+}

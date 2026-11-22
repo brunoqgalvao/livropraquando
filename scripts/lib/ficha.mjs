@@ -115,6 +115,15 @@ const corta = (s, n = 80) => {
 // entra como sinal positivo. Só positivo: FORA continua sendo checado antes e
 // ganha, porque a Ciranda esgotada mantém o botão no DOM e escreve "Produto
 // Indisponível" no texto.
+// Vitrine de outros livros embaixo da ficha traz o estoque DELES: em 22/11 a
+// Panda mostrava "Esgotado!" no "Leia também" de "Vou ganhar um irmãozinho",
+// à venda. O que vem depois do cabeçalho da vitrine não é deste livro.
+const VITRINE = /\b(?:leia tamb[ée]m|veja tamb[ée]m|voc[êe] tamb[ée]m pode gostar|produtos relacionados|quem (?:viu|comprou)[^\n]{0,40}tamb[ée]m)\b/i;
+export function soDoProduto(t) {
+  const m = t.search(VITRINE);
+  return m > 0 ? t.slice(0, m) : t;
+}
+
 export function estoqueDaPagina({ host, texto, titulo, amazon, botoes }) {
   if (/amazon\./.test(host)) {
     const s = semMarcas(amazon?.estoque);
@@ -125,8 +134,8 @@ export function estoqueDaPagina({ host, texto, titulo, amazon, botoes }) {
     return { ok: null, nota: limpo ? `disponibilidade ilegível: ${limpo.slice(0, 60)}` : 'disponibilidade ilegível' };
   }
   if (/403|forbidden|acesso negado|access denied/i.test(titulo || '')) return { ok: null, nota: 'loja barrou o navegador' };
-  const t = semMarcas(texto);
-  if (t.length < 250) return { ok: null, nota: 'página voltou vazia' };
+  const t = soDoProduto(semMarcas(texto));
+  if (semMarcas(texto).length < 250) return { ok: null, nota: 'página voltou vazia' };
   // A VM sai por IP dos EUA, e o Google Play responde "Este item não está
   // disponível no seu país" pra e-book que a loja brasileira vende. O FORA
   // casava "não está disponível" e três dias disso esgotaram "O gatinho Pete"

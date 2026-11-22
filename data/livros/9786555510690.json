@@ -1,0 +1,115 @@
+{
+  "isbn13": "9786555510690",
+  "titulo": "Meu irmão é um abacate",
+  "autor": "Tracy Darnton",
+  "ilustrador": "Yasmeen Ismail",
+  "tradutor": "Carolina Caires Coelho",
+  "editora": "Catapulta",
+  "ano": 2023,
+  "origem": "traducao",
+  "paginas": 32,
+  "situacoes": [
+    "vai-nascer-um-irmao"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "5+",
+      "base": 1
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "crianca",
+      "base": 0
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site da Catapulta",
+      "url": "https://catapulta.net/pt/libros/detalle/1218",
+      "trecho": "Meu irmãozinho está vindo! Mas eu preciso esperar... Ele parece meio... Estranho. O papai diz que meu irmão é uma semente de papoula. Depois, um feijão. Mais para frente, meu irmão é... Um abacate!",
+      "acessado_em": "2026-11-22"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha no site da Catapulta",
+      "url": "https://catapulta.net/pt/libros/detalle/1218",
+      "trecho": "Idade: +5 anos Tamanho: 26 cm x 26 cm Capa dura, 32 páginas ISBN: 978-65-5551-069-0",
+      "acessado_em": "2026-11-22"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha na Livraria Martins Fontes",
+      "url": "https://www.martinsfontespaulista.com.br/meu-irmao-e-um-abacate-1040857/p",
+      "trecho": "Autor: DARNTON, TRACY Ilustrador: ISMAIL, YASMEEN Tradutor: CAIRES COELHO, CAROLINA Editora: CATAPULTA",
+      "acessado_em": "2026-11-22"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "detalhes do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/6555510692",
+      "trecho": "Editora ‏ : ‎ Catapulta Data da publicação ‏ : ‎ 28 abril 2023 Edição ‏ : ‎ 1ª Idioma ‏ : ‎ Português Número de páginas ‏ : ‎ 32 páginas ISBN-10 ‏ : ‎ 6555510692 ISBN-13 ‏ : ‎ 978-6555510690",
+      "acessado_em": "2026-11-22"
+    }
+  ],
+  "nao_coberto": "A sinopse fala na voz da criança mais velha, que espera o irmão e conta que o pai o compara a uma semente de papoula, depois a um feijão e depois a um abacate. Ela não diz se o livro chega ao nascimento, como termina, o que a criança sente durante a espera nem se o texto é rimado. Nenhuma fonte lida traz o título original nem o ano da primeira edição, e nenhuma diz se há texto para o adulto.",
+  "nao_aborda": "Pela sinopse, o livro fica na espera do irmão; ela não fala de ciúme, de dividir os pais nem da vida com o bebê já em casa.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Martins Fontes Paulista",
+        "url": "https://www.martinsfontespaulista.com.br/meu-irmao-e-um-abacate-1040857/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6555510692"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-11-22"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-11-22"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "martinsfontespaulista.com.br",
+        "url": "https://www.martinsfontespaulista.com.br/meu-irmao-e-um-abacate-1040857/p",
+        "isbn13": "9786555510690",
+        "titulo_bateu": true,
+        "trecho": "MEU IRMÃO É UM ABACATE - DARNTON, TRACY | Livraria Martins Fontes",
+        "em": "2026-11-22"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-11-22",
+  "capa": {
+    "arquivo": "9786555510690.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/510f5WtgMwL._SL1200_.jpg",
+    "obtida_em": "2026-11-22",
+    "sha1": "893a1a866bd5c3b9a8eba08c0c791cf251a978ef",
+    "largura": 500,
+    "altura": 500
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Martins Fontes, que imprime o ISBN-13. A ficha da Catapulta e a da Amazon trazem o mesmo ISBN e 32 páginas, em capa dura. A idade (5+) é a da ficha da editora; a Amazon registra \"5 - 8 anos\". A Martins Fontes e a Amazon creditam a tradução a Carolina Caires Coelho. Em 22/11 a Martins Fontes e a Amazon tinham à venda."
+}
