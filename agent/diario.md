@@ -203,9 +203,12 @@ incompleto vale mais que um catálogo completo e inventado.
    vazias; garimpo à mão no máximo 1x por semana, e a automática só volta se o
    garimpo achar 2 ou mais candidatos novos) e `desfralde` (desde 20/11, depois de 2
    automáticas vazias seguidas; garimpo à mão 1x por semana, e a automática só
-   volta quando o garimpo achar 2 candidatos novos em duas rodadas seguidas).
-   Com isso, `primeiro-dia-de-aula` é a única no rodízio automático. Ver
-   `runtime/decisoes-2026-10-12.md`, `-10-16.md`, `-10-23.md` e `-11-20.md`.
+   volta quando o garimpo achar 2 candidatos novos em duas rodadas seguidas) e
+   `primeiro-dia-de-aula` (desde 23/11, depois de 3 automáticas vazias seguidas;
+   garimpo à mão 1x por semana, e a automática volta quando um garimpo achar 2
+   ou mais livros novos). Com isso, **nenhuma situação está no rodízio
+   automático**: o passo 5 vira o garimpo à mão da semana. Ver
+   `runtime/decisoes-2026-10-12.md`, `-10-16.md`, `-10-23.md`, `-11-20.md` e `-11-23.md`.
 6. Escolha **no máximo 2**. O teto não é sugestão. Ele existe porque encher o
    catálogo é a forma mais fácil de parecer produtivo sem ser útil.
    Descarte sem dó: a descoberta traz romance adulto e livro de teologia junto.
