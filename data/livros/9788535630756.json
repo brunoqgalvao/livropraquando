@@ -1,0 +1,103 @@
+{
+  "isbn13": "9788535630756",
+  "titulo": "Coisa de irmão",
+  "autor": "Luciana Rigueira",
+  "editora": "Paulinas",
+  "ano": 2012,
+  "paginas": 16,
+  "situacoes": [
+    "vai-nascer-um-irmao"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse na Livraria Martins Fontes",
+      "url": "https://www.martinsfontespaulista.com.br/coisa-de-irmao-804577/p",
+      "trecho": "A obra trata do ciúmes entre o irmã mais velha e o recém-nascido. A menina quer entender por que há tanta atenção do pai e da mãe para o bebê: tudo que a criaturinha faz agrada aos outros, mesmo quando se trata da coisa mais sem graça. Mas quando lhe perguntam se quer se livrar do irmão, ela é firme: de jeito nenhum! Afinal, ele foi muito desejado por ela.Indicado para os anos iniciais do Ensino Fundamental 1º ano e 2º ano",
+      "acessado_em": "2026-11-23"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "detalhes do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/8535630759",
+      "trecho": "Editora ‏ : ‎ Paulinas Editora Data da publicação ‏ : ‎ 28 maio 2012 Edição ‏ : ‎ 1ª Idioma ‏ : ‎ Português Número de páginas ‏ : ‎ 16 páginas ISBN-10 ‏ : ‎ 8535630759 ISBN-13 ‏ : ‎ 978-8535630756",
+      "acessado_em": "2026-11-23"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha na Livraria Martins Fontes",
+      "url": "https://www.martinsfontespaulista.com.br/coisa-de-irmao-804577/p",
+      "trecho": "Autor: RIGUEIRA, LUCIANA Editora: PAULINAS",
+      "acessado_em": "2026-11-23"
+    }
+  ],
+  "nao_coberto": "A sinopse diz que a menina mais velha estranha a atenção que o pai e a mãe dão ao recém-nascido e que, quando perguntam se quer se livrar do irmão, responde que não, porque ele \"foi muito desejado por ela\". Ela não diz quem narra, se o texto é em verso nem como o livro termina. Nenhuma ficha credita ilustrador; a capa traz o nome de Elisabeth Teixeira ao lado do da autora, sem dizer qual é o papel dela. A editora é católica, mas a sinopse não fala em fé nem em oração, então o enquadramento fica em aberto. Não há indicação de material para o adulto.",
+  "nao_aborda": "Pela sinopse, o bebê já nasceu quando a história começa; ela não fala da gravidez nem da chegada do bebê em casa.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8535630759"
+      },
+      {
+        "loja": "Martins Fontes Paulista",
+        "url": "https://www.martinsfontespaulista.com.br/coisa-de-irmao-804577/p"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-11-23"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-11-23"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "martinsfontespaulista.com.br",
+        "url": "https://www.martinsfontespaulista.com.br/coisa-de-irmao-804577/p",
+        "isbn13": "9788535630756",
+        "titulo_bateu": true,
+        "trecho": "COISA DE IRMÃO - RIGUEIRA, LUCIANA | Livraria Martins Fontes",
+        "em": "2026-11-23"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-11-23",
+  "capa": {
+    "arquivo": "9788535630756.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/51ftw3veR4L._SL1200_.jpg",
+    "obtida_em": "2026-11-23",
+    "sha1": "36f785021fa2a748e73d338796095596651584a8",
+    "largura": 361,
+    "altura": 500
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Martins Fontes, que imprime o ISBN-13, e a da Amazon traz o mesmo. Ano e páginas vêm da Amazon (28 de maio de 2012, 1ª edição, 16 páginas); a Martins Fontes também diz 16 páginas, brochura. Sem idade: a sinopse da editora indica o livro para o 1º e o 2º ano do Ensino Fundamental, que é série escolar e não faixa etária, e a Amazon não indica idade. Em 23/11 a Amazon tinha 2 exemplares; na Martins Fontes estava sob encomenda."
+}

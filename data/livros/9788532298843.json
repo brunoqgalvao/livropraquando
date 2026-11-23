@@ -1,0 +1,104 @@
+{
+  "isbn13": "9788532298843",
+  "titulo": "Não quero... ter um irmão",
+  "autor": "Ana Oom",
+  "ilustrador": "Raquel Pinheiro",
+  "editora": "FTD",
+  "paginas": 28,
+  "situacoes": [
+    "vai-nascer-um-irmao"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "0 a 5",
+      "base": 2
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse na Livraria Martins Fontes",
+      "url": "https://www.martinsfontespaulista.com.br/nao-quero----ter-um-irmao-795964/p",
+      "trecho": "Inês não se conformava com a dedicação de todos com a mãe, só porque ela ia ter um bebê. Quando a mãe deu à luz, Inês foi recebida no quarto com tanto carinho, que ficou orgulhosa de ter um irmão.",
+      "acessado_em": "2026-11-23"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha na Livraria Martins Fontes",
+      "url": "https://www.martinsfontespaulista.com.br/nao-quero----ter-um-irmao-795964/p",
+      "trecho": "Autor: OOM, ANA Ilustrador: PINHEIRO, RAQUEL Editora: FTD*",
+      "acessado_em": "2026-11-23"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "detalhes do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/8532298842",
+      "trecho": "Editora ‏ : ‎ FTD Data da publicação ‏ : ‎ 5 maio 2021 Edição ‏ : ‎ 1ª Idioma ‏ : ‎ Português Número de páginas ‏ : ‎ 28 páginas ISBN-10 ‏ : ‎ 8532298842 ISBN-13 ‏ : ‎ 978-8532298843 Peso do produto ‏ : ‎ 130 g Idade de leitura ‏ : ‎ 0 - 5 anos",
+      "acessado_em": "2026-11-23"
+    }
+  ],
+  "nao_coberto": "A sinopse conta a história de ponta a ponta em duas frases: Inês não se conforma com a atenção que todos dão à mãe grávida e, quando o bebê nasce, é recebida no quarto com carinho e fica orgulhosa de ter um irmão. Ela não diz quem narra, se o texto é rimado, se há páginas para o adulto nem quanto do livro se passa na gravidez e quanto no hospital. As fontes não batem no ano: a Martins Fontes registra \"1ª edição - 2014\" e a Amazon, 5 de maio de 2021, por isso a página não mostra ano. A autora é portuguesa, segundo a nota biográfica da Martins Fontes, e nenhuma fonte lida diz se esta edição foi adaptada da portuguesa.",
+  "nao_aborda": "Pela sinopse, o livro vai da gravidez à visita no quarto da maternidade; ela não fala da vida com o bebê já em casa nem de dividir brinquedos ou colo.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Martins Fontes Paulista",
+        "url": "https://www.martinsfontespaulista.com.br/nao-quero----ter-um-irmao-795964/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/8532298842"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-11-23"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-11-23"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "martinsfontespaulista.com.br",
+        "url": "https://www.martinsfontespaulista.com.br/nao-quero----ter-um-irmao-795964/p",
+        "isbn13": "9788532298843",
+        "titulo_bateu": true,
+        "trecho": "NÃO QUERO... TER UM IRMÃO - OOM, ANA | Livraria Martins Fontes",
+        "em": "2026-11-23"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-11-23",
+  "capa": {
+    "arquivo": "9788532298843.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/41VKGZL17-L._SL1200_.jpg",
+    "obtida_em": "2026-11-23",
+    "sha1": "55fc1f9687c6165d7dfd6ddd58aad5068e1dd7fc",
+    "largura": 500,
+    "altura": 500
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Martins Fontes, que imprime o ISBN-13, e a da Amazon traz o mesmo. As duas dizem 28 páginas. A idade (0 a 5) é o campo \"Idade de leitura\" da ficha da Amazon, não a enquete de clientes; não achei página do livro no site da FTD. Sem ano: a Martins Fontes diz 2014 e a Amazon, 2021. Em 23/11 a Martins Fontes e a Amazon tinham em estoque."
+}
