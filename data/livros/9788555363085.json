@@ -1,0 +1,110 @@
+{
+  "isbn13": "9788555363085",
+  "titulo": "Um irmãozinho?",
+  "autor": "Margarita Mainé",
+  "ilustrador": "Cecilia Esteves",
+  "tradutor": "Paulo Ubiratan Araújo Sobrinho",
+  "editora": "Edebê",
+  "ano": 2020,
+  "origem": "traducao",
+  "paginas": 32,
+  "situacoes": [
+    "vai-nascer-um-irmao"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "nao_coberto"
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "crianca",
+      "base": 0
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse na Livraria Martins Fontes",
+      "url": "https://www.martinsfontespaulista.com.br/um-irmaozinho--935754/p",
+      "trecho": "Mamãe parece que tem um balão ou uma bola na barriga. Quando eu pergunto, ela diz que é um bebê. Ai, meu Deus! Vou ter um irmãozinho...",
+      "acessado_em": "2026-11-24"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha na Livraria Martins Fontes",
+      "url": "https://www.martinsfontespaulista.com.br/um-irmaozinho--935754/p",
+      "trecho": "Autor: MAINE, MARGARITA Ilustrador: ESTEVES, CECILIA Tradutor: SOBRINHO, PAULO UBIRATAN ARAÚJO Editora: EDEBE BRASIL",
+      "acessado_em": "2026-11-24"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha na Livraria Martins Fontes",
+      "url": "https://www.martinsfontespaulista.com.br/um-irmaozinho--935754/p",
+      "trecho": "EDITORA EDEBE BRASIL ** ISBN 9788555363085 PÁGINAS 32 IDIOMA PORTUGUÊS PESO 132G ACABAMENTO BROCHURA",
+      "acessado_em": "2026-11-24"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha na Livraria Martins Fontes",
+      "url": "https://www.martinsfontespaulista.com.br/um-irmaozinho--935754/p",
+      "trecho": "Número da edição 1ª EDIÇÃO - 2020",
+      "acessado_em": "2026-11-24"
+    }
+  ],
+  "nao_coberto": "A sinopse tem três frases, na voz da criança mais velha: a barriga da mãe parece um balão, a mãe diz que é um bebê e a criança percebe que vai ter um irmãozinho. Ela não diz o nome nem a idade de quem narra, o que a criança sente depois da notícia, se o livro chega ao nascimento nem como termina. A ficha credita tradução a Paulo Ubiratan Araújo Sobrinho, mas nenhuma fonte lida traz o título original, a língua de origem nem o ano da primeira edição. Nenhuma fonte indica faixa etária nem diz se há texto para o adulto.",
+  "nao_aborda": "Pela sinopse, o livro começa na gravidez; ela não fala da vida com o bebê já em casa, de ciúme nem de dividir os pais.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Martins Fontes Paulista",
+        "url": "https://www.martinsfontespaulista.com.br/um-irmaozinho--935754/p"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-11-24"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-11-24"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "martinsfontespaulista.com.br",
+        "url": "https://www.martinsfontespaulista.com.br/um-irmaozinho--935754/p",
+        "isbn13": "9788555363085",
+        "titulo_bateu": true,
+        "trecho": "UM IRMÃOZINHO? - MAINE, MARGARITA | Livraria Martins Fontes",
+        "em": "2026-11-24"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-11-24",
+  "capa": {
+    "arquivo": "9788555363085.jpg",
+    "fonte": "martinsfontespaulista.com.br",
+    "url": "https://martinsfontespaulista.vteximg.com.br/arquivos/ids/1396794-292-292/935754.jpg?v=637624891470900000",
+    "obtida_em": "2026-11-24",
+    "sha1": "0a12254ad49bb623bf2ff96d01b75bcf275372bf",
+    "largura": 292,
+    "altura": 285
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Martins Fontes, que imprime o ISBN-13. Ano (1ª edição, 2020), 32 páginas e o crédito de tradução vêm da mesma ficha, a única fonte lida que traz esses campos; a Amazon não tem página deste ISBN. A ficha escreve a autora como \"MAINE, MARGARITA\" e a capa, \"Margarita Mainé\"; a página segue a capa. A ficha diz brochura e a foto da capa parece de livro cartonado, por isso a página não afirma o formato. Sem idade: nenhuma fonte lida indica faixa etária. Em 24/11 o catálogo da Martins Fontes informava 1 exemplar; a página do livro não deixou ler o estoque."
+}
