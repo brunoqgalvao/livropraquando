@@ -1,0 +1,111 @@
+{
+  "isbn13": "9786560871335",
+  "titulo": "Cresço e apareço: não quero um irmãozinho!",
+  "autor": "Liliana Cinetto e Federico Bonifacini",
+  "editora": "Gato Amarelo",
+  "ano": 2025,
+  "paginas": 14,
+  "situacoes": [
+    "vai-nascer-um-irmao"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "3 a 5",
+      "base": 2
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse na Livraria Martins Fontes",
+      "url": "https://www.martinsfontespaulista.com.br/cresco-e-apareco--nao-quero-um-irmaozinho----vol--1-1168429/p",
+      "trecho": "Bem-vindo ao maravilhoso mundo de Nina e seus amigos! Desta vez, as gêmeas Anita e Lupe vão ganhar um irmãozinho e terão que lidar com um sentimento difícil de controlar: o ciúme. Venha acompanhá-las nesta aventura inesquecível.",
+      "acessado_em": "2026-11-25"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha na Livraria Martins Fontes",
+      "url": "https://www.martinsfontespaulista.com.br/cresco-e-apareco--nao-quero-um-irmaozinho----vol--1-1168429/p",
+      "trecho": "Número da edição 1ª EDIÇÃO - 2025",
+      "acessado_em": "2026-11-25"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "detalhes do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/6560871339",
+      "trecho": "Editora ‏ : ‎ Gato Amarelo Data da publicação ‏ : ‎ 1 outubro 2025 Edição ‏ : ‎ 1ª Idioma ‏ : ‎ Português Número de páginas ‏ : ‎ 14 páginas ISBN-10 ‏ : ‎ 6560871339 ISBN-13 ‏ : ‎ 978-6560871335 Peso do produto ‏ : ‎ 440 g Idade de leitura ‏ : ‎ 3 - 5 anos Dimensões ‏ : ‎ 20.7 x 1.9 x 20.7 cm",
+      "acessado_em": "2026-11-25"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "detalhes do produto na Amazon",
+      "url": "https://www.amazon.com.br/dp/6560871339",
+      "trecho": "por Equipe GDB Editorial (Autor)",
+      "acessado_em": "2026-11-25"
+    }
+  ],
+  "nao_coberto": "A sinopse tem três frases: as gêmeas Anita e Lupe, do mundo de Nina e seus amigos, vão ganhar um irmãozinho e sentem ciúme. Ela não diz quem narra, a idade das gêmeas, se o livro chega ao nascimento do bebê nem como termina. A capa traz os nomes de Liliana Cinetto e Federico Bonifacini sem dizer quem escreve e quem ilustra, e nenhuma fonte lida diz se o livro é tradução nem traz título original. Nenhuma fonte diz se há texto para o adulto nem se o texto é rimado. É o volume 1 da coleção Cresço e apareço; nenhuma fonte lida descreve os outros volumes.",
+  "nao_aborda": "Pela sinopse, o assunto é o ciúme diante da notícia do irmão; ela não fala de gravidez em detalhe, de parto nem da vida com o bebê já em casa.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Martins Fontes Paulista",
+        "url": "https://www.martinsfontespaulista.com.br/cresco-e-apareco--nao-quero-um-irmaozinho----vol--1-1168429/p"
+      },
+      {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/6560871339"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-11-25"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-11-25"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "martinsfontespaulista.com.br",
+        "url": "https://www.martinsfontespaulista.com.br/cresco-e-apareco--nao-quero-um-irmaozinho----vol--1-1168429/p",
+        "isbn13": "9786560871335",
+        "titulo_bateu": true,
+        "trecho": "CRESÇO E APAREÇO: NÃO QUERO UM IRMÃOZINHO! - VOL. 1 | Livraria Martins Fontes",
+        "em": "2026-11-25"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-11-25",
+  "capa": {
+    "arquivo": "9786560871335.jpg",
+    "fonte": "amazon.com.br",
+    "url": "https://m.media-amazon.com/images/I/41i3x3pPMZL._SL1200_.jpg",
+    "obtida_em": "2026-11-25",
+    "sha1": "f09077197f4ce361c8b026b848daaa2093fe9fb4",
+    "largura": 500,
+    "altura": 500
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Martins Fontes, que imprime o ISBN-13, e a da Amazon traz o mesmo. As duas dizem 14 páginas e capa dura, e o ano bate: 1ª edição de 2025 na Martins Fontes, 1º de outubro de 2025 na Amazon. A idade (3 a 5) é o campo \"Idade de leitura\" da ficha da Amazon, não a enquete de clientes; não achei página do livro no site da Gato Amarelo. Autoria: a capa traz Liliana Cinetto e Federico Bonifacini, a Amazon credita \"Equipe GDB Editorial\" e a Martins Fontes não traz autor; a página segue a capa e não atribui papel a cada nome. Em 25/11 a Amazon informava 8 exemplares em estoque."
+}
