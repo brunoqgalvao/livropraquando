@@ -209,6 +209,12 @@ incompleto vale mais que um catálogo completo e inventado.
    ou mais livros novos). Com isso, **nenhuma situação está no rodízio
    automático**: o passo 5 vira o garimpo à mão da semana. Ver
    `runtime/decisoes-2026-10-12.md`, `-10-16.md`, `-10-23.md`, `-11-20.md` e `-11-23.md`.
+   **Desde 25/11, `medo-do-escuro` e `morte-do-bichinho` têm garimpo a cada 2
+   semanas** (próximo: 09/12), depois de 2 garimpos semanais seguidos sem nada
+   aproveitável (18 e 25/11). Não troque a fonte por busca da Amazon no
+   Chromium: a VM tem 2 GB e Chromium extra derruba a sessão. Pra variar, use
+   outra fonte por HTTP (catálogo de editora ou livraria, sem navegador), dentro
+   do teto de requisições de sempre. Ver `runtime/decisoes-2026-11-25.md`.
 6. Escolha **no máximo 2**. O teto não é sugestão. Ele existe porque encher o
    catálogo é a forma mais fácil de parecer produtivo sem ser útil.
    Descarte sem dó: a descoberta traz romance adulto e livro de teologia junto.
