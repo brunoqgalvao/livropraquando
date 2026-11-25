@@ -55,7 +55,8 @@ jobs:
         if: vars.SITE_DOMINIO != ''
 
       - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with: { path: site }
+      - uses: actions/upload-pages-artifact@v4
+        with: { path: site, name: github-pages }
       - id: deploy
         uses: actions/deploy-pages@v4
+        with: { artifact_name: github-pages }
