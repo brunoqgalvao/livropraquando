@@ -1,0 +1,102 @@
+{
+  "isbn13": "9786586881578",
+  "titulo": "Irmão, irmãozinho, irmãozão",
+  "autor": "Vanessa Anesi",
+  "ilustrador": "Thiago Amormino",
+  "editora": "Alebebê (Aletria)",
+  "ano": 2021,
+  "origem": "nacional",
+  "paginas": 32,
+  "situacoes": [
+    "vai-nascer-um-irmao"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "0+",
+      "base": 1
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site da Aletria Editora (selo Alebebê)",
+      "url": "https://www.aletria.com.br/irmao-irmaozinho-irmaozao",
+      "trecho": "Meu irmão chegou causando muita confusão. Roubou tudo o que era meu: espaço, brinquedos e atenção. E agora, o que eu faço?! Não sei dividir nada, não! Sempre tive tudo pra mim! POLÍCIA! POLÍCIA! PEGA LADRÃO!",
+      "acessado_em": "2026-11-26"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha no site da Aletria Editora",
+      "url": "https://www.aletria.com.br/irmao-irmaozinho-irmaozao",
+      "trecho": "Indicado para pré-leitores (a partir de 0 anos) Título original: Irmão, irmãozinho, irmaozão Autor: Vanessa Anesi Ilustrações: Thiago Amormino ISBN: 9786586881578 32 páginas, 24 x 22 x 1 cm 1ª edição, 2021",
+      "acessado_em": "2026-11-26"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha na Livraria Martins Fontes",
+      "url": "https://www.martinsfontespaulista.com.br/irmao--irmaozinho--irmaozao-989191/p",
+      "trecho": "Número da edição 1ª EDIÇÃO - 2021",
+      "acessado_em": "2026-11-26"
+    }
+  ],
+  "nao_coberto": "A sinopse tem cinco frases, em primeira pessoa, na voz de quem já estava em casa: o irmão chegou, \"roubou\" espaço, brinquedos e atenção, e quem narra diz que não sabe dividir. Ela não diz o nome nem a idade de quem narra, nem se é uma criança ou um bicho (a capa mostra um filhote de onça), se o irmão é recém-nascido, se o livro passa pela gravidez nem como termina. Nenhuma fonte lida diz se há texto para o adulto nem se o texto é rimado.",
+  "nao_aborda": "Pela sinopse, o livro começa com o irmão já em casa; ela não fala de gravidez nem de parto.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Martins Fontes Paulista",
+        "url": "https://www.martinsfontespaulista.com.br/irmao--irmaozinho--irmaozao-989191/p"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-11-26"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-11-26"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "martinsfontespaulista.com.br",
+        "url": "https://www.martinsfontespaulista.com.br/irmao--irmaozinho--irmaozao-989191/p",
+        "isbn13": "9786586881578",
+        "titulo_bateu": true,
+        "trecho": "IRMÃO, IRMÃOZINHO, IRMÃOZÃO - ANESI, VANESSA | Livraria Martins Fontes",
+        "em": "2026-11-26"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-11-27",
+  "capa": {
+    "arquivo": "9786586881578.jpg",
+    "fonte": "martinsfontespaulista.com.br",
+    "url": "https://martinsfontespaulista.vteximg.com.br/arquivos/ids/1463991-292-292/989191.jpg?v=639056432020770000",
+    "obtida_em": "2026-11-27",
+    "sha1": "85cf1531844b30e12a2f2350eb26451675cbf15e",
+    "largura": 292,
+    "altura": 292
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Martins Fontes, que imprime o ISBN-13, e a página do livro no site da Aletria traz o mesmo. As duas dizem 32 páginas e 1ª edição de 2021. A idade (a partir de 0) é a indicação da própria editora. A Alebebê é o selo da Aletria Editora, de Belo Horizonte, para crianças de zero a três anos. Em 26/11 e em 27/11 a loja da Aletria dizia \"Esse produto encontra-se indisponível\" e o catálogo da Martins Fontes informava 10 exemplares; a Amazon não respondeu à consulta deste ISBN."
+}
