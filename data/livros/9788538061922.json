@@ -1,0 +1,98 @@
+{
+  "isbn13": "9788538061922",
+  "titulo": "Até as princesas fazem cocô!",
+  "autor": "Sarah Creese, Gabrielle Mercer",
+  "ilustrador": "Stuart Lynch",
+  "editora": "Ciranda Cultural",
+  "ano": 2015,
+  "paginas": 8,
+  "situacoes": [
+    "desfralde"
+  ],
+  "rubrica": {
+    "idade_editora": {
+      "valor": "0 a 3",
+      "base": 1
+    },
+    "nomeia_evento": {
+      "valor": "direto",
+      "base": 0
+    },
+    "enquadramento": {
+      "valor": "nao_coberto"
+    },
+    "narrador": {
+      "valor": "nao_coberto"
+    },
+    "material_adulto": {
+      "valor": "nao_coberto"
+    },
+    "forma": {
+      "valor": "nao_coberto"
+    }
+  },
+  "evidencias": [
+    {
+      "tipo": "sinopse_editora",
+      "veiculo": "sinopse no site da Ciranda Cultural",
+      "url": "https://www.cirandacultural.com.br/produto/ate-as-princesas-fazem-coco-74011",
+      "trecho": "Com uma ajudinha da família real, a princesa Alice está aprendendo a usar o peniquinho. Venha conhecer a história de Alice e descubra com ela que todos fazem xixi e cocô, não importa quem sejam!",
+      "acessado_em": "2026-11-28"
+    },
+    {
+      "tipo": "ficha_tecnica",
+      "veiculo": "ficha no site da Ciranda Cultural",
+      "url": "https://www.cirandacultural.com.br/produto/ate-as-princesas-fazem-coco-74011",
+      "trecho": "Editora: Ciranda Cultural Edição: 1, 2015 Autor: Sarah Creese, Gabrielle Mercer Ilustrador: Stuart Lynch Idioma: Português Páginas: 8 Dimensões: L 20.00 x A 24.00 x E 1.00 ISBN: 9788538061922 Coleção: Usando o peniquinho Linha Editorial: Ciranda Cultural - Bebês Faixa Etária: 0-3 anos Assuntos (tags): Desfralde, Higiene, Criança BISAC: Saúde e Boa Forma / Saúde e Boa Forma / Saúde das Crianças Linha de Produto: Abas Encadernação: Lombada quadrada Acabamento: Faca especial Material: Cartonado",
+      "acessado_em": "2026-11-28"
+    }
+  ],
+  "nao_coberto": "A sinopse diz que a princesa Alice está aprendendo a usar o peniquinho com a ajuda de a família real, mas não conta como: não diz quem narra, se o texto é rimado, se há escape ou medo do penico, nem como termina. A ficha não diz se há texto para o adulto. Nenhuma fonte diz se é tradução: as autoras e o ilustrador têm nome inglês e a ficha não traz tradutor nem título original, então a página não afirma a origem.",
+  "nao_aborda": "Pela sinopse, é o aprender a usar o penico contado para bebês, com a família por perto; ela não fala de noite sem fralda nem de vaso sanitário.",
+  "disponibilidade": {
+    "estado": "a_venda",
+    "compra": [
+      {
+        "loja": "Ciranda Cultural",
+        "url": "https://www.cirandacultural.com.br/produto/ate-as-princesas-fazem-coco-74011"
+      },
+      {
+        "loja": "Martins Fontes Paulista",
+        "url": "https://www.martinsfontespaulista.com.br/ate-as-princesas-fazem-coco--772453/p"
+      }
+    ],
+    "resolucoes": [
+      {
+        "fonte": "google_books",
+        "titulo_bateu": false,
+        "em": "2026-11-28"
+      },
+      {
+        "fonte": "open_library",
+        "titulo_bateu": false,
+        "em": "2026-11-28"
+      },
+      {
+        "fonte": "ficha_loja",
+        "host": "cirandacultural.com.br",
+        "url": "https://www.cirandacultural.com.br/produto/ate-as-princesas-fazem-coco-74011",
+        "isbn13": "9788538061922",
+        "titulo_bateu": true,
+        "trecho": "Até as princesas fazem cocô! - Ciranda Cultural",
+        "em": "2026-11-28"
+      }
+    ]
+  },
+  "curadoria": "agente",
+  "verificado_em": "2026-11-28",
+  "capa": {
+    "arquivo": "9788538061922.jpg",
+    "fonte": "martinsfontespaulista.com.br",
+    "url": "https://martinsfontespaulista.vteximg.com.br/arquivos/ids/1598391-292-292/772453.jpg?v=639270207270800000",
+    "obtida_em": "2026-11-28",
+    "sha1": "919e5e1a1a871e4cdd35b8328adecfabfa54e089",
+    "largura": 292,
+    "altura": 292
+  },
+  "nota": "O Google Books e a Open Library não têm este ISBN; a existência está provada pela ficha da Ciranda Cultural, que imprime o ISBN. A idade (0 a 3) é a faixa da ficha da editora, que também marca o livro com o assunto \"Desfralde\". É cartonado de 8 páginas com abas, da coleção Usando o peniquinho, das mesmas autoras e ilustrador de \"Até os piratas fazem cocô!\". A Martins Fontes registra a 1ª edição mas cadastra o acabamento como brochura; a página segue a editora (cartonado). Em 28/11 o site da Ciranda dizia \"Produto Indisponível\" e o catálogo da Martins Fontes marcava o livro como disponível para pronta entrega."
+}

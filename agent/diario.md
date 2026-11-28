@@ -206,8 +206,10 @@ incompleto vale mais que um catálogo completo e inventado.
    volta quando o garimpo achar 2 candidatos novos em duas rodadas seguidas) e
    `primeiro-dia-de-aula` (desde 23/11, depois de 3 automáticas vazias seguidas;
    garimpo à mão 1x por semana, e a automática volta quando um garimpo achar 2
-   ou mais livros novos). Com isso, **nenhuma situação está no rodízio
-   automático**: o passo 5 vira o garimpo à mão da semana. Ver
+   ou mais livros novos). **Em 28/11 `desfralde` voltou ao rodízio
+   automático**: os garimpos de 21/11 e 28/11 acharam 2 ou mais candidatos
+   novos cada um, que é a condição de volta de 20/11. Ela é a única situação no
+   rodízio; as outras seguem no garimpo à mão. Ver
    `runtime/decisoes-2026-10-12.md`, `-10-16.md`, `-10-23.md`, `-11-20.md` e `-11-23.md`.
    **Desde 25/11, `medo-do-escuro` e `morte-do-bichinho` têm garimpo a cada 2
    semanas** (próximo: 09/12), depois de 2 garimpos semanais seguidos sem nada
